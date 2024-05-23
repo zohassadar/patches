@@ -186,8 +186,9 @@ function ff(a,b,c,d,x,s,t){return _cmn((b&c)|((~b)&d),a,b,x,s,t)}
 function gg(a,b,c,d,x,s,t){return _cmn((b&d)|(c&(~d)),a,b,x,s,t)}
 function hh(a,b,c,d,x,s,t){return _cmn(b^c^d,a,b,x,s,t)}
 function ii(a,b,c,d,x,s,t){return _cmn(c^(b|(~d)),a,b,x,s,t)}
-function md5(marcFile, headerSize){
-	var data=headerSize? new Uint8Array(marcFile._u8array.buffer, headerSize):marcFile._u8array;
+function md5(data){
+    // Uint8Array
+	// var data=headerSize? new Uint8Array(marcFile._u8array.buffer, headerSize):marcFile._u8array;
 
 	var n=data.length,state=[1732584193,-271733879,-1732584194,271733878],i;
 	for(i=64;i<=data.length;i+=64)
@@ -1010,4 +1011,4 @@ MarcFile.prototype.writeString=function(str,len){
 	this.offset+=len;
 }
 /* eslint-enable */
-module.exports = { MarcFile, saveAs };
+module.exports = { MarcFile, saveAs, md5 };
