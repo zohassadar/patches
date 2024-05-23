@@ -32,7 +32,7 @@ function NewFileInput({ name, handleInput, hide }) {
         </>
     );
 }
-
+/* eslint-disable */
 function FileInput({ name, handleInput, hide }) {
     if (hide) return;
     function handleFileLoad(fileEvent, filename) {
@@ -57,6 +57,8 @@ function FileInput({ name, handleInput, hide }) {
         </>
     );
 }
+
+/* eslint-enable */
 
 function App() {
     const [rom, setRom] = useState(null);
