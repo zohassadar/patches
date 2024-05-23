@@ -1011,4 +1011,4 @@ MarcFile.prototype.writeString=function(str,len){
 	this.offset+=len;
 }
 /* eslint-enable */
-module.exports = { MarcFile, saveAs, md5 };
+module.exports = { MarcFile, saveAs, md5, parseBPSFile };

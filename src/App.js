@@ -1,7 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 
-const { saveAs, MarcFile, md5 } = require('./bps.js');
+const { saveAs, MarcFile, md5, parseBPSFile } = require('./bps.js');
 
 function Information({ hide, information }) {
     if (hide) return;
@@ -88,11 +88,15 @@ function App() {
                 contents: patchMarc,
             });
             setPatchInfo(`${patchMarc._u8array.length} bytes`);
-            setPatched({
-                filename: 'notyet.nes',
-                contents: { _u8array: new Uint8Array([0, 1, 2]) },
-                valid: true,
-            });
+            try {
+                const bpsPatch = parseBPSFile(patchMarc);
+                const _patched = bpsPatch.apply(rom.contents, true);
+                setPatched({
+                    filename: 'patched.nes',
+                    contents: _patched,
+                    valid: true,
+                });
+            } catch {}
         }
     }
 
@@ -120,7 +124,7 @@ function App() {
                     text="download unmodified patch"
                 />
                 <SaveFile
-                    hide={!rom || !patch || (patched && !patched.valid) }
+                    hide={!rom || !patch || (patched && !patched.valid)}
                     file={patched}
                     text="download patched"
                 />
