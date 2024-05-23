@@ -4,7 +4,7 @@ import { useState } from 'react';
 const { saveAs, MarcFile, md5 } = require('./bps.js');
 
 function Information({ hide, information }) {
-    if (hide) return
+    if (hide) return;
     return (
         <>
             <p>{information}</p>
@@ -15,11 +15,20 @@ function Information({ hide, information }) {
 function SaveFile({ hide, file, text }) {
     if (hide) return;
     function downloadRom() {
-        saveAs(new Blob([file.contents]), file.filename);
+        saveAs(new Blob([file.contents._u8array]), file.filename);
     }
     return (
         <>
             <button onClick={downloadRom}>{text}</button>
+        </>
+    );
+}
+
+function NewFileInput({ name, handleInput, hide }) {
+    if (hide) return;
+    return (
+        <>
+            <input name={name} type="file" onInput={handleInput} />
         </>
     );
 }
@@ -56,28 +65,42 @@ function App() {
 
     const [romInfo, setRomInfo] = useState('');
     const [patchInfo, setPatchInfo] = useState('');
-
     function handleRomInput(romFile) {
-        setRom(romFile);
-        const hash = md5(romFile.contents).toString();
-        setRomInfo(hash);
+        const romMarc = new MarcFile(romFile.target.files[0], onMarcRomLoad);
+        function onMarcRomLoad() {
+            setRom({
+                filename: romFile.target.files[0].name,
+                contents: romMarc,
+            });
+            const hash = md5(romMarc._u8array).toString();
+            setRomInfo(hash);
+        }
     }
 
     function handlePatchInput(patchFile) {
-        setPatch(patchFile);
-        setPatchInfo(`${patchFile.contents.length} bytes`);
-        setPatched({
-            filename: 'notyet.nes',
-            contents: new Uint8Array([0, 1, 2]),
-            valid: true,
-        });
+        const patchMarc = new MarcFile(
+            patchFile.target.files[0],
+            onMarcPatchLoad,
+        );
+        function onMarcPatchLoad() {
+            setPatch({
+                filename: patchFile.target.files[0].name,
+                contents: patchMarc,
+            });
+            setPatchInfo(`${patchMarc._u8array.length} bytes`);
+            setPatched({
+                filename: 'notyet.nes',
+                contents: { _u8array: new Uint8Array([0, 1, 2]) },
+                valid: true,
+            });
+        }
     }
 
     return (
         <div className="App">
             <header className="App-header">
                 <Information hide={false} information="give rom" />
-                <FileInput name="RomInput" handleInput={handleRomInput} />
+                <NewFileInput name="RomInput" handleInput={handleRomInput} />
                 <Information hide={!rom} information={romInfo} />
                 <SaveFile
                     hide={!rom}
@@ -85,7 +108,7 @@ function App() {
                     text="download unmodified rom"
                 />
                 <Information hide={!rom} information="give patch" />
-                <FileInput
+                <NewFileInput
                     name="PatchInput"
                     handleInput={handlePatchInput}
                     hide={!rom}
@@ -97,7 +120,7 @@ function App() {
                     text="download unmodified patch"
                 />
                 <SaveFile
-                    hide={!rom || !patch || !patched.valid}
+                    hide={!rom || !patch || (patched && !patched.valid) }
                     file={patched}
                     text="download patched"
                 />
