@@ -76,29 +76,27 @@ function App() {
             });
             const hash = md5(romMarc._u8array).toString();
             setRomInfo(hash);
-        }
-    }
+            let marcPatch;
+            fetch('patches/tetris.bps')
+                .then((response) => response.blob())
+                .then((patchData) => {
+                    patchData.arrayBuffer().then((buffer) => {
+                        marcPatch = new MarcFile(new Uint8Array(buffer));
 
-    function handlePatchInput(patchFile) {
-        const patchMarc = new MarcFile(
-            patchFile.target.files[0],
-            onMarcPatchLoad,
-        );
-        function onMarcPatchLoad() {
-            setPatch({
-                filename: patchFile.target.files[0].name,
-                contents: patchMarc,
-            });
-            setPatchInfo(`${patchMarc._u8array.length} bytes`);
-            try {
-                const bpsPatch = parseBPSFile(patchMarc);
-                const _patched = bpsPatch.apply(rom.contents, true);
-                setPatched({
-                    filename: 'patched.nes',
-                    contents: _patched,
-                    valid: true,
+                        const patchParsed = parseBPSFile(marcPatch);
+                        const patchedRom = patchParsed.apply(romMarc);
+                        try {
+                            setPatch(true);
+                            setPatched({
+                                filename: 'patched.nes',
+                                contents: patchedRom,
+                                valid: true,
+                            });
+                        } catch {
+                            debugger;
+                        }
+                    });
                 });
-            } catch {}
         }
     }
 
@@ -112,18 +110,6 @@ function App() {
                     hide={!rom}
                     file={rom}
                     text="download unmodified rom"
-                />
-                <Information hide={!rom} information="give patch" />
-                <NewFileInput
-                    name="PatchInput"
-                    handleInput={handlePatchInput}
-                    hide={!rom}
-                />
-                <Information hide={!patch} information={patchInfo} />
-                <SaveFile
-                    hide={!patch}
-                    file={patch}
-                    text="download unmodified patch"
                 />
                 <SaveFile
                     hide={!rom || !patch || (patched && !patched.valid)}
