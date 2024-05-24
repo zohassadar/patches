@@ -62,11 +62,9 @@ function FileInput({ name, handleInput, hide }) {
 
 function App() {
     const [rom, setRom] = useState(null);
-    const [patch, setPatch] = useState(null);
     const [patched, setPatched] = useState(null);
 
     const [romInfo, setRomInfo] = useState('');
-    const [patchInfo, setPatchInfo] = useState('');
     function handleRomInput(romFile) {
         const romMarc = new MarcFile(romFile.target.files[0], onMarcRomLoad);
         function onMarcRomLoad() {
@@ -76,17 +74,14 @@ function App() {
             });
             const hash = md5(romMarc._u8array).toString();
             setRomInfo(hash);
-            let marcPatch;
             fetch('patches/tetris.bps')
                 .then((response) => response.blob())
                 .then((patchData) => {
                     patchData.arrayBuffer().then((buffer) => {
-                        marcPatch = new MarcFile(new Uint8Array(buffer));
-
-                        const patchParsed = parseBPSFile(marcPatch);
-                        const patchedRom = patchParsed.apply(romMarc);
                         try {
-                            setPatch(true);
+                            const marcPatch = new MarcFile(new Uint8Array(buffer));
+                            const patchParsed = parseBPSFile(marcPatch);
+                            const patchedRom = patchParsed.apply(romMarc, true);
                             setPatched({
                                 filename: 'patched.nes',
                                 contents: patchedRom,
@@ -112,7 +107,7 @@ function App() {
                     text="download unmodified rom"
                 />
                 <SaveFile
-                    hide={!rom || !patch || (patched && !patched.valid)}
+                    hide={!rom || (patched && !patched.valid)}
                     file={patched}
                     text="download patched"
                 />
