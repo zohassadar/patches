@@ -1,16 +1,16 @@
 import './App.css';
 import { useState } from 'react';
 
-const { saveAs, MarcFile, md5, parseBPSFile } = require('./bps.js');
+const { saveAs, MarcFile, parseBPSFile } = require('./bps.js');
 
 const INES1HEADER = [78, 69, 83, 26, 2, 2, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 function Information({ hide, information }) {
     if (hide) return;
     return (
-        <>
+        <div className="info">
             <p>{information}</p>
-        </>
+        </div>
     );
 }
 
@@ -20,18 +20,18 @@ function SaveFile({ hide, file, text }) {
         saveAs(new Blob([file.contents._u8array]), file.filename);
     }
     return (
-        <>
+        <div className="download">
             <button onClick={downloadRom}>{text}</button>
-        </>
+        </div>
     );
 }
 
 function NewFileInput({ name, handleInput, hide }) {
     if (hide) return;
     return (
-        <>
+        <div className="input">
             <input name={name} type="file" onInput={handleInput} />
-        </>
+        </div>
     );
 }
 /* eslint-disable */
@@ -65,7 +65,7 @@ function FileInput({ name, handleInput, hide }) {
 function App() {
     const [rom, setRom] = useState(null);
     const [patched, setPatched] = useState(null);
-    const [romInfo, setRomInfo] = useState('');
+    const [romInfo, setRomInfo] = useState('Waiting for Rom');
     function handleRomInput(romFile) {
         var romMarc = new MarcFile(romFile.target.files[0], onMarcRomLoad);
         function onMarcRomLoad() {
@@ -76,8 +76,7 @@ function App() {
                 filename: romFile.target.files[0].name,
                 contents: romMarc,
             });
-            const hash = md5(romMarc._u8array).toString();
-            setRomInfo(hash);
+            // const hash = md5(romMarc._u8array).toString();
             fetch('patches/TetrisGYM-6.0.0.bps')
                 .then((response) => response.blob())
                 .then((patchData) => {
@@ -88,13 +87,14 @@ function App() {
                             );
                             const patchParsed = parseBPSFile(marcPatch);
                             const patchedRom = patchParsed.apply(romMarc, true);
+                            setRomInfo('this rom will work!');
                             setPatched({
                                 filename: 'TetrisGYM-6.0.0.nes',
                                 contents: patchedRom,
                                 valid: true,
                             });
                         } catch (exc) {
-                            setRomInfo('invalid rom');
+                            setRomInfo('This is an invalid rom');
                             setPatched({ valid: false });
                         }
                     });
@@ -105,9 +105,14 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <Information hide={false} information="give rom" />
-                <NewFileInput name="RomInput" handleInput={handleRomInput} />
-                <Information hide={!rom} information={romInfo} />
+                <div className="headerBox">
+                    <Information hide={false} information="give rom" />
+                    <NewFileInput
+                        name="RomInput"
+                        handleInput={handleRomInput}
+                    />
+                    <Information information={romInfo} />
+                </div>
                 <SaveFile
                     hide={!rom || (patched && !patched.valid)}
                     file={patched}
