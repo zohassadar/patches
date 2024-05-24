@@ -95,7 +95,7 @@ function App() {
                             });
                         } catch (exc) {
                             setRomInfo('invalid rom');
-                            setPatched({valid: false})
+                            setPatched({ valid: false });
                         }
                     });
                 });
