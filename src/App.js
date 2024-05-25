@@ -103,7 +103,6 @@ function patchSomething(patch, rom) {
 
 function App() {
     const [rom, setRom] = useState(null);
-    const [patched, setPatched] = useState(null);
     const [romInfo, setRomInfo] = useState('Waiting for Rom');
 
     const [patch, setPatch] = useState(null);
@@ -115,7 +114,7 @@ function App() {
                 new Uint8Array([...INES1HEADER, ...romMarc._u8array.slice(16)]),
             );
             const hash = md5(romMarc._u8array).toString();
-            if (hash == VANILLA_INES1_MD5) {
+            if (hash === VANILLA_INES1_MD5) {
                 setRomInfo('This rom will work!');
                 setRom({
                     filename: romFile.target.files[0].name,
