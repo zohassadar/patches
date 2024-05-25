@@ -19,7 +19,7 @@ function Information({ hide, information }) {
 
 function SaveFile({ rom, patch }) {
     if (!rom) return;
-    function downloadRom(data, name) {
+    function downloadRom() {
         patchSomething(patch, rom);
     }
     return (
