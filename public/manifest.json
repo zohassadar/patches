@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "NES Tetris Patches",
+  "name": "Patch Collection for the 1989 NES Game Tetris",
   "icons": [
     {
       "src": "favicon.ico",
