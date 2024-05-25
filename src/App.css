@@ -10,7 +10,7 @@ body {
 }
 p {
     border: solid;
-    border-color: yellow;
+    border-color: #282c34;
 }
 .App {
     text-align: center;
@@ -41,36 +41,36 @@ p {
     min-height: 80vh;
     min-width: 100vw;
     border: solid;
-    border-color: white;
+    border-color: #282c34;
 }
 .sideBox {
     display: block;
     font-size: calc(5px + 2vmin);
     border: solid;
-    border-color: red;
+    border-color: #282c34;
     min-width: 20%;
     height: 100vh;
     overflow: auto;
 }
 .tableBox {
     border: solid;
-    border-color: teal;
+    border-color: #282c34;
     min-width: 80%;
     height: 100vh;
     overflow: auto;
 }
 .info {
     border: solid;
-    border-color: green;
+    border-color: #282c34;
 }
 .input {
     display: flex;
     flex-direction: column;
     justify-content: center;
     border: solid;
-    border-color: blue;
+    border-color: #282c34;
 }
 .download {
     border: solid;
-    border-color: purple;
+    border-color: #282c34;
 }
