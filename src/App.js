@@ -73,7 +73,11 @@ function SideNames({ setPatch }) {
     return (
         <>
             {patches.map((patch) => {
-                return <p onClick={() => setPatch(patch)}>{patch.name}</p>;
+                return (
+                    <p className="patchChoice" onClick={() => setPatch(patch)}>
+                        {patch.name}
+                    </p>
+                );
             })}
         </>
     );

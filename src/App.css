@@ -52,6 +52,9 @@ p {
     height: 100vh;
     overflow: auto;
 }
+.patchChoice:hover {
+    background-color: #383c44;
+}
 .tableBox {
     border: solid;
     border-color: #282c34;
