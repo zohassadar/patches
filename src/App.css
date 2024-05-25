@@ -1,49 +1,76 @@
 body {
     margin: 0 auto;
+    font-size: calc(10px + 2vmin);
+    background-color: #282c34;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    color: white;
+}
+p {
+    border: solid;
+    border-color: yellow;
 }
 .App {
     text-align: center;
 }
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
+.headerBox {
+    min-height: 10vh;
     display: block;
     border: solid;
     border-color: #282c34;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
 }
-.App-link {
-    color: #61dafb;
-}
-.headerBox {
+.topBox {
     display: flex;
     flex-direction: row;
     align-self: center;
     justify-content: center;
-    min-width: 100vw;
+    min-height: 10vh;
     border: solid;
     border-color: #282c34;
 }
+.bottomBox {
+    height: 100%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    min-height: 80vh;
+    min-width: 100vw;
+    border: solid;
+    border-color: white;
+}
+.sideBox {
+    display: block;
+    font-size: calc(5px + 2vmin);
+    border: solid;
+    border-color: red;
+    min-width: 20%;
+    height: 100vh;
+    overflow: auto;
+}
+.tableBox {
+    border: solid;
+    border-color: teal;
+    min-width: 80%;
+    height: 100vh;
+    overflow: auto;
+}
 .info {
     border: solid;
-    border-color: #282c34;
+    border-color: green;
 }
 .input {
     display: flex;
     flex-direction: column;
     justify-content: center;
     border: solid;
-    border-color: #282c34;
+    border-color: blue;
 }
 .download {
     border: solid;
-    border-color: #282c34;
+    border-color: purple;
 }
