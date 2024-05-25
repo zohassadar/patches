@@ -69,10 +69,10 @@ function Table({ patch, rom }) {
         </>
     );
 }
-function SideNames({ setPatch }) {
+function SideNames({ filteredPatches, setPatch }) {
     return (
         <>
-            {patches.map((patch) => {
+            {filteredPatches.map((patch) => {
                 return (
                     <p className="patchChoice" onClick={() => setPatch(patch)}>
                         {patch.name}
@@ -105,10 +105,28 @@ function patchSomething(patch, rom) {
         });
 }
 
+function filterPatches(filter, setFilteredPatches) {
+    console.log(filter);
+    if (!filter) {
+        setFilteredPatches(patches);
+        return;
+    }
+    setFilteredPatches(
+        patches.filter((patch) => {
+            const regexp = new RegExp(`${filter}`, 'i');
+            if (regexp.test(patch.name)) return true;
+            for (let author of patch.authors) {
+                if (regexp.test(author)) return true;
+            }
+            return false;
+        }),
+    );
+}
+
 function App() {
     const [rom, setRom] = useState(null);
     const [romInfo, setRomInfo] = useState('Waiting for Rom');
-
+    const [filteredPatches, setFilteredPatches] = useState(patches);
     const [patch, setPatch] = useState(null);
 
     function handleRomInput(romFile) {
@@ -142,7 +160,15 @@ function App() {
             </div>
             <div className="bottomBox">
                 <div className="sideBox">
-                    <SideNames setPatch={setPatch} />
+                    <input
+                        onChange={(e) =>
+                            filterPatches(e.target.value, setFilteredPatches)
+                        }
+                    />
+                    <SideNames
+                        filteredPatches={filteredPatches}
+                        setPatch={setPatch}
+                    />
                 </div>
                 <div className="tableBox">
                     <Table patch={patch} rom={rom} />
