@@ -3,37 +3,170 @@
         "name": "Tetris GYM 6.0.0",
         "file": "TetrisGYM-6.0.0.bps",
         "desc": "Adds practice modes to NES Tetris (among other things)",
-        "authors": ["kirjava"]
+        "authors": [
+            "kirjava"
+        ]
     },
     {
         "name": "Tetris GYM 6.0.0 w/Keyboard",
         "file": "TetrisGYM-6.0.0-keyboard.bps",
         "desc": "TetrisGYM compiled with Famicom Keyboard support",
-        "authors": ["kirjava"]
+        "authors": [
+            "kirjava"
+        ]
     },
     {
         "name": "Tetris GYM 6.0.0 Tron hack",
         "file": "TetrisGYM-6.0.0-tron0.bps",
         "desc": "Adds an extra dark mode to Tetris GYM",
-        "authors": ["kirjava", "zohassadar"],
+        "authors": [
+            "kirjava",
+            "zohassadar"
+        ],
         "yt": ""
     },
     {
         "name": "tetris next box playfield",
         "file": "tetris_next_box_playfield.ips",
         "desc": "Play tetris in the next box",
-        "authors": ["maya"]
+        "authors": [
+            "maya"
+        ]
     },
     {
         "name": "Pentris",
         "file": "Pentris_v1.3.bps",
         "desc": "5 minos instead of 4 minos",
-        "authors": ["zohassadar"]
+        "authors": [
+            "zohassadar"
+        ]
     },
     {
         "name": "Pentris AnyDAS",
         "file": "PentrisAnydas_v1.3.bps",
         "desc": "Pentris with HydrantDude's DAS controls",
-        "authors": ["zohassadar", "HydrantDude"]
+        "authors": [
+            "zohassadar",
+            "HydrantDude"
+        ]
+    },
+    {
+        "name": "Big Mode Anydas",
+        "file": "BigModeAnydas.bps",
+        "desc": "Big Mode with HydrantDyde's DAS Controls added",
+        "authors": [
+            "zohassadar",
+            "HydrantDude"
+        ],
+        "yt": ""
+    },
+    {
+        "name": "Max Out Song",
+        "file": "maxoutsong.ips",
+        "desc": "Plays a song when score is equal to or greater than 999,999",
+        "authors": [
+            "zohassadar"
+        ],
+        "yt": ""
+    },
+    {
+        "name": "No Entry Delay",
+        "file": "TetrisNoEntryDelay.bps",
+        "desc": "Reduces the normal 10-18 frame entry delay to 0 frames",
+        "authors": [
+            "zohassadar"
+        ],
+        "yt": ""
+    },
+    {
+        "name": "Big Mode",
+        "file": "BigMode.bps",
+        "desc": "Pieces doubled in width and height on a 5 x 10 playfield",
+        "authors": [
+            "zohassadar"
+        ],
+        "yt": ""
+    },
+    {
+        "name": "Background Pieces",
+        "file": "background.bps",
+        "desc": "Play tetris but using the background tiles as pieces",
+        "authors": [
+            "zohassadar"
+        ],
+        "yt": ""
+    },
+    {
+        "name": "Neon Tetris",
+        "file": "neon.bps",
+        "desc": "Neon Tetris",
+        "authors": [
+            "zohassadar"
+        ],
+        "yt": ""
+    },
+    {
+        "name": "Color Match Line Clear",
+        "file": "ColorMatchLineClear.ips",
+        "desc": "Lines only clear when colors match",
+        "authors": [
+            "zohassadar"
+        ],
+        "yt": ""
+    },
+    {
+        "name": "Modified Background Pattern",
+        "file": "bgpattern.bps",
+        "desc": "Interesting visual hack of background and pieces",
+        "authors": [
+            "zohassadar"
+        ],
+        "yt": ""
+    },
+    {
+        "name": "Connected Pieces",
+        "file": "connected.bps",
+        "desc": "Pieces are solidly connected",
+        "authors": [
+            "zohassadar"
+        ],
+        "yt": ""
+    },
+    {
+        "name": "No Entry Delay Anydas",
+        "file": "TetrisNoEntryDelayAnydas.bps",
+        "desc": "No Entry Delay with HydrantDude's DAS controls",
+        "authors": [
+            "zohassadar",
+            "HydrantDude"
+        ],
+        "yt": ""
+    },
+    {
+        "name": "Wall Hack 2",
+        "file": "Wallhack2.bps",
+        "desc": "Pieces wrap around the playfield",
+        "authors": [
+            "zohassadar"
+        ],
+        "yt": ""
+    },
+    {
+        "name": "Wall Hack 2 Anydas",
+        "file": "Wallhack2Anydas.bps",
+        "desc": "Pieces wrap around the playfield",
+        "authors": [
+            "zohassadar"
+        ],
+        "yt": ""
+    },
+    {
+        "name": "Random Tiles",
+        "file": "randomtiles.ips",
+        "desc": "Pieces can consist of any of the three tiles",
+        "authors": [
+            "zohassadar"
+        ],
+        "yt": ""
     }
 ]
