@@ -1,6 +1,6 @@
 import './App.css';
 import { useState } from 'react';
-import { patches } from './patches.js';
+const patches = require('./patches.json');
 const {
     saveAs,
     MarcFile,

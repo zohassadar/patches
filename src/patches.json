@@ -1,0 +1,39 @@
+[
+    {
+        "name": "Tetris GYM 6.0.0",
+        "file": "TetrisGYM-6.0.0.bps",
+        "desc": "Adds practice modes to NES Tetris (among other things)",
+        "authors": ["kirjava"]
+    },
+    {
+        "name": "Tetris GYM 6.0.0 w/Keyboard",
+        "file": "TetrisGYM-6.0.0-keyboard.bps",
+        "desc": "TetrisGYM compiled with Famicom Keyboard support",
+        "authors": ["kirjava"]
+    },
+    {
+        "name": "Tetris GYM 6.0.0 Tron hack",
+        "file": "TetrisGYM-6.0.0-tron0.bps",
+        "desc": "Adds an extra dark mode to Tetris GYM",
+        "authors": ["kirjava", "zohassadar"],
+        "yt": ""
+    },
+    {
+        "name": "tetris next box playfield",
+        "file": "tetris_next_box_playfield.ips",
+        "desc": "Play tetris in the next box",
+        "authors": ["maya"]
+    },
+    {
+        "name": "Pentris",
+        "file": "Pentris_v1.3.bps",
+        "desc": "5 minos instead of 4 minos",
+        "authors": ["zohassadar"]
+    },
+    {
+        "name": "Pentris AnyDAS",
+        "file": "PentrisAnydas_v1.3.bps",
+        "desc": "Pentris with HydrantDude's DAS controls",
+        "authors": ["zohassadar", "HydrantDude"]
+    }
+]
