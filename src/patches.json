@@ -748,5 +748,145 @@
         "desc": "",
         "authors": ["HydrantDude"],
         "yt": ""
+    },
+    {
+        "name": "Double KS",
+        "file": "doubleKS.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "Debug",
+        "file": "Debug.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "Disco",
+        "file": "disco.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "Goofy Foot",
+        "file": "GoofyFoot.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "No Demo No Legal NTSC",
+        "file": "NoDemoNoLegalNTSC.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "CTWC V2",
+        "file": "CTWC_v2.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "19-29 Speed",
+        "file": "19-29_speed.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "Lerp",
+        "file": "lerp.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "Hyper Disco",
+        "file": "hyperdisco.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "Flat Pieces",
+        "file": "FlatPieces.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "Kawaii",
+        "file": "Kawaii.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "No Line Pieces",
+        "file": "NoLinePieces.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "10 Digit Score",
+        "file": "10digitscore.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "No Rocket Fast Legal",
+        "file": "NoRocketFastLegal.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "Always Tetris Ready",
+        "file": "AlwaysTetrisReady.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "Hyper Trans",
+        "file": "hypertrans.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "TSpin Trainer",
+        "file": "TSpinTrainer.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "Brackets GYM",
+        "file": "brackets_gym.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "12 Wide",
+        "file": "12wide.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "Level 69",
+        "file": "level_69.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
     }
 ]
