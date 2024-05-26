@@ -126,7 +126,7 @@
         "name": "Wall Hack 2 Anydas",
         "file": "Wallhack2Anydas.bps",
         "desc": "Pieces wrap around the playfield",
-        "authors": ["zohassadar"],
+        "authors": ["zohassadar", "HydrantDude"],
         "yt": ""
     },
     {
@@ -413,7 +413,7 @@
         "file": "PentrisAnydas_withTetriminos.bps",
         "desc": "Pentris with Tetriminos added to the mix",
         "source": "https://github.com/zohassadar/Pentris/tree/with_tetriminos",
-        "authors": ["zohassadar"],
+        "authors": ["zohassadar", "HydrantDude"],
         "yt": ""
     },
     {
