@@ -79,11 +79,24 @@ function Table({ patch, rom }) {
                     <h2>{patch.name}</h2>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <p>{patch.desc}</p>
-                </td>
-            </tr>
+            {patch.desc ? (
+                <tr>
+                    <td>
+                        <p>{patch.desc}</p>
+                    </td>
+                </tr>
+            ) : (
+                ''
+            )}
+            {patch.source ? (
+                <tr>
+                    <td>
+                        <a href={patch.source}>source</a>
+                    </td>
+                </tr>
+            ) : (
+                ''
+            )}
             <tr>
                 <td>
                     <p>{`hacked by: ${patch.authors.join(', ')}`}</p>
@@ -96,14 +109,28 @@ function Table({ patch, rom }) {
             </tr>
             <tr>
                 <td>
-                    <SaveFile text="download patched" rom={rom} patch={patch} />
+                    {rom ? (
+                        <SaveFile
+                            text="download patched"
+                            rom={rom}
+                            patch={patch}
+                        />
+                    ) : (
+                        <>
+                            <h5>Waiting for valid rom</h5>
+                        </>
+                    )}
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <YouTube vid={patch.yt} />
-                </td>
-            </tr>
+            {patch.yt ? (
+                <tr>
+                    <td>
+                        <YouTube vid={patch.yt} />
+                    </td>
+                </tr>
+            ) : (
+                ''
+            )}
         </table>
     );
 }
@@ -169,6 +196,25 @@ function filterPatches(filter, setFilteredPatches) {
     );
 }
 
+function handleRomInput(romFile, setRom, setRomInfo) {
+    var romMarc = new MarcFile(romFile.target.files[0], onMarcRomLoad);
+    function onMarcRomLoad() {
+        romMarc = new MarcFile(
+            new Uint8Array([...INES1HEADER, ...romMarc._u8array.slice(16)]),
+        );
+        const hash = md5(romMarc._u8array).toString();
+        if (hash === VANILLA_INES1_MD5) {
+            setRomInfo(<p className="romValid">Valid ROM</p>);
+            setRom({
+                filename: romFile.target.files[0].name,
+                contents: romMarc,
+            });
+        } else {
+            setRomInfo(<p className="romInvalid">Invalid ROM</p>);
+            setRom(null);
+        }
+    }
+}
 function App() {
     const [rom, setRom] = useState(null);
     const [romInfo, setRomInfo] = useState(
@@ -176,25 +222,6 @@ function App() {
     );
     const [filteredPatches, setFilteredPatches] = useState(sortedPatches);
     const [patch, setPatch] = useState(null);
-
-    function handleRomInput(romFile) {
-        var romMarc = new MarcFile(romFile.target.files[0], onMarcRomLoad);
-        function onMarcRomLoad() {
-            romMarc = new MarcFile(
-                new Uint8Array([...INES1HEADER, ...romMarc._u8array.slice(16)]),
-            );
-            const hash = md5(romMarc._u8array).toString();
-            if (hash === VANILLA_INES1_MD5) {
-                setRomInfo(<p className="romValid">Valid ROM</p>);
-                setRom({
-                    filename: romFile.target.files[0].name,
-                    contents: romMarc,
-                });
-            } else {
-                setRomInfo(<p className="romInvalid">Invalid ROM</p>);
-            }
-        }
-    }
 
     return (
         <div className="App">
@@ -211,7 +238,9 @@ function App() {
                 <div className="romInputBox">
                     <NewFileInput
                         name="RomInput"
-                        handleInput={handleRomInput}
+                        handleInput={(romFile) =>
+                            handleRomInput(romFile, setRom, setRomInfo)
+                        }
                     />
                     {romInfo}
                 </div>
@@ -233,7 +262,10 @@ function App() {
                 <Table patch={patch} rom={rom} />
             </div>
             <div className="footerBox">
-                <p> Thanks for visiting.  <a href="https://github.com/zohassadar/patches">Repo</a></p>
+                <p>
+                    Thanks for visiting.{' '}
+                    <a href="https://github.com/zohassadar/patches">Repo</a>
+                </p>
             </div>
         </div>
     );

@@ -3,24 +3,28 @@
         "name": "TetrisGYM 6.0.0",
         "file": "TetrisGYM-6.0.0.bps",
         "desc": "Adds practice modes to NES Tetris (among other things)",
+        "source": "https://github.com/kirjavascript/TetrisGYM",
         "authors": ["kirjava"]
     },
     {
         "name": "TetrisGYM 6.0.0 w/Keyboard",
         "file": "TetrisGYM-6.0.0-keyboard.bps",
         "desc": "TetrisGYM compiled with Famicom Keyboard support",
+        "source": "https://github.com/kirjavascript/TetrisGYM",
         "authors": ["kirjava"]
     },
     {
         "name": "TetrisGYM 6.0.0 Tron hack",
         "file": "TetrisGYM-6.0.0-tron0.bps",
         "desc": "Adds an extra dark mode to Tetris GYM",
+        "source": "https://github.com/zohassadar/TetrisGYM/tree/neon2",
         "authors": ["kirjava", "zohassadar"]
     },
     {
         "name": "Next Box Playfield",
         "file": "tetris_next_box_playfield.ips",
         "desc": "Play tetris in the next box",
+        "source": "/patches/tetris_next_box_playfield.asm",
         "authors": ["maya"]
     },
     {
@@ -28,18 +32,22 @@
         "file": "Pentris_v1.3.bps",
         "desc": "5 minos instead of 4 minos",
         "authors": ["zohassadar"],
+        "source": "https://github.com/zohassadar/Pentris",
         "yt": "3b2VvO2fCfo"
     },
     {
         "name": "Pentris AnyDAS",
         "file": "PentrisAnydas_v1.3.bps",
         "desc": "Pentris with HydrantDude's DAS controls",
-        "authors": ["zohassadar", "HydrantDude"]
+        "source": "https://github.com/zohassadar/Pentris",
+        "authors": ["zohassadar", "HydrantDude"],
+        "yt": "3b2VvO2fCfo"
     },
     {
         "name": "Big Mode Anydas",
         "file": "BigModeAnydas.bps",
-        "desc": "Big Mode with HydrantDyde's DAS Controls added",
+        "desc": "Big Mode with HydrantDude's DAS Controls added",
+        "source": "https://github.com/zohassadar/NESTetrisBigmode",
         "authors": ["zohassadar", "HydrantDude"],
         "yt": "8FEVTTIi5WU"
     },
@@ -61,6 +69,7 @@
         "name": "Big Mode",
         "file": "BigMode.bps",
         "desc": "Pieces doubled in width and height on a 5 x 10 playfield",
+        "source": "https://github.com/zohassadar/NESTetrisBigmode",
         "authors": ["zohassadar"],
         "yt": "8FEVTTIi5WU"
     },
@@ -403,6 +412,7 @@
         "name": "Pentris (with Tetriminos) AnyDAS",
         "file": "PentrisAnydas_withTetriminos.bps",
         "desc": "Pentris with Tetriminos added to the mix",
+        "source": "https://github.com/zohassadar/Pentris/tree/with_tetriminos",
         "authors": ["zohassadar"],
         "yt": ""
     },
@@ -416,77 +426,88 @@
     {
         "name": "TAUS Two Player",
         "file": "twoplayer-1-5-0.ips",
-        "desc": "https://github.com/ejona86/taus",
+        "desc": "",
+        "source": "https://github.com/ejona86/taus",
         "authors": ["ejona86"],
         "yt": ""
     },
     {
         "name": "TAUS Two Player Garbage",
         "file": "twoplayer-garbage-1-5-0.ips",
-        "desc": "https://github.com/ejona86/taus",
+        "desc": "",
+        "source": "https://github.com/ejona86/taus",
         "authors": ["ejona86"],
         "yt": ""
     },
     {
         "name": "TAUS",
         "file": "taus-1-5-0.ips",
-        "desc": "Tetris Actually Useful Statistics\nhttps://github.com/ejona86/taus",
+        "desc": "Tetris Actually Useful Statistics",
+        "source": "https://github.com/ejona86/taus",
         "authors": ["ejona86"],
         "yt": ""
     },
     {
         "name": "TAUS Hold",
         "file": "hold-1-5-0.ips",
-        "desc": "https://github.com/ejona86/taus",
+        "desc": "",
+        "source": "https://github.com/ejona86/taus",
         "authors": ["ejona86"],
         "yt": ""
     },
     {
         "name": "TAUS Save Highscores",
         "file": "save-highscores-1-5-0.ips",
-        "desc": "https://github.com/ejona86/taus",
+        "desc": "",
+        "source": "https://github.com/ejona86/taus",
         "authors": ["ejona86"],
         "yt": ""
     },
     {
         "name": "TAUS Hard Drop",
         "file": "hard-drop-taus-1-5-0.ips",
-        "desc": "https://github.com/ejona86/taus",
+        "desc": "",
+        "source": "https://github.com/ejona86/taus",
         "authors": ["ejona86"],
         "yt": ""
     },
     {
         "name": "TAUS Player ID",
         "file": "playerid-1-5-0.ips",
-        "desc": "https://github.com/ejona86/taus",
+        "desc": "",
+        "source": "https://github.com/ejona86/taus",
         "authors": ["ejona86"],
         "yt": ""
     },
     {
         "name": "TAUS Two Player Next on top",
         "file": "twoplayer-nextontop-1-5-0.ips",
-        "desc": "https://github.com/ejona86/taus",
+        "desc": "",
+        "source": "https://github.com/ejona86/taus",
         "authors": ["ejona86"],
         "yt": ""
     },
     {
         "name": "TAUS Handicap",
         "file": "handicap-1-5-0.ips",
-        "desc": "https://github.com/ejona86/taus",
+        "desc": "",
+        "source": "https://github.com/ejona86/taus",
         "authors": ["ejona86"],
         "yt": ""
     },
     {
         "name": "TAUS 7 Bag",
         "file": "7bag-1-5-0.ips",
-        "desc": "https://github.com/ejona86/taus",
+        "desc": "",
+        "source": "https://github.com/ejona86/taus",
         "authors": ["ejona86"],
         "yt": ""
     },
     {
         "name": "TAUS Hard Drop (no ghost)",
         "file": "hard-drop-taus-no-ghost-1-5-0.ips",
-        "desc": "https://github.com/ejona86/taus",
+        "desc": "",
+        "source": "https://github.com/ejona86/taus",
         "authors": ["ejona86"],
         "yt": ""
     },
