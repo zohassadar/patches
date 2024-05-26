@@ -517,5 +517,376 @@
         "desc": "",
         "authors": ["kirjava", "zohassadar"],
         "yt": ""
+    },
+    {
+        "name": "Little Rolling Trainer w/o Lines",
+        "file": "little_rolling_trainer_without_lines.bps",
+        "desc": "",
+        "authors": ["CAndiman"],
+        "yt": ""
+    },
+    {
+        "name": "Gameboy Mod V3",
+        "file": "gameboy_mod_v3.bps",
+        "desc": "",
+        "authors": ["CAndiman"],
+        "yt": ""
+    },
+    {
+        "name": "Little Rolling Trainer w/Lines",
+        "file": "little_rolling_trainer_lines.bps",
+        "desc": "",
+        "authors": ["CAndiman"],
+        "yt": ""
+    },
+    {
+        "name": "Minimal Neon",
+        "file": "Minimal_Neon.bps",
+        "desc": "",
+        "authors": ["CAndiman"],
+        "yt": ""
+    },
+    {
+        "name": "Minimal Elektronika 2.0",
+        "file": "Minimal_Elektronika2_0.bps",
+        "desc": "",
+        "authors": ["CAndiman"],
+        "yt": ""
+    },
+    {
+        "name": "Gameboy Mod V4",
+        "file": "gameboy_mod_v4.bps",
+        "desc": "",
+        "authors": ["CAndiman"],
+        "yt": ""
+    },
+    {
+        "name": "Retro Theme 1 (Nostalgia) HD",
+        "file": "RetroTheme1(Nostalgia)HD.bps",
+        "desc": "",
+        "authors": ["CAndiman"],
+        "yt": ""
+    },
+    {
+        "name": "Practice Mode",
+        "file": "practice_mode.bps",
+        "desc": "",
+        "authors": ["CAndiman"],
+        "yt": ""
+    },
+    {
+        "name": "Nostalgic",
+        "file": "nostalgic.bps",
+        "desc": "",
+        "authors": ["CAndiman"],
+        "yt": ""
+    },
+    {
+        "name": "Super Tetris Land v1.0 HD",
+        "file": "super_tetris_land_v_1_0_HD.bps",
+        "desc": "",
+        "authors": ["CAndiman"],
+        "yt": ""
+    },
+    {
+        "name": "Super Tetris Land v1.0",
+        "file": "super_tetris_land_v_1_0_no_HD.bps",
+        "desc": "",
+        "authors": ["CAndiman"],
+        "yt": ""
+    },
+    {
+        "name": "Minimal Elektronika 1.0",
+        "file": "Minimal_Elektronika1_0.bps",
+        "desc": "",
+        "authors": ["CAndiman"],
+        "yt": ""
+    },
+    {
+        "name": "Gameboy Mod V4 HD",
+        "file": "gameboy_mod_v4HD.bps",
+        "desc": "",
+        "authors": ["CAndiman"],
+        "yt": ""
+    },
+    {
+        "name": "Retro Theme 2 (Nostalgic)",
+        "file": "RetroTheme2(Nostalgia).bps",
+        "desc": "",
+        "authors": ["CAndiman"],
+        "yt": ""
+    },
+    {
+        "name": "Retro Theme 2 (Nostalgic) HD",
+        "file": "RetroTheme2(Nostalgia)HD.bps",
+        "desc": "",
+        "authors": ["CAndiman"],
+        "yt": ""
+    },
+    {
+        "name": "Minimal Neon VFD",
+        "file": "Minimal_Neon_VFD.bps",
+        "desc": "",
+        "authors": ["CAndiman"],
+        "yt": ""
+    },
+    {
+        "name": "Retro Theme 1 (Nostalgia)",
+        "file": "RetroTheme1(Nostalgia).bps",
+        "desc": "",
+        "authors": ["CAndiman"],
+        "yt": ""
+    },
+    {
+        "name": "Tetrodrome",
+        "file": "Tetrodrome.bps",
+        "desc": "",
+        "authors": ["CAndiman"],
+        "yt": ""
+    },
+    {
+        "name": "Dr. Mariotris",
+        "file": "Dr._Mariotris.bps",
+        "desc": "",
+        "authors": ["JazzySpinalFusion"],
+        "yt": ""
+    },
+    {
+        "name": "Zentris",
+        "file": "Zentris.bps",
+        "desc": "",
+        "authors": ["JazzySpinalFusion"],
+        "yt": ""
+    },
+    {
+        "name": "Electronika60",
+        "file": "Electronika60.bps",
+        "desc": "",
+        "authors": ["JazzySpinalFusion"],
+        "yt": ""
+    },
+    {
+        "name": "ElectronikaGYM JazzySpinalFusion",
+        "file": "ElectronikaGYM-JazzySpinalFusion.bps",
+        "desc": "",
+        "authors": ["Kirjava", "JazzySpinalFusion"],
+        "yt": ""
+    },
+    {
+        "name": "Electronika60 JPF",
+        "file": "Electronika60-JPF.bps",
+        "desc": "",
+        "authors": ["JazzySpinalFusion"],
+        "yt": ""
+    },
+    {
+        "name": "Parity V1",
+        "file": "Parityv1.bps",
+        "desc": "",
+        "authors": ["Kitaru"],
+        "yt": ""
+    },
+    {
+        "name": "Tetris AJK 2012",
+        "file": "Tetris_AJK_2012.bps",
+        "desc": "",
+        "authors": ["Kitaru"],
+        "yt": "39VSTge9tpk"
+    },
+    {
+        "name": "Determinism",
+        "file": "determinism.bps",
+        "desc": "",
+        "authors": ["Kitaru"],
+        "yt": ""
+    },
+    {
+        "name": "Parity V0",
+        "file": "Parityv0.bps",
+        "desc": "",
+        "authors": ["Kitaru"],
+        "yt": ""
+    },
+    {
+        "name": "Fixed RNG New",
+        "file": "FixedRNGNew.bps",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "Tapping Display Large",
+        "file": "TappingDisplayLarge.bps",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "7 Digit Score",
+        "file": "7DigitScore.bps",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "Fixed RNG",
+        "file": "FixedRNG.bps",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "Tapping Display",
+        "file": "TappingDisplay.bps",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "New RNG Mod",
+        "file": "New_RNG_Mod.bps",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "Double KS",
+        "file": "doubleKS.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "Debug",
+        "file": "Debug.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "Disco",
+        "file": "disco.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "Goofy Foot",
+        "file": "GoofyFoot.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "No Demo No Legal NTSC",
+        "file": "NoDemoNoLegalNTSC.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "CTWC V2",
+        "file": "CTWC_v2.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "19-29 Speed",
+        "file": "19-29_speed.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "Lerp",
+        "file": "lerp.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "Hyper Disco",
+        "file": "hyperdisco.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "Flat Pieces",
+        "file": "FlatPieces.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "Kawaii",
+        "file": "Kawaii.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "No Line Pieces",
+        "file": "NoLinePieces.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "10 Digit Score",
+        "file": "10digitscore.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "No Rocket Fast Legal",
+        "file": "NoRocketFastLegal.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "Always Tetris Ready",
+        "file": "AlwaysTetrisReady.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "Hyper Trans",
+        "file": "hypertrans.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "TSpin Trainer",
+        "file": "TSpinTrainer.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "Brackets GYM",
+        "file": "brackets_gym.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "12 Wide",
+        "file": "12wide.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "Level 69",
+        "file": "level_69.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
     }
 ]
