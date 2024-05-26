@@ -888,5 +888,103 @@
         "desc": "",
         "authors": ["Kirjava"],
         "yt": ""
+    },
+    {
+        "name": "Press Up",
+        "file": "pressup.ips",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "Background Blocks - Normal",
+        "file": "normalcolor.ips",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "French",
+        "file": "French.ips",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "H",
+        "file": "H.ips",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "Background Blocks - Gray",
+        "file": "gray.ips",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "Grey Background",
+        "file": "NTSCTris_grey_bg_edit.ips",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "DAS Trainer +TRT",
+        "file": "NTSC DAS Trainer +TRT.ips",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "Minimal",
+        "file": "reduced.ips",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "Pepperlaw",
+        "file": "pepperlaw.ips",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "Appearance Hack",
+        "file": "appearancehack.ips",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "Metrics +TRT",
+        "file": "NTSC Tetris Metrics +TRT.ips",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "Tetris Rate",
+        "file": "NTSC Tetris Rate.ips",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "DAS Controls",
+        "file": "DAScontrols.ips",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "SRS",
+        "file": "SRS.ips",
+        "desc": "",
+        "authors": ["fractal161"],
+        "yt": ""
     }
 ]
