@@ -43,7 +43,7 @@ function SavePatch({ patch }) {
                 });
             });
     }
-    return <button onClick={(p) => savePatch(patch)}>Download patch</button>;
+    return <button onClick={() => savePatch(patch)}>Download patch</button>;
 }
 function NewFileInput({ name, handleInput, hide }) {
     if (hide) return;
@@ -264,7 +264,8 @@ function App() {
             <div className="footerBox">
                 <p>
                     Thanks for visiting.{' '}
-                    <a href="https://github.com/zohassadar/patches">Repo</a>
+                    Leave feedback or contribute <a href="https://github.com/zohassadar/patches">here</a>{'. '}
+                    Built using <a href="https://github.com/marcrobledo/RomPatcher.js/">RomPatcher.js</a>.
                 </p>
             </div>
         </div>
