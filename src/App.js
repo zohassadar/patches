@@ -9,6 +9,10 @@ const {
     md5,
 } = require('./bps.js');
 
+const sortFilter = (p1, p2) => p1.name > p2.name;
+
+const sortedPatches = patches.sort(sortFilter);
+
 const INES1HEADER = [78, 69, 83, 26, 2, 2, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 const VANILLA_INES1_MD5 = 'ec58574d96bee8c8927884ae6e7a2508';
 
@@ -29,6 +33,18 @@ function SaveFile({ rom, patch }) {
     );
 }
 
+function SavePatch({ patch }) {
+    function savePatch(patch) {
+        fetch(`patches/${patch.file}`)
+            .then((response) => response.blob())
+            .then((patchData) => {
+                patchData.arrayBuffer().then((buffer) => {
+                    saveAs(new Blob([buffer]), patch.file);
+                });
+            });
+    }
+    return <button onClick={(p) => savePatch(patch)}>Download patch</button>;
+}
 function NewFileInput({ name, handleInput, hide }) {
     if (hide) return;
     return (
@@ -55,18 +71,40 @@ function YouTube({ vid }) {
 }
 
 function Table({ patch, rom }) {
-    if (!patch) return;
+    if (!patch) return <table className="tableBox" />;
     return (
-        <>
-            <h3>{patch.name}</h3>
-            <p>{patch.desc}</p>
-            <p>{patch.authors.join(', ')}</p>
-            <p>
-                <a href={`/patches/${patch.file}`}>download patch</a>
-            </p>
-            <YouTube vid={patch.yt} />
-            <SaveFile text="download patched" rom={rom} patch={patch} />
-        </>
+        <table className="tableBox">
+            <tr>
+                <td>
+                    <h2>{patch.name}</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>{patch.desc}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>{patch.authors.join(', ')}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <SavePatch patch={patch} />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <SaveFile text="download patched" rom={rom} patch={patch} />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <YouTube vid={patch.yt} />
+                </td>
+            </tr>
+        </table>
     );
 }
 function SideNames({ filteredPatches, setPatch }) {
@@ -108,11 +146,11 @@ function patchSomething(patch, rom) {
 function filterPatches(filter, setFilteredPatches) {
     console.log(filter);
     if (!filter) {
-        setFilteredPatches(patches);
+        setFilteredPatches(sortedPatches);
         return;
     }
     setFilteredPatches(
-        patches.filter((patch) => {
+        sortedPatches.filter((patch) => {
             const regexp = new RegExp(`${filter}`, 'i');
             if (regexp.test(patch.name)) return true;
             for (let author of patch.authors) {
@@ -126,7 +164,7 @@ function filterPatches(filter, setFilteredPatches) {
 function App() {
     const [rom, setRom] = useState(null);
     const [romInfo, setRomInfo] = useState('Waiting for Rom');
-    const [filteredPatches, setFilteredPatches] = useState(patches);
+    const [filteredPatches, setFilteredPatches] = useState(sortedPatches);
     const [patch, setPatch] = useState(null);
 
     function handleRomInput(romFile) {
@@ -161,6 +199,7 @@ function App() {
             <div className="bottomBox">
                 <div className="sideBox">
                     <input
+                        placeholder="Search"
                         onChange={(e) =>
                             filterPatches(e.target.value, setFilteredPatches)
                         }
@@ -170,9 +209,10 @@ function App() {
                         setPatch={setPatch}
                     />
                 </div>
-                <div className="tableBox">
-                    <Table patch={patch} rom={rom} />
-                </div>
+                <Table patch={patch} rom={rom} />
+            </div>
+            <div className="footerBox">
+                <p> Thanks for visiting</p>
             </div>
         </div>
     );
