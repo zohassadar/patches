@@ -678,5 +678,33 @@
         "desc": "",
         "authors": ["JazzySpinalFusion"],
         "yt": ""
+    },
+    {
+        "name": "Parity V1",
+        "file": "Parityv1.bps",
+        "desc": "",
+        "authors": ["Kitaru"],
+        "yt": ""
+    },
+    {
+        "name": "Tetris AJK 2012",
+        "file": "Tetris_AJK_2012.bps",
+        "desc": "",
+        "authors": ["Kitaru"],
+        "yt": "39VSTge9tpk"
+    },
+    {
+        "name": "Determinism",
+        "file": "determinism.bps",
+        "desc": "",
+        "authors": ["Kitaru"],
+        "yt": ""
+    },
+    {
+        "name": "Parity V0",
+        "file": "Parityv0.bps",
+        "desc": "",
+        "authors": ["Kitaru"],
+        "yt": ""
     }
 ]
