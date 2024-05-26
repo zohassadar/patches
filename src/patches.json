@@ -706,5 +706,47 @@
         "desc": "",
         "authors": ["Kitaru"],
         "yt": ""
+    },
+    {
+        "name": "Fixed RNG New",
+        "file": "FixedRNGNew.bps",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "Tapping Display Large",
+        "file": "TappingDisplayLarge.bps",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "7 Digit Score",
+        "file": "7DigitScore.bps",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "Fixed RNG",
+        "file": "FixedRNG.bps",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "Tapping Display",
+        "file": "TappingDisplay.bps",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "New RNG Mod",
+        "file": "New_RNG_Mod.bps",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
     }
 ]
