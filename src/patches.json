@@ -126,5 +126,46 @@
         "desc": "Pieces can consist of any of the three tiles",
         "authors": ["zohassadar"],
         "yt": ""
+    },
+    {
+        "name": "Ultris",
+        "file": "Ultris.ips",
+        "desc": "    Faster DAS (simulates PAL DAS)   Faster softdrops (at level 29 speed instead of 19)\n    Instant line clears\n    Score rollover\n    Higher score cap before rollover (E99,999 to 000,000)\n    No pause-screen blackout (still see field, but not current or next blocks)\n    Copyright and rocket screen skip\n    Higher frequency of straight pieces\n    10-frame pause before each piece begins dropping automatically\n\nIt was designed to emulate a variety of classic and modern games, and act as a sort of hybrid between the two.",
+        "authors": ["Gyzzmo Glytch"]
+    },
+    {
+        "name": "Penguin Line Clear",
+        "file": "penguin.ips",
+        "desc": "A penguin takes away cleared lines",
+        "authors": ["zohassadar"],
+        "yt": ""
+    },
+    {
+        "name": "Upside Down Tetris",
+        "file": "UpsideDownTetris.bps",
+        "desc": "Tetris, but upside down",
+        "authors": ["zohassadar"],
+        "yt": ""
+    },
+    {
+        "name": "Shrink Mode",
+        "file": "TetrisShrinkMode_v1.1.bps",
+        "desc": "Big, Medium & Small modes, along with a Shrink mode that combines all three. Based on TetrisGYM.",
+        "authors": ["zohassadar", "Kirjava"],
+        "yt": "dt01BeEZfgw"
+    },
+    {
+        "name": "Taller Tetris",
+        "file": "TallerTetris.bps",
+        "desc": "Play tetris on a 10x24 playfield",
+        "authors": ["zohassadar"],
+        "yt": ""
+    },
+    {
+        "name": "Speedhack",
+        "file": "speedhack1.1.bps",
+        "desc": "Faster Tetris",
+        "authors": ["fractal161"],
+        "yt": "n9vKMNu5JWo"
     }
 ]

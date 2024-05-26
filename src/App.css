@@ -63,6 +63,7 @@ p {
     border-color: #282c34;
 }
 .tableBox {
+    white-space: pre-line;
     border: solid;
     border-color: #282c34;
     min-width: 80%;

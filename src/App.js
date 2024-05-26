@@ -86,7 +86,7 @@ function Table({ patch, rom }) {
             </tr>
             <tr>
                 <td>
-                    <p>{patch.authors.join(', ')}</p>
+                    <p>{`hacked by: ${patch.authors.join(', ')}`}</p>
                 </td>
             </tr>
             <tr>
