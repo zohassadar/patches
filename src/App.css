@@ -33,6 +33,10 @@ p {
     border: solid;
     border-color: #282c34;
 }
+.topInfoBox {
+    max-width: 60vw;
+    margin: 10px;
+}
 .bottomBox {
     height: 100%;
     display: flex;
@@ -41,6 +45,20 @@ p {
     min-width: 100vw;
     border: solid;
     border-color: #282c34;
+}
+.romInputBox {
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+}
+.romValid {
+    background-color: #28ac34;
+}
+.romWaiting {
+    background-color: #287c84;
+}
+.romInvalid {
+    background-color: #a82c34;
 }
 .sideBox {
     display: flex;
@@ -58,9 +76,10 @@ p {
     text-align: left;
     font-size: calc(5px + 1vmin);
 }
-.patchChoice:hover {
+.patchChoice:hover,
+.patchSelected {
     cursor: pointer;
-    border-color: #282c34;
+    background-color: #484c54;
 }
 .tableBox {
     white-space: pre-line;
