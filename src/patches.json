@@ -41,7 +41,7 @@
         "file": "BigModeAnydas.bps",
         "desc": "Big Mode with HydrantDyde's DAS Controls added",
         "authors": ["zohassadar", "HydrantDude"],
-        "yt": ""
+        "yt": "8FEVTTIi5WU"
     },
     {
         "name": "Max Out Song",
@@ -62,7 +62,7 @@
         "file": "BigMode.bps",
         "desc": "Pieces doubled in width and height on a 5 x 10 playfield",
         "authors": ["zohassadar"],
-        "yt": ""
+        "yt": "8FEVTTIi5WU"
     },
     {
         "name": "Background Pieces",
@@ -125,7 +125,7 @@
         "file": "randomtiles.ips",
         "desc": "Pieces can consist of any of the three tiles",
         "authors": ["zohassadar"],
-        "yt": ""
+        "yt": "lOOwrWkdf4o"
     },
     {
         "name": "Ultris",
@@ -138,14 +138,14 @@
         "file": "penguin.ips",
         "desc": "A penguin takes away cleared lines",
         "authors": ["zohassadar"],
-        "yt": ""
+        "yt": "IZn6R--RxNg"
     },
     {
         "name": "Upside Down Tetris",
         "file": "UpsideDownTetris.bps",
         "desc": "Tetris, but upside down",
         "authors": ["zohassadar"],
-        "yt": ""
+        "yt": "cBs7H2lll-0"
     },
     {
         "name": "Shrink Mode",
@@ -167,5 +167,334 @@
         "desc": "Faster Tetris",
         "authors": ["fractal161"],
         "yt": "n9vKMNu5JWo"
+    },
+    {
+        "name": "Side Scroller Tetris",
+        "file": "SideScrollerTetris.bps",
+        "desc": "Tetris if it were a side scroller",
+        "authors": ["zohassadar"],
+        "yt": "5x6KWWcPquo"
+    },
+    {
+        "name": "Wall Hack",
+        "file": "TetrisWallHack.bps",
+        "desc": "Tetris that allows going outside the playfield (as long as you return in time)",
+        "authors": ["zohassadar"],
+        "yt": ""
+    },
+    {
+        "name": "Tetris AnyTourney",
+        "file": "TetrisAnyTrn.bps",
+        "desc": "DAS Controls + ability to skip rocket screens + start on higher levels",
+        "authors": ["HydrantDude", "Kirby703", "zohassadar"],
+        "yt": ""
+    },
+    {
+        "name": "All Levels",
+        "file": "allLevels.bps",
+        "desc": "",
+        "authors": ["fractal161"],
+        "yt": ""
+    },
+    {
+        "name": "Random Rotate",
+        "file": "tetris_random_rotate.ips",
+        "desc": "",
+        "authors": ["maya"],
+        "yt": ""
+    },
+    {
+        "name": "Tetris 12 Wide",
+        "file": "Tetris12Wide.bps",
+        "desc": "12x20 playfield",
+        "authors": ["zohassadar"],
+        "yt": "kz7hjhtZ3_k"
+    },
+    {
+        "name": "Smooth Gravity",
+        "file": "SmoothGravity.ips",
+        "desc": "",
+        "authors": ["HydrantDude"],
+        "yt": ""
+    },
+    {
+        "name": "Sideways (Left to Right)",
+        "file": "LeftToRight.bps",
+        "desc": "",
+        "authors": ["zohassadar"],
+        "yt": ""
+    },
+    {
+        "name": "Tetris 30x25",
+        "file": "Tetris30x25.bps",
+        "desc": "",
+        "authors": ["zohassadar"],
+        "yt": "-7OrMs77s0A"
+    },
+    {
+        "name": "All Level Challenge",
+        "file": "allLevels_challenge.bps",
+        "desc": "",
+        "authors": ["fractal161"],
+        "yt": ""
+    },
+    {
+        "name": "Pal SPS Tourney",
+        "file": "PalSPSTourney.bps",
+        "desc": "Emulate PAL on NTSC console, w SPS",
+        "authors": ["fractal161"],
+        "yt": "n9vKMNu5JWo"
+    },
+    {
+        "name": "SZ",
+        "file": "sz.ips",
+        "desc": "Delivers an alternating sequence of S's and Z's",
+        "authors": ["zohassadar"],
+        "yt": ""
+    },
+    {
+        "name": "Pal Hack",
+        "file": "palhack.bps",
+        "desc": "Emulate PAL on NTSC console",
+        "authors": ["fractal161"],
+        "yt": "n9vKMNu5JWo"
+    },
+    {
+        "name": "Music 1.1",
+        "file": "music-1.1.bps",
+        "desc": "",
+        "authors": ["fractal161"],
+        "yt": ""
+    },
+    {
+        "name": "Sideways (Right to Left)",
+        "file": "RightToLeft.bps",
+        "desc": "",
+        "authors": ["zohassadar"],
+        "yt": ""
+    },
+    {
+        "name": "Tetris Double Wide",
+        "file": "TetrisDoubleWide.bps",
+        "desc": "20x20 playfield",
+        "authors": ["zohassadar"],
+        "yt": "Kdhbwzg34sc"
+    },
+    {
+        "name": "Pal SPS Tourney (Goofy)",
+        "file": "PalSPSTourneyGoofy.bps",
+        "desc": "Pal SPS Tourney with Goofyfoot controls",
+        "authors": ["fractal161"],
+        "yt": "n9vKMNu5JWo"
+    },
+    {
+        "name": "CTM Hack Dec 2017",
+        "file": "ctm1217.ips",
+        "desc": "",
+        "authors": ["fridaywitch"],
+        "yt": ""
+    },
+    {
+        "name": "TSpin Points",
+        "file": "tspins.ips",
+        "desc": "",
+        "authors": ["Kirby703"],
+        "yt": ""
+    },
+    {
+        "name": "Hot Mustard",
+        "file": "HOT_Mustard_v1.1.1.bps",
+        "desc": "Play 10 levels of 19-2",
+        "authors": ["Meme"],
+        "yt": ""
+    },
+    {
+        "name": "Scrolltris",
+        "file": "Scrolltris.bps",
+        "desc": "",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "Statistics Mod",
+        "file": "Tetris_USA_-_Statistics.ips",
+        "desc": "",
+        "authors": ["jazzthief81"],
+        "yt": ""
+    },
+    {
+        "name": "CTM Hack Jan 2018",
+        "file": "ctm0118.ips",
+        "desc": "",
+        "authors": ["fridaywitch"],
+        "yt": ""
+    },
+    {
+        "name": "Controller Input Display",
+        "file": "TetrisControllerInputDisplay.ips",
+        "desc": "",
+        "authors": ["jazzthief81"],
+        "yt": ""
+    },
+    {
+        "name": "Piece Percentages",
+        "file": "TetricPPCT.ips",
+        "desc": "",
+        "authors": ["fractal161"],
+        "yt": ""
+    },
+    {
+        "name": "Ludicrous Speed",
+        "file": "LudicrousSpeed.ips",
+        "desc": "",
+        "authors": ["Trey Harrison"],
+        "yt": ""
+    },
+    {
+        "name": "7 Bag",
+        "file": "7bagKirby703.ips",
+        "desc": "",
+        "authors": ["Kirby703"],
+        "yt": ""
+    },
+    {
+        "name": "Tetris Metrics",
+        "file": "TetrisMetrics.ips",
+        "desc": "",
+        "authors": ["jazzthief81"],
+        "yt": ""
+    },
+    {
+        "name": "Hard Drop",
+        "file": "Tetris_HD_patch.ips",
+        "desc": "",
+        "authors": ["Josh Tolles"],
+        "yt": ""
+    },
+    {
+        "name": "Korobeiniki",
+        "file": "TetrisKorobeiniki.ips",
+        "desc": "",
+        "authors": ["jazzthief81"],
+        "yt": ""
+    },
+    {
+        "name": "CTM Hack Feb 2018",
+        "file": "ctm0218.ips",
+        "desc": "",
+        "authors": ["fridaywitch"],
+        "yt": ""
+    },
+    {
+        "name": "Cursed RNG",
+        "file": "CursedRNG.bps",
+        "desc": "Clean tetrises discouraged by game",
+        "authors": ["zohassadar"],
+        "yt": ""
+    },
+    {
+        "name": "Random Spawn Orientation",
+        "file": "RandomSpawnOrientation.bps",
+        "desc": "pieces spawn in any orientation",
+        "authors": ["zohassadar"],
+        "yt": ""
+    },
+    {
+        "name": "Pentris (with Tetriminos) AnyDAS",
+        "file": "PentrisAnydas_withTetriminos.bps",
+        "desc": "Pentris with Tetriminos added to the mix",
+        "authors": ["zohassadar"],
+        "yt": ""
+    },
+    {
+        "name": "Pentris (with Tetriminos)",
+        "file": "Pentris_withTetriminos.bps",
+        "desc": "Pentris with Tetriminos added to the mix",
+        "authors": ["zohassadar"],
+        "yt": ""
+    },
+    {
+        "name": "TAUS Two Player",
+        "file": "twoplayer-1-5-0.ips",
+        "desc": "https://github.com/ejona86/taus",
+        "authors": ["ejona86"],
+        "yt": ""
+    },
+    {
+        "name": "TAUS Two Player Garbage",
+        "file": "twoplayer-garbage-1-5-0.ips",
+        "desc": "https://github.com/ejona86/taus",
+        "authors": ["ejona86"],
+        "yt": ""
+    },
+    {
+        "name": "TAUS",
+        "file": "taus-1-5-0.ips",
+        "desc": "Tetris Actually Useful Statistics\nhttps://github.com/ejona86/taus",
+        "authors": ["ejona86"],
+        "yt": ""
+    },
+    {
+        "name": "TAUS Hold",
+        "file": "hold-1-5-0.ips",
+        "desc": "https://github.com/ejona86/taus",
+        "authors": ["ejona86"],
+        "yt": ""
+    },
+    {
+        "name": "TAUS Save Highscores",
+        "file": "save-highscores-1-5-0.ips",
+        "desc": "https://github.com/ejona86/taus",
+        "authors": ["ejona86"],
+        "yt": ""
+    },
+    {
+        "name": "TAUS Hard Drop",
+        "file": "hard-drop-taus-1-5-0.ips",
+        "desc": "https://github.com/ejona86/taus",
+        "authors": ["ejona86"],
+        "yt": ""
+    },
+    {
+        "name": "TAUS Player ID",
+        "file": "playerid-1-5-0.ips",
+        "desc": "https://github.com/ejona86/taus",
+        "authors": ["ejona86"],
+        "yt": ""
+    },
+    {
+        "name": "TAUS Two Player Next on top",
+        "file": "twoplayer-nextontop-1-5-0.ips",
+        "desc": "https://github.com/ejona86/taus",
+        "authors": ["ejona86"],
+        "yt": ""
+    },
+    {
+        "name": "TAUS Handicap",
+        "file": "handicap-1-5-0.ips",
+        "desc": "https://github.com/ejona86/taus",
+        "authors": ["ejona86"],
+        "yt": ""
+    },
+    {
+        "name": "TAUS 7 Bag",
+        "file": "7bag-1-5-0.ips",
+        "desc": "https://github.com/ejona86/taus",
+        "authors": ["ejona86"],
+        "yt": ""
+    },
+    {
+        "name": "TAUS Hard Drop (no ghost)",
+        "file": "hard-drop-taus-no-ghost-1-5-0.ips",
+        "desc": "https://github.com/ejona86/taus",
+        "authors": ["ejona86"],
+        "yt": ""
+    },
+    {
+        "name": "TetrisGYM 6.0.0 Pride Colors",
+        "file": "TetrisGYM-6.0.0-pride.bps",
+        "desc": "",
+        "authors": ["kirjava", "zohassadar"],
+        "yt": ""
     }
 ]

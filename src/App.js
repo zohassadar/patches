@@ -138,7 +138,10 @@ function patchSomething(patch, rom) {
                 }
 
                 const patchedRom = patchParsed.apply(rom.contents, true);
-                saveAs(new Blob([patchedRom._u8array]), 'patched.nes');
+                saveAs(
+                    new Blob([patchedRom._u8array]),
+                    patch.file.replace(/\.[bi]ps$/i, '.nes'),
+                );
             });
         });
 }
