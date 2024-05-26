@@ -107,13 +107,18 @@ function Table({ patch, rom }) {
         </table>
     );
 }
-function SideNames({ filteredPatches, setPatch }) {
+function SideNames({ filteredPatches, setPatch, patch }) {
     return (
         <>
-            {filteredPatches.map((patch) => {
+            {filteredPatches.map((p) => {
+                var className = 'patchChoice';
+                if (JSON.stringify(p) === JSON.stringify(patch)) {
+                    className = 'patchChoice patchSelected';
+                }
+
                 return (
-                    <p className="patchChoice" onClick={() => setPatch(patch)}>
-                        {patch.name}
+                    <p className={className} onClick={() => setPatch(p)}>
+                        {p.name}
                     </p>
                 );
             })}
@@ -166,7 +171,9 @@ function filterPatches(filter, setFilteredPatches) {
 
 function App() {
     const [rom, setRom] = useState(null);
-    const [romInfo, setRomInfo] = useState('Waiting for Rom');
+    const [romInfo, setRomInfo] = useState(
+        <p className="romWaiting">Waiting...</p>,
+    );
     const [filteredPatches, setFilteredPatches] = useState(sortedPatches);
     const [patch, setPatch] = useState(null);
 
@@ -178,13 +185,13 @@ function App() {
             );
             const hash = md5(romMarc._u8array).toString();
             if (hash === VANILLA_INES1_MD5) {
-                setRomInfo('This rom will work!');
+                setRomInfo(<p className="romValid">Valid ROM</p>);
                 setRom({
                     filename: romFile.target.files[0].name,
                     contents: romMarc,
                 });
             } else {
-                setRomInfo('Unknown rom');
+                setRomInfo(<p className="romInvalid">Invalid ROM</p>);
             }
         }
     }
@@ -192,12 +199,22 @@ function App() {
     return (
         <div className="App">
             <header className="headerBox">
-                <Information information="Patch tetris.nes" />
+                <h2>Nestris Patches (with Patcher)</h2>
             </header>
             <div className="topBox">
-                <Information hide={false} information="give rom" />
-                <NewFileInput name="RomInput" handleInput={handleRomInput} />
-                <Information information={romInfo} />
+                <div className="topInfoBox">
+                    <Information
+                        hide={false}
+                        information="Download patch, or provide the backup of your nestris rom to download a patched version."
+                    />
+                </div>
+                <div className="romInputBox">
+                    <NewFileInput
+                        name="RomInput"
+                        handleInput={handleRomInput}
+                    />
+                    {romInfo}
+                </div>
             </div>
             <div className="bottomBox">
                 <div className="sideBox">
@@ -210,12 +227,13 @@ function App() {
                     <SideNames
                         filteredPatches={filteredPatches}
                         setPatch={setPatch}
+                        patch={patch}
                     />
                 </div>
                 <Table patch={patch} rom={rom} />
             </div>
             <div className="footerBox">
-                <p> Thanks for visiting</p>
+                <p> Thanks for visiting.  <a href="https://github.com/zohassadar/patches">Repo</a></p>
             </div>
         </div>
     );
