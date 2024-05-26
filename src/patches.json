@@ -986,5 +986,33 @@
         "desc": "",
         "authors": ["fractal161"],
         "yt": ""
+    },
+    {
+        "name": "Options for B Game",
+        "file": "TetrisOptionsForBGame.bps",
+        "desc": "",
+        "authors": ["zohassadar"],
+        "yt": ""
+    },
+    {
+        "name": "TetrisGYM - Flip Mode Line Cap",
+        "file": "FlipModeLinecap.bps",
+        "desc": "Adds an extra linecap mode",
+        "authors": ["Kirjava", "zohassadar"],
+        "yt": ""
+    },
+    {
+        "name": "TetrisGYM - XPiece",
+        "file": "GymXPiece.bps",
+        "desc": "T replaced with X Piece",
+        "authors": ["Kirjava", "zohassadar"],
+        "yt": ""
+    },
+    {
+        "name": "TetrisGYM - Upside Down Options",
+        "file": "TGymUpsideDownOptionsCNROM.bps",
+        "desc": "uses CNROM",
+        "authors": ["Kirjava", "zohassadar"],
+        "yt": "yx89F-ymbI4"
     }
 ]
