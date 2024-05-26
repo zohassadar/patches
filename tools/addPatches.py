@@ -12,7 +12,12 @@ patch_data = json.load(open(patch_data_file))
 
 patches = [ p.name for p in patch_dir.glob("*.[iIbB][pP][sS]")]
 
-existing = [p['file'] for p in patch_data]
+existing = []
+for p in patch_data:
+    try:
+        existing.append(p['file'])
+    except Exception as exc:
+        print(f"Exception with: {p} {exc}")
 
 for patch in patches:
     if patch in existing:

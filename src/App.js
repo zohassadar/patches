@@ -79,11 +79,24 @@ function Table({ patch, rom }) {
                     <h2>{patch.name}</h2>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <p>{patch.desc}</p>
-                </td>
-            </tr>
+            {patch.desc ? (
+                <tr>
+                    <td>
+                        <p>{patch.desc}</p>
+                    </td>
+                </tr>
+            ) : (
+                ''
+            )}
+            {patch.source ? (
+                <tr>
+                    <td>
+                        <a href={patch.source}>source</a>
+                    </td>
+                </tr>
+            ) : (
+                ''
+            )}
             <tr>
                 <td>
                     <p>{`hacked by: ${patch.authors.join(', ')}`}</p>
@@ -96,14 +109,28 @@ function Table({ patch, rom }) {
             </tr>
             <tr>
                 <td>
-                    <SaveFile text="download patched" rom={rom} patch={patch} />
+                    {rom ? (
+                        <SaveFile
+                            text="download patched"
+                            rom={rom}
+                            patch={patch}
+                        />
+                    ) : (
+                        <>
+                            <h5>Waiting for valid rom</h5>
+                        </>
+                    )}
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <YouTube vid={patch.yt} />
-                </td>
-            </tr>
+            {patch.yt ? (
+                <tr>
+                    <td>
+                        <YouTube vid={patch.yt} />
+                    </td>
+                </tr>
+            ) : (
+                ''
+            )}
         </table>
     );
 }
@@ -184,6 +211,7 @@ function handleRomInput(romFile, setRom, setRomInfo) {
             });
         } else {
             setRomInfo(<p className="romInvalid">Invalid ROM</p>);
+            setRom(null);
         }
     }
 }
@@ -235,7 +263,6 @@ function App() {
             </div>
             <div className="footerBox">
                 <p>
-                    {' '}
                     Thanks for visiting.{' '}
                     <a href="https://github.com/zohassadar/patches">Repo</a>
                 </p>
