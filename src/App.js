@@ -70,10 +70,6 @@ function Table({ patch, rom }) {
             <tr>
                 <td>
                     <h2>{patch.name}</h2>
-                </td>
-            </tr>
-            <tr>
-                <td>
                     <p>{`by: ${patch.authors.join(', ')}`}</p>
                 </td>
             </tr>
