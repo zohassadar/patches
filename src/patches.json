@@ -24,7 +24,7 @@
         "name": "Next Box Playfield",
         "file": "tetris_next_box_playfield.ips",
         "desc": "Play tetris in the next box",
-        "source": "/patches/tetris_next_box_playfield.asm",
+        "source": "patches/tetris_next_box_playfield.asm",
         "authors": ["maya"]
     },
     {
