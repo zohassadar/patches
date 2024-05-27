@@ -21,16 +21,9 @@ function Information({ hide, information }) {
     return <p className="info">{information}</p>;
 }
 
-function SaveFile({ rom, patch }) {
+function SavePatched({ rom, patch }) {
     if (!rom) return;
-    function downloadRom() {
-        patchSomething(patch, rom);
-    }
-    return (
-        <div className="download">
-            <button onClick={downloadRom}>Download patched</button>
-        </div>
-    );
+    return <button onClick={() => patchRom(patch, rom)}>Get Patched</button>;
 }
 
 function SavePatch({ patch }) {
@@ -43,9 +36,9 @@ function SavePatch({ patch }) {
                 });
             });
     }
-    return <button onClick={() => savePatch(patch)}>Download patch</button>;
+    return <button onClick={() => savePatch(patch)}>Get Patch</button>;
 }
-function NewFileInput({ name, handleInput, hide }) {
+function FileInput({ name, handleInput, hide }) {
     if (hide) return;
     return (
         <div className="input">
@@ -77,6 +70,7 @@ function Table({ patch, rom }) {
             <tr>
                 <td>
                     <h2>{patch.name}</h2>
+                    <p>{`by: ${patch.authors.join(', ')}`}</p>
                 </td>
             </tr>
             {patch.desc ? (
@@ -99,18 +93,13 @@ function Table({ patch, rom }) {
             )}
             <tr>
                 <td>
-                    <p>{`hacked by: ${patch.authors.join(', ')}`}</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
                     <SavePatch patch={patch} />
                 </td>
             </tr>
             <tr>
                 <td>
                     {rom ? (
-                        <SaveFile
+                        <SavePatched
                             text="download patched"
                             rom={rom}
                             patch={patch}
@@ -153,7 +142,7 @@ function SideNames({ filteredPatches, setPatch, patch }) {
     );
 }
 
-function patchSomething(patch, rom) {
+function patchRom(patch, rom) {
     const bpsTest = new RegExp(/\.bps$/);
     fetch(`patches/${patch.file}`)
         .then((response) => response.blob())
@@ -236,7 +225,7 @@ function App() {
                     />
                 </div>
                 <div className="romInputBox">
-                    <NewFileInput
+                    <FileInput
                         name="RomInput"
                         handleInput={(romFile) =>
                             handleRomInput(romFile, setRom, setRomInfo)
@@ -263,9 +252,14 @@ function App() {
             </div>
             <div className="footerBox">
                 <p>
-                    Thanks for visiting.{' '}
-                    Leave feedback or contribute <a href="https://github.com/zohassadar/patches">here</a>{'. '}
-                    Built using <a href="https://github.com/marcrobledo/RomPatcher.js/">RomPatcher.js</a>.
+                    Thanks for visiting. Leave feedback or contribute{' '}
+                    <a href="https://github.com/zohassadar/patches">here</a>
+                    {'. '}
+                    Built using{' '}
+                    <a href="https://github.com/marcrobledo/RomPatcher.js/">
+                        RomPatcher.js
+                    </a>
+                    .
                 </p>
             </div>
         </div>
