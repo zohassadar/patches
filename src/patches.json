@@ -694,13 +694,6 @@
         "yt": "39VSTge9tpk"
     },
     {
-        "name": "Determinism",
-        "file": "determinism.bps",
-        "desc": "",
-        "authors": ["Kitaru"],
-        "yt": ""
-    },
-    {
         "name": "Parity V0",
         "file": "Parityv0.bps",
         "desc": "",
