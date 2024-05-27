@@ -988,24 +988,124 @@
         "yt": ""
     },
     {
-        "name": "TetrisGYM - Flip Mode Line Cap",
+        "name": "TetrisGYM Flip Mode Line Cap",
         "file": "FlipModeLinecap.bps",
         "desc": "Adds an extra linecap mode",
         "authors": ["Kirjava", "zohassadar"],
         "yt": ""
     },
     {
-        "name": "TetrisGYM - XPiece",
+        "name": "TetrisGYM XPiece",
         "file": "GymXPiece.bps",
         "desc": "T replaced with X Piece",
         "authors": ["Kirjava", "zohassadar"],
         "yt": ""
     },
     {
-        "name": "TetrisGYM - Upside Down Options",
+        "name": "TetrisGYM Upside Down Options",
         "file": "TGymUpsideDownOptionsCNROM.bps",
         "desc": "uses CNROM",
         "authors": ["Kirjava", "zohassadar"],
         "yt": "yx89F-ymbI4"
+    },
+    {
+        "name": "TetrisGYM Crunch Mode",
+        "file": "crunch.bps",
+        "desc": "Original Crunchmode",
+        "authors": ["Kirjava", "super"],
+        "yt": ""
+    },
+    {
+        "name": "TetrisGYM XPos Random",
+        "file": "xpos-random.bps",
+        "desc": "Set x-pos to 8 to randomize the position",
+        "authors": ["Kirjava", "super"],
+        "yt": ""
+    },
+    {
+        "name": "TetrisGYM 6.0.0 Universal",
+        "file": "TetrisGYM-6.0.0-universal.bps",
+        "desc": "Downloaded patch will work with any header",
+        "authors": ["Kirjava"],
+        "yt": ""
+    },
+    {
+        "name": "SNES Gravity",
+        "file": "Tetris (USA) SNES.ips",
+        "desc": "",
+        "authors": ["Josh Tolles"],
+        "yt": ""
+    },
+    {
+        "name": "Late Night People V1",
+        "file": "tetris - latenightpeoplev1.ips",
+        "desc": "",
+        "authors": ["CAndiman"],
+        "yt": ""
+    },
+    {
+        "name": "Window Night City V2",
+        "file": "Nes Tetris(ntsc)Window Night Cityv2.ips",
+        "desc": "",
+        "authors": ["CAndiman"],
+        "yt": ""
+    },
+    {
+        "name": "TetrisGYM XPos",
+        "file": "xpos.bps",
+        "desc": "",
+        "authors": ["Kirjava", "super"],
+        "yt": ""
+    },
+    {
+        "name": "Goofy NES Tetris",
+        "file": "GoofyNesTetris.ips",
+        "desc": "",
+        "authors": ["jazzthief81"],
+        "yt": ""
+    },
+    {
+        "name": "TetrisGYM 6.0.0 iNES2.0",
+        "file": "TetrisGYM-6.0.0NES2.0-Conversion.bps",
+        "desc": "",
+        "authors": ["Kirjava", "TakuikaNinja"],
+        "yt": ""
+    },
+    {
+        "name": "TetrisGYM Invisible Options",
+        "file": "TetrisGYMInvisibleOptions.bps",
+        "desc": "",
+        "authors": ["Kirjava", "zohassadar"],
+        "yt": ""
+    },
+    {
+        "name": "Window Night City V2 HD",
+        "file": "Nes Tetris(ntsc)Window Night City HDv2_0.ips",
+        "desc": "",
+        "authors": ["CAndiman"],
+        "yt": ""
+    },
+    {
+        "name": "Speedrun Timer",
+        "file": "speedrun.bps",
+        "source": "https://www.romhacking.net/hacks/6913/",
+        "desc": "",
+        "authors": ["fractal161"],
+        "yt": ""
+    },
+    {
+        "name": "Das Trainer V1.1",
+        "file": "TetrisDasTrainerV1_1.ips",
+        "source": "https://www.romhacking.net/hacks/3761/",
+        "desc": "",
+        "authors": ["jazzthief81"],
+        "yt": ""
+    },
+    {
+        "name": "TetrisGYM Long 18",
+        "file": "long_18.ips",
+        "desc": "",
+        "authors": ["Kirjava", "Javantea"],
+        "yt": ""
     }
 ]
