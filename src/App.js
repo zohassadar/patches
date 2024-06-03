@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { useState } from 'react';
 const patches = require('./patches.json');
 const {
@@ -235,6 +235,7 @@ function App() {
                 </div>
             </div>
             <div className="bottomBox">
+                <div className="filler" />
                 <div className="sideBox">
                     <input
                         placeholder="Search"
@@ -249,6 +250,7 @@ function App() {
                     />
                 </div>
                 <Table patch={patch} rom={rom} />
+                <div className="filler" />
             </div>
             <div className="footerBox">
                 <p>

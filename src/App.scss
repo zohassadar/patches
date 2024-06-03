@@ -1,3 +1,7 @@
+$border: #FF0000;
+$border: #282c34;
+
+
 html {
     box-sizing: border-box;
 }
@@ -16,11 +20,11 @@ body {
     align-items: center;
     justify-content: center;
     color: white;
-    border-color: #282c34;
+    border-color: $border;
 }
 p {
     background-color: #282c34;
-    border-color: #282c34;
+    border-color: $border;
 }
 .App {
     text-align: center;
@@ -29,7 +33,7 @@ p {
     min-height: 5vh;
     display: block;
     border: solid;
-    border-color: #282c34;
+    border-color: $border;
     flex-direction: column;
     justify-content: center;
 }
@@ -40,7 +44,7 @@ p {
     justify-content: center;
     min-height: 5vh;
     border: solid;
-    border-color: #282c34;
+    border-color: $border;
 }
 .topInfoBox {
     max-width: 60vw;
@@ -53,7 +57,7 @@ p {
     justify-content: center;
     min-width: 100vw;
     border: solid;
-    border-color: #282c34;
+    border-color: $border;
 }
 .romInputBox {
     display: flex;
@@ -74,7 +78,8 @@ p {
     flex-direction: column;
     font-size: calc(5px + 2vmin);
     border: solid;
-    border-color: #282c34;
+    margin: 10px;
+    border-color: $border;
     min-width: 20%;
     height: 70vh;
     overflow: auto;
@@ -93,30 +98,38 @@ p {
 .tableBox {
     white-space: pre-line;
     border: solid;
-    border-color: #282c34;
-    min-width: 80%;
+    border-color: $border;
+    min-width: 60%;
     height: 70vh;
     overflow: auto;
     td {
         border: solid;
-        border-color: #282c34;
+        border-color: $border;
     }
+}
+.filler {
+    display: table;
+    width: 10em;
+    min-width: 10%;
+    overflow: hidden;
+    border: solid;
+    border-color: $border;
 }
 .footerBox {
     justify-content: top;
     align: top;
     border: solid;
-    border-color: #282c34;
+    border-color: $border;
 }
 .info {
     border: solid;
     align-self: center;
-    border-color: #282c34;
+    border-color: $border;
 }
 .input {
     display: flex;
     flex-direction: column;
     justify-content: center;
     border: solid;
-    border-color: #282c34;
+    border-color: $border;
 }
