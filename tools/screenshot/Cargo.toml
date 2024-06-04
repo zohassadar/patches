@@ -1,0 +1,8 @@
+[package]
+name = "hack-img-grab"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+minifb = "0.25"
+rustico-core = { git = "https://github.com/zeta0134/rustico.git", rev = "e1ee2211cc6173fe2df0df036c9c2a30e9966136" }
