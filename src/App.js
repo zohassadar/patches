@@ -41,9 +41,10 @@ function SavePatch({ patch }) {
 function FileInput({ name, handleInput, hide }) {
     if (hide) return;
     return (
-        <div className="input">
-            <input name={name} type="file" onInput={handleInput} />
-        </div>
+        <label className="btn-btn">
+            Select ROM
+            <input className="btn-file" name={name} type="file" onInput={handleInput} />
+        </label>
     );
 }
 
@@ -63,7 +64,7 @@ function YouTube({ vid }) {
     );
 }
 
-function Table({ patch, rom }) {
+function Table({ patch, rom, romInputBox }) {
     if (!patch) return <table className="tableBox" />;
     return (
         <table className="tableBox">
@@ -105,9 +106,9 @@ function Table({ patch, rom }) {
                             patch={patch}
                         />
                     ) : (
-                        <>
-                            <h5>Waiting for valid rom</h5>
-                        </>
+                        <div className="inputBox">
+                            {romInputBox()}
+                        </div>
                     )}
                 </td>
             </tr>
@@ -211,7 +212,18 @@ function App() {
     );
     const [filteredPatches, setFilteredPatches] = useState(sortedPatches);
     const [patch, setPatch] = useState(null);
-
+    function romInputBox() {
+        return (
+            <div>
+                <FileInput
+                    name="RomInput"
+                    handleInput={(romFile) =>
+                        handleRomInput(romFile, setRom, setRomInfo)
+                    }
+                />
+            </div>
+        );
+    }
     return (
         <div className="App">
             <header className="headerBox">
@@ -224,13 +236,7 @@ function App() {
                         information="Download patch, or provide the backup of your nestris rom to download a patched version."
                     />
                 </div>
-                <div className="romInputBox">
-                    <FileInput
-                        name="RomInput"
-                        handleInput={(romFile) =>
-                            handleRomInput(romFile, setRom, setRomInfo)
-                        }
-                    />
+                <div className="inputBox">
                     {romInfo}
                 </div>
             </div>
@@ -249,7 +255,7 @@ function App() {
                         patch={patch}
                     />
                 </div>
-                <Table patch={patch} rom={rom} />
+                <Table patch={patch} rom={rom} romInputBox={romInputBox} />
                 <div className="filler" />
             </div>
             <div className="footerBox">
