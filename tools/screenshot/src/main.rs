@@ -2,6 +2,34 @@ mod input;
 mod labels;
 mod util;
 mod video;
+
+extern crate image;
+use rustico_core::nes::NesState;
+use rustico_core::palettes::NTSC_PAL;
+// https://github.com/zeta0134/rustico/blob/e1ee2211cc6173fe2df0df036c9c2a30e9966136/cli/src/main.rs#L198
+fn save_screenshot(nes: &NesState, output_path: &str) {
+    let mut img = image::ImageBuffer::new(256, 240);
+    for x in 0..256 {
+        for y in 0..240 {
+            let palette_index = ((nes.ppu.screen[y * 256 + x]) as usize) * 3;
+            img.put_pixel(
+                x as u32,
+                y as u32,
+                image::Rgba([
+                    NTSC_PAL[palette_index + 0],
+                    NTSC_PAL[palette_index + 1],
+                    NTSC_PAL[palette_index + 2],
+                    255 as u8,
+                ]),
+            );
+        }
+    }
+
+    image::ImageRgba8(img).save(output_path).unwrap();
+
+    println!("Saved screenshot to {}", output_path);
+}
+
 fn main() {
     let mut emu = util::emulator(None);
     let mut view = video::Video::new();
