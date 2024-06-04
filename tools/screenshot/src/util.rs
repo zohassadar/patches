@@ -56,6 +56,7 @@ pub fn set_controller(emu: &mut NesState, button: char) {
     );
 }
 
+#[allow(dead_code)]
 pub fn run_to_return(emu: &mut NesState, print: bool) {
     opcodes::push(emu, 0);
     opcodes::push(emu, 0);
@@ -151,6 +152,7 @@ pub fn cycles_to_vblank(emu: &mut NesState) -> u32 {
     cycles
 }
 
+#[allow(dead_code)]
 pub fn print_step(emu: &mut NesState) {
     if let Some(label) = labels::from_addr(emu.registers.pc) {
         println!("{}:", label);
