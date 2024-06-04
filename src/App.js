@@ -70,10 +70,11 @@ function FileInput({ name, handleInput }) {
 
 function YouTube({ vid }) {
     if (!vid) return;
+    const width=400;
     return (
         <iframe
-            width="560"
-            height="315"
+            width={width}
+            height={Math.floor(width*(315/560))}
             src={`https://www.youtube.com/embed/${vid}`}
             title="YouTube video player"
             frameborder="0"
