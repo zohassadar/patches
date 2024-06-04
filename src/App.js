@@ -21,9 +21,18 @@ function Information({ hide, information }) {
     return <p className="info">{information}</p>;
 }
 
-function SavePatched({ rom, patch }) {
+function SavePatched({ rom, patch, clearFile }) {
     if (!rom) return;
-    return <button onClick={() => patchRom(patch, rom)}>Get Patched</button>;
+    return (
+        <>
+            <div className="button_" onClick={() => patchRom(patch, rom)}>
+                Apply Patch
+            </div>
+            <p className="clearFile" onClick={() => clearFile()}>
+                unload rom
+            </p>
+        </>
+    );
 }
 
 function SavePatch({ patch }) {
@@ -36,15 +45,26 @@ function SavePatch({ patch }) {
                 });
             });
     }
-    return <button onClick={() => savePatch(patch)}>Get Patch</button>;
-}
-function FileInput({ name, handleInput, hide }) {
-    if (hide) return;
     return (
-        <label className="btn-btn">
-            Select ROM
-            <input className="btn-file" name={name} type="file" onInput={handleInput} />
-        </label>
+        <div className="button_" onClick={() => savePatch(patch)}>
+            Download Patch
+        </div>
+    );
+}
+function FileInput({ name, handleInput }) {
+    return (
+        <>
+            <label className="button_">
+                Select ROM to Apply Patch
+                <input
+                    className="buttonFile"
+                    name={name}
+                    type="file"
+                    onInput={handleInput}
+                />
+            </label>
+            <p className="noFile">no rom loaded</p>
+        </>
     );
 }
 
@@ -64,64 +84,57 @@ function YouTube({ vid }) {
     );
 }
 
-function Table({ patch, rom, romInputBox }) {
-    if (!patch) return <table className="tableBox" />;
+function Table({ patch, rom, romInputBox, clearFile }) {
+    if (!patch) return <table className="romPanel" />;
     return (
-        <table className="tableBox">
-            <tr>
-                <td>
-                    <h2>{patch.name}</h2>
-                    <p>{`by: ${patch.authors.join(', ')}`}</p>
-                </td>
-            </tr>
-            {patch.desc ? (
-                <tr>
-                    <td>
-                        <p>{patch.desc}</p>
-                    </td>
-                </tr>
-            ) : (
-                ''
-            )}
-            {patch.source ? (
-                <tr>
-                    <td>
-                        <a href={patch.source}>source</a>
-                    </td>
-                </tr>
-            ) : (
-                ''
-            )}
-            <tr>
-                <td>
-                    <SavePatch patch={patch} />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    {rom ? (
+        <div className="romPanel">
+            <div className="romTitleBox">
+                <h2>{patch.name}</h2>
+                <p>{`by: ${patch.authors.join(', ')}`}</p>
+                <SavePatch patch={patch} />
+                {rom ? (
+                    <div className="inputBox">
                         <SavePatched
                             text="download patched"
                             rom={rom}
                             patch={patch}
+                            clearFile={clearFile}
                         />
-                    ) : (
-                        <div className="inputBox">
-                            {romInputBox()}
-                        </div>
-                    )}
-                </td>
-            </tr>
-            {patch.yt ? (
-                <tr>
-                    <td>
-                        <YouTube vid={patch.yt} />
-                    </td>
-                </tr>
-            ) : (
-                ''
-            )}
-        </table>
+                    </div>
+                ) : (
+                    <div className="inputBox">{romInputBox()}</div>
+                )}
+            </div>
+            <table className="romDetailsBox">
+                {patch.desc ? (
+                    <tr>
+                        <td>
+                            <p>{patch.desc}</p>
+                        </td>
+                    </tr>
+                ) : (
+                    ''
+                )}
+                {patch.source ? (
+                    <tr>
+                        <td>
+                            <a href={patch.source}>source</a>
+                        </td>
+                    </tr>
+                ) : (
+                    ''
+                )}
+                {patch.yt ? (
+                    <tr>
+                        <td>
+                            <YouTube vid={patch.yt} />
+                        </td>
+                    </tr>
+                ) : (
+                    ''
+                )}
+            </table>
+        </div>
     );
 }
 function SideNames({ filteredPatches, setPatch, patch }) {
@@ -194,13 +207,13 @@ function handleRomInput(romFile, setRom, setRomInfo) {
         );
         const hash = md5(romMarc._u8array).toString();
         if (hash === VANILLA_INES1_MD5) {
-            setRomInfo(<p className="romValid">Valid ROM</p>);
+            setRomInfo(<div className="romInfo romValid">Valid ROM</div>);
             setRom({
                 filename: romFile.target.files[0].name,
                 contents: romMarc,
             });
         } else {
-            setRomInfo(<p className="romInvalid">Invalid ROM</p>);
+            setRomInfo(<div className="romInfo romInvalid">Invalid ROM</div>);
             setRom(null);
         }
     }
@@ -208,10 +221,14 @@ function handleRomInput(romFile, setRom, setRomInfo) {
 function App() {
     const [rom, setRom] = useState(null);
     const [romInfo, setRomInfo] = useState(
-        <p className="romWaiting">Waiting...</p>,
+        <div className="romInfo romWaiting">No ROM Loaded</div>,
     );
     const [filteredPatches, setFilteredPatches] = useState(sortedPatches);
     const [patch, setPatch] = useState(null);
+    function clearFile() {
+        setRom(null);
+        setRomInfo(<div className="romInfo romWaiting">ROM Unloaded</div>);
+    }
     function romInputBox() {
         return (
             <div>
@@ -220,6 +237,7 @@ function App() {
                     handleInput={(romFile) =>
                         handleRomInput(romFile, setRom, setRomInfo)
                     }
+                    clearFile={clearFile}
                 />
             </div>
         );
@@ -233,12 +251,10 @@ function App() {
                 <div className="topInfoBox">
                     <Information
                         hide={false}
-                        information="Download patch, or provide the backup of your nestris rom to download a patched version."
+                        information="Download patch, or provide backup of Nestris rom to apply patch in browser."
                     />
                 </div>
-                <div className="inputBox">
-                    {romInfo}
-                </div>
+                <div className="inputBox">{romInfo}</div>
             </div>
             <div className="bottomBox">
                 <div className="filler" />
@@ -255,7 +271,12 @@ function App() {
                         patch={patch}
                     />
                 </div>
-                <Table patch={patch} rom={rom} romInputBox={romInputBox} />
+                <Table
+                    patch={patch}
+                    rom={rom}
+                    romInputBox={romInputBox}
+                    clearFile={clearFile}
+                />
                 <div className="filler" />
             </div>
             <div className="footerBox">
