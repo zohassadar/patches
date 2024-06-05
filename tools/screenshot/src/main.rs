@@ -6,6 +6,7 @@ mod input;
 mod labels;
 mod util;
 
+extern crate flips;
 extern crate image;
 use rustico_core::nes::NesState;
 use rustico_core::palettes::NTSC_PAL;
@@ -36,8 +37,8 @@ fn save_screenshot(nes: &NesState, output_path: &str) {
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-    if args.len() != 3 {
-        eprintln!("Need to pass rompath & output dir as args");
+    if args.len() != 4 {
+        eprintln!("Need to pass rompath, output dir & patchpath as args");
         std::process::exit(1)
     };
     let rom_path = &args[1];
@@ -46,24 +47,53 @@ fn main() {
     let output_path = &args[2];
     println!("This is the output_path: {}", output_path);
 
+    let patch_path = &args[3];
+    println!("This is the patch_path: {}", patch_path);
 
-
-    let (_file_path, file_name) = rom_path.rsplit_once(MAIN_SEPARATOR_STR).unwrap();
+    let (_file_path, file_name) = patch_path.rsplit_once(MAIN_SEPARATOR_STR).unwrap();
     println!("This is the file_name: {:#?}", file_name);
     println!("This is the _file_path: {:#?}", _file_path);
 
-    let output = [output_path, file_name].join(MAIN_SEPARATOR_STR);
+    let mut output = [output_path, file_name].join(MAIN_SEPARATOR_STR);
     println!("This is the output: {}", output);
 
     let mut f = File::open(rom_path).unwrap_or_else(|error| {
         panic!("Problem: {:?}", error);
     });
+
     let mut rom = Vec::new();
     f.read_to_end(&mut rom).unwrap_or_else(|error| {
         panic!("Problem: {:?}", error);
     });
 
-    let mut emu = util::emulator(Some(&rom));
+    let mut f2 = File::open(patch_path).unwrap_or_else(|error| {
+        panic!("Problem: {:?}", error);
+    });
+
+    let mut patch = Vec::new();
+    f2.read_to_end(&mut patch).unwrap_or_else(|error| {
+        panic!("Problem: {:?}", error);
+    });
+    let mut patched = Vec::new();
+    if patch_path.contains(".ips") {
+        output = output.replace(".ips", ".nes");
+        println!("IPS patch!");
+        patched = flips::IpsPatch::new(&patch)
+            .apply(&rom)
+            .expect("Failed to apply ips patch")
+            .to_vec()
+    } else if patch_path.contains(".bps") {
+        output = output.replace(".bps", ".nes");
+        println!("BPS patch!");
+        patched = flips::BpsPatch::new(patch)
+            .apply(&rom)
+            .expect("Failed to apply BPS patch")
+            .to_vec()
+    } else {
+        panic!("Invalid patch type")
+    }
+
+    let mut emu = util::emulator(Some(&patched));
 
     let main_loop = labels::get("@mainLoop");
     let practise_type = labels::get("gameType") as usize;
