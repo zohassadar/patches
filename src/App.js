@@ -35,6 +35,52 @@ function SavePatched({ rom, patch, clearFile }) {
     );
 }
 
+function DisplayImage({ name, setImage }) {
+    fetch(`patches/${name}`)
+        .then((response) => response.blob())
+        .then((blob) => {
+            const img = URL.createObjectURL(blob);
+            setImage(<img src={img} />);
+        });
+    let patch={file: ""}
+    return (
+        <tr>
+            <td>
+                <img
+                    src={`patches/screenshots/${patch.file.replace(
+                        /\.[ib]ps/,
+                        '_legal.png',
+                    )}`}
+                />
+                <img
+                    src={`patches/screenshots/${patch.file.replace(
+                        /\.[ib]ps/,
+                        '_title.png',
+                    )}`}
+                />
+                <img
+                    src={`patches/screenshots/${patch.file.replace(
+                        /\.[ib]ps/,
+                        '_gamemenu.png',
+                    )}`}
+                />
+                <img
+                    src={`patches/screenshots/${patch.file.replace(
+                        /\.[ib]ps/,
+                        '_levelmenu.png',
+                    )}`}
+                />
+                <img
+                    src={`patches/screenshots/${patch.file.replace(
+                        /\.[ib]ps/,
+                        '_game.png',
+                    )}`}
+                />
+            </td>
+        </tr>
+    );
+}
+
 function SavePatch({ patch }) {
     function savePatch(patch) {
         fetch(`patches/${patch.file}`)
@@ -70,11 +116,11 @@ function FileInput({ name, handleInput }) {
 
 function YouTube({ vid }) {
     if (!vid) return;
-    const width=400;
+    const width = 400;
     return (
         <iframe
             width={width}
-            height={Math.floor(width*(315/560))}
+            height={Math.floor(width * (315 / 560))}
             src={`https://www.youtube.com/embed/${vid}`}
             title="YouTube video player"
             frameborder="0"
