@@ -134,7 +134,7 @@ fn main() {
     emu.memory.iram_raw[b_modifier] = 5;
 
     emu.registers.pc = main_loop;
-    for _ in 0..22 {
+    for _ in 0..25 {
         emu.run_until_vblank();
     }
     save_screenshot(&emu, &output.replace(".nes", "_game.png"));
