@@ -34,7 +34,7 @@ function SavePatched({ rom, patch, clearFile }) {
         </>
     );
 }
-
+/*
 function DisplayImage({ name, setImage }) {
     fetch(`patches/${name}`)
         .then((response) => response.blob())
@@ -80,7 +80,7 @@ function DisplayImage({ name, setImage }) {
         </tr>
     );
 }
-
+*/
 function SavePatch({ patch }) {
     function savePatch(patch) {
         fetch(`${window.location.pathname.slice(1)}/patches/${patch.file}`)
