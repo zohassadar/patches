@@ -1107,5 +1107,12 @@
         "desc": "",
         "authors": ["Kirjava", "Javantea"],
         "yt": ""
+    },
+    {
+        "name": "WaitrisBeta",
+        "file": "WaitrisBeta.ips",
+        "desc": "From JazzySpF: Anyways, here's a very very primitive foundation of an instant start level 0 mod with no push down, no level transition, and a seven digit score count. I gave it the name Waitris, which is so dumb I stuck with it. It's barely anything, so I consider it basically a beta until it gets more fleshed out. I don't really feel like doing much with it though.",
+        "authors": ["JazzySpinalFusion"],
+        "yt": ""
     }
 ]
