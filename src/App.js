@@ -42,7 +42,7 @@ function DisplayImage({ name, setImage }) {
             const img = URL.createObjectURL(blob);
             setImage(<img src={img} />);
         });
-    let patch={file: ""}
+    let patch = { file: '' };
     return (
         <tr>
             <td>
@@ -83,7 +83,7 @@ function DisplayImage({ name, setImage }) {
 
 function SavePatch({ patch }) {
     function savePatch(patch) {
-        fetch(`patches/${patch.file}`)
+        fetch(`${window.location.pathname.slice(1)}/patches/${patch.file}`)
             .then((response) => response.blob())
             .then((patchData) => {
                 patchData.arrayBuffer().then((buffer) => {
@@ -205,7 +205,7 @@ function SideNames({ filteredPatches, setPatch, patch }) {
 
 function patchRom(patch, rom) {
     const bpsTest = new RegExp(/\.bps$/);
-    fetch(`patches/${patch.file}`)
+    fetch(`${window.location.pathname.slice(1)}/patches/${patch.file}`)
         .then((response) => response.blob())
         .then((patchData) => {
             patchData.arrayBuffer().then((buffer) => {
