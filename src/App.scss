@@ -1,6 +1,6 @@
-$border: #FF0000;
+/* swap to add red debug box */
+$border: #ff0000;
 $border: #282c34;
-
 
 html {
     box-sizing: border-box;
@@ -42,6 +42,7 @@ p {
     flex-direction: row;
     align-self: center;
     justify-content: center;
+    align-items: center;
     min-height: 5vh;
     border: solid;
     border-color: $border;
@@ -59,10 +60,20 @@ p {
     border: solid;
     border-color: $border;
 }
-.romInputBox {
-    display: flex;
-    flex-direction: column;
-    font-size: small;
+.romInfo {
+    font-size: medium;
+    height: 2rem;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.55rem;
+    border-radius: 0.25rem;
+    width: 10rem;
+    position: absolute;
 }
 .romValid {
     background-color: #28ac34;
@@ -95,22 +106,33 @@ p {
     cursor: pointer;
     background-color: #484c54;
 }
-.tableBox {
+
+.romPanel {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    min-width: 60%;
+}
+.romTitleBox {
+    display: table;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.romDetailsBox {
+    display: table;
     white-space: pre-line;
     border: solid;
     border-color: $border;
-    min-width: 60%;
-    height: 70vh;
-    overflow: auto;
     td {
         border: solid;
+        overflow: visible;
         border-color: $border;
     }
 }
 .filler {
     display: table;
-    width: 10em;
-    min-width: 10%;
+    width: 10%;
     overflow: hidden;
     border: solid;
     border-color: $border;
@@ -132,4 +154,39 @@ p {
     justify-content: center;
     border: solid;
     border-color: $border;
+}
+.button_ {
+    font-size: medium;
+    cursor: pointer;
+    height: 1.5em;
+    line-height: 0.55em;
+    vertical-align: middle;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background-color: #42d;
+    vertical-align: middle;
+    padding: 0.55rem;
+    border-radius: 0.25rem;
+    width: 15rem;
+    margin: 0.5em;
+}
+.buttonFile {
+    opacity: 0;
+    background: #fff;
+    cursor: inherit;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.clearFile {
+    font-size: small;
+    cursor: pointer;
+}
+.noFile {
+    font-size: small;
 }
