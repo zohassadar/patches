@@ -83,7 +83,7 @@ function DisplayImage({ name, setImage }) {
 */
 function SavePatch({ patch }) {
     function savePatch(patch) {
-        fetch(`${window.location.pathname.slice(1)}/patches/${patch.file}`)
+        fetch(`patches/${patch.file}`)
             .then((response) => response.blob())
             .then((patchData) => {
                 patchData.arrayBuffer().then((buffer) => {
@@ -205,7 +205,7 @@ function SideNames({ filteredPatches, setPatch, patch }) {
 
 function patchRom(patch, rom) {
     const bpsTest = new RegExp(/\.bps$/);
-    fetch(`${window.location.pathname.slice(1)}/patches/${patch.file}`)
+    fetch(`patches/${patch.file}`)
         .then((response) => response.blob())
         .then((patchData) => {
             patchData.arrayBuffer().then((buffer) => {
