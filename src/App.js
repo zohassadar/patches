@@ -116,7 +116,7 @@ function FileInput({ name, handleInput }) {
 
 function YouTube({ vid }) {
     if (!vid) return;
-    const width = 400;
+    const width = 560;
     return (
         <iframe
             width={width}
