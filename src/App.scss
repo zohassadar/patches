@@ -100,10 +100,11 @@ p {
     margin: 0px;
     text-align: left;
     font-size: calc(5px + 1vmin);
+    color: inherit;
+    text-decoration: inherit;
 }
 .patchChoice:hover,
 .patchSelected {
-    cursor: pointer;
     background-color: #484c54;
 }
 

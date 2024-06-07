@@ -925,7 +925,7 @@
         "yt": ""
     },
     {
-        "name": "DAS Trainer +TRT",
+        "name": "DAS Trainer TRT",
         "file": "NTSC DAS Trainer +TRT.ips",
         "desc": "",
         "authors": ["HydrantDude"],
@@ -953,7 +953,7 @@
         "yt": ""
     },
     {
-        "name": "Metrics +TRT",
+        "name": "Metrics TRT",
         "file": "NTSC Tetris Metrics +TRT.ips",
         "desc": "",
         "authors": ["HydrantDude"],

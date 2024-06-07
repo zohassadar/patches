@@ -194,9 +194,13 @@ function SideNames({ filteredPatches, setPatch, patch }) {
                 }
 
                 return (
-                    <p className={className} onClick={() => setPatch(p)}>
+                    <a
+                        href={`#${p.name.replace(/ /g, '+')}`}
+                        className={className}
+                        onClick={() => setPatch(p)}
+                    >
                         {p.name}
-                    </p>
+                    </a>
                 );
             })}
         </>
@@ -272,10 +276,21 @@ function App() {
     );
     const [filteredPatches, setFilteredPatches] = useState(sortedPatches);
     const [patch, setPatch] = useState(null);
+
+    if (patch === null) {
+        const parsedURL = new URL(window.location.href);
+        const patchName = parsedURL.hash.slice(1).replace(/\+/g, ' ');
+        if (patchName) {
+            const patch = filteredPatches.find((p) => p.name === patchName);
+            if (patch) setPatch(patch);
+        }
+    }
+
     function clearFile() {
         setRom(null);
         setRomInfo(<div className="romInfo romWaiting">ROM Unloaded</div>);
     }
+
     function romInputBox() {
         return (
             <div>
@@ -289,6 +304,7 @@ function App() {
             </div>
         );
     }
+
     return (
         <div className="App">
             <header className="headerBox">
