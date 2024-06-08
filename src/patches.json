@@ -1114,5 +1114,33 @@
         "desc": "From JazzySpF: Anyways, here's a very very primitive foundation of an instant start level 0 mod with no push down, no level transition, and a seven digit score count. I gave it the name Waitris, which is so dumb I stuck with it. It's barely anything, so I consider it basically a beta until it gets more fleshed out. I don't really feel like doing much with it though.",
         "authors": ["JazzySpinalFusion"],
         "yt": ""
+    },
+    {
+        "name": "Quick Stack Mode - Hard Drop",
+        "file": "Quick_Stack_ModeHard_Drop.ips",
+        "desc": "It instantly opens a never ending level 0 type a game for when you want instant casual stacking.",
+        "authors": ["JazzySpinalFusion"],
+        "yt": ""
+    },
+    {
+        "name": "Quick Stack Mode - No Press Down",
+        "file": "Quick_Stack_ModeNo_Press_Down.ips",
+        "desc": "It instantly opens a never ending level 0 type a game for when you want instant casual stacking.",
+        "authors": ["JazzySpinalFusion"],
+        "yt": ""
+    },
+    {
+        "name": "Quick Zentris",
+        "file": "Quick_Zentris.ips",
+        "desc": "",
+        "authors": ["JazzySpinalFusion"],
+        "yt": ""
+    },
+    {
+        "name": "Quick Stack Mode",
+        "file": "Quick_Stack_Mode.ips",
+        "desc": "It instantly opens a never ending level 0 type a game for when you want instant casual stacking.",
+        "authors": ["JazzySpinalFusion"],
+        "yt": ""
     }
 ]
