@@ -1142,5 +1142,40 @@
         "desc": "It instantly opens a never ending level 0 type a game for when you want instant casual stacking.",
         "authors": ["JazzySpinalFusion"],
         "yt": ""
+    },
+    {
+        "name": "Zentris (2024)",
+        "file": "Zentris.ips",
+        "desc": "Welcome to Zentris.\n\nThis ROM Hack of Tetris released by Nintendo in 1989 takes stacking blocks in a more relaxing direction.\n\nTo start, the visuals have been overhauled to a more minimalist design. Inspired by Tetris Effect, the blocks are designed with a singular color for each level.\n\nThe gameplay has been modified to make it as relaxing as possible. The game no longer increases the speed of gravity as you play, allowing for casual stacking of your own liking.\nIncluded are two patches. One is the standard version that has Level 0 Gravity. The second version has Gravity completely turned off, meaning you will have to press down to move the pieces.\n\nNow one might be concerned that this lack of gravity would result in a lot of holding down on the D-Pad and tired thumbs. Do not fret!\nTo avoid any kind of sore thumbs, a hard drop was added. Simply press Up on the D-Pad to send the block instantly to the bottom!\n\nIn Zentris, there are two game modes.\n\nThe first is A-Type. This is your standard Tetris game. Stack for as long as you would like without topping out.\nFor more fun, the score cap has been removed.\n\nThe second mode is B-Type. In this, you must clear a preset number of lines with a chosen height  of garbage lines.\nIn the standard version of NES Tetris, you are supposed to clear 25 lines. HOWEVER, in Zentris, the line amount has been raised to 80 lines!\nTry to see if you can clear all the level 5 garbage height before clearing 80 lines.\n\nSome other changes are listed below\n-New high scoreboard entries\n-You can see the board while the game is paused\n-The copyright/credit screen can be skipped by pressing start\n-Music is set to OFF by default\n\nA Quick Mode variant of the game has been added as well. In this version, the game skips all menus and goes straight into a Level 0 game.\nIn Quick Mode, you are unable to return to the menu. If you would like to start another game of Quick Mode, you will have to soft or hard reset.\n\nTo access these ROM Hacks, simply apply any of the included patches to a vanilla copy of the Tetris(USA) ROM\n\nSpecial thanks to zohassadar and the rest of the Classic Tetris Monthly discord for their help with this mod. \n\nRelax and have fun :)",
+        "authors": ["JazzySpinalFusion"],
+        "yt": ""
+    },
+    {
+        "name": "Zentris Zero Gravity Quick Mode",
+        "file": "Zentris_Zero Gravity_Quick Mode.ips",
+        "desc": "See Zentris (2024)",
+        "authors": ["JazzySpinalFusion"],
+        "yt": ""
+    },
+    {
+        "name": "Stack Mode",
+        "file": "Stack_Mode.ips",
+        "desc": "\n        This is Stack Mode. Based on the Stack Mode from Not Tetris 2, this variant of Tetris does not allow lines to clear. Instead, the goal is to get as many pieces onto the board as possible. Each piece gives your score one point and will save to the high score board.\nDo you think you can achieve a perfect 50 piece game?\nTry it here!",
+        "authors": ["JazzySpinalFusion"],
+        "yt": ""
+    },
+    {
+        "name": "Zentris Zero Gravity",
+        "file": "Zentris_Zero Gravity.ips",
+        "desc": "See Zentris (2024)",
+        "authors": ["JazzySpinalFusion"],
+        "yt": ""
+    },
+    {
+        "name": "Zentris Quick Mode",
+        "file": "Zentris_Quick Mode.ips",
+        "desc": "See Zentris (2024)",
+        "authors": ["JazzySpinalFusion"],
+        "yt": ""
     }
 ]
