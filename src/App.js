@@ -9,7 +9,7 @@ const {
     md5,
 } = require('./bps.js');
 
-const sortFilter = (p1, p2) => p1.name > p2.name;
+const sortFilter = (p1, p2) => p1.name.toLowerCase() > p2.name.toLowerCase() ? 1 : -1;
 
 const sortedPatches = patches.sort(sortFilter);
 
@@ -242,9 +242,7 @@ function filterPatches(filter, setFilteredPatches) {
         sortedPatches.filter((patch) => {
             const regexp = new RegExp(`${filter}`, 'i');
             if (regexp.test(patch.name)) return true;
-            for (let author of patch.authors) {
-                if (regexp.test(author)) return true;
-            }
+            if (patch.authors.some(author => regexp.test(author))) return true;
             return false;
         }),
     );
