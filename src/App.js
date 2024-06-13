@@ -9,7 +9,7 @@ const {
     md5,
 } = require('./bps.js');
 
-const sortFilter = (p1, p2) => p1.name > p2.name;
+const sortFilter = (p1, p2) => p1.name.toLowerCase() > p2.name.toLowerCase() ? 1 : -1;
 
 const sortedPatches = patches.sort(sortFilter);
 
