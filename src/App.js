@@ -242,9 +242,7 @@ function filterPatches(filter, setFilteredPatches) {
         sortedPatches.filter((patch) => {
             const regexp = new RegExp(`${filter}`, 'i');
             if (regexp.test(patch.name)) return true;
-            for (let author of patch.authors) {
-                if (regexp.test(author)) return true;
-            }
+            if (patch.authors.some(author => regexp.test(author))) return true;
             return false;
         }),
     );
