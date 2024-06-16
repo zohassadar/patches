@@ -250,21 +250,49 @@ function filterPatches(filter, setFilteredPatches) {
 
 function handleRomInput(romFile, setRom, setRomInfo) {
     var romMarc = new MarcFile(romFile.target.files[0], onMarcRomLoad);
-    function onMarcRomLoad() {
-        romMarc = new MarcFile(
-            new Uint8Array([...INES1HEADER, ...romMarc._u8array.slice(16)]),
-        );
-        const hash = md5(romMarc._u8array).toString();
+    function validateRom(marcfile) {
+        const hash = md5(marcfile._u8array).toString();
         if (hash === VANILLA_INES1_MD5) {
             setRomInfo(<div className="romInfo romValid">Valid ROM</div>);
             setRom({
                 filename: romFile.target.files[0].name,
-                contents: romMarc,
+                contents: marcfile,
             });
-        } else {
-            setRomInfo(<div className="romInfo romInvalid">Invalid ROM</div>);
-            setRom(null);
+            return true;
         }
+        return false;
+    }
+    function onMarcRomLoad() {
+        romMarc = new MarcFile(
+            new Uint8Array([...INES1HEADER, ...romMarc._u8array.slice(16)]),
+        );
+        if (validateRom(romMarc)) return;
+
+        // attempt to solve for the 256k rom
+        const size = romMarc._u8array.length;
+        if (size > 0x40000) {
+            // assume no trainer
+            const prg = [...romMarc._u8array.slice(0x10, 0x10 + 0x8000)];
+            const chr = [
+                ...romMarc._u8array.slice(0x10 + 0x20000, 0x10 + 0x24000),
+            ];
+            romMarc = new MarcFile(
+                new Uint8Array([...INES1HEADER, ...prg, ...chr]),
+            );
+            if (validateRom(romMarc)) return;
+
+            // assume trainer
+            const prg2 = [...romMarc._u8array.slice(0x210, 0x210 + 0x8000)];
+            const chr2 = [
+                ...romMarc._u8array.slice(0x210 + 0x20000, 0x210 + 0x24000),
+            ];
+            romMarc = new MarcFile(
+                new Uint8Array([...INES1HEADER, ...prg2, ...chr2]),
+            );
+            if (validateRom(romMarc)) return;
+        }
+        setRomInfo(<div className="romInfo romInvalid">Invalid ROM</div>);
+        setRom(null);
     }
 }
 function App() {
