@@ -1,1181 +1,1188 @@
 [
-    {
-        "name": "TetrisGYM 6.0.0",
-        "file": "TetrisGYM-6.0.0.bps",
-        "desc": "Adds practice modes to NES Tetris (among other things)",
-        "source": "https://github.com/kirjavascript/TetrisGYM",
-        "authors": ["kirjava"]
-    },
-    {
-        "name": "TetrisGYM 6.0.0 w/Keyboard",
-        "file": "TetrisGYM-6.0.0-keyboard.bps",
-        "desc": "TetrisGYM compiled with Famicom Keyboard support",
-        "source": "https://github.com/kirjavascript/TetrisGYM",
-        "authors": ["kirjava"]
-    },
-    {
-        "name": "TetrisGYM 6.0.0 Tron hack",
-        "file": "TetrisGYM-6.0.0-tron0.bps",
-        "desc": "Adds an extra dark mode to Tetris GYM",
-        "source": "https://github.com/zohassadar/TetrisGYM/tree/neon2",
-        "authors": ["kirjava", "zohassadar"]
-    },
-    {
-        "name": "Next Box Playfield",
-        "file": "tetris_next_box_playfield.ips",
-        "desc": "Play tetris in the next box",
-        "source": "patches/tetris_next_box_playfield.asm",
-        "authors": ["maya"]
-    },
-    {
-        "name": "Pentris",
-        "file": "Pentris_v1.3.bps",
-        "desc": "5 minos instead of 4 minos",
-        "authors": ["zohassadar"],
-        "source": "https://github.com/zohassadar/Pentris",
-        "yt": "3b2VvO2fCfo"
-    },
-    {
-        "name": "Pentris AnyDAS",
-        "file": "PentrisAnydas_v1.3.bps",
-        "desc": "Pentris with HydrantDude's DAS controls",
-        "source": "https://github.com/zohassadar/Pentris",
-        "authors": ["zohassadar", "HydrantDude"],
-        "yt": "3b2VvO2fCfo"
-    },
-    {
-        "name": "Big Mode Anydas",
-        "file": "BigModeAnydas.bps",
-        "desc": "Big Mode with HydrantDude's DAS Controls added",
-        "source": "https://github.com/zohassadar/NESTetrisBigmode",
-        "authors": ["zohassadar", "HydrantDude"],
-        "yt": "8FEVTTIi5WU"
-    },
-    {
-        "name": "Max Out Song",
-        "file": "maxoutsong.ips",
-        "desc": "Plays a song when score is equal to or greater than 999,999",
-        "authors": ["zohassadar"],
-        "yt": ""
-    },
-    {
-        "name": "No Entry Delay",
-        "file": "TetrisNoEntryDelay.bps",
-        "desc": "Reduces the normal 10-18 frame entry delay to 0 frames",
-        "authors": ["zohassadar"],
-        "yt": ""
-    },
-    {
-        "name": "Big Mode",
-        "file": "BigMode.bps",
-        "desc": "Pieces doubled in width and height on a 5 x 10 playfield",
-        "source": "https://github.com/zohassadar/NESTetrisBigmode",
-        "authors": ["zohassadar"],
-        "yt": "8FEVTTIi5WU"
-    },
-    {
-        "name": "Background Pieces",
-        "file": "background.bps",
-        "desc": "Play tetris but using the background tiles as pieces",
-        "authors": ["zohassadar"],
-        "yt": ""
-    },
-    {
-        "name": "Neon Tetris",
-        "file": "neon.bps",
-        "desc": "Neon Tetris",
-        "authors": ["zohassadar"],
-        "yt": ""
-    },
-    {
-        "name": "Color Match Line Clear",
-        "file": "ColorMatchLineClear.ips",
-        "desc": "Lines only clear when colors match",
-        "authors": ["zohassadar"],
-        "yt": ""
-    },
-    {
-        "name": "Modified Background Pattern",
-        "file": "bgpattern.bps",
-        "desc": "Interesting visual hack of background and pieces",
-        "authors": ["zohassadar"],
-        "yt": ""
-    },
-    {
-        "name": "Connected Pieces",
-        "file": "connected.bps",
-        "desc": "Pieces are solidly connected",
-        "authors": ["zohassadar"],
-        "yt": ""
-    },
-    {
-        "name": "No Entry Delay Anydas",
-        "file": "TetrisNoEntryDelayAnydas.bps",
-        "desc": "No Entry Delay with HydrantDude's DAS controls",
-        "authors": ["zohassadar", "HydrantDude"],
-        "yt": ""
-    },
-    {
-        "name": "Wall Hack 2",
-        "file": "Wallhack2.bps",
-        "desc": "Pieces wrap around the playfield",
-        "authors": ["zohassadar"],
-        "yt": ""
-    },
-    {
-        "name": "Wall Hack 2 Anydas",
-        "file": "Wallhack2Anydas.bps",
-        "desc": "Pieces wrap around the playfield",
-        "authors": ["zohassadar", "HydrantDude"],
-        "yt": ""
-    },
-    {
-        "name": "Random Tiles",
-        "file": "randomtiles.ips",
-        "desc": "Pieces can consist of any of the three tiles",
-        "authors": ["zohassadar"],
-        "yt": "lOOwrWkdf4o"
-    },
-    {
-        "name": "Ultris",
-        "file": "Ultris.ips",
-        "desc": "    Faster DAS (simulates PAL DAS)   Faster softdrops (at level 29 speed instead of 19)\n    Instant line clears\n    Score rollover\n    Higher score cap before rollover (E99,999 to 000,000)\n    No pause-screen blackout (still see field, but not current or next blocks)\n    Copyright and rocket screen skip\n    Higher frequency of straight pieces\n    10-frame pause before each piece begins dropping automatically\n\nIt was designed to emulate a variety of classic and modern games, and act as a sort of hybrid between the two.",
-        "authors": ["Gyzzmo Glytch"]
-    },
-    {
-        "name": "Penguin Line Clear",
-        "file": "penguin.ips",
-        "desc": "A penguin takes away cleared lines",
-        "authors": ["zohassadar"],
-        "yt": "IZn6R--RxNg"
-    },
-    {
-        "name": "Upside Down Tetris",
-        "file": "UpsideDownTetris.bps",
-        "desc": "Tetris, but upside down",
-        "authors": ["zohassadar"],
-        "yt": "cBs7H2lll-0"
-    },
-    {
-        "name": "Shrink Mode",
-        "file": "TetrisShrinkMode_v1.1.bps",
-        "desc": "Big, Medium & Small modes, along with a Shrink mode that combines all three. Based on TetrisGYM.",
-        "authors": ["zohassadar", "Kirjava"],
-        "yt": "dt01BeEZfgw"
-    },
-    {
-        "name": "Taller Tetris",
-        "file": "TallerTetris.bps",
-        "desc": "Play tetris on a 10x24 playfield",
-        "authors": ["zohassadar"],
-        "yt": ""
-    },
-    {
-        "name": "Speedhack",
-        "file": "speedhack1.1.bps",
-        "desc": "Faster Tetris",
-        "authors": ["fractal161"],
-        "yt": "n9vKMNu5JWo"
-    },
-    {
-        "name": "Side Scroller Tetris",
-        "file": "SideScrollerTetris.bps",
-        "desc": "Tetris if it were a side scroller",
-        "authors": ["zohassadar"],
-        "yt": "5x6KWWcPquo"
-    },
-    {
-        "name": "Wall Hack",
-        "file": "TetrisWallHack.bps",
-        "desc": "Tetris that allows going outside the playfield (as long as you return in time)",
-        "authors": ["zohassadar"],
-        "yt": ""
-    },
-    {
-        "name": "Tetris AnyTourney",
-        "file": "TetrisAnyTrn.bps",
-        "desc": "DAS Controls + ability to skip rocket screens + start on higher levels",
-        "authors": ["HydrantDude", "Kirby703", "zohassadar"],
-        "yt": ""
-    },
-    {
-        "name": "All Levels",
-        "file": "allLevels.bps",
-        "desc": "",
-        "authors": ["fractal161"],
-        "yt": ""
-    },
-    {
-        "name": "Random Rotate",
-        "file": "tetris_random_rotate.ips",
-        "desc": "",
-        "authors": ["maya"],
-        "yt": ""
-    },
-    {
-        "name": "Tetris 12 Wide",
-        "file": "Tetris12Wide.bps",
-        "desc": "12x20 playfield",
-        "authors": ["zohassadar"],
-        "yt": "kz7hjhtZ3_k"
-    },
-    {
-        "name": "Smooth Gravity",
-        "file": "SmoothGravity.ips",
-        "desc": "",
-        "authors": ["HydrantDude"],
-        "yt": ""
-    },
-    {
-        "name": "Sideways (Left to Right)",
-        "file": "LeftToRight.bps",
-        "desc": "",
-        "authors": ["zohassadar"],
-        "yt": ""
-    },
-    {
-        "name": "Tetris 30x25",
-        "file": "Tetris30x25.bps",
-        "desc": "",
-        "authors": ["zohassadar"],
-        "yt": "-7OrMs77s0A"
-    },
-    {
-        "name": "All Level Challenge",
-        "file": "allLevels_challenge.bps",
-        "desc": "",
-        "authors": ["fractal161"],
-        "yt": ""
-    },
-    {
-        "name": "Pal SPS Tourney",
-        "file": "PalSPSTourney.bps",
-        "desc": "Emulate PAL on NTSC console, w SPS",
-        "authors": ["fractal161"],
-        "yt": "n9vKMNu5JWo"
-    },
-    {
-        "name": "SZ",
-        "file": "sz.ips",
-        "desc": "Delivers an alternating sequence of S's and Z's",
-        "authors": ["zohassadar"],
-        "yt": ""
-    },
-    {
-        "name": "Pal Hack",
-        "file": "palhack.bps",
-        "desc": "Emulate PAL on NTSC console",
-        "authors": ["fractal161"],
-        "yt": "n9vKMNu5JWo"
-    },
-    {
-        "name": "Music 1.1",
-        "file": "music-1.1.bps",
-        "desc": "",
-        "authors": ["fractal161"],
-        "yt": ""
-    },
-    {
-        "name": "Sideways (Right to Left)",
-        "file": "RightToLeft.bps",
-        "desc": "",
-        "authors": ["zohassadar"],
-        "yt": ""
-    },
-    {
-        "name": "Tetris Double Wide",
-        "file": "TetrisDoubleWide.bps",
-        "desc": "20x20 playfield",
-        "authors": ["zohassadar"],
-        "yt": "Kdhbwzg34sc"
-    },
-    {
-        "name": "Pal SPS Tourney (Goofy)",
-        "file": "PalSPSTourneyGoofy.bps",
-        "desc": "Pal SPS Tourney with Goofyfoot controls",
-        "authors": ["fractal161"],
-        "yt": "n9vKMNu5JWo"
-    },
-    {
-        "name": "CTM Hack Dec 2017",
-        "file": "ctm1217.ips",
-        "desc": "",
-        "authors": ["fridaywitch"],
-        "yt": ""
-    },
-    {
-        "name": "TSpin Points",
-        "file": "tspins.ips",
-        "desc": "",
-        "authors": ["Kirby703"],
-        "yt": ""
-    },
-    {
-        "name": "Hot Mustard",
-        "file": "HOT_Mustard_v1.1.1.bps",
-        "desc": "Play 10 levels of 19-2",
-        "authors": ["Meme"],
-        "yt": ""
-    },
-    {
-        "name": "Scrolltris",
-        "file": "Scrolltris.bps",
-        "desc": "",
-        "authors": ["Kirjava"],
-        "yt": ""
-    },
-    {
-        "name": "Statistics Mod",
-        "file": "Tetris_USA_-_Statistics.ips",
-        "desc": "",
-        "authors": ["jazzthief81"],
-        "yt": ""
-    },
-    {
-        "name": "CTM Hack Jan 2018",
-        "file": "ctm0118.ips",
-        "desc": "",
-        "authors": ["fridaywitch"],
-        "yt": ""
-    },
-    {
-        "name": "Controller Input Display",
-        "file": "TetrisControllerInputDisplay.ips",
-        "desc": "",
-        "authors": ["jazzthief81"],
-        "yt": ""
-    },
-    {
-        "name": "Piece Percentages",
-        "file": "TetricPPCT.ips",
-        "desc": "",
-        "authors": ["fractal161"],
-        "yt": ""
-    },
-    {
-        "name": "Ludicrous Speed",
-        "file": "LudicrousSpeed.ips",
-        "desc": "",
-        "authors": ["Trey Harrison"],
-        "yt": ""
-    },
-    {
-        "name": "7 Bag",
-        "file": "7bagKirby703.ips",
-        "desc": "",
-        "authors": ["Kirby703"],
-        "yt": ""
-    },
-    {
-        "name": "Tetris Metrics",
-        "file": "TetrisMetrics.ips",
-        "desc": "",
-        "authors": ["jazzthief81"],
-        "yt": ""
-    },
-    {
-        "name": "Hard Drop",
-        "file": "Tetris_HD_patch.ips",
-        "desc": "",
-        "authors": ["Josh Tolles"],
-        "yt": ""
-    },
-    {
-        "name": "Korobeiniki",
-        "file": "TetrisKorobeiniki.ips",
-        "desc": "",
-        "authors": ["jazzthief81"],
-        "yt": ""
-    },
-    {
-        "name": "CTM Hack Feb 2018",
-        "file": "ctm0218.ips",
-        "desc": "",
-        "authors": ["fridaywitch"],
-        "yt": ""
-    },
-    {
-        "name": "Cursed RNG",
-        "file": "CursedRNG.bps",
-        "desc": "Clean tetrises discouraged by game",
-        "authors": ["zohassadar"],
-        "yt": ""
-    },
-    {
-        "name": "Random Spawn Orientation",
-        "file": "RandomSpawnOrientation.bps",
-        "desc": "pieces spawn in any orientation",
-        "authors": ["zohassadar"],
-        "yt": ""
-    },
-    {
-        "name": "Pentris (with Tetriminos) AnyDAS",
-        "file": "PentrisAnydas_withTetriminos.bps",
-        "desc": "Pentris with Tetriminos added to the mix",
-        "source": "https://github.com/zohassadar/Pentris/tree/with_tetriminos",
-        "authors": ["zohassadar", "HydrantDude"],
-        "yt": ""
-    },
-    {
-        "name": "Pentris (with Tetriminos)",
-        "file": "Pentris_withTetriminos.bps",
-        "desc": "Pentris with Tetriminos added to the mix",
-        "authors": ["zohassadar"],
-        "yt": ""
-    },
-    {
-        "name": "TAUS Two Player",
-        "file": "twoplayer-1-5-0.ips",
-        "desc": "",
-        "source": "https://github.com/ejona86/taus",
-        "authors": ["ejona86"],
-        "yt": ""
-    },
-    {
-        "name": "TAUS Two Player Garbage",
-        "file": "twoplayer-garbage-1-5-0.ips",
-        "desc": "",
-        "source": "https://github.com/ejona86/taus",
-        "authors": ["ejona86"],
-        "yt": ""
-    },
-    {
-        "name": "TAUS",
-        "file": "taus-1-5-0.ips",
-        "desc": "Tetris Actually Useful Statistics",
-        "source": "https://github.com/ejona86/taus",
-        "authors": ["ejona86"],
-        "yt": ""
-    },
-    {
-        "name": "TAUS Hold",
-        "file": "hold-1-5-0.ips",
-        "desc": "",
-        "source": "https://github.com/ejona86/taus",
-        "authors": ["ejona86"],
-        "yt": ""
-    },
-    {
-        "name": "TAUS Save Highscores",
-        "file": "save-highscores-1-5-0.ips",
-        "desc": "",
-        "source": "https://github.com/ejona86/taus",
-        "authors": ["ejona86"],
-        "yt": ""
-    },
-    {
-        "name": "TAUS Hard Drop",
-        "file": "hard-drop-taus-1-5-0.ips",
-        "desc": "",
-        "source": "https://github.com/ejona86/taus",
-        "authors": ["ejona86"],
-        "yt": ""
-    },
-    {
-        "name": "TAUS Player ID",
-        "file": "playerid-1-5-0.ips",
-        "desc": "",
-        "source": "https://github.com/ejona86/taus",
-        "authors": ["ejona86"],
-        "yt": ""
-    },
-    {
-        "name": "TAUS Two Player Next on top",
-        "file": "twoplayer-nextontop-1-5-0.ips",
-        "desc": "",
-        "source": "https://github.com/ejona86/taus",
-        "authors": ["ejona86"],
-        "yt": ""
-    },
-    {
-        "name": "TAUS Handicap",
-        "file": "handicap-1-5-0.ips",
-        "desc": "",
-        "source": "https://github.com/ejona86/taus",
-        "authors": ["ejona86"],
-        "yt": ""
-    },
-    {
-        "name": "TAUS 7 Bag",
-        "file": "7bag-1-5-0.ips",
-        "desc": "",
-        "source": "https://github.com/ejona86/taus",
-        "authors": ["ejona86"],
-        "yt": ""
-    },
-    {
-        "name": "TAUS Hard Drop (no ghost)",
-        "file": "hard-drop-taus-no-ghost-1-5-0.ips",
-        "desc": "",
-        "source": "https://github.com/ejona86/taus",
-        "authors": ["ejona86"],
-        "yt": ""
-    },
-    {
-        "name": "TetrisGYM 6.0.0 Pride Colors",
-        "file": "TetrisGYM-6.0.0-pride.bps",
-        "desc": "",
-        "authors": ["kirjava", "zohassadar"],
-        "yt": ""
-    },
-    {
-        "name": "Little Rolling Trainer w/o Lines",
-        "file": "little_rolling_trainer_without_lines.bps",
-        "desc": "",
-        "authors": ["CAndiman"],
-        "yt": ""
-    },
-    {
-        "name": "Gameboy Mod V3",
-        "file": "gameboy_mod_v3.bps",
-        "desc": "",
-        "authors": ["CAndiman"],
-        "yt": ""
-    },
-    {
-        "name": "Little Rolling Trainer w/Lines",
-        "file": "little_rolling_trainer_lines.bps",
-        "desc": "",
-        "authors": ["CAndiman"],
-        "yt": ""
-    },
-    {
-        "name": "Minimal Neon",
-        "file": "Minimal_Neon.bps",
-        "desc": "",
-        "authors": ["CAndiman"],
-        "yt": ""
-    },
-    {
-        "name": "Minimal Elektronika 2.0",
-        "file": "Minimal_Elektronika2_0.bps",
-        "desc": "",
-        "authors": ["CAndiman"],
-        "yt": ""
-    },
-    {
-        "name": "Gameboy Mod V4",
-        "file": "gameboy_mod_v4.bps",
-        "desc": "",
-        "authors": ["CAndiman"],
-        "yt": ""
-    },
-    {
-        "name": "Retro Theme 1 (Nostalgia) HD",
-        "file": "RetroTheme1(Nostalgia)HD.bps",
-        "desc": "",
-        "authors": ["CAndiman"],
-        "yt": ""
-    },
-    {
-        "name": "Practice Mode",
-        "file": "practice_mode.bps",
-        "desc": "",
-        "authors": ["CAndiman"],
-        "yt": ""
-    },
-    {
-        "name": "Nostalgic",
-        "file": "nostalgic.bps",
-        "desc": "",
-        "authors": ["CAndiman"],
-        "yt": ""
-    },
-    {
-        "name": "Super Tetris Land v1.0 HD",
-        "file": "super_tetris_land_v_1_0_HD.bps",
-        "desc": "",
-        "authors": ["CAndiman"],
-        "yt": ""
-    },
-    {
-        "name": "Super Tetris Land v1.0",
-        "file": "super_tetris_land_v_1_0_no_HD.bps",
-        "desc": "",
-        "authors": ["CAndiman"],
-        "yt": ""
-    },
-    {
-        "name": "Minimal Elektronika 1.0",
-        "file": "Minimal_Elektronika1_0.bps",
-        "desc": "",
-        "authors": ["CAndiman"],
-        "yt": ""
-    },
-    {
-        "name": "Gameboy Mod V4 HD",
-        "file": "gameboy_mod_v4HD.bps",
-        "desc": "",
-        "authors": ["CAndiman"],
-        "yt": ""
-    },
-    {
-        "name": "Retro Theme 2 (Nostalgic)",
-        "file": "RetroTheme2(Nostalgia).bps",
-        "desc": "",
-        "authors": ["CAndiman"],
-        "yt": ""
-    },
-    {
-        "name": "Retro Theme 2 (Nostalgic) HD",
-        "file": "RetroTheme2(Nostalgia)HD.bps",
-        "desc": "",
-        "authors": ["CAndiman"],
-        "yt": ""
-    },
-    {
-        "name": "Minimal Neon VFD",
-        "file": "Minimal_Neon_VFD.bps",
-        "desc": "",
-        "authors": ["CAndiman"],
-        "yt": ""
-    },
-    {
-        "name": "Retro Theme 1 (Nostalgia)",
-        "file": "RetroTheme1(Nostalgia).bps",
-        "desc": "",
-        "authors": ["CAndiman"],
-        "yt": ""
-    },
-    {
-        "name": "Tetrodrome",
-        "file": "Tetrodrome.bps",
-        "desc": "",
-        "authors": ["CAndiman"],
-        "yt": ""
-    },
-    {
-        "name": "Dr. Mariotris",
-        "file": "Dr._Mariotris.bps",
-        "desc": "",
-        "authors": ["JazzySpinalFusion"],
-        "yt": ""
-    },
-    {
-        "name": "Zentris",
-        "file": "Zentris.bps",
-        "desc": "",
-        "authors": ["JazzySpinalFusion"],
-        "yt": ""
-    },
-    {
-        "name": "Electronika60",
-        "file": "Electronika60.bps",
-        "desc": "",
-        "authors": ["JazzySpinalFusion"],
-        "yt": ""
-    },
-    {
-        "name": "ElectronikaGYM JazzySpinalFusion",
-        "file": "ElectronikaGYM-JazzySpinalFusion.bps",
-        "desc": "",
-        "authors": ["Kirjava", "JazzySpinalFusion"],
-        "yt": ""
-    },
-    {
-        "name": "Electronika60 JPF",
-        "file": "Electronika60-JPF.bps",
-        "desc": "",
-        "authors": ["JazzySpinalFusion"],
-        "yt": ""
-    },
-    {
-        "name": "Parity V1",
-        "file": "Parityv1.bps",
-        "desc": "",
-        "authors": ["Kitaru"],
-        "yt": ""
-    },
-    {
-        "name": "Tetris AJK 2012",
-        "file": "Tetris_AJK_2012.bps",
-        "desc": "",
-        "authors": ["Kitaru"],
-        "yt": "39VSTge9tpk"
-    },
-    {
-        "name": "Parity V0",
-        "file": "Parityv0.bps",
-        "desc": "",
-        "authors": ["Kitaru"],
-        "yt": ""
-    },
-    {
-        "name": "Fixed RNG New",
-        "file": "FixedRNGNew.bps",
-        "desc": "",
-        "authors": ["HydrantDude"],
-        "yt": ""
-    },
-    {
-        "name": "Tapping Display Large",
-        "file": "TappingDisplayLarge.bps",
-        "desc": "",
-        "authors": ["HydrantDude"],
-        "yt": ""
-    },
-    {
-        "name": "7 Digit Score",
-        "file": "7DigitScore.bps",
-        "desc": "",
-        "authors": ["HydrantDude"],
-        "yt": ""
-    },
-    {
-        "name": "Fixed RNG",
-        "file": "FixedRNG.bps",
-        "desc": "",
-        "authors": ["HydrantDude"],
-        "yt": ""
-    },
-    {
-        "name": "Tapping Display",
-        "file": "TappingDisplay.bps",
-        "desc": "",
-        "authors": ["HydrantDude"],
-        "yt": ""
-    },
-    {
-        "name": "New RNG Mod",
-        "file": "New_RNG_Mod.bps",
-        "desc": "",
-        "authors": ["HydrantDude"],
-        "yt": ""
-    },
-    {
-        "name": "Double KS",
-        "file": "doubleKS.bps",
-        "desc": "",
-        "authors": ["Kirjava"],
-        "yt": ""
-    },
-    {
-        "name": "Debug",
-        "file": "Debug.bps",
-        "desc": "",
-        "authors": ["Kirjava"],
-        "yt": ""
-    },
-    {
-        "name": "Disco",
-        "file": "disco.bps",
-        "desc": "",
-        "authors": ["Kirjava"],
-        "yt": ""
-    },
-    {
-        "name": "Goofy Foot",
-        "file": "GoofyFoot.bps",
-        "desc": "",
-        "authors": ["Kirjava"],
-        "yt": ""
-    },
-    {
-        "name": "No Demo No Legal NTSC",
-        "file": "NoDemoNoLegalNTSC.bps",
-        "desc": "",
-        "authors": ["Kirjava"],
-        "yt": ""
-    },
-    {
-        "name": "CTWC V2",
-        "file": "CTWC_v2.bps",
-        "desc": "",
-        "authors": ["Kirjava"],
-        "yt": ""
-    },
-    {
-        "name": "19-29 Speed",
-        "file": "19-29_speed.bps",
-        "desc": "",
-        "authors": ["Kirjava"],
-        "yt": ""
-    },
-    {
-        "name": "Lerp",
-        "file": "lerp.bps",
-        "desc": "",
-        "authors": ["Kirjava"],
-        "yt": ""
-    },
-    {
-        "name": "Hyper Disco",
-        "file": "hyperdisco.bps",
-        "desc": "",
-        "authors": ["Kirjava"],
-        "yt": ""
-    },
-    {
-        "name": "Flat Pieces",
-        "file": "FlatPieces.bps",
-        "desc": "",
-        "authors": ["Kirjava"],
-        "yt": ""
-    },
-    {
-        "name": "Kawaii",
-        "file": "Kawaii.bps",
-        "desc": "",
-        "authors": ["Kirjava"],
-        "yt": ""
-    },
-    {
-        "name": "No Line Pieces",
-        "file": "NoLinePieces.bps",
-        "desc": "",
-        "authors": ["Kirjava"],
-        "yt": ""
-    },
-    {
-        "name": "10 Digit Score",
-        "file": "10digitscore.bps",
-        "desc": "",
-        "authors": ["Kirjava"],
-        "yt": ""
-    },
-    {
-        "name": "No Rocket Fast Legal",
-        "file": "NoRocketFastLegal.bps",
-        "desc": "",
-        "authors": ["Kirjava"],
-        "yt": ""
-    },
-    {
-        "name": "Always Tetris Ready",
-        "file": "AlwaysTetrisReady.bps",
-        "desc": "",
-        "authors": ["Kirjava"],
-        "yt": ""
-    },
-    {
-        "name": "Hyper Trans",
-        "file": "hypertrans.bps",
-        "desc": "",
-        "authors": ["Kirjava"],
-        "yt": ""
-    },
-    {
-        "name": "TSpin Trainer",
-        "file": "TSpinTrainer.bps",
-        "desc": "",
-        "authors": ["Kirjava"],
-        "yt": ""
-    },
-    {
-        "name": "Brackets GYM",
-        "file": "brackets_gym.bps",
-        "desc": "",
-        "authors": ["Kirjava"],
-        "yt": ""
-    },
-    {
-        "name": "12 Wide",
-        "file": "12wide.bps",
-        "desc": "",
-        "authors": ["Kirjava"],
-        "yt": ""
-    },
-    {
-        "name": "Level 69",
-        "file": "level_69.bps",
-        "desc": "",
-        "authors": ["Kirjava"],
-        "yt": ""
-    },
-    {
-        "name": "Press Up",
-        "file": "pressup.ips",
-        "desc": "",
-        "authors": ["HydrantDude"],
-        "yt": ""
-    },
-    {
-        "name": "Background Blocks - Normal",
-        "file": "normalcolor.ips",
-        "desc": "",
-        "authors": ["HydrantDude"],
-        "yt": ""
-    },
-    {
-        "name": "French",
-        "file": "French.ips",
-        "desc": "",
-        "authors": ["HydrantDude"],
-        "yt": ""
-    },
-    {
-        "name": "H",
-        "file": "H.ips",
-        "desc": "",
-        "authors": ["HydrantDude"],
-        "yt": ""
-    },
-    {
-        "name": "Background Blocks - Gray",
-        "file": "gray.ips",
-        "desc": "",
-        "authors": ["HydrantDude"],
-        "yt": ""
-    },
-    {
-        "name": "Grey Background",
-        "file": "NTSCTris_grey_bg_edit.ips",
-        "desc": "",
-        "authors": ["HydrantDude"],
-        "yt": ""
-    },
-    {
-        "name": "DAS Trainer TRT",
-        "file": "NTSC DAS Trainer +TRT.ips",
-        "desc": "",
-        "authors": ["HydrantDude"],
-        "yt": ""
-    },
-    {
-        "name": "Minimal",
-        "file": "reduced.ips",
-        "desc": "",
-        "authors": ["HydrantDude"],
-        "yt": ""
-    },
-    {
-        "name": "Pepperlaw",
-        "file": "pepperlaw.ips",
-        "desc": "",
-        "authors": ["HydrantDude"],
-        "yt": ""
-    },
-    {
-        "name": "Appearance Hack",
-        "file": "appearancehack.ips",
-        "desc": "",
-        "authors": ["HydrantDude"],
-        "yt": ""
-    },
-    {
-        "name": "Metrics TRT",
-        "file": "NTSC Tetris Metrics +TRT.ips",
-        "desc": "",
-        "authors": ["HydrantDude"],
-        "yt": ""
-    },
-    {
-        "name": "Tetris Rate",
-        "file": "NTSC Tetris Rate.ips",
-        "desc": "",
-        "authors": ["HydrantDude"],
-        "yt": ""
-    },
-    {
-        "name": "DAS Controls",
-        "file": "DAScontrols.ips",
-        "desc": "",
-        "authors": ["HydrantDude"],
-        "yt": ""
-    },
-    {
-        "name": "SRS",
-        "file": "SRS.ips",
-        "desc": "",
-        "authors": ["fractal161"],
-        "yt": ""
-    },
-    {
-        "name": "Options for B Game",
-        "file": "TetrisOptionsForBGame.bps",
-        "desc": "",
-        "authors": ["zohassadar"],
-        "yt": ""
-    },
-    {
-        "name": "TetrisGYM Flip Mode Line Cap",
-        "file": "FlipModeLinecap.bps",
-        "desc": "Adds an extra linecap mode",
-        "authors": ["Kirjava", "zohassadar"],
-        "yt": ""
-    },
-    {
-        "name": "TetrisGYM XPiece",
-        "file": "GymXPiece.bps",
-        "desc": "T replaced with X Piece",
-        "authors": ["Kirjava", "zohassadar"],
-        "yt": ""
-    },
-    {
-        "name": "TetrisGYM Upside Down Options",
-        "file": "TGymUpsideDownOptionsCNROM.bps",
-        "desc": "uses CNROM",
-        "authors": ["Kirjava", "zohassadar"],
-        "yt": "yx89F-ymbI4"
-    },
-    {
-        "name": "TetrisGYM Crunch Mode",
-        "file": "crunch.bps",
-        "desc": "Original Crunchmode",
-        "authors": ["Kirjava", "super"],
-        "yt": ""
-    },
-    {
-        "name": "TetrisGYM XPos Random",
-        "file": "xpos-random.bps",
-        "desc": "Set x-pos to 8 to randomize the position",
-        "authors": ["Kirjava", "super"],
-        "yt": ""
-    },
-    {
-        "name": "TetrisGYM 6.0.0 Universal",
-        "file": "TetrisGYM-6.0.0-universal.bps",
-        "desc": "Downloaded patch will work with any header",
-        "authors": ["Kirjava"],
-        "yt": ""
-    },
-    {
-        "name": "SNES Gravity",
-        "file": "Tetris (USA) SNES.ips",
-        "desc": "",
-        "authors": ["Josh Tolles"],
-        "yt": ""
-    },
-    {
-        "name": "Late Night People V1",
-        "file": "tetris - latenightpeoplev1.ips",
-        "desc": "",
-        "authors": ["CAndiman"],
-        "yt": ""
-    },
-    {
-        "name": "Window Night City V2",
-        "file": "Nes Tetris(ntsc)Window Night Cityv2.ips",
-        "desc": "",
-        "authors": ["CAndiman"],
-        "yt": ""
-    },
-    {
-        "name": "TetrisGYM XPos",
-        "file": "xpos.bps",
-        "desc": "",
-        "authors": ["Kirjava", "super"],
-        "yt": ""
-    },
-    {
-        "name": "Goofy NES Tetris",
-        "file": "GoofyNesTetris.ips",
-        "desc": "",
-        "authors": ["jazzthief81"],
-        "yt": ""
-    },
-    {
-        "name": "TetrisGYM 6.0.0 iNES2.0",
-        "file": "TetrisGYM-6.0.0NES2.0-Conversion.bps",
-        "desc": "",
-        "authors": ["Kirjava", "TakuikaNinja"],
-        "yt": ""
-    },
-    {
-        "name": "TetrisGYM Invisible Options",
-        "file": "TetrisGYMInvisibleOptions.bps",
-        "desc": "",
-        "authors": ["Kirjava", "zohassadar"],
-        "yt": ""
-    },
-    {
-        "name": "Window Night City V2 HD",
-        "file": "Nes Tetris(ntsc)Window Night City HDv2_0.ips",
-        "desc": "",
-        "authors": ["CAndiman"],
-        "yt": ""
-    },
-    {
-        "name": "Speedrun Timer",
-        "file": "speedrun.bps",
-        "source": "https://www.romhacking.net/hacks/6913/",
-        "desc": "",
-        "authors": ["fractal161"],
-        "yt": ""
-    },
-    {
-        "name": "Das Trainer V1.1",
-        "file": "TetrisDasTrainerV1_1.ips",
-        "source": "https://www.romhacking.net/hacks/3761/",
-        "desc": "",
-        "authors": ["jazzthief81"],
-        "yt": ""
-    },
-    {
-        "name": "TetrisGYM Long 18",
-        "file": "long_18.ips",
-        "desc": "",
-        "authors": ["Kirjava", "Javantea"],
-        "yt": ""
-    },
-    {
-        "name": "WaitrisBeta",
-        "file": "WaitrisBeta.ips",
-        "desc": "From JazzySpF: Anyways, here's a very very primitive foundation of an instant start level 0 mod with no push down, no level transition, and a seven digit score count. I gave it the name Waitris, which is so dumb I stuck with it. It's barely anything, so I consider it basically a beta until it gets more fleshed out. I don't really feel like doing much with it though.",
-        "authors": ["JazzySpinalFusion"],
-        "yt": ""
-    },
-    {
-        "name": "Quick Stack Mode - Hard Drop",
-        "file": "Quick_Stack_ModeHard_Drop.ips",
-        "desc": "It instantly opens a never ending level 0 type a game for when you want instant casual stacking.",
-        "authors": ["JazzySpinalFusion"],
-        "yt": ""
-    },
-    {
-        "name": "Quick Stack Mode - No Press Down",
-        "file": "Quick_Stack_ModeNo_Press_Down.ips",
-        "desc": "It instantly opens a never ending level 0 type a game for when you want instant casual stacking.",
-        "authors": ["JazzySpinalFusion"],
-        "yt": ""
-    },
-    {
-        "name": "Quick Zentris",
-        "file": "Quick_Zentris.ips",
-        "desc": "",
-        "authors": ["JazzySpinalFusion"],
-        "yt": ""
-    },
-    {
-        "name": "Quick Stack Mode",
-        "file": "Quick_Stack_Mode.ips",
-        "desc": "It instantly opens a never ending level 0 type a game for when you want instant casual stacking.",
-        "authors": ["JazzySpinalFusion"],
-        "yt": ""
-    },
-    {
-        "name": "Zentris (2024)",
-        "file": "Zentris.ips",
-        "desc": "Welcome to Zentris.\n\nThis ROM Hack of Tetris released by Nintendo in 1989 takes stacking blocks in a more relaxing direction.\n\nTo start, the visuals have been overhauled to a more minimalist design. Inspired by Tetris Effect, the blocks are designed with a singular color for each level.\n\nThe gameplay has been modified to make it as relaxing as possible. The game no longer increases the speed of gravity as you play, allowing for casual stacking of your own liking.\nIncluded are two patches. One is the standard version that has Level 0 Gravity. The second version has Gravity completely turned off, meaning you will have to press down to move the pieces.\n\nNow one might be concerned that this lack of gravity would result in a lot of holding down on the D-Pad and tired thumbs. Do not fret!\nTo avoid any kind of sore thumbs, a hard drop was added. Simply press Up on the D-Pad to send the block instantly to the bottom!\n\nIn Zentris, there are two game modes.\n\nThe first is A-Type. This is your standard Tetris game. Stack for as long as you would like without topping out.\nFor more fun, the score cap has been removed.\n\nThe second mode is B-Type. In this, you must clear a preset number of lines with a chosen height  of garbage lines.\nIn the standard version of NES Tetris, you are supposed to clear 25 lines. HOWEVER, in Zentris, the line amount has been raised to 80 lines!\nTry to see if you can clear all the level 5 garbage height before clearing 80 lines.\n\nSome other changes are listed below\n-New high scoreboard entries\n-You can see the board while the game is paused\n-The copyright/credit screen can be skipped by pressing start\n-Music is set to OFF by default\n\nA Quick Mode variant of the game has been added as well. In this version, the game skips all menus and goes straight into a Level 0 game.\nIn Quick Mode, you are unable to return to the menu. If you would like to start another game of Quick Mode, you will have to soft or hard reset.\n\nTo access these ROM Hacks, simply apply any of the included patches to a vanilla copy of the Tetris(USA) ROM\n\nSpecial thanks to zohassadar and the rest of the Classic Tetris Monthly discord for their help with this mod. \n\nRelax and have fun :)",
-        "authors": ["JazzySpinalFusion"],
-        "yt": ""
-    },
-    {
-        "name": "Zentris Zero Gravity Quick Mode",
-        "file": "Zentris_Zero Gravity_Quick Mode.ips",
-        "desc": "See Zentris (2024)",
-        "authors": ["JazzySpinalFusion"],
-        "yt": ""
-    },
-    {
-        "name": "Stack Mode",
-        "file": "Stack_Mode.ips",
-        "desc": "\n        This is Stack Mode. Based on the Stack Mode from Not Tetris 2, this variant of Tetris does not allow lines to clear. Instead, the goal is to get as many pieces onto the board as possible. Each piece gives your score one point and will save to the high score board.\nDo you think you can achieve a perfect 50 piece game?\nTry it here!",
-        "authors": ["JazzySpinalFusion"],
-        "yt": ""
-    },
-    {
-        "name": "Zentris Zero Gravity",
-        "file": "Zentris_Zero Gravity.ips",
-        "desc": "See Zentris (2024)",
-        "authors": ["JazzySpinalFusion"],
-        "yt": ""
-    },
-    {
-        "name": "Zentris Quick Mode",
-        "file": "Zentris_Quick Mode.ips",
-        "desc": "See Zentris (2024)",
-        "authors": ["JazzySpinalFusion"],
-        "yt": ""
-    }
+  {
+    "name": "TetrisGYM 6.0.0",
+    "file": "TetrisGYM-6.0.0.bps",
+    "desc": "Adds practice modes to NES Tetris (among other things)",
+    "source": "https://github.com/kirjavascript/TetrisGYM",
+    "authors": ["kirjava"]
+  },
+  {
+    "name": "TetrisGYM 6.0.0 w/Keyboard",
+    "file": "TetrisGYM-6.0.0-keyboard.bps",
+    "desc": "TetrisGYM compiled with Famicom Keyboard support",
+    "source": "https://github.com/kirjavascript/TetrisGYM",
+    "authors": ["kirjava"]
+  },
+  {
+    "name": "TetrisGYM 6.0.0 Tron hack",
+    "file": "TetrisGYM-6.0.0-tron0.bps",
+    "desc": "Adds an extra dark mode to Tetris GYM",
+    "source": "https://github.com/zohassadar/TetrisGYM/tree/neon2",
+    "authors": ["kirjava", "zohassadar"]
+  },
+  {
+    "name": "Next Box Playfield",
+    "file": "tetris_next_box_playfield.ips",
+    "desc": "Play tetris in the next box",
+    "source": "patches/tetris_next_box_playfield.asm",
+    "authors": ["maya"]
+  },
+  {
+    "name": "Pentris",
+    "file": "Pentris_v1.3.bps",
+    "desc": "5 minos instead of 4 minos",
+    "authors": ["zohassadar"],
+    "source": "https://github.com/zohassadar/Pentris",
+    "yt": "3b2VvO2fCfo"
+  },
+  {
+    "name": "Pentris AnyDAS",
+    "file": "PentrisAnydas_v1.3.bps",
+    "desc": "Pentris with HydrantDude's DAS controls",
+    "source": "https://github.com/zohassadar/Pentris",
+    "authors": ["zohassadar", "HydrantDude"],
+    "yt": "3b2VvO2fCfo"
+  },
+  {
+    "name": "Big Mode Anydas",
+    "file": "BigModeAnydas.bps",
+    "desc": "Big Mode with HydrantDude's DAS Controls added",
+    "source": "https://github.com/zohassadar/NESTetrisBigmode",
+    "authors": ["zohassadar", "HydrantDude"],
+    "yt": "8FEVTTIi5WU"
+  },
+  {
+    "name": "Max Out Song",
+    "file": "maxoutsong.ips",
+    "desc": "Plays a song when score is equal to or greater than 999,999",
+    "authors": ["zohassadar"],
+    "yt": ""
+  },
+  {
+    "name": "No Entry Delay",
+    "file": "TetrisNoEntryDelay.bps",
+    "desc": "Reduces the normal 10-18 frame entry delay to 0 frames",
+    "authors": ["zohassadar"],
+    "yt": ""
+  },
+  {
+    "name": "Big Mode",
+    "file": "BigMode.bps",
+    "desc": "Pieces doubled in width and height on a 5 x 10 playfield",
+    "source": "https://github.com/zohassadar/NESTetrisBigmode",
+    "authors": ["zohassadar"],
+    "yt": "8FEVTTIi5WU"
+  },
+  {
+    "name": "Background Pieces",
+    "file": "background.bps",
+    "desc": "Play tetris but using the background tiles as pieces",
+    "authors": ["zohassadar"],
+    "yt": ""
+  },
+  {
+    "name": "Neon Tetris",
+    "file": "neon.bps",
+    "desc": "Neon Tetris",
+    "authors": ["zohassadar"],
+    "yt": ""
+  },
+  {
+    "name": "Color Match Line Clear",
+    "file": "ColorMatchLineClear.ips",
+    "desc": "Lines only clear when colors match",
+    "authors": ["zohassadar"],
+    "yt": ""
+  },
+  {
+    "name": "Modified Background Pattern",
+    "file": "bgpattern.bps",
+    "desc": "Interesting visual hack of background and pieces",
+    "authors": ["zohassadar"],
+    "yt": ""
+  },
+  {
+    "name": "Connected Pieces",
+    "file": "connected.bps",
+    "desc": "Pieces are solidly connected",
+    "authors": ["zohassadar"],
+    "yt": ""
+  },
+  {
+    "name": "No Entry Delay Anydas",
+    "file": "TetrisNoEntryDelayAnydas.bps",
+    "desc": "No Entry Delay with HydrantDude's DAS controls",
+    "authors": ["zohassadar", "HydrantDude"],
+    "yt": ""
+  },
+  {
+    "name": "Wall Hack 2",
+    "file": "Wallhack2.bps",
+    "desc": "Pieces wrap around the playfield",
+    "authors": ["zohassadar"],
+    "yt": ""
+  },
+  {
+    "name": "Wall Hack 2 Anydas",
+    "file": "Wallhack2Anydas.bps",
+    "desc": "Pieces wrap around the playfield",
+    "authors": ["zohassadar", "HydrantDude"],
+    "yt": ""
+  },
+  {
+    "name": "Random Tiles",
+    "file": "randomtiles.ips",
+    "desc": "Pieces can consist of any of the three tiles",
+    "authors": ["zohassadar"],
+    "yt": "lOOwrWkdf4o"
+  },
+  {
+    "name": "Ultris",
+    "file": "Ultris.ips",
+    "desc": "    Faster DAS (simulates PAL DAS)   Faster softdrops (at level 29 speed instead of 19)\n    Instant line clears\n    Score rollover\n    Higher score cap before rollover (E99,999 to 000,000)\n    No pause-screen blackout (still see field, but not current or next blocks)\n    Copyright and rocket screen skip\n    Higher frequency of straight pieces\n    10-frame pause before each piece begins dropping automatically\n\nIt was designed to emulate a variety of classic and modern games, and act as a sort of hybrid between the two.",
+    "authors": ["Gyzzmo Glytch"]
+  },
+  {
+    "name": "Penguin Line Clear",
+    "file": "penguin.ips",
+    "desc": "A penguin takes away cleared lines",
+    "authors": ["zohassadar"],
+    "yt": "IZn6R--RxNg"
+  },
+  {
+    "name": "Upside Down Tetris",
+    "file": "UpsideDownTetris.bps",
+    "desc": "Tetris, but upside down",
+    "authors": ["zohassadar"],
+    "yt": "cBs7H2lll-0"
+  },
+  {
+    "name": "Shrink Mode",
+    "file": "TetrisShrinkMode_v1.1.bps",
+    "desc": "Big, Medium & Small modes, along with a Shrink mode that combines all three. Based on TetrisGYM.",
+    "authors": ["zohassadar", "Kirjava"],
+    "yt": "dt01BeEZfgw"
+  },
+  {
+    "name": "Taller Tetris",
+    "file": "TallerTetris.bps",
+    "desc": "Play tetris on a 10x24 playfield",
+    "authors": ["zohassadar"],
+    "yt": ""
+  },
+  {
+    "name": "Speedhack",
+    "file": "speedhack1.1.bps",
+    "desc": "Faster Tetris",
+    "authors": ["fractal161"],
+    "yt": "n9vKMNu5JWo"
+  },
+  {
+    "name": "Side Scroller Tetris",
+    "file": "SideScrollerTetris.bps",
+    "desc": "Tetris if it were a side scroller",
+    "authors": ["zohassadar"],
+    "yt": "5x6KWWcPquo"
+  },
+  {
+    "name": "Wall Hack",
+    "file": "TetrisWallHack.bps",
+    "desc": "Tetris that allows going outside the playfield (as long as you return in time)",
+    "authors": ["zohassadar"],
+    "yt": ""
+  },
+  {
+    "name": "Tetris AnyTourney",
+    "file": "TetrisAnyTrn.bps",
+    "desc": "DAS Controls + ability to skip rocket screens + start on higher levels",
+    "authors": ["HydrantDude", "Kirby703", "zohassadar"],
+    "yt": ""
+  },
+  {
+    "name": "All Levels",
+    "file": "allLevels.bps",
+    "desc": "",
+    "authors": ["fractal161"],
+    "yt": ""
+  },
+  {
+    "name": "Random Rotate",
+    "file": "tetris_random_rotate.ips",
+    "desc": "",
+    "authors": ["maya"],
+    "yt": ""
+  },
+  {
+    "name": "Tetris 12 Wide",
+    "file": "Tetris12Wide.bps",
+    "desc": "12x20 playfield",
+    "authors": ["zohassadar"],
+    "yt": "kz7hjhtZ3_k"
+  },
+  {
+    "name": "Smooth Gravity",
+    "file": "SmoothGravity.ips",
+    "desc": "",
+    "authors": ["HydrantDude"],
+    "yt": ""
+  },
+  {
+    "name": "Sideways (Left to Right)",
+    "file": "LeftToRight.bps",
+    "desc": "",
+    "authors": ["zohassadar"],
+    "yt": ""
+  },
+  {
+    "name": "Tetris 30x25",
+    "file": "Tetris30x25.bps",
+    "desc": "",
+    "authors": ["zohassadar"],
+    "yt": "-7OrMs77s0A"
+  },
+  {
+    "name": "All Level Challenge",
+    "file": "allLevels_challenge.bps",
+    "desc": "",
+    "authors": ["fractal161"],
+    "yt": ""
+  },
+  {
+    "name": "Pal SPS Tourney",
+    "file": "PalSPSTourney.bps",
+    "desc": "Emulate PAL on NTSC console, w SPS",
+    "authors": ["fractal161"],
+    "yt": "n9vKMNu5JWo"
+  },
+  {
+    "name": "SZ",
+    "file": "sz.ips",
+    "desc": "Delivers an alternating sequence of S's and Z's",
+    "authors": ["zohassadar"],
+    "yt": ""
+  },
+  {
+    "name": "Pal Hack",
+    "file": "palhack.bps",
+    "desc": "Emulate PAL on NTSC console",
+    "authors": ["fractal161"],
+    "yt": "n9vKMNu5JWo"
+  },
+  {
+    "name": "Music 1.1",
+    "file": "music-1.1.bps",
+    "desc": "",
+    "authors": ["fractal161"],
+    "yt": ""
+  },
+  {
+    "name": "Sideways (Right to Left)",
+    "file": "RightToLeft.bps",
+    "desc": "",
+    "authors": ["zohassadar"],
+    "yt": ""
+  },
+  {
+    "name": "Tetris Double Wide",
+    "file": "TetrisDoubleWide.bps",
+    "desc": "20x20 playfield",
+    "authors": ["zohassadar"],
+    "yt": "Kdhbwzg34sc"
+  },
+  {
+    "name": "Pal SPS Tourney (Goofy)",
+    "file": "PalSPSTourneyGoofy.bps",
+    "desc": "Pal SPS Tourney with Goofyfoot controls",
+    "authors": ["fractal161"],
+    "yt": "n9vKMNu5JWo"
+  },
+  {
+    "name": "CTM Hack Dec 2017",
+    "file": "ctm1217.ips",
+    "desc": "",
+    "authors": ["fridaywitch"],
+    "yt": ""
+  },
+  {
+    "name": "TSpin Points",
+    "file": "tspins.ips",
+    "desc": "",
+    "authors": ["Kirby703"],
+    "yt": ""
+  },
+  {
+    "name": "Hot Mustard",
+    "file": "HOT_Mustard_v1.1.1.bps",
+    "desc": "Play 10 levels of 19-2",
+    "authors": ["Meme"],
+    "yt": ""
+  },
+  {
+    "name": "Scrolltris",
+    "file": "Scrolltris.bps",
+    "desc": "",
+    "authors": ["Kirjava"],
+    "yt": ""
+  },
+  {
+    "name": "Statistics Mod",
+    "file": "Tetris_USA_-_Statistics.ips",
+    "desc": "",
+    "authors": ["jazzthief81"],
+    "yt": ""
+  },
+  {
+    "name": "CTM Hack Jan 2018",
+    "file": "ctm0118.ips",
+    "desc": "",
+    "authors": ["fridaywitch"],
+    "yt": ""
+  },
+  {
+    "name": "Controller Input Display",
+    "file": "TetrisControllerInputDisplay.ips",
+    "desc": "",
+    "authors": ["jazzthief81"],
+    "yt": ""
+  },
+  {
+    "name": "Piece Percentages",
+    "file": "TetricPPCT.ips",
+    "desc": "",
+    "authors": ["fractal161"],
+    "yt": ""
+  },
+  {
+    "name": "Ludicrous Speed",
+    "file": "LudicrousSpeed.ips",
+    "desc": "",
+    "authors": ["Trey Harrison"],
+    "yt": ""
+  },
+  {
+    "name": "7 Bag",
+    "file": "7bagKirby703.ips",
+    "desc": "",
+    "authors": ["Kirby703"],
+    "yt": ""
+  },
+  {
+    "name": "Tetris Metrics",
+    "file": "TetrisMetrics.ips",
+    "desc": "",
+    "authors": ["jazzthief81"],
+    "yt": ""
+  },
+  {
+    "name": "Hard Drop",
+    "file": "Tetris_HD_patch.ips",
+    "desc": "",
+    "authors": ["Josh Tolles"],
+    "yt": ""
+  },
+  {
+    "name": "Korobeiniki",
+    "file": "TetrisKorobeiniki.ips",
+    "desc": "",
+    "authors": ["jazzthief81"],
+    "yt": ""
+  },
+  {
+    "name": "CTM Hack Feb 2018",
+    "file": "ctm0218.ips",
+    "desc": "",
+    "authors": ["fridaywitch"],
+    "yt": ""
+  },
+  {
+    "name": "Cursed RNG",
+    "file": "CursedRNG.bps",
+    "desc": "Clean tetrises discouraged by game",
+    "authors": ["zohassadar"],
+    "yt": ""
+  },
+  {
+    "name": "Random Spawn Orientation",
+    "file": "RandomSpawnOrientation.bps",
+    "desc": "pieces spawn in any orientation",
+    "authors": ["zohassadar"],
+    "yt": ""
+  },
+  {
+    "name": "Pentris (with Tetriminos) AnyDAS",
+    "file": "PentrisAnydas_withTetriminos.bps",
+    "desc": "Pentris with Tetriminos added to the mix",
+    "source": "https://github.com/zohassadar/Pentris/tree/with_tetriminos",
+    "authors": ["zohassadar", "HydrantDude"],
+    "yt": ""
+  },
+  {
+    "name": "Pentris (with Tetriminos)",
+    "file": "Pentris_withTetriminos.bps",
+    "desc": "Pentris with Tetriminos added to the mix",
+    "authors": ["zohassadar"],
+    "yt": ""
+  },
+  {
+    "name": "TAUS Two Player",
+    "file": "twoplayer-1-5-0.ips",
+    "desc": "",
+    "source": "https://github.com/ejona86/taus",
+    "authors": ["ejona86"],
+    "yt": ""
+  },
+  {
+    "name": "TAUS Two Player Garbage",
+    "file": "twoplayer-garbage-1-5-0.ips",
+    "desc": "",
+    "source": "https://github.com/ejona86/taus",
+    "authors": ["ejona86"],
+    "yt": ""
+  },
+  {
+    "name": "TAUS",
+    "file": "taus-1-5-0.ips",
+    "desc": "Tetris Actually Useful Statistics",
+    "source": "https://github.com/ejona86/taus",
+    "authors": ["ejona86"],
+    "yt": ""
+  },
+  {
+    "name": "TAUS Hold",
+    "file": "hold-1-5-0.ips",
+    "desc": "",
+    "source": "https://github.com/ejona86/taus",
+    "authors": ["ejona86"],
+    "yt": ""
+  },
+  {
+    "name": "TAUS Save Highscores",
+    "file": "save-highscores-1-5-0.ips",
+    "desc": "",
+    "source": "https://github.com/ejona86/taus",
+    "authors": ["ejona86"],
+    "yt": ""
+  },
+  {
+    "name": "TAUS Hard Drop",
+    "file": "hard-drop-taus-1-5-0.ips",
+    "desc": "",
+    "source": "https://github.com/ejona86/taus",
+    "authors": ["ejona86"],
+    "yt": ""
+  },
+  {
+    "name": "TAUS Player ID",
+    "file": "playerid-1-5-0.ips",
+    "desc": "",
+    "source": "https://github.com/ejona86/taus",
+    "authors": ["ejona86"],
+    "yt": ""
+  },
+  {
+    "name": "TAUS Two Player Next on top",
+    "file": "twoplayer-nextontop-1-5-0.ips",
+    "desc": "",
+    "source": "https://github.com/ejona86/taus",
+    "authors": ["ejona86"],
+    "yt": ""
+  },
+  {
+    "name": "TAUS Handicap",
+    "file": "handicap-1-5-0.ips",
+    "desc": "",
+    "source": "https://github.com/ejona86/taus",
+    "authors": ["ejona86"],
+    "yt": ""
+  },
+  {
+    "name": "TAUS 7 Bag",
+    "file": "7bag-1-5-0.ips",
+    "desc": "",
+    "source": "https://github.com/ejona86/taus",
+    "authors": ["ejona86"],
+    "yt": ""
+  },
+  {
+    "name": "TAUS Hard Drop (no ghost)",
+    "file": "hard-drop-taus-no-ghost-1-5-0.ips",
+    "desc": "",
+    "source": "https://github.com/ejona86/taus",
+    "authors": ["ejona86"],
+    "yt": ""
+  },
+  {
+    "name": "TetrisGYM 6.0.0 Pride Colors",
+    "file": "TetrisGYM-6.0.0-pride.bps",
+    "desc": "",
+    "authors": ["kirjava", "zohassadar"],
+    "yt": ""
+  },
+  {
+    "name": "Little Rolling Trainer w/o Lines",
+    "file": "little_rolling_trainer_without_lines.bps",
+    "desc": "",
+    "authors": ["CAndiman"],
+    "yt": ""
+  },
+  {
+    "name": "Gameboy Mod V3",
+    "file": "gameboy_mod_v3.bps",
+    "desc": "",
+    "authors": ["CAndiman"],
+    "yt": ""
+  },
+  {
+    "name": "Little Rolling Trainer w/Lines",
+    "file": "little_rolling_trainer_lines.bps",
+    "desc": "",
+    "authors": ["CAndiman"],
+    "yt": ""
+  },
+  {
+    "name": "Minimal Neon",
+    "file": "Minimal_Neon.bps",
+    "desc": "",
+    "authors": ["CAndiman"],
+    "yt": ""
+  },
+  {
+    "name": "Minimal Elektronika 2.0",
+    "file": "Minimal_Elektronika2_0.bps",
+    "desc": "",
+    "authors": ["CAndiman"],
+    "yt": ""
+  },
+  {
+    "name": "Gameboy Mod V4",
+    "file": "gameboy_mod_v4.bps",
+    "desc": "",
+    "authors": ["CAndiman"],
+    "yt": ""
+  },
+  {
+    "name": "Retro Theme 1 (Nostalgia) HD",
+    "file": "RetroTheme1(Nostalgia)HD.bps",
+    "desc": "",
+    "authors": ["CAndiman"],
+    "yt": ""
+  },
+  {
+    "name": "Practice Mode",
+    "file": "practice_mode.bps",
+    "desc": "",
+    "authors": ["CAndiman"],
+    "yt": ""
+  },
+  {
+    "name": "Nostalgic",
+    "file": "nostalgic.bps",
+    "desc": "",
+    "authors": ["CAndiman"],
+    "yt": ""
+  },
+  {
+    "name": "Super Tetris Land v1.0 HD",
+    "file": "super_tetris_land_v_1_0_HD.bps",
+    "desc": "",
+    "authors": ["CAndiman"],
+    "yt": ""
+  },
+  {
+    "name": "Super Tetris Land v1.0",
+    "file": "super_tetris_land_v_1_0_no_HD.bps",
+    "desc": "",
+    "authors": ["CAndiman"],
+    "yt": ""
+  },
+  {
+    "name": "Minimal Elektronika 1.0",
+    "file": "Minimal_Elektronika1_0.bps",
+    "desc": "",
+    "authors": ["CAndiman"],
+    "yt": ""
+  },
+  {
+    "name": "Gameboy Mod V4 HD",
+    "file": "gameboy_mod_v4HD.bps",
+    "desc": "",
+    "authors": ["CAndiman"],
+    "yt": ""
+  },
+  {
+    "name": "Retro Theme 2 (Nostalgic)",
+    "file": "RetroTheme2(Nostalgia).bps",
+    "desc": "",
+    "authors": ["CAndiman"],
+    "yt": ""
+  },
+  {
+    "name": "Retro Theme 2 (Nostalgic) HD",
+    "file": "RetroTheme2(Nostalgia)HD.bps",
+    "desc": "",
+    "authors": ["CAndiman"],
+    "yt": ""
+  },
+  {
+    "name": "Minimal Neon VFD",
+    "file": "Minimal_Neon_VFD.bps",
+    "desc": "",
+    "authors": ["CAndiman"],
+    "yt": ""
+  },
+  {
+    "name": "Retro Theme 1 (Nostalgia)",
+    "file": "RetroTheme1(Nostalgia).bps",
+    "desc": "",
+    "authors": ["CAndiman"],
+    "yt": ""
+  },
+  {
+    "name": "Tetrodrome",
+    "file": "Tetrodrome.bps",
+    "desc": "",
+    "authors": ["CAndiman"],
+    "yt": ""
+  },
+  {
+    "name": "Dr. Mariotris",
+    "file": "Dr._Mariotris.bps",
+    "desc": "",
+    "authors": ["JazzySpinalFusion"],
+    "yt": ""
+  },
+  {
+    "name": "Zentris",
+    "file": "Zentris.bps",
+    "desc": "",
+    "authors": ["JazzySpinalFusion"],
+    "yt": ""
+  },
+  {
+    "name": "Electronika60",
+    "file": "Electronika60.bps",
+    "desc": "",
+    "authors": ["JazzySpinalFusion"],
+    "yt": ""
+  },
+  {
+    "name": "ElectronikaGYM JazzySpinalFusion",
+    "file": "ElectronikaGYM-JazzySpinalFusion.bps",
+    "desc": "",
+    "authors": ["Kirjava", "JazzySpinalFusion"],
+    "yt": ""
+  },
+  {
+    "name": "Electronika60 JPF",
+    "file": "Electronika60-JPF.bps",
+    "desc": "",
+    "authors": ["JazzySpinalFusion"],
+    "yt": ""
+  },
+  {
+    "name": "Parity V1",
+    "file": "Parityv1.bps",
+    "desc": "",
+    "authors": ["Kitaru"],
+    "yt": ""
+  },
+  {
+    "name": "Tetris AJK 2012",
+    "file": "Tetris_AJK_2012.bps",
+    "desc": "",
+    "authors": ["Kitaru"],
+    "yt": "39VSTge9tpk"
+  },
+  {
+    "name": "Parity V0",
+    "file": "Parityv0.bps",
+    "desc": "",
+    "authors": ["Kitaru"],
+    "yt": ""
+  },
+  {
+    "name": "Fixed RNG New",
+    "file": "FixedRNGNew.bps",
+    "desc": "",
+    "authors": ["HydrantDude"],
+    "yt": ""
+  },
+  {
+    "name": "Tapping Display Large",
+    "file": "TappingDisplayLarge.bps",
+    "desc": "",
+    "authors": ["HydrantDude"],
+    "yt": ""
+  },
+  {
+    "name": "7 Digit Score",
+    "file": "7DigitScore.bps",
+    "desc": "",
+    "authors": ["HydrantDude"],
+    "yt": ""
+  },
+  {
+    "name": "Fixed RNG",
+    "file": "FixedRNG.bps",
+    "desc": "",
+    "authors": ["HydrantDude"],
+    "yt": ""
+  },
+  {
+    "name": "Tapping Display",
+    "file": "TappingDisplay.bps",
+    "desc": "",
+    "authors": ["HydrantDude"],
+    "yt": ""
+  },
+  {
+    "name": "New RNG Mod",
+    "file": "New_RNG_Mod.bps",
+    "desc": "",
+    "authors": ["HydrantDude"],
+    "yt": ""
+  },
+  {
+    "name": "Double KS",
+    "file": "doubleKS.bps",
+    "desc": "",
+    "authors": ["Kirjava"],
+    "yt": ""
+  },
+  {
+    "name": "Debug",
+    "file": "Debug.bps",
+    "desc": "",
+    "authors": ["Kirjava"],
+    "yt": ""
+  },
+  {
+    "name": "Disco",
+    "file": "disco.bps",
+    "desc": "",
+    "authors": ["Kirjava"],
+    "yt": ""
+  },
+  {
+    "name": "Goofy Foot",
+    "file": "GoofyFoot.bps",
+    "desc": "",
+    "authors": ["Kirjava"],
+    "yt": ""
+  },
+  {
+    "name": "No Demo No Legal NTSC",
+    "file": "NoDemoNoLegalNTSC.bps",
+    "desc": "",
+    "authors": ["Kirjava"],
+    "yt": ""
+  },
+  {
+    "name": "CTWC V2",
+    "file": "CTWC_v2.bps",
+    "desc": "",
+    "authors": ["Kirjava"],
+    "yt": ""
+  },
+  {
+    "name": "19-29 Speed",
+    "file": "19-29_speed.bps",
+    "desc": "",
+    "authors": ["Kirjava"],
+    "yt": ""
+  },
+  {
+    "name": "Lerp",
+    "file": "lerp.bps",
+    "desc": "",
+    "authors": ["Kirjava"],
+    "yt": ""
+  },
+  {
+    "name": "Hyper Disco",
+    "file": "hyperdisco.bps",
+    "desc": "",
+    "authors": ["Kirjava"],
+    "yt": ""
+  },
+  {
+    "name": "Flat Pieces",
+    "file": "FlatPieces.bps",
+    "desc": "",
+    "authors": ["Kirjava"],
+    "yt": ""
+  },
+  {
+    "name": "Kawaii",
+    "file": "Kawaii.bps",
+    "desc": "",
+    "authors": ["Kirjava"],
+    "yt": ""
+  },
+  {
+    "name": "No Line Pieces",
+    "file": "NoLinePieces.bps",
+    "desc": "",
+    "authors": ["Kirjava"],
+    "yt": ""
+  },
+  {
+    "name": "10 Digit Score",
+    "file": "10digitscore.bps",
+    "desc": "",
+    "authors": ["Kirjava"],
+    "yt": ""
+  },
+  {
+    "name": "No Rocket Fast Legal",
+    "file": "NoRocketFastLegal.bps",
+    "desc": "",
+    "authors": ["Kirjava"],
+    "yt": ""
+  },
+  {
+    "name": "Always Tetris Ready",
+    "file": "AlwaysTetrisReady.bps",
+    "desc": "",
+    "authors": ["Kirjava"],
+    "yt": ""
+  },
+  {
+    "name": "Hyper Trans",
+    "file": "hypertrans.bps",
+    "desc": "",
+    "authors": ["Kirjava"],
+    "yt": ""
+  },
+  {
+    "name": "TSpin Trainer",
+    "file": "TSpinTrainer.bps",
+    "desc": "",
+    "authors": ["Kirjava"],
+    "yt": ""
+  },
+  {
+    "name": "Brackets GYM",
+    "file": "brackets_gym.bps",
+    "desc": "",
+    "authors": ["Kirjava"],
+    "yt": ""
+  },
+  {
+    "name": "12 Wide",
+    "file": "12wide.bps",
+    "desc": "",
+    "authors": ["Kirjava"],
+    "yt": ""
+  },
+  {
+    "name": "Level 69",
+    "file": "level_69.bps",
+    "desc": "",
+    "authors": ["Kirjava"],
+    "yt": ""
+  },
+  {
+    "name": "Press Up",
+    "file": "pressup.ips",
+    "desc": "",
+    "authors": ["HydrantDude"],
+    "yt": ""
+  },
+  {
+    "name": "Background Blocks - Normal",
+    "file": "normalcolor.ips",
+    "desc": "",
+    "authors": ["HydrantDude"],
+    "yt": ""
+  },
+  {
+    "name": "French",
+    "file": "French.ips",
+    "desc": "",
+    "authors": ["HydrantDude"],
+    "yt": ""
+  },
+  {
+    "name": "H",
+    "file": "H.ips",
+    "desc": "",
+    "authors": ["HydrantDude"],
+    "yt": ""
+  },
+  {
+    "name": "Background Blocks - Gray",
+    "file": "gray.ips",
+    "desc": "",
+    "authors": ["HydrantDude"],
+    "yt": ""
+  },
+  {
+    "name": "Grey Background",
+    "file": "NTSCTris_grey_bg_edit.ips",
+    "desc": "",
+    "authors": ["HydrantDude"],
+    "yt": ""
+  },
+  {
+    "name": "DAS Trainer TRT",
+    "file": "NTSC DAS Trainer +TRT.ips",
+    "desc": "",
+    "authors": ["HydrantDude"],
+    "yt": ""
+  },
+  {
+    "name": "Minimal",
+    "file": "reduced.ips",
+    "desc": "",
+    "authors": ["HydrantDude"],
+    "yt": ""
+  },
+  {
+    "name": "Pepperlaw",
+    "file": "pepperlaw.ips",
+    "desc": "",
+    "authors": ["HydrantDude"],
+    "yt": ""
+  },
+  {
+    "name": "Appearance Hack",
+    "file": "appearancehack.ips",
+    "desc": "",
+    "authors": ["HydrantDude"],
+    "yt": ""
+  },
+  {
+    "name": "Metrics TRT",
+    "file": "NTSC Tetris Metrics +TRT.ips",
+    "desc": "",
+    "authors": ["HydrantDude"],
+    "yt": ""
+  },
+  {
+    "name": "Tetris Rate",
+    "file": "NTSC Tetris Rate.ips",
+    "desc": "",
+    "authors": ["HydrantDude"],
+    "yt": ""
+  },
+  {
+    "name": "DAS Controls",
+    "file": "DAScontrols.ips",
+    "desc": "",
+    "authors": ["HydrantDude"],
+    "yt": ""
+  },
+  {
+    "name": "SRS",
+    "file": "SRS.ips",
+    "desc": "",
+    "authors": ["fractal161"],
+    "yt": ""
+  },
+  {
+    "name": "Options for B Game",
+    "file": "TetrisOptionsForBGame.bps",
+    "desc": "",
+    "authors": ["zohassadar"],
+    "yt": ""
+  },
+  {
+    "name": "TetrisGYM Flip Mode Line Cap",
+    "file": "FlipModeLinecap.bps",
+    "desc": "Adds an extra linecap mode",
+    "authors": ["Kirjava", "zohassadar"],
+    "yt": ""
+  },
+  {
+    "name": "TetrisGYM XPiece",
+    "file": "GymXPiece.bps",
+    "desc": "T replaced with X Piece",
+    "authors": ["Kirjava", "zohassadar"],
+    "yt": ""
+  },
+  {
+    "name": "TetrisGYM Upside Down Options",
+    "file": "TGymUpsideDownOptionsCNROM.bps",
+    "desc": "uses CNROM",
+    "authors": ["Kirjava", "zohassadar"],
+    "yt": "yx89F-ymbI4"
+  },
+  {
+    "name": "TetrisGYM Crunch Mode",
+    "file": "crunch.bps",
+    "desc": "Original Crunchmode",
+    "authors": ["Kirjava", "super"],
+    "yt": ""
+  },
+  {
+    "name": "TetrisGYM XPos Random",
+    "file": "xpos-random.bps",
+    "desc": "Set x-pos to 8 to randomize the position",
+    "authors": ["Kirjava", "super"],
+    "yt": ""
+  },
+  {
+    "name": "TetrisGYM 6.0.0 Universal",
+    "file": "TetrisGYM-6.0.0-universal.bps",
+    "desc": "Downloaded patch will work with any header",
+    "authors": ["Kirjava"],
+    "yt": ""
+  },
+  {
+    "name": "SNES Gravity",
+    "file": "Tetris (USA) SNES.ips",
+    "desc": "",
+    "authors": ["Josh Tolles"],
+    "yt": ""
+  },
+  {
+    "name": "Late Night People V1",
+    "file": "tetris - latenightpeoplev1.ips",
+    "desc": "",
+    "authors": ["CAndiman"],
+    "yt": ""
+  },
+  {
+    "name": "Window Night City V2",
+    "file": "Nes Tetris(ntsc)Window Night Cityv2.ips",
+    "desc": "",
+    "authors": ["CAndiman"],
+    "yt": ""
+  },
+  {
+    "name": "TetrisGYM XPos",
+    "file": "xpos.bps",
+    "desc": "",
+    "authors": ["Kirjava", "super"],
+    "yt": ""
+  },
+  {
+    "name": "Goofy NES Tetris",
+    "file": "GoofyNesTetris.ips",
+    "desc": "",
+    "authors": ["jazzthief81"],
+    "yt": ""
+  },
+  {
+    "name": "TetrisGYM 6.0.0 iNES2.0",
+    "file": "TetrisGYM-6.0.0NES2.0-Conversion.bps",
+    "desc": "",
+    "authors": ["Kirjava", "TakuikaNinja"],
+    "yt": ""
+  },
+  {
+    "name": "TetrisGYM Invisible Options",
+    "file": "TetrisGYMInvisibleOptions.bps",
+    "desc": "",
+    "authors": ["Kirjava", "zohassadar"],
+    "yt": ""
+  },
+  {
+    "name": "Window Night City V2 HD",
+    "file": "Nes Tetris(ntsc)Window Night City HDv2_0.ips",
+    "desc": "",
+    "authors": ["CAndiman"],
+    "yt": ""
+  },
+  {
+    "name": "Speedrun Timer",
+    "file": "speedrun.bps",
+    "source": "https://www.romhacking.net/hacks/6913/",
+    "desc": "",
+    "authors": ["fractal161"],
+    "yt": ""
+  },
+  {
+    "name": "Das Trainer V1.1",
+    "file": "TetrisDasTrainerV1_1.ips",
+    "source": "https://www.romhacking.net/hacks/3761/",
+    "desc": "",
+    "authors": ["jazzthief81"],
+    "yt": ""
+  },
+  {
+    "name": "TetrisGYM Long 18",
+    "file": "long_18.ips",
+    "desc": "",
+    "authors": ["Kirjava", "Javantea"],
+    "yt": ""
+  },
+  {
+    "name": "WaitrisBeta",
+    "file": "WaitrisBeta.ips",
+    "desc": "From JazzySpF: Anyways, here's a very very primitive foundation of an instant start level 0 mod with no push down, no level transition, and a seven digit score count. I gave it the name Waitris, which is so dumb I stuck with it. It's barely anything, so I consider it basically a beta until it gets more fleshed out. I don't really feel like doing much with it though.",
+    "authors": ["JazzySpinalFusion"],
+    "yt": ""
+  },
+  {
+    "name": "Quick Stack Mode - Hard Drop",
+    "file": "Quick_Stack_ModeHard_Drop.ips",
+    "desc": "It instantly opens a never ending level 0 type a game for when you want instant casual stacking.",
+    "authors": ["JazzySpinalFusion"],
+    "yt": ""
+  },
+  {
+    "name": "Quick Stack Mode - No Press Down",
+    "file": "Quick_Stack_ModeNo_Press_Down.ips",
+    "desc": "It instantly opens a never ending level 0 type a game for when you want instant casual stacking.",
+    "authors": ["JazzySpinalFusion"],
+    "yt": ""
+  },
+  {
+    "name": "Quick Zentris",
+    "file": "Quick_Zentris.ips",
+    "desc": "",
+    "authors": ["JazzySpinalFusion"],
+    "yt": ""
+  },
+  {
+    "name": "Quick Stack Mode",
+    "file": "Quick_Stack_Mode.ips",
+    "desc": "It instantly opens a never ending level 0 type a game for when you want instant casual stacking.",
+    "authors": ["JazzySpinalFusion"],
+    "yt": ""
+  },
+  {
+    "name": "Zentris (2024)",
+    "file": "Zentris.ips",
+    "desc": "Welcome to Zentris.\n\nThis ROM Hack of Tetris released by Nintendo in 1989 takes stacking blocks in a more relaxing direction.\n\nTo start, the visuals have been overhauled to a more minimalist design. Inspired by Tetris Effect, the blocks are designed with a singular color for each level.\n\nThe gameplay has been modified to make it as relaxing as possible. The game no longer increases the speed of gravity as you play, allowing for casual stacking of your own liking.\nIncluded are two patches. One is the standard version that has Level 0 Gravity. The second version has Gravity completely turned off, meaning you will have to press down to move the pieces.\n\nNow one might be concerned that this lack of gravity would result in a lot of holding down on the D-Pad and tired thumbs. Do not fret!\nTo avoid any kind of sore thumbs, a hard drop was added. Simply press Up on the D-Pad to send the block instantly to the bottom!\n\nIn Zentris, there are two game modes.\n\nThe first is A-Type. This is your standard Tetris game. Stack for as long as you would like without topping out.\nFor more fun, the score cap has been removed.\n\nThe second mode is B-Type. In this, you must clear a preset number of lines with a chosen height  of garbage lines.\nIn the standard version of NES Tetris, you are supposed to clear 25 lines. HOWEVER, in Zentris, the line amount has been raised to 80 lines!\nTry to see if you can clear all the level 5 garbage height before clearing 80 lines.\n\nSome other changes are listed below\n-New high scoreboard entries\n-You can see the board while the game is paused\n-The copyright/credit screen can be skipped by pressing start\n-Music is set to OFF by default\n\nA Quick Mode variant of the game has been added as well. In this version, the game skips all menus and goes straight into a Level 0 game.\nIn Quick Mode, you are unable to return to the menu. If you would like to start another game of Quick Mode, you will have to soft or hard reset.\n\nTo access these ROM Hacks, simply apply any of the included patches to a vanilla copy of the Tetris(USA) ROM\n\nSpecial thanks to zohassadar and the rest of the Classic Tetris Monthly discord for their help with this mod. \n\nRelax and have fun :)",
+    "authors": ["JazzySpinalFusion"],
+    "yt": ""
+  },
+  {
+    "name": "Zentris Zero Gravity Quick Mode",
+    "file": "Zentris_Zero Gravity_Quick Mode.ips",
+    "desc": "See Zentris (2024)",
+    "authors": ["JazzySpinalFusion"],
+    "yt": ""
+  },
+  {
+    "name": "Stack Mode",
+    "file": "Stack_Mode.ips",
+    "desc": "\n        This is Stack Mode. Based on the Stack Mode from Not Tetris 2, this variant of Tetris does not allow lines to clear. Instead, the goal is to get as many pieces onto the board as possible. Each piece gives your score one point and will save to the high score board.\nDo you think you can achieve a perfect 50 piece game?\nTry it here!",
+    "authors": ["JazzySpinalFusion"],
+    "yt": ""
+  },
+  {
+    "name": "Zentris Zero Gravity",
+    "file": "Zentris_Zero Gravity.ips",
+    "desc": "See Zentris (2024)",
+    "authors": ["JazzySpinalFusion"],
+    "yt": ""
+  },
+  {
+    "name": "Zentris Quick Mode",
+    "file": "Zentris_Quick Mode.ips",
+    "desc": "See Zentris (2024)",
+    "authors": ["JazzySpinalFusion"],
+    "yt": ""
+  },
+  {
+    "name": "Chaotic Palettes Tetris No Killscreen",
+    "file": "ChaoticPalettesTetrisNoKS.bps",
+    "desc": "Randomized color table with 19 & 29 speeds removed",
+    "authors": ["SafeHexagon"],
+    "yt": "XnZh4KvYfhM"
+  }
 ]
