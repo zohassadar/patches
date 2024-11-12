@@ -1182,7 +1182,20 @@
     "name": "Chaotic Palettes Tetris No Killscreen",
     "file": "ChaoticPalettesTetrisNoKS.bps",
     "desc": "Randomized color table with 19 & 29 speeds removed",
-    "authors": ["SafeHexagon"],
-    "yt": "XnZh4KvYfhM"
+    "authors": ["SafeHexagon"]
+  },
+  {
+    "name": "Tetris 30 Wide With Big Pieces",
+    "file": "Tetris30WideWithBig.bps",
+    "source": "https://github.com/zohassadar/NestrisHacks/tree/30big",
+    "desc": "See source for readme",
+    "authors": ["Zohassadar", "HydrantDude", "Kirby703"]
+  },
+  {
+    "name": "Pentris 2.0",
+    "file": "Pentris_v2.0.bps",
+    "source": "https://github.com/zohassadar/Pentris/tree/v2.0",
+    "desc": "See source for readme",
+    "authors": ["Zohassadar", "HydrantDude", "Kirby703"]
   }
 ]
