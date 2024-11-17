@@ -1197,5 +1197,11 @@
     "source": "https://github.com/zohassadar/Pentris/tree/v2.0",
     "desc": "See source for readme",
     "authors": ["Zohassadar", "HydrantDude", "Kirby703"]
+  },
+  {
+    "name": "Anydas Random Spawn Orientation",
+    "file": "TetrisAnyRoTrn.bps",
+    "desc": "",
+    "authors": ["Zohassadar", "HydrantDude", "Kirby703"]
   }
 ]
