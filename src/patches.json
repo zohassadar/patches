@@ -1186,8 +1186,8 @@
   },
   {
     "name": "Tetris 30 Wide With Big Pieces",
-    "file": "Tetris30WideWithBig.bps",
-    "source": "https://github.com/zohassadar/NestrisHacks/tree/30big",
+    "file": "Tetris30WideWithBigAnyTrn.bps",
+    "source": "https://github.com/zohassadar/NestrisHacks/tree/30bigSram",
     "desc": "See source for readme",
     "authors": ["Zohassadar", "HydrantDude", "Kirby703"]
   },
