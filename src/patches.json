@@ -1203,5 +1203,11 @@
     "file": "TetrisAnyRoTrn.bps",
     "desc": "",
     "authors": ["Zohassadar", "HydrantDude", "Kirby703"]
+  },
+  {
+    "name": "Big Mode Wide Sps",
+    "file": "TetrisBigModeWideSps.bps",
+    "desc": "Big Mode on a 15x12 playfield, with Same Piece Sets",
+    "authors": ["Zohassadar", "HydrantDude", "Kirby703", "Kirjava"]
   }
 ]
