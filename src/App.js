@@ -9,116 +9,80 @@ const {
     md5,
 } = require('./bps.js');
 
-const sortFilter = (p1, p2) => p1.name.toLowerCase() > p2.name.toLowerCase() ? 1 : -1;
+const sortFilter = (p1, p2) =>
+    p1.name.toLowerCase() > p2.name.toLowerCase() ? 1 : -1;
 
 const sortedPatches = patches.sort(sortFilter);
 
 const INES1HEADER = [78, 69, 83, 26, 2, 2, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 const VANILLA_INES1_MD5 = 'ec58574d96bee8c8927884ae6e7a2508';
 
-function Information({ hide, information }) {
-    if (hide) return;
-    return <p className="info">{information}</p>;
-}
-
-function SavePatched({ rom, patch, clearFile }) {
-    if (!rom) return;
-    return (
-        <>
-            <div className="button_" onClick={() => patchRom(patch, rom)}>
-                Apply Patch
-            </div>
-            <p className="clearFile" onClick={() => clearFile()}>
-                unload rom
-            </p>
-        </>
-    );
-}
-/*
-function DisplayImage({ name, setImage }) {
-    fetch(`patches/${name}`)
+function savePatch(patch) {
+    fetch(`patches/${patch.file}`)
         .then((response) => response.blob())
-        .then((blob) => {
-            const img = URL.createObjectURL(blob);
-            setImage(<img src={img} />);
-        });
-    let patch = { file: '' };
-    return (
-        <tr>
-            <td>
-                <img
-                    src={`patches/screenshots/${patch.file.replace(
-                        /\.[ib]ps/,
-                        '_legal.png',
-                    )}`}
-                />
-                <img
-                    src={`patches/screenshots/${patch.file.replace(
-                        /\.[ib]ps/,
-                        '_title.png',
-                    )}`}
-                />
-                <img
-                    src={`patches/screenshots/${patch.file.replace(
-                        /\.[ib]ps/,
-                        '_gamemenu.png',
-                    )}`}
-                />
-                <img
-                    src={`patches/screenshots/${patch.file.replace(
-                        /\.[ib]ps/,
-                        '_levelmenu.png',
-                    )}`}
-                />
-                <img
-                    src={`patches/screenshots/${patch.file.replace(
-                        /\.[ib]ps/,
-                        '_game.png',
-                    )}`}
-                />
-            </td>
-        </tr>
-    );
-}
-*/
-function SavePatch({ patch }) {
-    function savePatch(patch) {
-        fetch(`patches/${patch.file}`)
-            .then((response) => response.blob())
-            .then((patchData) => {
-                patchData.arrayBuffer().then((buffer) => {
-                    saveAs(new Blob([buffer]), patch.file);
-                });
+        .then((patchData) => {
+            patchData.arrayBuffer().then((buffer) => {
+                saveAs(new Blob([buffer]), patch.file);
             });
-    }
-    return (
-        <div className="button_" onClick={() => savePatch(patch)}>
-            Download Patch
-        </div>
-    );
+        });
 }
-function FileInput({ name, handleInput }) {
+function FileInput({
+    name,
+    handleInput,
+    patch,
+    rom,
+    fileSelectedMsg,
+    validRom,
+}) {
     return (
         <>
-            <label className="button_">
-                Select ROM to Apply Patch
-                <input
-                    className="buttonFile"
-                    name={name}
-                    type="file"
-                    onInput={handleInput}
-                />
-            </label>
-            <p className="noFile">no rom loaded</p>
+            <div className="field is-grouped m-4">
+                <button
+                    className="button is-primary is-outlined"
+                    onClick={() => savePatch(patch)}
+                >
+                    Get Patch
+                </button>
+                <button
+                    className="button is-primary is-outlined"
+                    onClick={() => patchRom(patch, rom)}
+                    disabled={!rom}
+                >
+                    Get Patched ROM
+                </button>
+                <div
+                    id="file-js-example"
+                    className="file has-name is-primary is-outlined"
+                >
+                    <label className="file-label">
+                        <input
+                            className="file-input"
+                            type="file"
+                            name="resume"
+                            onInput={handleInput}
+                        />
+                        <span className="file-cta">
+                            <span className="file-label">
+                                Select Original ROM
+                            </span>
+                        </span>
+                        <span className="file-name">
+                            {fileSelectedMsg}
+                            {validRom ? '✅' : validRom === null ? '' : '❌'}
+                        </span>
+                    </label>
+                </div>
+            </div>
         </>
     );
 }
 
 function YouTube({ vid }) {
     if (!vid) return;
-    const width = 560;
+    const width = 400;
     return (
         <iframe
+            className="content"
             width={width}
             height={Math.floor(width * (315 / 560))}
             src={`https://www.youtube.com/embed/${vid}`}
@@ -131,79 +95,76 @@ function YouTube({ vid }) {
     );
 }
 
-function Table({ patch, rom, romInputBox, clearFile }) {
-    if (!patch) return <table className="romPanel" />;
+function Table({ patch }) {
+    if (!patch) return <table className="box" />;
     return (
-        <div className="romPanel">
-            <div className="romTitleBox">
-                <h2>{patch.name}</h2>
-                <p>{`by: ${patch.authors.join(', ')}`}</p>
-                <SavePatch patch={patch} />
-                {rom ? (
-                    <div className="inputBox">
-                        <SavePatched
-                            text="download patched"
-                            rom={rom}
-                            patch={patch}
-                            clearFile={clearFile}
-                        />
+        <>
+            <div className="card m-6 custom-mainpanel">
+                <header className="media-content">
+                    <p className="title is-3">{patch.name}</p>
+                    <p className="subtitle is-6">{`by: ${patch.authors.join(
+                        ', ',
+                    )}`}</p>
+                </header>
+                <div className="columns">
+                    {patch.desc ? (
+                        <div className="column card-content m-6">
+                            {patch.desc}
+                        </div>
+                    ) : (
+                        ''
+                    )}
+                    {patch.yt ? (
+                        <div className="column card-content m-6">
+                            <YouTube vid={patch.yt} />
+                        </div>
+                    ) : (
+                        ''
+                    )}
+                </div>
+                {patch.link ? (
+                    <div className="card-content">
+                        <div className="content">
+                            Link: <a href={patch.link}>{patch.link}</a>
+                        </div>
                     </div>
-                ) : (
-                    <div className="inputBox">{romInputBox()}</div>
-                )}
-            </div>
-            <table className="romDetailsBox">
-                {patch.desc ? (
-                    <tr>
-                        <td>
-                            <p>{patch.desc}</p>
-                        </td>
-                    </tr>
                 ) : (
                     ''
                 )}
                 {patch.source ? (
-                    <tr>
-                        <td>
-                            <a href={patch.source}>source</a>
-                        </td>
-                    </tr>
+                    <div className="card-content">
+                        <div className="content">
+                            Source: <a href={patch.source}>{patch.source}</a>
+                        </div>
+                    </div>
                 ) : (
                     ''
                 )}
-                {patch.yt ? (
-                    <tr>
-                        <td>
-                            <YouTube vid={patch.yt} />
-                        </td>
-                    </tr>
-                ) : (
-                    ''
-                )}
-            </table>
-        </div>
+                <div className="card-footer"></div>
+            </div>
+        </>
     );
 }
 function SideNames({ filteredPatches, setPatch, patch }) {
     return (
-        <>
+        <div className="panel custom-sidepanel">
+            <thead></thead>
             {filteredPatches.map((p) => {
-                var className = 'patchChoice';
+                var className = 'has-text-primary';
                 if (JSON.stringify(p) === JSON.stringify(patch)) {
-                    className = 'patchChoice patchSelected';
+                    className = 'has-text-info has-text-weight-bold';
                 }
-
                 return (
                     <a
                         href={`#${p.name.replace(/ /g, '+')}`}
-                        className={className}
+                        className={`panel-block ${className}`}
                         onClick={() => setPatch(p)}
                     >
                         {p.name}
                     </a>
                 );
             })}
-        </>
+        </div>
     );
 }
 
@@ -242,18 +203,20 @@ function filterPatches(filter, setFilteredPatches) {
         sortedPatches.filter((patch) => {
             const regexp = new RegExp(`${filter}`, 'i');
             if (regexp.test(patch.name)) return true;
-            if (patch.authors.some(author => regexp.test(author))) return true;
+            if (patch.authors.some((author) => regexp.test(author)))
+                return true;
             return false;
         }),
     );
 }
 
-function handleRomInput(romFile, setRom, setRomInfo) {
+function handleRomInput(romFile, setRom, setValidRom) {
+    debugger;
     var romMarc = new MarcFile(romFile.target.files[0], onMarcRomLoad);
     function validateRom(marcfile) {
         const hash = md5(marcfile._u8array).toString();
         if (hash === VANILLA_INES1_MD5) {
-            setRomInfo(<div className="romInfo romValid">Valid ROM</div>);
+            setValidRom(true);
             setRom({
                 filename: romFile.target.files[0].name,
                 contents: marcfile,
@@ -291,15 +254,14 @@ function handleRomInput(romFile, setRom, setRomInfo) {
             );
             if (validateRom(romMarc)) return;
         }
-        setRomInfo(<div className="romInfo romInvalid">Invalid ROM</div>);
+        setValidRom(false);
         setRom(null);
     }
 }
 function App() {
     const [rom, setRom] = useState(null);
-    const [romInfo, setRomInfo] = useState(
-        <div className="romInfo romWaiting">No ROM Loaded</div>,
-    );
+    const [validRom, setValidRom] = useState(null);
+    const [fileSelectedMsg, setFileSelectedMsg] = useState('No file selected');
     const [filteredPatches, setFilteredPatches] = useState(sortedPatches);
     const [patch, setPatch] = useState(null);
 
@@ -312,43 +274,33 @@ function App() {
         }
     }
 
-    function clearFile() {
-        setRom(null);
-        setRomInfo(<div className="romInfo romWaiting">ROM Unloaded</div>);
-    }
-
-    function romInputBox() {
-        return (
-            <div>
+    return (
+        <div className="container box content">
+            <h2>Nestris Patches</h2>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+            <div className="box">
                 <FileInput
+                    patch={patch}
+                    rom={rom}
+                    validRom={validRom}
                     name="RomInput"
-                    handleInput={(romFile) =>
-                        handleRomInput(romFile, setRom, setRomInfo)
-                    }
-                    clearFile={clearFile}
+                    fileSelectedMsg={fileSelectedMsg}
+                    handleInput={(romFile) => {
+                        setFileSelectedMsg(romFile.target.files[0].name);
+                        handleRomInput(romFile, setRom, setValidRom);
+                    }}
                 />
             </div>
-        );
-    }
-
-    return (
-        <div className="App">
-            <header className="headerBox">
-                <h2>Nestris Patches (with Patcher)</h2>
-            </header>
-            <div className="topBox">
-                <div className="topInfoBox">
-                    <Information
-                        hide={false}
-                        information="Download patch, or provide backup of Nestris rom to apply patch in browser."
-                    />
-                </div>
-                <div className="inputBox">{romInfo}</div>
-            </div>
-            <div className="bottomBox">
-                <div className="filler" />
-                <div className="sideBox">
+            <div className="box columns">
+                <div className="box column is-one-fifth">
                     <input
+                        className="input"
                         placeholder="Search"
                         onChange={(e) =>
                             filterPatches(e.target.value, setFilteredPatches)
@@ -360,15 +312,11 @@ function App() {
                         patch={patch}
                     />
                 </div>
-                <Table
-                    patch={patch}
-                    rom={rom}
-                    romInputBox={romInputBox}
-                    clearFile={clearFile}
-                />
-                <div className="filler" />
+                <div className="box column">
+                    <Table patch={patch} rom={rom} />
+                </div>
             </div>
-            <div className="footerBox">
+            <div className="box content">
                 <p>
                     Thanks for visiting. Leave feedback or contribute{' '}
                     <a href="https://github.com/zohassadar/patches">here</a>
