@@ -8,6 +8,8 @@
 # testing
 /coverage
 
+/src/patches.json
+
 # production
 /build
 

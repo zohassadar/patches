@@ -49,6 +49,10 @@ const writeStatsJson = argv.indexOf('--stats') !== -1;
 // Generate configuration
 const config = configFactory('production');
 
+console.log(`converting patches.yaml to patches.json`);
+const patches = parse(fs.readFileSync('src/patches.yaml', 'utf8'));
+fs.writeFileSync('src/patches.json', JSON.stringify(patches), 'utf8');
+
 // We require that you explicitly set browsers and do not fall back to
 // browserslist defaults.
 const { checkBrowsers } = require('react-dev-utils/browsersHelper');
