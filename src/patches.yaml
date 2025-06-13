@@ -1,1134 +1,859 @@
-- authors:
-  - kirjava
-  - others
-  - me
-  desc: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-    deserunt mollit anim id est laborum.
-  file: TetrisGYM-6.0.0.bps
-  link: https://zombo.com.poop
-  name: 000 Test Rom
-  source: https://github.com/romhacker/hackers-potato
-  tags:
-  - gym
-  - test
-  yt: KWotO76SuXE
-- authors:
-  - kirjava
-  desc: Adds practice modes to NES Tetris (among other things)
-  file: TetrisGYM-6.0.0.bps
-  name: TetrisGYM 6.0.0
-  source: https://github.com/kirjavascript/TetrisGYM
-- authors:
-  - kirjava
-  desc: TetrisGYM compiled with Famicom Keyboard support
-  file: TetrisGYM-6.0.0-keyboard.bps
-  name: TetrisGYM 6.0.0 w/Keyboard
-  source: https://github.com/kirjavascript/TetrisGYM
-- authors:
-  - kirjava
-  - zohassadar
-  desc: Adds an extra dark mode to Tetris GYM
-  file: TetrisGYM-6.0.0-tron0.bps
-  name: TetrisGYM 6.0.0 Tron hack
-  source: https://github.com/zohassadar/TetrisGYM/tree/neon2
-- authors:
-  - maya
-  desc: Play tetris in the next box
-  file: tetris_next_box_playfield.ips
-  name: Next Box Playfield
-  source: patches/tetris_next_box_playfield.asm
-- authors:
-  - zohassadar
-  desc: 5 minos instead of 4 minos
-  file: Pentris_v1.3.bps
-  name: Pentris
-  source: https://github.com/zohassadar/Pentris
-  yt: 3b2VvO2fCfo
-- authors:
-  - zohassadar
-  - HydrantDude
-  desc: Pentris with HydrantDude's DAS controls
-  file: PentrisAnydas_v1.3.bps
-  name: Pentris AnyDAS
-  source: https://github.com/zohassadar/Pentris
-  yt: 3b2VvO2fCfo
-- authors:
-  - zohassadar
-  - HydrantDude
-  desc: Big Mode with HydrantDude's DAS Controls added
-  file: BigModeAnydas.bps
-  name: Big Mode Anydas
-  source: https://github.com/zohassadar/NESTetrisBigmode
-  yt: 8FEVTTIi5WU
-- authors:
-  - zohassadar
-  desc: Plays a song when score is equal to or greater than 999,999
-  file: maxoutsong.ips
-  name: Max Out Song
-  yt: ''
-- authors:
-  - zohassadar
-  desc: Reduces the normal 10-18 frame entry delay to 0 frames
-  file: TetrisNoEntryDelay.bps
-  name: No Entry Delay
-  yt: ''
-- authors:
-  - zohassadar
-  desc: Pieces doubled in width and height on a 5 x 10 playfield
-  file: BigMode.bps
-  name: Big Mode
-  source: https://github.com/zohassadar/NESTetrisBigmode
-  yt: 8FEVTTIi5WU
-- authors:
-  - zohassadar
-  desc: Play tetris but using the background tiles as pieces
-  file: background.bps
-  name: Background Pieces
-  yt: ''
-- authors:
-  - zohassadar
-  desc: Neon Tetris
-  file: neon.bps
-  name: Neon Tetris
-  yt: ''
-- authors:
-  - zohassadar
-  desc: Lines only clear when colors match
-  file: ColorMatchLineClear.ips
-  name: Color Match Line Clear
-  yt: ''
-- authors:
-  - zohassadar
-  desc: Interesting visual hack of background and pieces
-  file: bgpattern.bps
-  name: Modified Background Pattern
-  yt: ''
-- authors:
-  - zohassadar
-  desc: Pieces are solidly connected
-  file: connected.bps
-  name: Connected Pieces
-  yt: ''
-- authors:
-  - zohassadar
-  - HydrantDude
-  desc: No Entry Delay with HydrantDude's DAS controls
-  file: TetrisNoEntryDelayAnydas.bps
-  name: No Entry Delay Anydas
-  yt: ''
-- authors:
-  - zohassadar
-  desc: Pieces wrap around the playfield
-  file: Wallhack2.bps
-  name: Wall Hack 2
-  yt: ''
-- authors:
-  - zohassadar
-  - HydrantDude
-  desc: Pieces wrap around the playfield
-  file: Wallhack2Anydas.bps
-  name: Wall Hack 2 Anydas
-  yt: ''
-- authors:
-  - zohassadar
-  desc: Pieces can consist of any of the three tiles
-  file: randomtiles.ips
-  name: Random Tiles
-  yt: lOOwrWkdf4o
-- authors:
-  - Gyzzmo Glytch
-  desc: "    Faster DAS (simulates PAL DAS)   Faster softdrops (at level 29 speed\
-    \ instead of 19)\n    Instant line clears\n    Score rollover\n    Higher score\
-    \ cap before rollover (E99,999 to 000,000)\n    No pause-screen blackout (still\
-    \ see field, but not current or next blocks)\n    Copyright and rocket screen\
-    \ skip\n    Higher frequency of straight pieces\n    10-frame pause before each\
-    \ piece begins dropping automatically\n\nIt was designed to emulate a variety\
-    \ of classic and modern games, and act as a sort of hybrid between the two."
-  file: Ultris.ips
-  name: Ultris
-- authors:
-  - zohassadar
-  desc: A penguin takes away cleared lines
-  file: penguin.ips
-  name: Penguin Line Clear
-  yt: IZn6R--RxNg
-- authors:
-  - zohassadar
-  desc: Tetris, but upside down
-  file: UpsideDownTetris.bps
-  name: Upside Down Tetris
-  yt: cBs7H2lll-0
-- authors:
-  - zohassadar
+- name: 10 Digit Score
+  file: 10digitscore.bps
+  authors:
   - Kirjava
+- name: 12 Wide
+  file: 12wide.bps
+  authors:
+  - Kirjava
+- name: 19-29 Speed
+  file: 19-29_speed.bps
+  authors:
+  - Kirjava
+- name: 7 Bag
+  file: 7bagKirby703.ips
+  authors:
+  - Kirby703
+- name: 7 Digit Score
+  file: 7DigitScore.bps
+  authors:
+  - HydrantDude
+- name: All Level Challenge
+  file: allLevels_challenge.bps
+  authors:
+  - fractal161
+- name: All Levels
+  file: allLevels.bps
+  authors:
+  - fractal161
+- name: Always Tetris Ready
+  file: AlwaysTetrisReady.bps
+  authors:
+  - Kirjava
+- name: Anydas Random Spawn Orientation
+  file: TetrisAnyRoTrn.bps
+  authors:
+  - Zohassadar
+  - HydrantDude
+  - Kirby703
+- name: Appearance Hack
+  file: appearancehack.ips
+  authors:
+  - HydrantDude
+- name: Background Blocks - Gray
+  file: gray.ips
+  authors:
+  - HydrantDude
+- name: Background Blocks - Normal
+  file: normalcolor.ips
+  authors:
+  - HydrantDude
+- name: Background Pieces
+  file: background.bps
+  desc: Play tetris but using the background tiles as pieces
+  authors:
+  - zohassadar
+- name: Big Mode
+  file: BigMode.bps
+  desc: Pieces doubled in width and height on a 5 x 10 playfield
+  source: https://github.com/zohassadar/NESTetrisBigmode
+  authors:
+  - zohassadar
+  yt: 8FEVTTIi5WU
+- name: Big Mode Anydas
+  file: BigModeAnydas.bps
+  desc: Big Mode with HydrantDude's DAS Controls added
+  source: https://github.com/zohassadar/NESTetrisBigmode
+  authors:
+  - zohassadar
+  - HydrantDude
+  yt: 8FEVTTIi5WU
+- name: Big Mode Wide Sps
+  file: TetrisBigModeWideSps.bps
+  desc: Big Mode on a 15x12 playfield, with Same Piece Sets
+  authors:
+  - Zohassadar
+  - HydrantDude
+  - Kirby703
+  - Kirjava
+- name: Brackets GYM
+  file: brackets_gym.bps
+  authors:
+  - Kirjava
+- name: CTM Hack Dec 2017
+  file: ctm1217.ips
+  authors:
+  - fridaywitch
+- name: CTM Hack Feb 2018
+  file: ctm0218.ips
+  authors:
+  - fridaywitch
+- name: CTM Hack Jan 2018
+  file: ctm0118.ips
+  authors:
+  - fridaywitch
+- name: CTWC V2
+  file: CTWC_v2.bps
+  authors:
+  - Kirjava
+- name: Chaotic Palettes Tetris No Killscreen
+  file: ChaoticPalettesTetrisNoKS.bps
+  desc: Randomized color table with 19 & 29 speeds removed
+  authors:
+  - SafeHexagon
+- name: Color Match Line Clear
+  file: ColorMatchLineClear.ips
+  desc: Lines only clear when colors match
+  authors:
+  - zohassadar
+- name: Connected Pieces
+  file: connected.bps
+  desc: Pieces are solidly connected
+  authors:
+  - zohassadar
+- name: Controller Input Display
+  file: TetrisControllerInputDisplay.ips
+  authors:
+  - jazzthief81
+- name: Cursed RNG
+  file: CursedRNG.bps
+  desc: Clean tetrises discouraged by game
+  authors:
+  - zohassadar
+- name: DAS Controls
+  file: DAScontrols.ips
+  authors:
+  - HydrantDude
+- name: DAS Trainer TRT
+  file: NTSC DAS Trainer +TRT.ips
+  authors:
+  - HydrantDude
+- name: Das Trainer V1.1
+  file: TetrisDasTrainerV1_1.ips
+  source: https://www.romhacking.net/hacks/3761/
+  authors:
+  - jazzthief81
+- name: Debug
+  file: Debug.bps
+  authors:
+  - Kirjava
+- name: Disco
+  file: disco.bps
+  authors:
+  - Kirjava
+- name: Double KS
+  file: doubleKS.bps
+  authors:
+  - Kirjava
+- name: Dr. Mariotris
+  file: Dr._Mariotris.bps
+  authors:
+  - JazzySpinalFusion
+- name: Electronika60
+  file: Electronika60.bps
+  authors:
+  - JazzySpinalFusion
+- name: Electronika60 JPF
+  file: Electronika60-JPF.bps
+  authors:
+  - JazzySpinalFusion
+- name: ElectronikaGYM JazzySpinalFusion
+  file: ElectronikaGYM-JazzySpinalFusion.bps
+  authors:
+  - Kirjava
+  - JazzySpinalFusion
+- name: Fixed RNG
+  file: FixedRNG.bps
+  authors:
+  - HydrantDude
+- name: Fixed RNG New
+  file: FixedRNGNew.bps
+  authors:
+  - HydrantDude
+- name: Flat Pieces
+  file: FlatPieces.bps
+  authors:
+  - Kirjava
+- name: French
+  file: French.ips
+  authors:
+  - HydrantDude
+- name: Gameboy Mod V3
+  file: gameboy_mod_v3.bps
+  authors:
+  - CAndiman
+- name: Gameboy Mod V4
+  file: gameboy_mod_v4.bps
+  authors:
+  - CAndiman
+- name: Gameboy Mod V4 HD
+  file: gameboy_mod_v4HD.bps
+  authors:
+  - CAndiman
+- name: Goofy Foot
+  file: GoofyFoot.bps
+  authors:
+  - Kirjava
+- name: Goofy NES Tetris
+  file: GoofyNesTetris.ips
+  authors:
+  - jazzthief81
+- name: Grey Background
+  file: NTSCTris_grey_bg_edit.ips
+  authors:
+  - HydrantDude
+- name: H
+  file: H.ips
+  authors:
+  - HydrantDude
+- name: Hard Drop
+  file: Tetris_HD_patch.ips
+  authors:
+  - Josh Tolles
+- name: Hot Mustard
+  file: HOT_Mustard_v1.1.1.bps
+  desc: Play 10 levels of 19-2
+  authors:
+  - Meme
+- name: Hyper Disco
+  file: hyperdisco.bps
+  authors:
+  - Kirjava
+- name: Hyper Trans
+  file: hypertrans.bps
+  authors:
+  - Kirjava
+- name: Kawaii
+  file: Kawaii.bps
+  authors:
+  - Kirjava
+- name: Korobeiniki
+  file: TetrisKorobeiniki.ips
+  authors:
+  - jazzthief81
+- name: Late Night People V1
+  file: tetris - latenightpeoplev1.ips
+  authors:
+  - CAndiman
+- name: Lerp
+  file: lerp.bps
+  authors:
+  - Kirjava
+- name: Level 69
+  file: level_69.bps
+  authors:
+  - Kirjava
+- name: Little Rolling Trainer w/Lines
+  file: little_rolling_trainer_lines.bps
+  authors:
+  - CAndiman
+- name: Little Rolling Trainer w/o Lines
+  file: little_rolling_trainer_without_lines.bps
+  authors:
+  - CAndiman
+- name: Ludicrous Speed
+  file: LudicrousSpeed.ips
+  authors:
+  - Trey Harrison
+- name: Max Out Song
+  file: maxoutsong.ips
+  desc: Plays a song when score is equal to or greater than 999,999
+  authors:
+  - zohassadar
+- name: Metrics TRT
+  file: NTSC Tetris Metrics +TRT.ips
+  authors:
+  - HydrantDude
+- name: Minimal
+  file: reduced.ips
+  authors:
+  - HydrantDude
+- name: Minimal Elektronika 1.0
+  file: Minimal_Elektronika1_0.bps
+  authors:
+  - CAndiman
+- name: Minimal Elektronika 2.0
+  file: Minimal_Elektronika2_0.bps
+  authors:
+  - CAndiman
+- name: Minimal Neon
+  file: Minimal_Neon.bps
+  authors:
+  - CAndiman
+- name: Minimal Neon VFD
+  file: Minimal_Neon_VFD.bps
+  authors:
+  - CAndiman
+- name: Modified Background Pattern
+  file: bgpattern.bps
+  desc: Interesting visual hack of background and pieces
+  authors:
+  - zohassadar
+- name: Music 1.1
+  file: music-1.1.bps
+  authors:
+  - fractal161
+- name: Neon Tetris
+  file: neon.bps
+  desc: Neon Tetris
+  authors:
+  - zohassadar
+- name: New RNG Mod
+  file: New_RNG_Mod.bps
+  authors:
+  - HydrantDude
+- name: Next Box Playfield
+  file: tetris_next_box_playfield.ips
+  desc: Play tetris in the next box
+  source: patches/tetris_next_box_playfield.asm
+  authors:
+  - maya
+- name: No Demo No Legal NTSC
+  file: NoDemoNoLegalNTSC.bps
+  authors:
+  - Kirjava
+- name: No Entry Delay
+  file: TetrisNoEntryDelay.bps
+  desc: Reduces the normal 10-18 frame entry delay to 0 frames
+  authors:
+  - zohassadar
+- name: No Entry Delay Anydas
+  file: TetrisNoEntryDelayAnydas.bps
+  desc: No Entry Delay with HydrantDude's DAS controls
+  authors:
+  - zohassadar
+  - HydrantDude
+- name: No Line Pieces
+  file: NoLinePieces.bps
+  authors:
+  - Kirjava
+- name: No Rocket Fast Legal
+  file: NoRocketFastLegal.bps
+  authors:
+  - Kirjava
+- name: Nostalgic
+  file: nostalgic.bps
+  authors:
+  - CAndiman
+- name: Options for B Game
+  file: TetrisOptionsForBGame.bps
+  authors:
+  - zohassadar
+- name: Pal Hack
+  file: palhack.bps
+  desc: Emulate PAL on NTSC console
+  authors:
+  - fractal161
+  yt: n9vKMNu5JWo
+- name: Pal SPS Tourney
+  file: PalSPSTourney.bps
+  desc: Emulate PAL on NTSC console, w SPS
+  authors:
+  - fractal161
+  yt: n9vKMNu5JWo
+- name: Pal SPS Tourney (Goofy)
+  file: PalSPSTourneyGoofy.bps
+  desc: Pal SPS Tourney with Goofyfoot controls
+  authors:
+  - fractal161
+  yt: n9vKMNu5JWo
+- name: Parity V0
+  file: Parityv0.bps
+  authors:
+  - Kitaru
+- name: Parity V1
+  file: Parityv1.bps
+  authors:
+  - Kitaru
+- name: Penguin Line Clear
+  file: penguin.ips
+  desc: A penguin takes away cleared lines
+  authors:
+  - zohassadar
+  yt: IZn6R--RxNg
+- name: Pentris
+  file: Pentris_v1.3.bps
+  desc: 5 minos instead of 4 minos
+  authors:
+  - zohassadar
+  source: https://github.com/zohassadar/Pentris
+  yt: 3b2VvO2fCfo
+- name: Pentris (with Tetriminos)
+  file: Pentris_withTetriminos.bps
+  desc: Pentris with Tetriminos added to the mix
+  authors:
+  - zohassadar
+- name: Pentris (with Tetriminos) AnyDAS
+  file: PentrisAnydas_withTetriminos.bps
+  desc: Pentris with Tetriminos added to the mix
+  source: https://github.com/zohassadar/Pentris/tree/with_tetriminos
+  authors:
+  - zohassadar
+  - HydrantDude
+- name: Pentris 2.0
+  file: Pentris_v2.0.bps
+  source: https://github.com/zohassadar/Pentris/tree/v2.0
+  desc: See source for readme
+  authors:
+  - Zohassadar
+  - HydrantDude
+  - Kirby703
+- name: Pentris AnyDAS
+  file: PentrisAnydas_v1.3.bps
+  desc: Pentris with HydrantDude's DAS controls
+  source: https://github.com/zohassadar/Pentris
+  authors:
+  - zohassadar
+  - HydrantDude
+  yt: 3b2VvO2fCfo
+- name: Pepperlaw
+  file: pepperlaw.ips
+  authors:
+  - HydrantDude
+- name: Piece Percentages
+  file: TetricPPCT.ips
+  authors:
+  - fractal161
+- name: Practice Mode
+  file: practice_mode.bps
+  authors:
+  - CAndiman
+- name: Press Up
+  file: pressup.ips
+  authors:
+  - HydrantDude
+- name: Quick Stack Mode
+  file: Quick_Stack_Mode.ips
+  desc: It instantly opens a never ending level 0 type a game for when you want instant
+    casual stacking.
+  authors:
+  - JazzySpinalFusion
+- name: Quick Stack Mode - Hard Drop
+  file: Quick_Stack_ModeHard_Drop.ips
+  desc: It instantly opens a never ending level 0 type a game for when you want instant
+    casual stacking.
+  authors:
+  - JazzySpinalFusion
+- name: Quick Stack Mode - No Press Down
+  file: Quick_Stack_ModeNo_Press_Down.ips
+  desc: It instantly opens a never ending level 0 type a game for when you want instant
+    casual stacking.
+  authors:
+  - JazzySpinalFusion
+- name: Quick Zentris
+  file: Quick_Zentris.ips
+  authors:
+  - JazzySpinalFusion
+- name: Random Rotate
+  file: tetris_random_rotate.ips
+  authors:
+  - maya
+- name: Random Spawn Orientation
+  file: RandomSpawnOrientation.bps
+  desc: pieces spawn in any orientation
+  authors:
+  - zohassadar
+- name: Random Tiles
+  file: randomtiles.ips
+  desc: Pieces can consist of any of the three tiles
+  authors:
+  - zohassadar
+  yt: lOOwrWkdf4o
+- name: Retro Theme 1 (Nostalgia)
+  file: RetroTheme1(Nostalgia).bps
+  authors:
+  - CAndiman
+- name: Retro Theme 1 (Nostalgia) HD
+  file: RetroTheme1(Nostalgia)HD.bps
+  authors:
+  - CAndiman
+- name: Retro Theme 2 (Nostalgic)
+  file: RetroTheme2(Nostalgia).bps
+  authors:
+  - CAndiman
+- name: Retro Theme 2 (Nostalgic) HD
+  file: RetroTheme2(Nostalgia)HD.bps
+  authors:
+  - CAndiman
+- name: SNES Gravity
+  file: Tetris (USA) SNES.ips
+  authors:
+  - Josh Tolles
+- name: SRS
+  file: SRS.ips
+  authors:
+  - fractal161
+- name: SZ
+  file: sz.ips
+  desc: Delivers an alternating sequence of S's and Z's
+  authors:
+  - zohassadar
+- name: Scrolltris
+  file: Scrolltris.bps
+  authors:
+  - Kirjava
+- name: Shrink Mode
+  file: TetrisShrinkMode_v1.1.bps
   desc: Big, Medium & Small modes, along with a Shrink mode that combines all three.
     Based on TetrisGYM.
-  file: TetrisShrinkMode_v1.1.bps
-  name: Shrink Mode
-  yt: dt01BeEZfgw
-- authors:
+  authors:
   - zohassadar
-  desc: Play tetris on a 10x24 playfield
-  file: TallerTetris.bps
-  name: Taller Tetris
-  yt: ''
-- authors:
-  - fractal161
-  desc: Faster Tetris
-  file: speedhack1.1.bps
-  name: Speedhack
-  yt: n9vKMNu5JWo
-- authors:
-  - zohassadar
-  desc: Tetris if it were a side scroller
-  file: SideScrollerTetris.bps
-  name: Side Scroller Tetris
-  yt: 5x6KWWcPquo
-- authors:
-  - zohassadar
-  desc: Tetris that allows going outside the playfield (as long as you return in time)
-  file: TetrisWallHack.bps
-  name: Wall Hack
-  yt: ''
-- authors:
-  - HydrantDude
-  - Kirby703
-  - zohassadar
-  desc: DAS Controls + ability to skip rocket screens + start on higher levels
-  file: TetrisAnyTrn.bps
-  name: Tetris AnyTourney
-  yt: ''
-- authors:
-  - fractal161
-  desc: ''
-  file: allLevels.bps
-  name: All Levels
-  yt: ''
-- authors:
-  - maya
-  desc: ''
-  file: tetris_random_rotate.ips
-  name: Random Rotate
-  yt: ''
-- authors:
-  - zohassadar
-  desc: 12x20 playfield
-  file: Tetris12Wide.bps
-  name: Tetris 12 Wide
-  yt: kz7hjhtZ3_k
-- authors:
-  - HydrantDude
-  desc: ''
-  file: SmoothGravity.ips
-  name: Smooth Gravity
-  yt: ''
-- authors:
-  - zohassadar
-  desc: ''
-  file: LeftToRight.bps
-  name: Sideways (Left to Right)
-  yt: ''
-- authors:
-  - zohassadar
-  desc: ''
-  file: Tetris30x25.bps
-  name: Tetris 30x25
-  yt: -7OrMs77s0A
-- authors:
-  - fractal161
-  desc: ''
-  file: allLevels_challenge.bps
-  name: All Level Challenge
-  yt: ''
-- authors:
-  - fractal161
-  desc: Emulate PAL on NTSC console, w SPS
-  file: PalSPSTourney.bps
-  name: Pal SPS Tourney
-  yt: n9vKMNu5JWo
-- authors:
-  - zohassadar
-  desc: Delivers an alternating sequence of S's and Z's
-  file: sz.ips
-  name: SZ
-  yt: ''
-- authors:
-  - fractal161
-  desc: Emulate PAL on NTSC console
-  file: palhack.bps
-  name: Pal Hack
-  yt: n9vKMNu5JWo
-- authors:
-  - fractal161
-  desc: ''
-  file: music-1.1.bps
-  name: Music 1.1
-  yt: ''
-- authors:
-  - zohassadar
-  desc: ''
-  file: RightToLeft.bps
-  name: Sideways (Right to Left)
-  yt: ''
-- authors:
-  - zohassadar
-  desc: 20x20 playfield
-  file: TetrisDoubleWide.bps
-  name: Tetris Double Wide
-  yt: Kdhbwzg34sc
-- authors:
-  - fractal161
-  desc: Pal SPS Tourney with Goofyfoot controls
-  file: PalSPSTourneyGoofy.bps
-  name: Pal SPS Tourney (Goofy)
-  yt: n9vKMNu5JWo
-- authors:
-  - fridaywitch
-  desc: ''
-  file: ctm1217.ips
-  name: CTM Hack Dec 2017
-  yt: ''
-- authors:
-  - Kirby703
-  desc: ''
-  file: tspins.ips
-  name: TSpin Points
-  yt: ''
-- authors:
-  - Meme
-  desc: Play 10 levels of 19-2
-  file: HOT_Mustard_v1.1.1.bps
-  name: Hot Mustard
-  yt: ''
-- authors:
   - Kirjava
-  desc: ''
-  file: Scrolltris.bps
-  name: Scrolltris
-  yt: ''
-- authors:
-  - jazzthief81
-  desc: ''
-  file: Tetris_USA_-_Statistics.ips
-  name: Statistics Mod
-  yt: ''
-- authors:
-  - fridaywitch
-  desc: ''
-  file: ctm0118.ips
-  name: CTM Hack Jan 2018
-  yt: ''
-- authors:
-  - jazzthief81
-  desc: ''
-  file: TetrisControllerInputDisplay.ips
-  name: Controller Input Display
-  yt: ''
-- authors:
-  - fractal161
-  desc: ''
-  file: TetricPPCT.ips
-  name: Piece Percentages
-  yt: ''
-- authors:
-  - Trey Harrison
-  desc: ''
-  file: LudicrousSpeed.ips
-  name: Ludicrous Speed
-  yt: ''
-- authors:
-  - Kirby703
-  desc: ''
-  file: 7bagKirby703.ips
-  name: 7 Bag
-  yt: ''
-- authors:
-  - jazzthief81
-  desc: ''
-  file: TetrisMetrics.ips
-  name: Tetris Metrics
-  yt: ''
-- authors:
-  - Josh Tolles
-  desc: ''
-  file: Tetris_HD_patch.ips
-  name: Hard Drop
-  yt: ''
-- authors:
-  - jazzthief81
-  desc: ''
-  file: TetrisKorobeiniki.ips
-  name: Korobeiniki
-  yt: ''
-- authors:
-  - fridaywitch
-  desc: ''
-  file: ctm0218.ips
-  name: CTM Hack Feb 2018
-  yt: ''
-- authors:
+  yt: dt01BeEZfgw
+- name: Side Scroller Tetris
+  file: SideScrollerTetris.bps
+  desc: Tetris if it were a side scroller
+  authors:
   - zohassadar
-  desc: Clean tetrises discouraged by game
-  file: CursedRNG.bps
-  name: Cursed RNG
-  yt: ''
-- authors:
+  yt: 5x6KWWcPquo
+- name: Sideways (Left to Right)
+  file: LeftToRight.bps
+  authors:
   - zohassadar
-  desc: pieces spawn in any orientation
-  file: RandomSpawnOrientation.bps
-  name: Random Spawn Orientation
-  yt: ''
-- authors:
+- name: Sideways (Right to Left)
+  file: RightToLeft.bps
+  authors:
   - zohassadar
+- name: Smooth Gravity
+  file: SmoothGravity.ips
+  authors:
   - HydrantDude
-  desc: Pentris with Tetriminos added to the mix
-  file: PentrisAnydas_withTetriminos.bps
-  name: Pentris (with Tetriminos) AnyDAS
-  source: https://github.com/zohassadar/Pentris/tree/with_tetriminos
-  yt: ''
-- authors:
-  - zohassadar
-  desc: Pentris with Tetriminos added to the mix
-  file: Pentris_withTetriminos.bps
-  name: Pentris (with Tetriminos)
-  yt: ''
-- authors:
-  - ejona86
-  desc: ''
-  file: twoplayer-1-5-0.ips
-  name: TAUS Two Player
-  source: https://github.com/ejona86/taus
-  yt: ''
-- authors:
-  - ejona86
-  desc: ''
-  file: twoplayer-garbage-1-5-0.ips
-  name: TAUS Two Player Garbage
-  source: https://github.com/ejona86/taus
-  yt: ''
-- authors:
-  - ejona86
-  desc: Tetris Actually Useful Statistics
+- name: Speedhack
+  file: speedhack1.1.bps
+  desc: Faster Tetris
+  authors:
+  - fractal161
+  yt: n9vKMNu5JWo
+- name: Speedrun Timer
+  file: speedrun.bps
+  source: https://www.romhacking.net/hacks/6913/
+  authors:
+  - fractal161
+- name: Stack Mode
+  file: Stack_Mode.ips
+  desc: |
+        This is Stack Mode. Based on the Stack Mode from Not Tetris 2, this variant of Tetris does not allow lines to clear. Instead, the goal is to get as many pieces onto the board as possible. Each piece gives your score one point and will save to the high score board.
+    Do you think you can achieve a perfect 50 piece game?
+    Try it here!
+  authors:
+  - JazzySpinalFusion
+- name: Statistics Mod
+  file: Tetris_USA_-_Statistics.ips
+  authors:
+  - jazzthief81
+- name: Super Tetris Land v1.0
+  file: super_tetris_land_v_1_0_no_HD.bps
+  authors:
+  - CAndiman
+- name: Super Tetris Land v1.0 HD
+  file: super_tetris_land_v_1_0_HD.bps
+  authors:
+  - CAndiman
+- name: TAUS
   file: taus-1-5-0.ips
-  name: TAUS
+  desc: Tetris Actually Useful Statistics
   source: https://github.com/ejona86/taus
-  yt: ''
-- authors:
+  authors:
   - ejona86
-  desc: ''
-  file: hold-1-5-0.ips
-  name: TAUS Hold
-  source: https://github.com/ejona86/taus
-  yt: ''
-- authors:
-  - ejona86
-  desc: ''
-  file: save-highscores-1-5-0.ips
-  name: TAUS Save Highscores
-  source: https://github.com/ejona86/taus
-  yt: ''
-- authors:
-  - ejona86
-  desc: ''
-  file: hard-drop-taus-1-5-0.ips
-  name: TAUS Hard Drop
-  source: https://github.com/ejona86/taus
-  yt: ''
-- authors:
-  - ejona86
-  desc: ''
-  file: playerid-1-5-0.ips
-  name: TAUS Player ID
-  source: https://github.com/ejona86/taus
-  yt: ''
-- authors:
-  - ejona86
-  desc: ''
-  file: twoplayer-nextontop-1-5-0.ips
-  name: TAUS Two Player Next on top
-  source: https://github.com/ejona86/taus
-  yt: ''
-- authors:
-  - ejona86
-  desc: ''
-  file: handicap-1-5-0.ips
-  name: TAUS Handicap
-  source: https://github.com/ejona86/taus
-  yt: ''
-- authors:
-  - ejona86
-  desc: ''
+- name: TAUS 7 Bag
   file: 7bag-1-5-0.ips
-  name: TAUS 7 Bag
   source: https://github.com/ejona86/taus
-  yt: ''
-- authors:
+  authors:
   - ejona86
-  desc: ''
-  file: hard-drop-taus-no-ghost-1-5-0.ips
-  name: TAUS Hard Drop (no ghost)
+- name: TAUS Handicap
+  file: handicap-1-5-0.ips
   source: https://github.com/ejona86/taus
-  yt: ''
-- authors:
+  authors:
+  - ejona86
+- name: TAUS Hard Drop
+  file: hard-drop-taus-1-5-0.ips
+  source: https://github.com/ejona86/taus
+  authors:
+  - ejona86
+- name: TAUS Hard Drop (no ghost)
+  file: hard-drop-taus-no-ghost-1-5-0.ips
+  source: https://github.com/ejona86/taus
+  authors:
+  - ejona86
+- name: TAUS Hold
+  file: hold-1-5-0.ips
+  source: https://github.com/ejona86/taus
+  authors:
+  - ejona86
+- name: TAUS Player ID
+  file: playerid-1-5-0.ips
+  source: https://github.com/ejona86/taus
+  authors:
+  - ejona86
+- name: TAUS Save Highscores
+  file: save-highscores-1-5-0.ips
+  source: https://github.com/ejona86/taus
+  authors:
+  - ejona86
+- name: TAUS Two Player
+  file: twoplayer-1-5-0.ips
+  source: https://github.com/ejona86/taus
+  authors:
+  - ejona86
+- name: TAUS Two Player Garbage
+  file: twoplayer-garbage-1-5-0.ips
+  source: https://github.com/ejona86/taus
+  authors:
+  - ejona86
+- name: TAUS Two Player Next on top
+  file: twoplayer-nextontop-1-5-0.ips
+  source: https://github.com/ejona86/taus
+  authors:
+  - ejona86
+- name: TSpin Points
+  file: tspins.ips
+  authors:
+  - Kirby703
+- name: TSpin Trainer
+  file: TSpinTrainer.bps
+  authors:
+  - Kirjava
+- name: Taller Tetris
+  file: TallerTetris.bps
+  desc: Play tetris on a 10x24 playfield
+  authors:
+  - zohassadar
+- name: Tapping Display
+  file: TappingDisplay.bps
+  authors:
+  - HydrantDude
+- name: Tapping Display Large
+  file: TappingDisplayLarge.bps
+  authors:
+  - HydrantDude
+- name: Tetris 12 Wide
+  file: Tetris12Wide.bps
+  desc: 12x20 playfield
+  authors:
+  - zohassadar
+  yt: kz7hjhtZ3_k
+- name: Tetris 30 Wide With Big Pieces
+  file: Tetris30WideWithBigAnyTrn.bps
+  source: https://github.com/zohassadar/NestrisHacks/tree/30bigSram
+  desc: See source for readme
+  authors:
+  - Zohassadar
+  - HydrantDude
+  - Kirby703
+- name: Tetris 30x25
+  file: Tetris30x25.bps
+  authors:
+  - zohassadar
+  yt: -7OrMs77s0A
+- name: Tetris AJK 2012
+  file: Tetris_AJK_2012.bps
+  authors:
+  - Kitaru
+  yt: 39VSTge9tpk
+- name: Tetris AnyTourney
+  file: TetrisAnyTrn.bps
+  desc: DAS Controls + ability to skip rocket screens + start on higher levels
+  authors:
+  - HydrantDude
+  - Kirby703
+  - zohassadar
+- name: Tetris Double Wide
+  file: TetrisDoubleWide.bps
+  desc: 20x20 playfield
+  authors:
+  - zohassadar
+  yt: Kdhbwzg34sc
+- name: Tetris Metrics
+  file: TetrisMetrics.ips
+  authors:
+  - jazzthief81
+- name: Tetris Rate
+  file: NTSC Tetris Rate.ips
+  authors:
+  - HydrantDude
+- name: TetrisGYM 6.0.0
+  file: TetrisGYM-6.0.0.bps
+  desc: Adds practice modes to NES Tetris (among other things)
+  source: https://github.com/kirjavascript/TetrisGYM
+  authors:
+  - kirjava
+- name: TetrisGYM 6.0.0 Pride Colors
+  file: TetrisGYM-6.0.0-pride.bps
+  authors:
   - kirjava
   - zohassadar
-  desc: ''
-  file: TetrisGYM-6.0.0-pride.bps
-  name: TetrisGYM 6.0.0 Pride Colors
-  yt: ''
-- authors:
-  - CAndiman
-  desc: ''
-  file: little_rolling_trainer_without_lines.bps
-  name: Little Rolling Trainer w/o Lines
-  yt: ''
-- authors:
-  - CAndiman
-  desc: ''
-  file: gameboy_mod_v3.bps
-  name: Gameboy Mod V3
-  yt: ''
-- authors:
-  - CAndiman
-  desc: ''
-  file: little_rolling_trainer_lines.bps
-  name: Little Rolling Trainer w/Lines
-  yt: ''
-- authors:
-  - CAndiman
-  desc: ''
-  file: Minimal_Neon.bps
-  name: Minimal Neon
-  yt: ''
-- authors:
-  - CAndiman
-  desc: ''
-  file: Minimal_Elektronika2_0.bps
-  name: Minimal Elektronika 2.0
-  yt: ''
-- authors:
-  - CAndiman
-  desc: ''
-  file: gameboy_mod_v4.bps
-  name: Gameboy Mod V4
-  yt: ''
-- authors:
-  - CAndiman
-  desc: ''
-  file: RetroTheme1(Nostalgia)HD.bps
-  name: Retro Theme 1 (Nostalgia) HD
-  yt: ''
-- authors:
-  - CAndiman
-  desc: ''
-  file: practice_mode.bps
-  name: Practice Mode
-  yt: ''
-- authors:
-  - CAndiman
-  desc: ''
-  file: nostalgic.bps
-  name: Nostalgic
-  yt: ''
-- authors:
-  - CAndiman
-  desc: ''
-  file: super_tetris_land_v_1_0_HD.bps
-  name: Super Tetris Land v1.0 HD
-  yt: ''
-- authors:
-  - CAndiman
-  desc: ''
-  file: super_tetris_land_v_1_0_no_HD.bps
-  name: Super Tetris Land v1.0
-  yt: ''
-- authors:
-  - CAndiman
-  desc: ''
-  file: Minimal_Elektronika1_0.bps
-  name: Minimal Elektronika 1.0
-  yt: ''
-- authors:
-  - CAndiman
-  desc: ''
-  file: gameboy_mod_v4HD.bps
-  name: Gameboy Mod V4 HD
-  yt: ''
-- authors:
-  - CAndiman
-  desc: ''
-  file: RetroTheme2(Nostalgia).bps
-  name: Retro Theme 2 (Nostalgic)
-  yt: ''
-- authors:
-  - CAndiman
-  desc: ''
-  file: RetroTheme2(Nostalgia)HD.bps
-  name: Retro Theme 2 (Nostalgic) HD
-  yt: ''
-- authors:
-  - CAndiman
-  desc: ''
-  file: Minimal_Neon_VFD.bps
-  name: Minimal Neon VFD
-  yt: ''
-- authors:
-  - CAndiman
-  desc: ''
-  file: RetroTheme1(Nostalgia).bps
-  name: Retro Theme 1 (Nostalgia)
-  yt: ''
-- authors:
-  - CAndiman
-  desc: ''
-  file: Tetrodrome.bps
-  name: Tetrodrome
-  yt: ''
-- authors:
-  - JazzySpinalFusion
-  desc: ''
-  file: Dr._Mariotris.bps
-  name: Dr. Mariotris
-  yt: ''
-- authors:
-  - JazzySpinalFusion
-  desc: ''
-  file: Zentris.bps
-  name: Zentris
-  yt: ''
-- authors:
-  - JazzySpinalFusion
-  desc: ''
-  file: Electronika60.bps
-  name: Electronika60
-  yt: ''
-- authors:
-  - Kirjava
-  - JazzySpinalFusion
-  desc: ''
-  file: ElectronikaGYM-JazzySpinalFusion.bps
-  name: ElectronikaGYM JazzySpinalFusion
-  yt: ''
-- authors:
-  - JazzySpinalFusion
-  desc: ''
-  file: Electronika60-JPF.bps
-  name: Electronika60 JPF
-  yt: ''
-- authors:
-  - Kitaru
-  desc: ''
-  file: Parityv1.bps
-  name: Parity V1
-  yt: ''
-- authors:
-  - Kitaru
-  desc: ''
-  file: Tetris_AJK_2012.bps
-  name: Tetris AJK 2012
-  yt: 39VSTge9tpk
-- authors:
-  - Kitaru
-  desc: ''
-  file: Parityv0.bps
-  name: Parity V0
-  yt: ''
-- authors:
-  - HydrantDude
-  desc: ''
-  file: FixedRNGNew.bps
-  name: Fixed RNG New
-  yt: ''
-- authors:
-  - HydrantDude
-  desc: ''
-  file: TappingDisplayLarge.bps
-  name: Tapping Display Large
-  yt: ''
-- authors:
-  - HydrantDude
-  desc: ''
-  file: 7DigitScore.bps
-  name: 7 Digit Score
-  yt: ''
-- authors:
-  - HydrantDude
-  desc: ''
-  file: FixedRNG.bps
-  name: Fixed RNG
-  yt: ''
-- authors:
-  - HydrantDude
-  desc: ''
-  file: TappingDisplay.bps
-  name: Tapping Display
-  yt: ''
-- authors:
-  - HydrantDude
-  desc: ''
-  file: New_RNG_Mod.bps
-  name: New RNG Mod
-  yt: ''
-- authors:
-  - Kirjava
-  desc: ''
-  file: doubleKS.bps
-  name: Double KS
-  yt: ''
-- authors:
-  - Kirjava
-  desc: ''
-  file: Debug.bps
-  name: Debug
-  yt: ''
-- authors:
-  - Kirjava
-  desc: ''
-  file: disco.bps
-  name: Disco
-  yt: ''
-- authors:
-  - Kirjava
-  desc: ''
-  file: GoofyFoot.bps
-  name: Goofy Foot
-  yt: ''
-- authors:
-  - Kirjava
-  desc: ''
-  file: NoDemoNoLegalNTSC.bps
-  name: No Demo No Legal NTSC
-  yt: ''
-- authors:
-  - Kirjava
-  desc: ''
-  file: CTWC_v2.bps
-  name: CTWC V2
-  yt: ''
-- authors:
-  - Kirjava
-  desc: ''
-  file: 19-29_speed.bps
-  name: 19-29 Speed
-  yt: ''
-- authors:
-  - Kirjava
-  desc: ''
-  file: lerp.bps
-  name: Lerp
-  yt: ''
-- authors:
-  - Kirjava
-  desc: ''
-  file: hyperdisco.bps
-  name: Hyper Disco
-  yt: ''
-- authors:
-  - Kirjava
-  desc: ''
-  file: FlatPieces.bps
-  name: Flat Pieces
-  yt: ''
-- authors:
-  - Kirjava
-  desc: ''
-  file: Kawaii.bps
-  name: Kawaii
-  yt: ''
-- authors:
-  - Kirjava
-  desc: ''
-  file: NoLinePieces.bps
-  name: No Line Pieces
-  yt: ''
-- authors:
-  - Kirjava
-  desc: ''
-  file: 10digitscore.bps
-  name: 10 Digit Score
-  yt: ''
-- authors:
-  - Kirjava
-  desc: ''
-  file: NoRocketFastLegal.bps
-  name: No Rocket Fast Legal
-  yt: ''
-- authors:
-  - Kirjava
-  desc: ''
-  file: AlwaysTetrisReady.bps
-  name: Always Tetris Ready
-  yt: ''
-- authors:
-  - Kirjava
-  desc: ''
-  file: hypertrans.bps
-  name: Hyper Trans
-  yt: ''
-- authors:
-  - Kirjava
-  desc: ''
-  file: TSpinTrainer.bps
-  name: TSpin Trainer
-  yt: ''
-- authors:
-  - Kirjava
-  desc: ''
-  file: brackets_gym.bps
-  name: Brackets GYM
-  yt: ''
-- authors:
-  - Kirjava
-  desc: ''
-  file: 12wide.bps
-  name: 12 Wide
-  yt: ''
-- authors:
-  - Kirjava
-  desc: ''
-  file: level_69.bps
-  name: Level 69
-  yt: ''
-- authors:
-  - HydrantDude
-  desc: ''
-  file: pressup.ips
-  name: Press Up
-  yt: ''
-- authors:
-  - HydrantDude
-  desc: ''
-  file: normalcolor.ips
-  name: Background Blocks - Normal
-  yt: ''
-- authors:
-  - HydrantDude
-  desc: ''
-  file: French.ips
-  name: French
-  yt: ''
-- authors:
-  - HydrantDude
-  desc: ''
-  file: H.ips
-  name: H
-  yt: ''
-- authors:
-  - HydrantDude
-  desc: ''
-  file: gray.ips
-  name: Background Blocks - Gray
-  yt: ''
-- authors:
-  - HydrantDude
-  desc: ''
-  file: NTSCTris_grey_bg_edit.ips
-  name: Grey Background
-  yt: ''
-- authors:
-  - HydrantDude
-  desc: ''
-  file: NTSC DAS Trainer +TRT.ips
-  name: DAS Trainer TRT
-  yt: ''
-- authors:
-  - HydrantDude
-  desc: ''
-  file: reduced.ips
-  name: Minimal
-  yt: ''
-- authors:
-  - HydrantDude
-  desc: ''
-  file: pepperlaw.ips
-  name: Pepperlaw
-  yt: ''
-- authors:
-  - HydrantDude
-  desc: ''
-  file: appearancehack.ips
-  name: Appearance Hack
-  yt: ''
-- authors:
-  - HydrantDude
-  desc: ''
-  file: NTSC Tetris Metrics +TRT.ips
-  name: Metrics TRT
-  yt: ''
-- authors:
-  - HydrantDude
-  desc: ''
-  file: NTSC Tetris Rate.ips
-  name: Tetris Rate
-  yt: ''
-- authors:
-  - HydrantDude
-  desc: ''
-  file: DAScontrols.ips
-  name: DAS Controls
-  yt: ''
-- authors:
-  - fractal161
-  desc: ''
-  file: SRS.ips
-  name: SRS
-  yt: ''
-- authors:
+- name: TetrisGYM 6.0.0 Tron hack
+  file: TetrisGYM-6.0.0-tron0.bps
+  desc: Adds an extra dark mode to Tetris GYM
+  source: https://github.com/zohassadar/TetrisGYM/tree/neon2
+  authors:
+  - kirjava
   - zohassadar
-  desc: ''
-  file: TetrisOptionsForBGame.bps
-  name: Options for B Game
-  yt: ''
-- authors:
-  - Kirjava
-  - zohassadar
-  desc: Adds an extra linecap mode
-  file: FlipModeLinecap.bps
-  name: TetrisGYM Flip Mode Line Cap
-  yt: ''
-- authors:
-  - Kirjava
-  - zohassadar
-  desc: T replaced with X Piece
-  file: GymXPiece.bps
-  name: TetrisGYM XPiece
-  yt: ''
-- authors:
-  - Kirjava
-  - zohassadar
-  desc: uses CNROM
-  file: TGymUpsideDownOptionsCNROM.bps
-  name: TetrisGYM Upside Down Options
-  yt: yx89F-ymbI4
-- authors:
-  - Kirjava
-  - super
-  desc: Original Crunchmode
-  file: crunch.bps
-  name: TetrisGYM Crunch Mode
-  yt: ''
-- authors:
-  - Kirjava
-  - super
-  desc: Set x-pos to 8 to randomize the position
-  file: xpos-random.bps
-  name: TetrisGYM XPos Random
-  yt: ''
-- authors:
-  - Kirjava
-  desc: Downloaded patch will work with any header
+- name: TetrisGYM 6.0.0 Universal
   file: TetrisGYM-6.0.0-universal.bps
-  name: TetrisGYM 6.0.0 Universal
-  yt: ''
-- authors:
-  - Josh Tolles
-  desc: ''
-  file: Tetris (USA) SNES.ips
-  name: SNES Gravity
-  yt: ''
-- authors:
-  - CAndiman
-  desc: ''
-  file: tetris - latenightpeoplev1.ips
-  name: Late Night People V1
-  yt: ''
-- authors:
-  - CAndiman
-  desc: ''
-  file: Nes Tetris(ntsc)Window Night Cityv2.ips
-  name: Window Night City V2
-  yt: ''
-- authors:
+  desc: Downloaded patch will work with any header
+  authors:
   - Kirjava
-  - super
-  desc: ''
-  file: xpos.bps
-  name: TetrisGYM XPos
-  yt: ''
-- authors:
-  - jazzthief81
-  desc: ''
-  file: GoofyNesTetris.ips
-  name: Goofy NES Tetris
-  yt: ''
-- authors:
+- name: TetrisGYM 6.0.0 iNES2.0
+  file: TetrisGYM-6.0.0NES2.0-Conversion.bps
+  authors:
   - Kirjava
   - TakuikaNinja
-  desc: ''
-  file: TetrisGYM-6.0.0NES2.0-Conversion.bps
-  name: TetrisGYM 6.0.0 iNES2.0
-  yt: ''
-- authors:
+- name: TetrisGYM 6.0.0 w/Keyboard
+  file: TetrisGYM-6.0.0-keyboard.bps
+  desc: TetrisGYM compiled with Famicom Keyboard support
+  source: https://github.com/kirjavascript/TetrisGYM
+  authors:
+  - kirjava
+- name: TetrisGYM Crunch Mode
+  file: crunch.bps
+  desc: Original Crunchmode
+  authors:
+  - Kirjava
+  - super
+- name: TetrisGYM Flip Mode Line Cap
+  file: FlipModeLinecap.bps
+  desc: Adds an extra linecap mode
+  authors:
   - Kirjava
   - zohassadar
-  desc: ''
+- name: TetrisGYM Invisible Options
   file: TetrisGYMInvisibleOptions.bps
-  name: TetrisGYM Invisible Options
-  yt: ''
-- authors:
-  - CAndiman
-  desc: ''
-  file: Nes Tetris(ntsc)Window Night City HDv2_0.ips
-  name: Window Night City V2 HD
-  yt: ''
-- authors:
-  - fractal161
-  desc: ''
-  file: speedrun.bps
-  name: Speedrun Timer
-  source: https://www.romhacking.net/hacks/6913/
-  yt: ''
-- authors:
-  - jazzthief81
-  desc: ''
-  file: TetrisDasTrainerV1_1.ips
-  name: Das Trainer V1.1
-  source: https://www.romhacking.net/hacks/3761/
-  yt: ''
-- authors:
+  authors:
+  - Kirjava
+  - zohassadar
+- name: TetrisGYM Long 18
+  file: long_18.ips
+  authors:
   - Kirjava
   - Javantea
-  desc: ''
-  file: long_18.ips
-  name: TetrisGYM Long 18
-  yt: ''
-- authors:
-  - JazzySpinalFusion
+- name: TetrisGYM Upside Down Options
+  file: TGymUpsideDownOptionsCNROM.bps
+  desc: uses CNROM
+  authors:
+  - Kirjava
+  - zohassadar
+  yt: yx89F-ymbI4
+- name: TetrisGYM XPiece
+  file: GymXPiece.bps
+  desc: T replaced with X Piece
+  authors:
+  - Kirjava
+  - zohassadar
+- name: TetrisGYM XPos
+  file: xpos.bps
+  authors:
+  - Kirjava
+  - super
+- name: TetrisGYM XPos Random
+  file: xpos-random.bps
+  desc: Set x-pos to 8 to randomize the position
+  authors:
+  - Kirjava
+  - super
+- name: Tetrodrome
+  file: Tetrodrome.bps
+  authors:
+  - CAndiman
+- name: Ultris
+  file: Ultris.ips
+  desc: |
+    Faster DAS (simulates PAL DAS)
+    Faster softdrops (at level 29 speed instead of 19)
+    Instant line clears
+    Score rollover
+    Higher score cap before rollover (E99,999 to 000,000)
+    No pause-screen blackout (still see field, but not current or next blocks)
+    Copyright and rocket screen skip
+    Higher frequency of straight pieces
+    10-frame pause before each piece begins dropping automatically
+    It was designed to emulate a variety of classic and modern games, and act as a sort of hybrid between the two.
+  authors:
+  - Gyzzmo Glytch
+- name: Upside Down Tetris
+  file: UpsideDownTetris.bps
+  desc: Tetris, but upside down
+  authors:
+  - zohassadar
+  yt: cBs7H2lll-0
+- name: WaitrisBeta
+  file: WaitrisBeta.ips
   desc: 'From JazzySpF: Anyways, here''s a very very primitive foundation of an instant
     start level 0 mod with no push down, no level transition, and a seven digit score
     count. I gave it the name Waitris, which is so dumb I stuck with it. It''s barely
     anything, so I consider it basically a beta until it gets more fleshed out. I
     don''t really feel like doing much with it though.'
-  file: WaitrisBeta.ips
-  name: WaitrisBeta
-  yt: ''
-- authors:
+  authors:
   - JazzySpinalFusion
-  desc: It instantly opens a never ending level 0 type a game for when you want instant
-    casual stacking.
-  file: Quick_Stack_ModeHard_Drop.ips
-  name: Quick Stack Mode - Hard Drop
-  yt: ''
-- authors:
+- name: Wall Hack
+  file: TetrisWallHack.bps
+  desc: Tetris that allows going outside the playfield (as long as you return in time)
+  authors:
+  - zohassadar
+- name: Wall Hack 2
+  file: Wallhack2.bps
+  desc: Pieces wrap around the playfield
+  authors:
+  - zohassadar
+- name: Wall Hack 2 Anydas
+  file: Wallhack2Anydas.bps
+  desc: Pieces wrap around the playfield
+  authors:
+  - zohassadar
+  - HydrantDude
+- name: Window Night City V2
+  file: Nes Tetris(ntsc)Window Night Cityv2.ips
+  authors:
+  - CAndiman
+- name: Window Night City V2 HD
+  file: Nes Tetris(ntsc)Window Night City HDv2_0.ips
+  authors:
+  - CAndiman
+- name: Zentris
+  file: Zentris.bps
+  authors:
   - JazzySpinalFusion
-  desc: It instantly opens a never ending level 0 type a game for when you want instant
-    casual stacking.
-  file: Quick_Stack_ModeNo_Press_Down.ips
-  name: Quick Stack Mode - No Press Down
-  yt: ''
-- authors:
-  - JazzySpinalFusion
-  desc: ''
-  file: Quick_Zentris.ips
-  name: Quick Zentris
-  yt: ''
-- authors:
-  - JazzySpinalFusion
-  desc: It instantly opens a never ending level 0 type a game for when you want instant
-    casual stacking.
-  file: Quick_Stack_Mode.ips
-  name: Quick Stack Mode
-  yt: ''
-- authors:
-  - JazzySpinalFusion
-  desc: |
-    Welcome to Zentris.\n\nThis ROM Hack of Tetris released by Nintendo in 1989\
-    \ takes stacking blocks in a more relaxing direction.\n\nTo start, the visuals\
-    \ have been overhauled to a more minimalist design. Inspired by Tetris Effect,\
-    \ the blocks are designed with a singular color for each level.\n\nThe gameplay\
-    \ has been modified to make it as relaxing as possible. The game no longer increases\
-    \ the speed of gravity as you play, allowing for casual stacking of your own liking.\n\
-    Included are two patches. One is the standard version that has Level 0 Gravity.\
-    \ The second version has Gravity completely turned off, meaning you will have\
-    \ to press down to move the pieces.\n\nNow one might be concerned that this lack\
-    \ of gravity would result in a lot of holding down on the D-Pad and tired thumbs.\
-    \ Do not fret!\nTo avoid any kind of sore thumbs, a hard drop was added. Simply\
-    \ press Up on the D-Pad to send the block instantly to the bottom!\n\nIn Zentris,\
-    \ there are two game modes.\n\nThe first is A-Type. This is your standard Tetris\
-    \ game. Stack for as long as you would like without topping out.\nFor more fun,\
-    \ the score cap has been removed.\n\nThe second mode is B-Type. In this, you must\
-    \ clear a preset number of lines with a chosen height  of garbage lines.\nIn the\
-    \ standard version of NES Tetris, you are supposed to clear 25 lines. HOWEVER,\
-    \ in Zentris, the line amount has been raised to 80 lines!\nTry to see if you\
-    \ can clear all the level 5 garbage height before clearing 80 lines.\n\nSome other\
-    \ changes are listed below\n-New high scoreboard entries\n-You can see the board\
-    \ while the game is paused\n-The copyright/credit screen can be skipped by pressing\
-    \ start\n-Music is set to OFF by default\n\nA Quick Mode variant of the game has\
-    \ been added as well. In this version, the game skips all menus and goes straight\
-    \ into a Level 0 game.\nIn Quick Mode, you are unable to return to the menu. If\
-    \ you would like to start another game of Quick Mode, you will have to soft or\
-    \ hard reset.\n\nTo access these ROM Hacks, simply apply any of the included patches\
-    \ to a vanilla copy of the Tetris(USA) ROM\n\nSpecial thanks to zohassadar and\
-    \ the rest of the Classic Tetris Monthly discord for their help with this mod.\
-    \ \n\nRelax and have fun :)"
+- name: Zentris (2024)
   file: Zentris.ips
-  name: Zentris (2024)
-  yt: ''
-- authors:
+  desc: |
+    "Welcome to Zentris.
+    This ROM Hack of Tetris released by Nintendo in 1989 takes stacking blocks in a more relaxing direction.
+    To start, the visuals have been overhauled to a more minimalist design. Inspired by Tetris Effect, the blocks are designed with a singular color for each level.
+    The gameplay has been modified to make it as relaxing as possible. The game no longer increases the speed of gravity as you play, allowing for casual stacking of your own liking.
+     Included are two patches. One is the standard version that has Level 0 Gravity. The second version has Gravity completely turned off, meaning you will have to press down to move the pieces.
+    Now one might be concerned that this lack of gravity would result in a lot of holding down on the D-Pad and tired thumbs. Do not fret!
+    To avoid any kind of sore thumbs, a hard drop was added. Simply press Up on the D-Pad to send the block instantly to the bottom!
+    In Zentris, there are two game modes.
+    The first is A-Type. This is your standard Tetris game. Stack for as long as you would like without topping out.
+    For more fun, the score cap has been removed.
+    The second mode is B-Type. In this, you must clear a preset number of lines with a chosen height  of garbage lines.
+    In the standard version of NES Tetris, you are supposed to clear 25 lines. HOWEVER, in Zentris, the line amount has been raised to 80 lines!
+    Try to see if you can clear all the level 5 garbage height before clearing 80 lines.
+    Some other changes are listed below
+    -New high scoreboard entries
+    -You can see the board while the game is paused
+    -The copyright/credit screen can be skipped by pressing start
+    -Music is set to OFF by default
+    A Quick Mode variant of the game has been added as well. In this version, the game skips all menus and goes straight into a Level 0 game.
+    In Quick Mode, you are unable to return to the menu. If you would like to start another game of Quick Mode, you will have to soft or hard reset.
+    To access these ROM Hacks, simply apply any of the included patches to a vanilla copy of the Tetris(USA) ROM
+    Special thanks to zohassadar and the rest of the Classic Tetris Monthly discord for their help with this mod.
+
+    Relax and have fun :)"
+  authors:
   - JazzySpinalFusion
-  desc: See Zentris (2024)
-  file: Zentris_Zero Gravity_Quick Mode.ips
-  name: Zentris Zero Gravity Quick Mode
-  yt: ''
-- authors:
-  - JazzySpinalFusion
-  desc: "\n        This is Stack Mode. Based on the Stack Mode from Not Tetris 2,\
-    \ this variant of Tetris does not allow lines to clear. Instead, the goal is to\
-    \ get as many pieces onto the board as possible. Each piece gives your score one\
-    \ point and will save to the high score board.\nDo you think you can achieve a\
-    \ perfect 50 piece game?\nTry it here!"
-  file: Stack_Mode.ips
-  name: Stack Mode
-  yt: ''
-- authors:
-  - JazzySpinalFusion
-  desc: See Zentris (2024)
-  file: Zentris_Zero Gravity.ips
-  name: Zentris Zero Gravity
-  yt: ''
-- authors:
-  - JazzySpinalFusion
-  desc: See Zentris (2024)
+- name: Zentris Quick Mode
   file: Zentris_Quick Mode.ips
-  name: Zentris Quick Mode
-  yt: ''
-- authors:
-  - SafeHexagon
-  desc: Randomized color table with 19 & 29 speeds removed
-  file: ChaoticPalettesTetrisNoKS.bps
-  name: Chaotic Palettes Tetris No Killscreen
-- authors:
-  - Zohassadar
-  - HydrantDude
-  - Kirby703
-  desc: See source for readme
-  file: Tetris30WideWithBigAnyTrn.bps
-  name: Tetris 30 Wide With Big Pieces
-  source: https://github.com/zohassadar/NestrisHacks/tree/30bigSram
-- authors:
-  - Zohassadar
-  - HydrantDude
-  - Kirby703
-  desc: See source for readme
-  file: Pentris_v2.0.bps
-  name: Pentris 2.0
-  source: https://github.com/zohassadar/Pentris/tree/v2.0
-- authors:
-  - Zohassadar
-  - HydrantDude
-  - Kirby703
-  desc: ''
-  file: TetrisAnyRoTrn.bps
-  name: Anydas Random Spawn Orientation
-- authors:
-  - Zohassadar
-  - HydrantDude
-  - Kirby703
-  - Kirjava
-  desc: Big Mode on a 15x12 playfield, with Same Piece Sets
-  file: TetrisBigModeWideSps.bps
-  name: Big Mode Wide Sps
+  desc: See Zentris (2024)
+  authors:
+  - JazzySpinalFusion
+- name: Zentris Zero Gravity
+  file: Zentris_Zero Gravity.ips
+  desc: See Zentris (2024)
+  authors:
+  - JazzySpinalFusion
+- name: Zentris Zero Gravity Quick Mode
+  file: Zentris_Zero Gravity_Quick Mode.ips
+  desc: See Zentris (2024)
+  authors:
+  - JazzySpinalFusion

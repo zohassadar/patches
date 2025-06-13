@@ -1,4 +1,5 @@
 // Path to Bulma's sass folder
 @use 'bulma/sass' with (
-    $text: hsl(171, 100%, 41%),
+    // $text: hsl(171, 100%, 41%),
+    $box-background-color: hsl(220, 29%, 9%)
 );

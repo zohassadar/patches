@@ -26,148 +26,6 @@ function savePatch(patch) {
             });
         });
 }
-function FileInput({
-    name,
-    handleInput,
-    patch,
-    rom,
-    fileSelectedMsg,
-    validRom,
-}) {
-    return (
-        <>
-            <div className="field is-grouped m-4">
-                <button
-                    className="button is-primary is-outlined"
-                    onClick={() => savePatch(patch)}
-                >
-                    Get Patch
-                </button>
-                <button
-                    className="button is-primary is-outlined"
-                    onClick={() => patchRom(patch, rom)}
-                    disabled={!rom}
-                >
-                    Get Patched ROM
-                </button>
-                <div
-                    id="file-js-example"
-                    className="file has-name is-primary is-outlined"
-                >
-                    <label className="file-label">
-                        <input
-                            className="file-input"
-                            type="file"
-                            name="resume"
-                            onInput={handleInput}
-                        />
-                        <span className="file-cta">
-                            <span className="file-label">
-                                Select Original ROM
-                            </span>
-                        </span>
-                        <span className="file-name">
-                            {fileSelectedMsg}
-                            {validRom ? '✅' : validRom === null ? '' : '❌'}
-                        </span>
-                    </label>
-                </div>
-            </div>
-        </>
-    );
-}
-
-function YouTube({ vid }) {
-    if (!vid) return;
-    const width = 400;
-    return (
-        <iframe
-            className="content"
-            width={width}
-            height={Math.floor(width * (315 / 560))}
-            src={`https://www.youtube.com/embed/${vid}`}
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-        ></iframe>
-    );
-}
-
-function Table({ patch }) {
-    if (!patch) return <table className="box" />;
-    return (
-        <>
-            <div className="card m-6 custom-mainpanel">
-                <header className="media-content">
-                    <p className="title is-3">{patch.name}</p>
-                    <p className="subtitle is-6">{`by: ${patch.authors.join(
-                        ', ',
-                    )}`}</p>
-                </header>
-                <div className="columns">
-                    {patch.desc ? (
-                        <div className="column card-content m-6">
-                            {patch.desc}
-                        </div>
-                    ) : (
-                        ''
-                    )}
-                    {patch.yt ? (
-                        <div className="column card-content m-6">
-                            <YouTube vid={patch.yt} />
-                        </div>
-                    ) : (
-                        ''
-                    )}
-                </div>
-                {patch.link ? (
-                    <div className="card-content">
-                        <div className="content">
-                            Link: <a href={patch.link}>{patch.link}</a>
-                        </div>
-                    </div>
-                ) : (
-                    ''
-                )}
-                {patch.source ? (
-                    <div className="card-content">
-                        <div className="content">
-                            Source: <a href={patch.source}>{patch.source}</a>
-                        </div>
-                    </div>
-                ) : (
-                    ''
-                )}
-                <div className="card-footer"></div>
-            </div>
-        </>
-    );
-}
-function SideNames({ filteredPatches, setPatch, patch }) {
-    return (
-        <div className="panel custom-sidepanel">
-            <thead></thead>
-            {filteredPatches.map((p) => {
-                var className = 'has-text-primary';
-                if (JSON.stringify(p) === JSON.stringify(patch)) {
-                    className = 'has-text-info has-text-weight-bold';
-                }
-                return (
-                    <a
-                        href={`#${p.name.replace(/ /g, '+')}`}
-                        className={`panel-block ${className}`}
-                        onClick={() => setPatch(p)}
-                    >
-                        {p.name}
-                    </a>
-                );
-            })}
-        </div>
-    );
-}
-
 function patchRom(patch, rom) {
     const bpsTest = new RegExp(/\.bps$/);
     fetch(`patches/${patch.file}`)
@@ -258,6 +116,25 @@ function handleRomInput(romFile, setRom, setValidRom) {
         setRom(null);
     }
 }
+
+function YouTube({ vid }) {
+    if (!vid) return;
+    const width = 400;
+    return (
+        <iframe
+            className="content"
+            width={width}
+            height={Math.floor(width * (315 / 560))}
+            src={`https://www.youtube.com/embed/${vid}`}
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+        ></iframe>
+    );
+}
+
 function App() {
     const [rom, setRom] = useState(null);
     const [validRom, setValidRom] = useState(null);
@@ -274,9 +151,25 @@ function App() {
         }
     }
 
+    if (0) {
+        return (
+            <div className="container box content">
+                <h2>Nestris Patches</h2>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <div className="box">blah</div>
+            </div>
+        );
+    }
+
     return (
-        <div className="container box content">
-            <h2>Nestris Patches</h2>
+        <div className="container box content has-text-info">
+            <h2 className="has-text-info">Nestris Patches</h2>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -285,20 +178,37 @@ function App() {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
             <div className="box">
-                <FileInput
-                    patch={patch}
-                    rom={rom}
-                    validRom={validRom}
-                    name="RomInput"
-                    fileSelectedMsg={fileSelectedMsg}
-                    handleInput={(romFile) => {
-                        setFileSelectedMsg(romFile.target.files[0].name);
-                        handleRomInput(romFile, setRom, setValidRom);
-                    }}
-                />
+                <div
+                    id="file-js-example"
+                    className="file has-name is-info is-pulled-right"
+                >
+                    <label className="file-label">
+                        <input
+                            className="file-input"
+                            type="file"
+                            name="resume"
+                            onInput={(romFile) => {
+                                setFileSelectedMsg(
+                                    romFile.target.files[0].name,
+                                );
+                                handleRomInput(romFile, setRom, setValidRom);
+                            }}
+                        />
+                        <span className="file-cta">
+                            <span className="file-label">
+                                Select Original ROM
+                            </span>
+                        </span>
+                        <span className="file-name">
+                            {fileSelectedMsg}
+                            {validRom ? '✅' : validRom === null ? '' : '❌'}
+                        </span>
+                    </label>
+                </div>
+                <div className="field is-grouped m-4"></div>
             </div>
-            <div className="box columns">
-                <div className="box column is-one-fifth">
+            <div className="columns">
+                <div className="column is-one-quarter m-3">
                     <input
                         className="input"
                         placeholder="Search"
@@ -306,17 +216,89 @@ function App() {
                             filterPatches(e.target.value, setFilteredPatches)
                         }
                     />
-                    <SideNames
-                        filteredPatches={filteredPatches}
-                        setPatch={setPatch}
-                        patch={patch}
-                    />
+                    <div className="panel custom-sidepanel">
+                        {filteredPatches.map((p, i) => (
+                            <a
+                                key={i}
+                                href={`#${p.name.replace(/ /g, '+')}`}
+                                className={`panel-block has-text-${
+                                    JSON.stringify(p) === JSON.stringify(patch)
+                                        ? 'primary has-text-weight-bold'
+                                        : 'info'
+                                }`}
+                                onClick={() => setPatch(p)}
+                            >
+                                {p.name}
+                            </a>
+                        ))}
+                    </div>
+
+                <button
+                    className="button is-info m-1 is-pulled-left"
+                    onClick={() => savePatch(patch)}
+                >
+                    Get Patch
+                </button>
+                <button
+                    className="button is-info m-1 is-pulled-right"
+                    onClick={() => patchRom(patch, rom)}
+                    disabled={!rom}
+                >
+                    Get Patched ROM
+                </button>
                 </div>
-                <div className="box column">
-                    <Table patch={patch} rom={rom} />
-                </div>
+                {!patch ? (
+                    <table className="box column card m-3 custom-mainpanel" />
+                ) : (
+                    <div className="box column card m-3 custom-mainpanel">
+                        <header className="media-content">
+                            <p className="title is-3">{patch.name}</p>
+                            <p className="subtitle is-6">{`by: ${patch.authors.join(
+                                ', ',
+                            )}`}</p>
+                        </header>
+                        <div className="columns">
+                            {patch.desc ? (
+                                <div className="column card-content m-6">
+                                    {patch.desc.split(/\n/).map((c, i) => (
+                                        <p key={i}>{c}</p>
+                                    ))}
+                                </div>
+                            ) : (
+                                ''
+                            )}
+                            {patch.yt ? (
+                                <div className="column card-content m-6">
+                                    <YouTube vid={patch.yt} />
+                                </div>
+                            ) : (
+                                ''
+                            )}
+                        </div>
+                        {patch.link ? (
+                            <div className="card-content">
+                                <div className="content">
+                                    Link: <a href={patch.link}>{patch.link}</a>
+                                </div>
+                            </div>
+                        ) : (
+                            ''
+                        )}
+                        {patch.source ? (
+                            <div className="card-content">
+                                <div className="content">
+                                    Source:{' '}
+                                    <a href={patch.source}>{patch.source}</a>
+                                </div>
+                            </div>
+                        ) : (
+                            ''
+                        )}
+                        <div className="card-footer"></div>
+                    </div>
+                )}
             </div>
-            <div className="box content">
+            <div className="box">
                 <p>
                     Thanks for visiting. Leave feedback or contribute{' '}
                     <a href="https://github.com/zohassadar/patches">here</a>
