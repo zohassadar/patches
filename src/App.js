@@ -148,7 +148,7 @@ function App() {
     const [patch, setPatch] = useState(null);
     const [md5sum, setMd5sum] = useState('waiting');
 
-    const active = "come back to this";
+    const active = "patches";
 
     function FileButton() {
         return (
