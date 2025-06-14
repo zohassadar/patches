@@ -407,41 +407,42 @@ function App() {
                                             ', ',
                                         )}`}</p>
                                     </header>
-                                    {patch.desc ? (
-                                        <div className="content m-3">
-                                            {patch.desc
-                                                .split(/\n/)
-                                                .map((c, i) => (
-                                                    <p key={i}>{c}</p>
-                                                ))}
-
-                                            {patch.link ? (
-                                                <>
-                                                    <p className="m-0">
-                                                        {' '}
-                                                        <a href={patch.link}>
-                                                            {patch.link}
-                                                        </a>
-                                                    </p>
-                                                </>
-                                            ) : (
-                                                ''
-                                            )}
-                                            {patch.source ? (
-                                                <>
-                                                    <p className="m-0">
-                                                        <a href={patch.source}>
-                                                            {patch.source}
-                                                        </a>
-                                                    </p>
-                                                </>
-                                            ) : (
-                                                ''
-                                            )}
-                                        </div>
-                                    ) : (
-                                        ''
-                                    )}
+                                    <div className="content m-3">
+                                        {patch.desc ? (
+                                            <>
+                                                {patch.desc
+                                                    .split(/\n/)
+                                                    .map((c, i) => (
+                                                        <p key={i}>{c}</p>
+                                                    ))}
+                                            </>
+                                        ) : (
+                                            ''
+                                        )}
+                                        {patch.link ? (
+                                            <>
+                                                <p className="m-0">
+                                                    {' '}
+                                                    <a href={patch.link}>
+                                                        {patch.link}
+                                                    </a>
+                                                </p>
+                                            </>
+                                        ) : (
+                                            ''
+                                        )}
+                                        {patch.source ? (
+                                            <>
+                                                <p className="m-0">
+                                                    <a href={patch.source}>
+                                                        {patch.source}
+                                                    </a>
+                                                </p>
+                                            </>
+                                        ) : (
+                                            ''
+                                        )}
+                                    </div>
                                     {patch.yt ? (
                                         <div className="card-content m-3">
                                             <YouTube vid={patch.yt} />
