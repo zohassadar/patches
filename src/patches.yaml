@@ -1,3 +1,21 @@
+# - name: 000 Test Rom
+#   file: patch.bps
+#   authors:
+#     - Hacker
+#     - Others
+#     - Me
+#     - You
+#   yt: 8FEVTTIi5WU
+#   desc: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+#  source: https://github.com/this/that
+#  link: https://www.www.www.www
+- name: Tetris Debug Mode
+  file: tetris-debug-mode.ips
+  authors:
+    - Kirjava
+  desc: |
+    Created 10/09/2020, 00:25
+    inspired by the secret debug mode in sonic games
 - name: 10 Digit Score
   file: 10digitscore.bps
   authors:
@@ -133,10 +151,12 @@
   source: https://www.romhacking.net/hacks/3761/
   authors:
   - jazzthief81
-- name: Debug
-  file: Debug.bps
+- name: Petrus (Prototype)
+  file: Petrus.bps
   authors:
   - Kirjava
+  desc:
+    Early prototype of TetrisGYM
 - name: Disco
   file: disco.bps
   authors:
@@ -532,7 +552,7 @@
 - name: Stack Mode
   file: Stack_Mode.ips
   desc: |
-        This is Stack Mode. Based on the Stack Mode from Not Tetris 2, this variant of Tetris does not allow lines to clear. Instead, the goal is to get as many pieces onto the board as possible. Each piece gives your score one point and will save to the high score board.
+    This is Stack Mode. Based on the Stack Mode from Not Tetris 2, this variant of Tetris does not allow lines to clear. Instead, the goal is to get as many pieces onto the board as possible. Each piece gives your score one point and will save to the high score board.
     Do you think you can achieve a perfect 50 piece game?
     Try it here!
   authors:
