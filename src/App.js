@@ -135,20 +135,6 @@ function YouTube({ vid }) {
     );
 }
 
-function NeatUnusedTag() {
-    return (
-        <div className="control">
-            <div className="tags has-addons">
-                <span className="tag is-dark">{'THING'}</span>
-                <span className="tag is-info">
-                    {'OTHER THING'}
-                    <button className="delete" onClick={() => {}}></button>
-                </span>
-            </div>
-        </div>
-    );
-}
-
 const title = 'Nestris Patches';
 const brief =
     'Collection of Rom Hacks for the 1989 NES game Tetris.  Includes browser based patching tool.';
@@ -162,9 +148,7 @@ function App() {
     const [patch, setPatch] = useState(null);
     const [md5sum, setMd5sum] = useState('waiting');
 
-    // unused
-    const [topTags, setTopTags] = useState([]);
-    const [active, setActive] = useState('patches');
+    const active = "come back to this";
 
     function FileButton() {
         return (
@@ -465,25 +449,6 @@ function App() {
                                     ) : (
                                         ''
                                     )}
-                                </div>
-                                <div className="m-3 fixed-grid has-auto-count is-hidden">
-                                    <div className="grid">
-                                        {'legal,title,gamemenu,levelmenu,game'
-                                            .split(',')
-                                            .filter((w) => false)
-                                            .map((w) => {
-                                                return (
-                                                    <div className="cell content m-1">
-                                                        <img
-                                                            src={`screenshots/${patch.file.replace(
-                                                                /\.[bi]ps/,
-                                                                '',
-                                                            )}_${w}.png`}
-                                                        ></img>
-                                                    </div>
-                                                );
-                                            })}
-                                    </div>
                                 </div>
                             </div>
                         )}
