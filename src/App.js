@@ -459,6 +459,7 @@ function App() {
                                                     <div className="cell content m-1">
 
                                                         <img
+                                                            alt="screenshot"
                                                             src={`screenshots/${w}`}
                                                         ></img>
                                                     </div>
@@ -475,6 +476,7 @@ function App() {
                                                 return (
                                                     <div className="cell content m-1">
                                                         <img
+                                                            alt="screenshot"
                                                             src={`screenshots/${patch.file.replace(
                                                                 /\.[bi]ps/,
                                                                 '',
