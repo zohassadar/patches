@@ -210,11 +210,9 @@ function App() {
                         <header class="modal-card-head">
                             <div>
                                 <p class="modal-card-title is-size-2">
-                                    title
+                                    {title}
                                 </p>
-                                <p class="subtitle is-6">
-                                    brief
-                                </p>
+                                <p class="subtitle is-6">{brief}</p>
                             </div>
                         </header>
                     ) : (
