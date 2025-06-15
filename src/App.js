@@ -148,7 +148,7 @@ function App() {
     const [patch, setPatch] = useState(null);
     const [md5sum, setMd5sum] = useState('waiting');
 
-    const active = "patches";
+    const active = 'patches';
 
     function FileButton() {
         return (
@@ -198,16 +198,19 @@ function App() {
                 <div class="modal-card is-fullwidth">
                     <header class="modal-card-head">
                         <div>
-                            <p class="modal-card-title is-size-2">{title}</p>
-                            <p class="subtitle is-6">{brief}</p>
+                            <p class="modal-card-title is-size-2">
+                                {patch ? patch.name : title}
+                            </p>
+                            <p class="subtitle is-6">{patch ? '' : brief}</p>
                         </div>
                     </header>
                     <section class="modal-card-body">
                         <div className="content">
                             <h3>Select a Rom</h3>
                             <p>
-                                To get started, select a valid nestris rom to
-                                patch.
+                                {patch
+                                    ? `To get a patched version of ${patch.name}, select a valid nestris rom.`
+                                    : 'To get started, select a valid nestris rom to patch.'}
                             </p>
                             <div className="grid">
                                 <cell>
@@ -219,57 +222,64 @@ function App() {
                                         onClick={() => setShowModal(false)}
                                         disabled={!rom}
                                     >
-                                        Continue to browse patches
+                                        {patch
+                                            ? `Continue to ${patch.name}`
+                                            : 'Continue to browse patches'}
                                     </button>
                                 </cell>
                             </div>
                             <pre>md5sum: {md5sum} </pre>
                         </div>
-                        <div className="content m-3">
-                            <h3>What is this?</h3>
-                            <p>
-                                This is a collection of Rom Hacks for the 1989
-                                NES Game Tetris that includes over 100 hacks
-                                from dozens of creators. It also provides a way
-                                to patch your Rom in the browser, based off of{' '}
-                                <a href="https://www.marcrobledo.com/RomPatcher.js/">
-                                    Rom Patcher JS
-                                </a>
-                                . As time permits more hacks and information
-                                will be added.
-                            </p>
-                            <h3>Where did you get these patches?</h3>
-                            <ul>
-                                <li>
-                                    <a href="https://www.romhacking.net/">
-                                        ROMhacking.net
+                        {!patch && (
+                            <div className="content m-3">
+                                <h3>What is this?</h3>
+                                <p>
+                                    This is a collection of Rom Hacks for the
+                                    1989 NES Game Tetris that includes over 100
+                                    hacks from dozens of creators. It also
+                                    provides a way to patch your Rom in the
+                                    browser, based off of{' '}
+                                    <a href="https://www.marcrobledo.com/RomPatcher.js/">
+                                        Rom Patcher JS
                                     </a>
-                                </li>
-                                <li>
-                                    <a href="https://ctm.gg/codes-tools-and-patches/">
-                                        Classic Tetris Monthly's Codes, Tools,
-                                        and Patches
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://go.ctm.gg/discord">
-                                        Classic Tetris Monthly's Discord
-                                    </a>
-                                </li>
-                                <li>
-                                    Directly from the creator or creator's
-                                    website
-                                </li>
-                                <li>I made them</li>
-                            </ul>
-                        </div>
+                                    . As time permits more hacks and information
+                                    will be added.
+                                </p>
+                                <h3>Where did you get these patches?</h3>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.romhacking.net/">
+                                            ROMhacking.net
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://ctm.gg/codes-tools-and-patches/">
+                                            Classic Tetris Monthly's Codes,
+                                            Tools, and Patches
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://go.ctm.gg/discord">
+                                            Classic Tetris Monthly's Discord
+                                        </a>
+                                    </li>
+                                    <li>
+                                        Directly from the creator or creator's
+                                        website
+                                    </li>
+                                    <li>I made them</li>
+                                </ul>
+                            </div>
+                        )}
                     </section>
                     <footer class="modal-card-foot">
                         <button
                             class="button is-info is-outlined is-fullwidth"
                             onClick={() => setShowModal(false)}
                         >
-                            Skip loading Rom, I'm only here to browse patches
+                            {patch
+                                ? `Skip loading Rom, I'm only here to see ${patch.name}`
+                                : "Skip loading Rom, I'm only here to browse patches"}
                         </button>
                     </footer>
                     <button
@@ -453,25 +463,28 @@ function App() {
                                 </div>
                                 <div className="m-3 fixed-grid has-auto-count">
                                     <div className="grid">
-                                        {!patch.screenshots ? '' :
-                                            patch.screenshots.map((w) => {
-                                                return (
-                                                    <div className="cell content m-1">
-
-                                                        <img
-                                                            alt="screenshot"
-                                                            src={`screenshots/${w}`}
-                                                        ></img>
-                                                    </div>
-                                                );
-                                            })}
+                                        {!patch.screenshots
+                                            ? ''
+                                            : patch.screenshots.map((w) => {
+                                                  return (
+                                                      <div className="cell content m-1">
+                                                          <img
+                                                              alt="screenshot"
+                                                              src={`screenshots/${w}`}
+                                                          ></img>
+                                                      </div>
+                                                  );
+                                              })}
                                     </div>
                                 </div>
                                 <div className="m-3 fixed-grid has-auto-count">
                                     <div className="grid">
                                         {'legal,title,gamemenu,levelmenu,game'
                                             .split(',')
-                                            .filter(() => false && !patch.screenshots)
+                                            .filter(
+                                                () =>
+                                                    false && !patch.screenshots,
+                                            )
                                             .map((w) => {
                                                 return (
                                                     <div className="cell content m-1">
