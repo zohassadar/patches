@@ -309,6 +309,7 @@
   screenshots:
   - TetrisDasTrainerV1_1_game.png
 - name: Petrus (Prototype)
+  link: https://github.com/kirjavascript/TetrisGYM
   file: Petrus.bps
   screenshots:
   - Petrus_title.png
@@ -1026,6 +1027,7 @@
   yt: kz7hjhtZ3_k
 - name: Tetris 30 Wide With Big Pieces
   file: Tetris30WideWithBigAnyTrn.bps
+  yt: a-g1F71msUE
   screenshots:
   - Tetris30WideWithBigAnyTrn_title.png
   - Tetris30WideWithBigAnyTrn_game.png
