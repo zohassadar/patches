@@ -152,7 +152,7 @@ function App() {
 
     useEffect(() => {
         const handleEsc = (e) => {
-            if (e.key === 'Escape') showModal && setShowModal(false);
+            if (e.key === 'Escape') setShowModal(false);
         };
         window.addEventListener('keydown', handleEsc);
         return () => {
