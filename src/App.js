@@ -1,5 +1,5 @@
 import './App.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 const patches = require('./patches.json');
 const {
     saveAs,
@@ -140,7 +140,7 @@ const brief =
     'Collection of Rom Hacks for the 1989 NES game Tetris.  Includes browser based patching tool.';
 
 function App() {
-    const [showModel, setShowModal] = useState(true);
+    const [showModal, setShowModal] = useState(true);
     const [rom, setRom] = useState(null);
     const [validRom, setValidRom] = useState(null);
     const [fileSelectedMsg, setFileSelectedMsg] = useState('No file selected');
@@ -149,6 +149,16 @@ function App() {
     const [md5sum, setMd5sum] = useState('waiting');
 
     const active = 'patches';
+
+    useEffect(() => {
+        const handleEsc = (e) => {
+            if (e.key === 'Escape') showModal && setShowModal(false);
+        };
+        window.addEventListener('keydown', handleEsc);
+        return () => {
+            window.removeEventListener('keydown', handleEsc);
+        };
+    }, []);
 
     function FileButton() {
         return (
@@ -190,20 +200,26 @@ function App() {
     const favorite = patches[Math.floor(Math.random() * patches.length)];
     return (
         <>
-            <div className={showModel ? 'modal is-active' : 'modal'}>
+            <div className={showModal ? 'modal is-active' : 'modal'}>
                 <div
                     className="modal-background"
                     onClick={() => setShowModal(false)}
                 ></div>
                 <div class="modal-card is-fullwidth">
-                    <header class="modal-card-head">
-                        <div>
-                            <p class="modal-card-title is-size-2">
-                                {patch ? patch.name : title}
-                            </p>
-                            <p class="subtitle is-6">{patch ? '' : brief}</p>
-                        </div>
-                    </header>
+                    {!patch ? (
+                        <header class="modal-card-head">
+                            <div>
+                                <p class="modal-card-title is-size-2">
+                                    title
+                                </p>
+                                <p class="subtitle is-6">
+                                    brief
+                                </p>
+                            </div>
+                        </header>
+                    ) : (
+                        ''
+                    )}
                     <section class="modal-card-body">
                         <div className="content">
                             <h3>Select a Rom</h3>
