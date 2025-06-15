@@ -187,7 +187,7 @@ function App() {
             if (patch) setPatch(patch);
         }
     }
-
+    const favorite = patches[Math.floor(Math.random() * patches.length)];
     return (
         <>
             <div className={showModel ? 'modal is-active' : 'modal'}>
@@ -243,7 +243,20 @@ function App() {
                                         Rom Patcher JS
                                     </a>
                                     . As time permits more hacks and information
-                                    will be added.
+                                    will be added. Until then, please check out
+                                    my favorite hack{' '}
+                                    <a
+                                        href={`#${favorite.name.replace(
+                                            / /g,
+                                            '+',
+                                        )}`}
+                                        onClick={() => {
+                                            setShowModal(false);
+                                            setPatch(favorite);
+                                        }}
+                                    >
+                                        {`${favorite.name}`}
+                                    </a>
                                 </p>
                                 <h3>Where did you get these patches?</h3>
                                 <ul>
