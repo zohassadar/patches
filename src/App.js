@@ -451,6 +451,40 @@ function App() {
                                         ''
                                     )}
                                 </div>
+                                <div className="m-3 fixed-grid has-auto-count">
+                                    <div className="grid">
+                                        {!patch.screenshots ? '' :
+                                            patch.screenshots.map((w) => {
+                                                return (
+                                                    <div className="cell content m-1">
+
+                                                        <img
+                                                            src={`screenshots/${w}`}
+                                                        ></img>
+                                                    </div>
+                                                );
+                                            })}
+                                    </div>
+                                </div>
+                                <div className="m-3 fixed-grid has-auto-count">
+                                    <div className="grid">
+                                        {'legal,title,gamemenu,levelmenu,game'
+                                            .split(',')
+                                            .filter(() => false && !patch.screenshots)
+                                            .map((w) => {
+                                                return (
+                                                    <div className="cell content m-1">
+                                                        <img
+                                                            src={`screenshots/${patch.file.replace(
+                                                                /\.[bi]ps/,
+                                                                '',
+                                                            )}_${w}.png`}
+                                                        ></img>
+                                                    </div>
+                                                );
+                                            })}
+                                    </div>
+                                </div>
                             </div>
                         )}
                     </div>
