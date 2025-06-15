@@ -139,6 +139,16 @@
   - TetrisBigModeWideSps_game.png
 
 
+- name: Bracket Blocks
+  file: TetrisNBracket.ips
+  authors:
+    - Andrew Rae
+  screenshots:
+  - 3644screenshot1.png
+  link: https://www.romhacking.net/hacks/3644/
+  desc: A very simple graphic hack inspired by the Shirase mode of Tetris TGM3 (which in turn was a nod to the Electronika 60 version), changing all the blocks to the bracket style seen therein. Try it on the higher levels!
+
+
 - name: Brackets GYM
   file: brackets_gym.bps
   authors:
@@ -170,11 +180,17 @@
 
 - name: Controller Input Display
   file: TetrisControllerInputDisplay.ips
+  desc: |
+    Controller input display for NES Tetris
+
+    This is a modification for the USA (NTSC) version of NES Tetris that shows a controller input read-out in the bottom right corner of the game screen. The left, right, down, A and B buttons light up whenever they are pressed down.
   authors:
   - jazzthief81
   link: https://www.romhacking.net/hacks/4785/
   screenshots:
-  - TetrisControllerInputDisplay_game.png
+  - 4785screenshot1.png
+  - 4785screenshot2.png
+  - 4785screenshot3.png
 
 
 - name: CTM Hack Dec 2017
@@ -1084,6 +1100,17 @@
 
 - name: SNES Gravity
   file: Tetris (USA) SNES.ips
+  link: https://www.romhacking.net/hacks/3997/
+  desc: |
+    NES and SNES are very similar in game mechanics. They obey the exact same auto-shift and delayed-auto-shift rules (this is referring to moving the pieces left and right). They also follow the same rules for each level’s fall/drop rate (the speed at which the pieces fall to the bottom of the screen). But there is one major difference between NES and SNES game mechanics.
+
+    While it is true that both games match each other in falling speed (the rate at which the piece falls to the bottom), there is a difference in the rules of gravity between the two games. In NES, gravity is in effect as soon as the next piece has been generated, while in SNES, gravity doesn’t kick in until ten frames of screen time have passed. That means that SNES gives you ten frames of game time in which the piece is “floating”–you can begin to move the piece left or right during this time, it’s active but not falling. NES does not give you any sort of “head start”–as soon as your piece appears, it is already falling.
+
+    Ten frames amounts to 1/6 of a second. The game displays 60 frames per second, and ten frames is 10 out of 60. That is a really big deal for the Tetris Master.
+
+    This patch adds the pre-gravity behaviour from the SNES version of Tetris (from “Tetris & Dr. Mario”) without affecting natural drop speeds of the NES release.
+
+    Also includes a version for the “Tetris Zero” hack.
   authors:
   - Josh Tolles
 
@@ -1274,6 +1301,20 @@
   - ejona86
 
 
+- name: Tetrimino Palette Swap
+  file: Tetris (USA) - Tetrimino Palette Swap.ips
+  authors:
+    - English1stud
+    - Josh Tolles
+  link: https://www.romhacking.net/hacks/5150/
+  desc: Just a modification of some palettes in this version, notably the Tetriminos color combos for each level. Three different level types, x1, x4, and x5, feature palettes from the out-of-bounds section when going through all 335 levels. The castle and some other colors in the endings were also touched up.
+  screenshots:
+  - 5150screenshot4.png
+  - 5150screenshot1.png
+  - 5150screenshot3.png
+  - 5150screenshot2.png
+
+
 - name: Tetris 12 Wide
   file: Tetris12Wide.bps
   screenshots:
@@ -1357,6 +1398,29 @@
   yt: Kdhbwzg34sc
 
 
+- name: Tetris Excel
+  file: Tetris_Excel_v2.ips
+  link: https://www.romhacking.net/hacks/4973/
+  desc: |
+    Tetris Excel 2.0 - Game of Last Year Edition is here!
+
+    If you wanna play NES Tetris with razor sharp controls and professional speed, this is the romhack for you. Everything is Fast and Awesome!
+
+    The controls are Super Responsive, The graphics are Better, the English is Brokener, and every screen is instantly skippable. Radical!
+
+    Version 2.0 brings Hard Drop and Quick Piece Spawn. w00t
+
+    Use LunarIPS with a correct USA rom.
+    FCEUX, Mesen or a flashcart are recommended.
+  authors:
+  - Controllerhead
+  screenshots:
+  - 4973titlescreen.PNG
+  - 4973screenshot1.PNG
+  - 4973screenshot2.PNG
+  - 4973screenshot3.PNG
+
+
 - name: Tetris Metrics
   file: TetrisMetrics.ips
   screenshots:
@@ -1369,6 +1433,34 @@
   file: NTSC Tetris Rate.ips
   authors:
   - HydrantDude
+
+
+- name: Tetris Zero
+  file: Tetris Zero (MMC3_118_v2).ips
+  authors:
+  - infidelity
+  link: https://www.romhacking.net/hacks/1013/
+  screenshots:
+  - 1013titlescreen.png
+  - 1013screenshot3.png
+  - 1013screenshot4.png
+  - 1013screenshot1.png
+  - 1013screenshot2.png
+  desc: |
+    This is a 2 player hack for the NES version of Tetris. In order to accomplish this, the ROM was converted from MMC1 to MMC3. The PRG was expanded to have 2 additional PRG banks.
+
+    Also, a custom bankswap routine was added since no bankswap was present in the original ROM. The following features were added:
+
+      Enabled 2 player mode.
+      Created custom controls for 2nd player on non & in-game screens.
+      Created custom designs for A/B-Type 2 player mode.
+      Created asm to allow 2nd player to have stats shown on in-game screen.
+      Player 2 has the ability to write their name into the scoreboard.
+      Added a new gameplay feature to the B-Type Mode. In B-Type mode, in order to win 25 lines must be cleared. There is now the ability to choose how many lines to clear. There is a choice from 01-80 lines to clear.
+      Player 2 now has the ability to obtain their own game piece, no longer sharing/stealing from player 1.
+      Player 2 now has a proper NEXT piece box, along with working select button to enable/disable display.
+      Player 2 now has the ability to select an additional +10 levels from what they choose from A/B-Type (player 1 can hold the A button down when they have level 0-9 highlighted, and when they press start with A button held, the player will start +10 levels from what was selected. Player 2 can also do the same thing. However, this can only be done while player 2 holds down the B button. When player 1 presses start, player 2 needs to have the B button held down in order to get the +10 level).
+      The archive also includes a .sav file for those who own a powerpak for the NES.
 
 
 - name: TetrisGYM 6.0.0
@@ -1659,6 +1751,20 @@
   authors:
   - CAndiman
   link: https://www.romhacking.net/hacks/7598/
+
+
+- name: WTFTris
+  file: wtftris.bps
+  link: https://www.romhacking.net/hacks/3889/
+  authors:
+    - Yoshimaster96
+  screenshots:
+  - 3889screenshot1.png
+  desc: |
+    This hack simply modifies the tetrominoes to take on more complex shapes, making the game more difficult. The “STATISTICS” graphics are also modified accordingly.
+
+    Enjoy!
+  yt: IGuA4T0xaEE
 
 
 - name: Zentris
