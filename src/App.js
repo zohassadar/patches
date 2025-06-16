@@ -205,20 +205,20 @@ function App() {
                     className="modal-background"
                     onClick={() => setShowModal(false)}
                 ></div>
-                <div class="modal-card is-fullwidth">
+                <div className="modal-card is-fullwidth">
                     {!patch ? (
-                        <header class="modal-card-head">
+                        <header className="modal-card-head">
                             <div>
-                                <p class="modal-card-title is-size-2">
+                                <p className="modal-card-title is-size-2">
                                     {title}
                                 </p>
-                                <p class="subtitle is-6">{brief}</p>
+                                <p className="subtitle is-6">{brief}</p>
                             </div>
                         </header>
                     ) : (
                         ''
                     )}
-                    <section class="modal-card-body">
+                    <section className="modal-card-body">
                         <div className="content">
                             <h3>Select a Rom</h3>
                             <p>
@@ -232,7 +232,7 @@ function App() {
                                 </cell>
                                 <cell>
                                     <button
-                                        class="button is-success is-outlined is-fullwidth"
+                                        className="button is-success is-outlined is-fullwidth"
                                         onClick={() => setShowModal(false)}
                                         disabled={!rom}
                                     >
@@ -299,9 +299,9 @@ function App() {
                             </div>
                         )}
                     </section>
-                    <footer class="modal-card-foot">
+                    <footer className="modal-card-foot">
                         <button
-                            class="button is-info is-outlined is-fullwidth"
+                            className="button is-info is-outlined is-fullwidth"
                             onClick={() => setShowModal(false)}
                         >
                             {patch
@@ -310,7 +310,7 @@ function App() {
                         </button>
                     </footer>
                     <button
-                        class="modal-close is-large"
+                        className="modal-close is-large"
                         aria-label="close"
                         onClick={() => setShowModal(false)}
                     ></button>
@@ -537,7 +537,7 @@ function App() {
                 )}
 
                 <footer className="box">
-                    <div class="content">
+                    <div className="content">
                         <p>
                             Thanks for visiting. Leave feedback or contribute{' '}
                             <a href="https://github.com/zohassadar/patches">
