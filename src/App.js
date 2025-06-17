@@ -14,8 +14,23 @@ const sortFilter = (p1, p2) =>
 
 const sortedPatches = patches.sort(sortFilter);
 
+// not using this for now, but this version being different from what's saved
+// is what would make the modal show up if it weren't disabled
+const VERSION = '104';
+const VERSION_TAG = 'patchesVersion';
+const ROM_TAG = 'savedRomBytes';
+const ROM_NAME_TAG = 'savedRomName';
+const ROM_DATE_TAG = 'savedRomDate';
+const ROM_HASH_TAG = 'savedRomHash';
 const INES1HEADER = [78, 69, 83, 26, 2, 2, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 const VANILLA_INES1_MD5 = 'ec58574d96bee8c8927884ae6e7a2508';
+
+const TITLE = 'Nestris Patches';
+const BRIEF =
+    'Collection of Rom Hacks for the 1989 NES game Tetris.  Includes browser based patching tool.';
+
+const DEFAULT_FILE = 'No file selected';
+const DEFAULT_MD5 = 'Waiting...';
 
 function savePatch(patch) {
     fetch(`patches/${patch.file}`)
@@ -35,10 +50,8 @@ function patchRom(patch, rom) {
                 const marcPatch = new MarcFile(new Uint8Array(buffer));
                 let patchParsed;
                 if (bpsTest.test(patch.file)) {
-                    console.log(patch.file);
                     patchParsed = parseBPSFile(marcPatch);
                 } else {
-                    console.log('IPS file');
                     patchParsed = parseIPSFile(marcPatch);
                 }
 
@@ -52,7 +65,6 @@ function patchRom(patch, rom) {
 }
 
 function filterPatches(filter, setFilteredPatches) {
-    console.log(filter);
     if (!filter) {
         setFilteredPatches(sortedPatches);
         return;
@@ -66,55 +78,6 @@ function filterPatches(filter, setFilteredPatches) {
             return false;
         }),
     );
-}
-
-function handleRomInput(romFile, setRom, setValidRom, setMd5sum) {
-    const romOrig = new MarcFile(romFile.target.files[0], onMarcRomLoad);
-    function validateRom(marcfile) {
-        const hash = md5(marcfile._u8array).toString();
-        setMd5sum(md5(romOrig._u8array).toString());
-        if (hash === VANILLA_INES1_MD5) {
-            setValidRom(true);
-            setRom({
-                filename: romFile.target.files[0].name,
-                contents: marcfile,
-            });
-            return true;
-        }
-        return false;
-    }
-    function onMarcRomLoad() {
-        var romMarc = new MarcFile(
-            new Uint8Array([...INES1HEADER, ...romOrig._u8array.slice(16)]),
-        );
-        if (validateRom(romMarc)) return;
-
-        // attempt to solve for the 256k rom
-        const size = romMarc._u8array.length;
-        if (size > 0x40000) {
-            // assume no trainer
-            const prg = [...romMarc._u8array.slice(0x10, 0x10 + 0x8000)];
-            const chr = [
-                ...romMarc._u8array.slice(0x10 + 0x20000, 0x10 + 0x24000),
-            ];
-            romMarc = new MarcFile(
-                new Uint8Array([...INES1HEADER, ...prg, ...chr]),
-            );
-            if (validateRom(romMarc)) return;
-
-            // assume trainer
-            const prg2 = [...romMarc._u8array.slice(0x210, 0x210 + 0x8000)];
-            const chr2 = [
-                ...romMarc._u8array.slice(0x210 + 0x20000, 0x210 + 0x24000),
-            ];
-            romMarc = new MarcFile(
-                new Uint8Array([...INES1HEADER, ...prg2, ...chr2]),
-            );
-            if (validateRom(romMarc)) return;
-        }
-        setValidRom(false);
-        setRom(null);
-    }
 }
 
 function YouTube({ vid }) {
@@ -135,20 +98,63 @@ function YouTube({ vid }) {
     );
 }
 
-const title = 'Nestris Patches';
-const brief =
-    'Collection of Rom Hacks for the 1989 NES game Tetris.  Includes browser based patching tool.';
+
 
 function App() {
-    const [showModal, setShowModal] = useState(true);
+    const [showModal, setShowModal] = useState(null);
+    const [remember, setRemember] = useState(null);
     const [rom, setRom] = useState(null);
+    const [romDate, setRomDate] = useState(null);
     const [validRom, setValidRom] = useState(null);
-    const [fileSelectedMsg, setFileSelectedMsg] = useState('No file selected');
+    const [fileSelectedMsg, setFileSelectedMsg] = useState(DEFAULT_FILE);
     const [filteredPatches, setFilteredPatches] = useState(sortedPatches);
     const [patch, setPatch] = useState(null);
-    const [md5sum, setMd5sum] = useState('waiting');
-
+    const [md5sum, setMd5sum] = useState(DEFAULT_MD5);
+    const [confirming, setConfirming] = useState(null);
     const active = 'patches';
+
+    function cleanUpRom() {
+        setMd5sum(DEFAULT_MD5);
+        setRomDate(null);
+        setRom(null);
+        setValidRom(null);
+        setRemember(false);
+        setFileSelectedMsg(DEFAULT_FILE);
+        localStorage.removeItem(ROM_TAG);
+        localStorage.removeItem(ROM_NAME_TAG);
+        localStorage.removeItem(ROM_DATE_TAG);
+        localStorage.removeItem(ROM_HASH_TAG);
+    }
+
+    useEffect(() => {
+        // show modal or no
+        setShowModal(localStorage.getItem(VERSION_TAG) !== VERSION);
+        localStorage.setItem(VERSION_TAG, VERSION);
+
+        // has a rom been saved?
+        const savedRom = localStorage.getItem(ROM_TAG);
+        const savedRomName = localStorage.getItem(ROM_NAME_TAG);
+        const savedRomDate = localStorage.getItem(ROM_DATE_TAG);
+        const savedRomHash = localStorage.getItem(ROM_HASH_TAG);
+        if (!(savedRom && savedRomName && savedRomDate && savedRomHash)) {
+            // cleanup if we don't have everything
+            cleanUpRom();
+        } else {
+            const romBytes = new Uint8Array(
+                Object.values(JSON.parse(savedRom)),
+            );
+            const marcFile = new MarcFile(romBytes);
+            if (validateRom(marcFile, savedRomName, false)) {
+                setFileSelectedMsg(savedRomName);
+                setMd5sum(savedRomHash);
+                setRomDate(savedRomDate);
+                setRemember(true);
+            } else {
+                // clean if rom is invalid
+                cleanUpRom();
+            }
+        }
+    }, []);
 
     useEffect(() => {
         const handleEsc = (e) => {
@@ -160,6 +166,89 @@ function App() {
         };
     }, []);
 
+    // marcFile, str, bool
+    function validateRom(marcfile, romName, saveLocal) {
+        const hash = md5(marcfile._u8array).toString();
+        if (hash === VANILLA_INES1_MD5) {
+            const timestamp = new Date().toLocaleString();
+            setValidRom(true);
+            setRom({
+                filename: romName,
+                contents: marcfile,
+            });
+            setRomDate(timestamp);
+            if (saveLocal && remember) {
+                localStorage.setItem(
+                    ROM_TAG,
+                    JSON.stringify(marcfile._u8array),
+                );
+                localStorage.setItem(ROM_NAME_TAG, romName);
+                localStorage.setItem(ROM_DATE_TAG, timestamp);
+            }
+            // console.log('Valid rom found!');
+            return true;
+        }
+        // console.error('invalid rom');
+        return false;
+    }
+
+    // Uint8Array, str, bool
+    function handleRomInput(romArray, romName, fromFile) {
+        var romOrig = new MarcFile(romArray);
+        const origHash = md5(romOrig._u8array).toString();
+        setMd5sum(origHash);
+        localStorage.setItem(ROM_HASH_TAG, origHash);
+
+        // console.log('Attempting unmodified header');
+        if (validateRom(romOrig, romName, fromFile)) return;
+
+        // replace the presumably ines2.0 header with v1 and try again
+        // console.log('Attempting with ines v1 header');
+        var romMarc = new MarcFile(
+            new Uint8Array([...INES1HEADER, ...romOrig._u8array.slice(16)]),
+        );
+        if (validateRom(romMarc, romName, fromFile)) return;
+        // console.log('checking for large rom');
+
+        // attempt to solve for the 256k rom
+        // i've never seen it, so i'm making assumptions
+        const size = romMarc._u8array.length;
+        if (size > 0x40000) {
+            // assume normal header
+            const prg = [...romOrig._u8array.slice(0x10, 0x10 + 0x8000)];
+            const chr = [
+                ...romOrig._u8array.slice(0x10 + 0x20000, 0x10 + 0x24000),
+            ];
+            romMarc = new MarcFile(
+                new Uint8Array([...INES1HEADER, ...prg, ...chr]),
+            );
+            // console.log('attempting to handle large rom with normal header');
+            if (validateRom(romMarc, romName, fromFile)) return;
+
+            // assume trainer present (how likely is this even)
+            const prg2 = [...romMarc._u8array.slice(0x210, 0x210 + 0x8000)];
+            const chr2 = [
+                ...romMarc._u8array.slice(0x210 + 0x20000, 0x210 + 0x24000),
+            ];
+            romMarc = new MarcFile(
+                new Uint8Array([...INES1HEADER, ...prg2, ...chr2]),
+            );
+            // console.log('attempting to handle large rom with trainer header');
+            if (validateRom(romMarc, romName, fromFile)) return;
+        }
+        setValidRom(false);
+        setRom(null);
+    }
+
+    function handleFileInput(event) {
+        const fileName = event.target.files[0].name;
+        const reader = new FileReader();
+        reader.onload = () => handleRomInput(reader.result, fileName, true);
+        reader.onerror = (error) =>
+            console.error(`error reading file ${error}`);
+        reader.readAsArrayBuffer(event.target.files[0]);
+    }
+
     function FileButton() {
         return (
             <div className="file has-name is-info">
@@ -168,18 +257,16 @@ function App() {
                         className="file-input"
                         type="file"
                         name="resume"
-                        onInput={(romFile) => {
-                            setFileSelectedMsg(romFile.target.files[0].name);
-                            handleRomInput(
-                                romFile,
-                                setRom,
-                                setValidRom,
-                                setMd5sum,
-                            );
+                        onInput={(event) => {
+                            setFileSelectedMsg(event.target.files[0].name);
+                            handleFileInput(event);
+                            setShowModal(false);
                         }}
                     />
                     <span className="file-cta">
-                        <span className="file-label">Select original rom</span>
+                        <span className="file-label">
+                            {rom ? 'Original Rom' : 'Select Original Rom'}
+                        </span>
                     </span>
                     <span className="file-name">
                         {fileSelectedMsg}
@@ -200,7 +287,8 @@ function App() {
     const favorite = patches[Math.floor(Math.random() * patches.length)];
     return (
         <>
-            <div className={showModal ? 'modal is-active' : 'modal'}>
+            {/* make modal go away for now */}
+            <div className={showModal && false ? 'modal is-active' : 'modal'}>
                 <div
                     className="modal-background"
                     onClick={() => setShowModal(false)}
@@ -210,9 +298,9 @@ function App() {
                         <header className="modal-card-head">
                             <div>
                                 <p className="modal-card-title is-size-2">
-                                    {title}
+                                    {TITLE}
                                 </p>
-                                <p className="subtitle is-6">{brief}</p>
+                                <p className="subtitle is-6">{BRIEF}</p>
                             </div>
                         </header>
                     ) : (
@@ -319,12 +407,83 @@ function App() {
 
             <div className="container box">
                 <div className="columns">
-                    <div className="column is-three-quarters content">
-                        <h1 className="m-0">{title}</h1>
-                        <p>{brief}</p>
+                    <div className="column is-three-fifths content">
+                        <h1 className="m-0">{TITLE}</h1>
+                        <p>{BRIEF}</p>
                     </div>
-                    <div className="column">
+                    <div className="column is-two-fifths">
                         <FileButton />
+                        <div className="columns">
+                            <pre className="column p-1">
+                                {md5sum}
+                                {'\n'}
+                                {romDate ? romDate : ' '}
+                            </pre>
+                            <div className="column p-1 is-two-fifths">
+                                {rom && remember ? (
+                                    <>
+                                        <button
+                                            onClick={() => {
+                                                if (confirming) {
+                                                    cleanUpRom();
+                                                }
+                                                setConfirming(!confirming);
+                                            }}
+                                            className={`button is-outlined ${
+                                                confirming
+                                                    ? 'is-warning'
+                                                    : 'is-info'
+                                            }`}
+                                        >
+                                            {confirming ? 'confirm' : 'forget'}
+                                        </button>
+
+                                        {confirming && (
+                                            <button
+                                                onClick={() =>
+                                                    setConfirming(false)
+                                                }
+                                                className="button is-outlined is-success"
+                                            >
+                                                cancel
+                                            </button>
+                                        )}
+                                    </>
+                                ) : (
+                                    <>
+                                        <label class="checkbox">
+                                            <input
+                                                type="checkbox"
+                                                checked={remember}
+                                                onChange={(event) => {
+                                                    const newRemember =
+                                                        !remember;
+                                                    setRemember(newRemember);
+                                                    if (rom && newRemember) {
+                                                        localStorage.setItem(
+                                                            ROM_TAG,
+                                                            JSON.stringify(
+                                                                rom.contents
+                                                                    ._u8array,
+                                                            ),
+                                                        );
+                                                        localStorage.setItem(
+                                                            ROM_NAME_TAG,
+                                                            fileSelectedMsg,
+                                                        );
+                                                        localStorage.setItem(
+                                                            ROM_DATE_TAG,
+                                                            romDate,
+                                                        );
+                                                    }
+                                                }}
+                                            />
+                                            Remember rom
+                                        </label>
+                                    </>
+                                )}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="columns">
