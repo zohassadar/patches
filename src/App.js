@@ -98,7 +98,36 @@ function YouTube({ vid }) {
     );
 }
 
-
+// marcFile, str, bool
+const validateRom = (
+    marcfile,
+    romName,
+    saveLocal,
+    setValidRom,
+    setRom,
+    setRomDate,
+    remember,
+) => {
+    const hash = md5(marcfile._u8array).toString();
+    if (hash === VANILLA_INES1_MD5) {
+        const timestamp = new Date().toLocaleString();
+        setValidRom(true);
+        setRom({
+            filename: romName,
+            contents: marcfile,
+        });
+        setRomDate(timestamp);
+        if (saveLocal && remember) {
+            localStorage.setItem(ROM_TAG, JSON.stringify(marcfile._u8array));
+            localStorage.setItem(ROM_NAME_TAG, romName);
+            localStorage.setItem(ROM_DATE_TAG, timestamp);
+        }
+        // console.log('Valid rom found!');
+        return true;
+    }
+    // console.error('invalid rom');
+    return false;
+};
 
 function App() {
     const [showModal, setShowModal] = useState(null);
@@ -144,7 +173,17 @@ function App() {
                 Object.values(JSON.parse(savedRom)),
             );
             const marcFile = new MarcFile(romBytes);
-            if (validateRom(marcFile, savedRomName, false)) {
+            if (
+                validateRom(
+                    marcFile,
+                    savedRomName,
+                    false,
+                    setValidRom,
+                    setRom,
+                    setRomDate,
+                    remember,
+                )
+            ) {
                 setFileSelectedMsg(savedRomName);
                 setMd5sum(savedRomHash);
                 setRomDate(savedRomDate);
@@ -154,7 +193,7 @@ function App() {
                 cleanUpRom();
             }
         }
-    }, []);
+    }, [remember]);
 
     useEffect(() => {
         const handleEsc = (e) => {
@@ -166,32 +205,6 @@ function App() {
         };
     }, []);
 
-    // marcFile, str, bool
-    function validateRom(marcfile, romName, saveLocal) {
-        const hash = md5(marcfile._u8array).toString();
-        if (hash === VANILLA_INES1_MD5) {
-            const timestamp = new Date().toLocaleString();
-            setValidRom(true);
-            setRom({
-                filename: romName,
-                contents: marcfile,
-            });
-            setRomDate(timestamp);
-            if (saveLocal && remember) {
-                localStorage.setItem(
-                    ROM_TAG,
-                    JSON.stringify(marcfile._u8array),
-                );
-                localStorage.setItem(ROM_NAME_TAG, romName);
-                localStorage.setItem(ROM_DATE_TAG, timestamp);
-            }
-            // console.log('Valid rom found!');
-            return true;
-        }
-        // console.error('invalid rom');
-        return false;
-    }
-
     // Uint8Array, str, bool
     function handleRomInput(romArray, romName, fromFile) {
         var romOrig = new MarcFile(romArray);
@@ -200,14 +213,36 @@ function App() {
         localStorage.setItem(ROM_HASH_TAG, origHash);
 
         // console.log('Attempting unmodified header');
-        if (validateRom(romOrig, romName, fromFile)) return;
+        if (
+            validateRom(
+                romOrig,
+                romName,
+                fromFile,
+                setValidRom,
+                setRom,
+                setRomDate,
+                remember,
+            )
+        )
+            return;
 
         // replace the presumably ines2.0 header with v1 and try again
         // console.log('Attempting with ines v1 header');
         var romMarc = new MarcFile(
             new Uint8Array([...INES1HEADER, ...romOrig._u8array.slice(16)]),
         );
-        if (validateRom(romMarc, romName, fromFile)) return;
+        if (
+            validateRom(
+                romMarc,
+                romName,
+                fromFile,
+                setValidRom,
+                setRom,
+                setRomDate,
+                remember,
+            )
+        )
+            return;
         // console.log('checking for large rom');
 
         // attempt to solve for the 256k rom
@@ -223,7 +258,18 @@ function App() {
                 new Uint8Array([...INES1HEADER, ...prg, ...chr]),
             );
             // console.log('attempting to handle large rom with normal header');
-            if (validateRom(romMarc, romName, fromFile)) return;
+            if (
+                validateRom(
+                    romMarc,
+                    romName,
+                    fromFile,
+                    setValidRom,
+                    setRom,
+                    setRomDate,
+                    remember,
+                )
+            )
+                return;
 
             // assume trainer present (how likely is this even)
             const prg2 = [...romMarc._u8array.slice(0x210, 0x210 + 0x8000)];
@@ -234,7 +280,18 @@ function App() {
                 new Uint8Array([...INES1HEADER, ...prg2, ...chr2]),
             );
             // console.log('attempting to handle large rom with trainer header');
-            if (validateRom(romMarc, romName, fromFile)) return;
+            if (
+                validateRom(
+                    romMarc,
+                    romName,
+                    fromFile,
+                    setValidRom,
+                    setRom,
+                    setRomDate,
+                    remember,
+                )
+            )
+                return;
         }
         setValidRom(false);
         setRom(null);
