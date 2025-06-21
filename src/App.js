@@ -98,40 +98,9 @@ function YouTube({ vid }) {
     );
 }
 
-// marcFile, str, bool
-const validateRom = (
-    marcfile,
-    romName,
-    saveLocal,
-    setValidRom,
-    setRom,
-    setRomDate,
-    remember,
-) => {
-    const hash = md5(marcfile._u8array).toString();
-    if (hash === VANILLA_INES1_MD5) {
-        const timestamp = new Date().toLocaleString();
-        setValidRom(true);
-        setRom({
-            filename: romName,
-            contents: marcfile,
-        });
-        setRomDate(timestamp);
-        if (saveLocal && remember) {
-            localStorage.setItem(ROM_TAG, JSON.stringify(marcfile._u8array));
-            localStorage.setItem(ROM_NAME_TAG, romName);
-            localStorage.setItem(ROM_DATE_TAG, timestamp);
-        }
-        // console.log('Valid rom found!');
-        return true;
-    }
-    // console.error('invalid rom');
-    return false;
-};
-
 function App() {
     const [showModal, setShowModal] = useState(null);
-    const [remember, setRemember] = useState(null);
+    const [remember, setRemember] = useState(false);
     const [rom, setRom] = useState(null);
     const [romDate, setRomDate] = useState(null);
     const [validRom, setValidRom] = useState(null);
@@ -140,60 +109,24 @@ function App() {
     const [patch, setPatch] = useState(null);
     const [md5sum, setMd5sum] = useState(DEFAULT_MD5);
     const [confirming, setConfirming] = useState(null);
+    const [featured, setFeaturedRom] = useState(null);
     const active = 'patches';
-
-    function cleanUpRom() {
-        setMd5sum(DEFAULT_MD5);
-        setRomDate(null);
-        setRom(null);
-        setValidRom(null);
-        setRemember(false);
-        setFileSelectedMsg(DEFAULT_FILE);
-        localStorage.removeItem(ROM_TAG);
-        localStorage.removeItem(ROM_NAME_TAG);
-        localStorage.removeItem(ROM_DATE_TAG);
-        localStorage.removeItem(ROM_HASH_TAG);
-    }
 
     useEffect(() => {
         // show modal or no
         setShowModal(localStorage.getItem(VERSION_TAG) !== VERSION);
+    }, []);
+    useEffect(() => {
+        // show modal or no
         localStorage.setItem(VERSION_TAG, VERSION);
-
-        // has a rom been saved?
-        const savedRom = localStorage.getItem(ROM_TAG);
-        const savedRomName = localStorage.getItem(ROM_NAME_TAG);
-        const savedRomDate = localStorage.getItem(ROM_DATE_TAG);
-        const savedRomHash = localStorage.getItem(ROM_HASH_TAG);
-        if (!(savedRom && savedRomName && savedRomDate && savedRomHash)) {
-            // cleanup if we don't have everything
-            cleanUpRom();
-        } else {
-            const romBytes = new Uint8Array(
-                Object.values(JSON.parse(savedRom)),
-            );
-            const marcFile = new MarcFile(romBytes);
-            if (
-                validateRom(
-                    marcFile,
-                    savedRomName,
-                    false,
-                    setValidRom,
-                    setRom,
-                    setRomDate,
-                    remember,
-                )
-            ) {
-                setFileSelectedMsg(savedRomName);
-                setMd5sum(savedRomHash);
-                setRomDate(savedRomDate);
-                setRemember(true);
-            } else {
-                // clean if rom is invalid
-                cleanUpRom();
-            }
-        }
-    }, [remember]);
+    }, []);
+    useEffect(() => {
+        setSavedRom();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+    useEffect(() => {
+        setFeatured(setFeaturedRom);
+    }, []);
 
     useEffect(() => {
         const handleEsc = (e) => {
@@ -205,6 +138,90 @@ function App() {
         };
     }, []);
 
+    // marcFile, str, bool
+    const validateRom = (marcfile, romName, saveLocal) => {
+        console.log(`Remember is ${remember} in validateRom`);
+        const hash = md5(marcfile._u8array).toString();
+        if (hash === VANILLA_INES1_MD5) {
+            const timestamp = new Date().toLocaleString();
+            setValidRom(true);
+            setRom({
+                filename: romName,
+                contents: marcfile,
+            });
+            setRomDate(timestamp);
+            if (saveLocal && remember) {
+                localStorage.setItem(
+                    ROM_TAG,
+                    JSON.stringify(marcfile._u8array),
+                );
+                localStorage.setItem(ROM_NAME_TAG, romName);
+                localStorage.setItem(ROM_DATE_TAG, timestamp);
+            }
+            // console.log('Valid rom found!');
+            return true;
+        }
+        // console.error('invalid rom');
+        return false;
+    };
+
+    function handleRememberBox(event) {
+        console.log(`B: Remember is ${remember} in validateRom`);
+        const newRemember = !remember;
+        setRemember(newRemember);
+        console.log(`A: Remember is ${newRemember} in validateRom`);
+        if (rom && newRemember) {
+            localStorage.setItem(
+                ROM_TAG,
+                JSON.stringify(rom.contents._u8array),
+            );
+            localStorage.setItem(ROM_NAME_TAG, fileSelectedMsg);
+            localStorage.setItem(ROM_DATE_TAG, romDate);
+        }
+    }
+    function setSavedRom() {
+        // has a rom been saved?
+        const savedRom = localStorage.getItem(ROM_TAG);
+        const savedRomName = localStorage.getItem(ROM_NAME_TAG);
+        const savedRomDate = localStorage.getItem(ROM_DATE_TAG);
+        const savedRomHash = localStorage.getItem(ROM_HASH_TAG);
+        if (!(savedRom && savedRomName && savedRomDate && savedRomHash)) {
+            // cleanup if we don't have everything
+            console.log(`setSavedRom doesn't have everything saved`);
+            cleanUpRom(
+                setMd5sum,
+                setRomDate,
+                setRom,
+                setValidRom,
+                setRemember,
+                setFileSelectedMsg,
+            );
+        } else {
+            const romBytes = new Uint8Array(
+                Object.values(JSON.parse(savedRom)),
+            );
+            const marcFile = new MarcFile(romBytes);
+            if (validateRom(marcFile, savedRomName, false)) {
+                setFileSelectedMsg(savedRomName);
+                setMd5sum(savedRomHash);
+                setRomDate(savedRomDate);
+                setRemember(true);
+            } else {
+                // clean if rom is invalid
+                cleanUpRom(
+                    setMd5sum,
+                    setRomDate,
+                    setRom,
+                    setValidRom,
+                    setRemember,
+                    setFileSelectedMsg,
+                );
+            }
+        }
+    }
+    function setFeatured(setFeaturedRom) {
+        setFeaturedRom(patches[Math.floor(Math.random() * patches.length)]);
+    }
     // Uint8Array, str, bool
     function handleRomInput(romArray, romName, fromFile) {
         var romOrig = new MarcFile(romArray);
@@ -213,36 +230,14 @@ function App() {
         localStorage.setItem(ROM_HASH_TAG, origHash);
 
         // console.log('Attempting unmodified header');
-        if (
-            validateRom(
-                romOrig,
-                romName,
-                fromFile,
-                setValidRom,
-                setRom,
-                setRomDate,
-                remember,
-            )
-        )
-            return;
+        if (validateRom(romOrig, romName, fromFile)) return;
 
         // replace the presumably ines2.0 header with v1 and try again
         // console.log('Attempting with ines v1 header');
         var romMarc = new MarcFile(
             new Uint8Array([...INES1HEADER, ...romOrig._u8array.slice(16)]),
         );
-        if (
-            validateRom(
-                romMarc,
-                romName,
-                fromFile,
-                setValidRom,
-                setRom,
-                setRomDate,
-                remember,
-            )
-        )
-            return;
+        if (validateRom(romMarc, romName, fromFile)) return;
         // console.log('checking for large rom');
 
         // attempt to solve for the 256k rom
@@ -258,18 +253,7 @@ function App() {
                 new Uint8Array([...INES1HEADER, ...prg, ...chr]),
             );
             // console.log('attempting to handle large rom with normal header');
-            if (
-                validateRom(
-                    romMarc,
-                    romName,
-                    fromFile,
-                    setValidRom,
-                    setRom,
-                    setRomDate,
-                    remember,
-                )
-            )
-                return;
+            if (validateRom(romMarc, romName, fromFile)) return;
 
             // assume trainer present (how likely is this even)
             const prg2 = [...romMarc._u8array.slice(0x210, 0x210 + 0x8000)];
@@ -280,24 +264,20 @@ function App() {
                 new Uint8Array([...INES1HEADER, ...prg2, ...chr2]),
             );
             // console.log('attempting to handle large rom with trainer header');
-            if (
-                validateRom(
-                    romMarc,
-                    romName,
-                    fromFile,
-                    setValidRom,
-                    setRom,
-                    setRomDate,
-                    remember,
-                )
-            )
-                return;
+            if (validateRom(romMarc, romName, fromFile)) return;
         }
         setValidRom(false);
         setRom(null);
     }
 
-    function handleFileInput(event) {
+    function handleFileInput(
+        event,
+        setMd5sum,
+        setValidRom,
+        setRom,
+        setRomDate,
+        remember,
+    ) {
         const fileName = event.target.files[0].name;
         const reader = new FileReader();
         reader.onload = () => handleRomInput(reader.result, fileName, true);
@@ -316,7 +296,14 @@ function App() {
                         name="resume"
                         onInput={(event) => {
                             setFileSelectedMsg(event.target.files[0].name);
-                            handleFileInput(event);
+                            handleFileInput(
+                                event,
+                                setMd5sum,
+                                setValidRom,
+                                setRom,
+                                setRomDate,
+                                remember,
+                            );
                             setShowModal(false);
                         }}
                     />
@@ -333,6 +320,28 @@ function App() {
             </div>
         );
     }
+
+    function cleanUpRom(
+        setMd5sum,
+        setRomDate,
+        setRom,
+        setValidRom,
+        setRemember,
+        setFileSelectedMsg,
+    ) {
+        setMd5sum(DEFAULT_MD5);
+        setRomDate(null);
+        setRom(null);
+        setValidRom(null);
+        setRemember(false);
+        console.log(`remember set to false in cleanUpRom`);
+        setFileSelectedMsg(DEFAULT_FILE);
+        localStorage.removeItem(ROM_TAG);
+        localStorage.removeItem(ROM_NAME_TAG);
+        localStorage.removeItem(ROM_DATE_TAG);
+        localStorage.removeItem(ROM_HASH_TAG);
+    }
+
     if (patch === null) {
         const parsedURL = new URL(window.location.href);
         const patchName = parsedURL.hash.slice(1).replace(/\+/g, ' ');
@@ -341,7 +350,6 @@ function App() {
             if (patch) setPatch(patch);
         }
     }
-    const favorite = patches[Math.floor(Math.random() * patches.length)];
     return (
         <>
             {/* make modal go away for now */}
@@ -372,10 +380,10 @@ function App() {
                                     : 'To get started, select a valid nestris rom to patch.'}
                             </p>
                             <div className="grid">
-                                <cell>
+                                <div className="cell">
                                     <FileButton />
-                                </cell>
-                                <cell>
+                                </div>
+                                <div className="cell">
                                     <button
                                         className="button is-success is-outlined is-fullwidth"
                                         onClick={() => setShowModal(false)}
@@ -385,7 +393,7 @@ function App() {
                                             ? `Continue to ${patch.name}`
                                             : 'Continue to browse patches'}
                                     </button>
-                                </cell>
+                                </div>
                             </div>
                             <pre>md5sum: {md5sum} </pre>
                         </div>
@@ -403,19 +411,21 @@ function App() {
                                     </a>
                                     . As time permits more hacks and information
                                     will be added. Until then, please check out
-                                    my favorite hack{' '}
-                                    <a
-                                        href={`#${favorite.name.replace(
-                                            / /g,
-                                            '+',
-                                        )}`}
-                                        onClick={() => {
-                                            setShowModal(false);
-                                            setPatch(favorite);
-                                        }}
-                                    >
-                                        {`${favorite.name}`}
-                                    </a>
+                                    this featured hack{' '}
+                                    {featured && (
+                                        <a
+                                            href={`#${featured.name.replace(
+                                                / /g,
+                                                '+',
+                                            )}`}
+                                            onClick={() => {
+                                                setShowModal(false);
+                                                setPatch(featured);
+                                            }}
+                                        >
+                                            {`${featured.name}`}
+                                        </a>
+                                    )}
                                 </p>
                                 <h3>Where did you get these patches?</h3>
                                 <ul>
@@ -466,7 +476,24 @@ function App() {
                 <div className="columns">
                     <div className="column is-three-fifths content">
                         <h1 className="m-0">{TITLE}</h1>
-                        <p>{BRIEF}</p>
+                        <p className="m-0">{BRIEF}</p>
+                        <p>
+                            Featured:{' '}
+                            {featured && (
+                                <a
+                                    href={`#${featured.name.replace(
+                                        / /g,
+                                        '+',
+                                    )}`}
+                                    onClick={() => {
+                                        setShowModal(false);
+                                        setPatch(featured);
+                                    }}
+                                >
+                                    {`${featured.name}`}
+                                </a>
+                            )}
+                        </p>
                     </div>
                     <div className="column is-two-fifths">
                         <FileButton />
@@ -482,7 +509,14 @@ function App() {
                                         <button
                                             onClick={() => {
                                                 if (confirming) {
-                                                    cleanUpRom();
+                                                    cleanUpRom(
+                                                        setMd5sum,
+                                                        setRomDate,
+                                                        setRom,
+                                                        setValidRom,
+                                                        setRemember,
+                                                        setFileSelectedMsg,
+                                                    );
                                                 }
                                                 setConfirming(!confirming);
                                             }}
@@ -508,32 +542,13 @@ function App() {
                                     </>
                                 ) : (
                                     <>
-                                        <label class="checkbox">
+                                        <label className="checkbox">
                                             <input
                                                 type="checkbox"
-                                                checked={remember}
-                                                onChange={(event) => {
-                                                    const newRemember =
-                                                        !remember;
-                                                    setRemember(newRemember);
-                                                    if (rom && newRemember) {
-                                                        localStorage.setItem(
-                                                            ROM_TAG,
-                                                            JSON.stringify(
-                                                                rom.contents
-                                                                    ._u8array,
-                                                            ),
-                                                        );
-                                                        localStorage.setItem(
-                                                            ROM_NAME_TAG,
-                                                            fileSelectedMsg,
-                                                        );
-                                                        localStorage.setItem(
-                                                            ROM_DATE_TAG,
-                                                            romDate,
-                                                        );
-                                                    }
-                                                }}
+                                                value={remember}
+                                                onChange={(event) =>
+                                                    handleRememberBox(event)
+                                                }
                                             />
                                             Remember rom
                                         </label>
@@ -656,6 +671,14 @@ function App() {
                                         <p className="title is-3">
                                             {patch.name}
                                         </p>
+                                        {patch.authors.map((a, i) => (
+                                            <div key={i}>
+                                                <a href={`?author=${a}`}>{a}</a>
+                                                {i === patch.authors.length - 1
+                                                    ? ''
+                                                    : ', '}
+                                            </div>
+                                        ))}
                                         <p className="subtitle is-6">{`by: ${patch.authors.join(
                                             ', ',
                                         )}`}</p>
@@ -708,9 +731,12 @@ function App() {
                                     <div className="grid">
                                         {!patch.screenshots
                                             ? ''
-                                            : patch.screenshots.map((w) => {
+                                            : patch.screenshots.map((w, i) => {
                                                   return (
-                                                      <div className="cell content m-1">
+                                                      <div
+                                                          key={i}
+                                                          className="cell content m-1"
+                                                      >
                                                           <img
                                                               alt="screenshot"
                                                               src={`screenshots/${w}`}
@@ -728,10 +754,11 @@ function App() {
                                                 () =>
                                                     false && !patch.screenshots,
                                             )
-                                            .map((w) => {
+                                            .map((w, i) => {
                                                 return (
                                                     <div className="cell content m-1">
                                                         <img
+                                                            key={i}
                                                             alt="screenshot"
                                                             src={`screenshots/${patch.file.replace(
                                                                 /\.[bi]ps/,
