@@ -119,7 +119,7 @@
 - name: Anydas Random Spawn Orientation
   file: TetrisAnyRoTrn.bps
   authors:
-  - Zohassadar
+  - zohassadar
   - HydrantDude
   - Kirby703
   tags:
@@ -212,7 +212,7 @@
 - name: Big Mode Wide Sps
   file: TetrisBigModeWideSps.bps
   authors:
-  - Zohassadar
+  - zohassadar
   - HydrantDude
   - Kirby703
   - Kirjava
@@ -1159,7 +1159,7 @@
 - name: Pentris 2.0
   file: Pentris_v2.0.bps
   authors:
-  - Zohassadar
+  - zohassadar
   - HydrantDude
   - Kirby703
   source: https://github.com/zohassadar/Pentris/tree/v2.0
@@ -1758,7 +1758,7 @@
 - name: Tetris 30 Wide With Big Pieces
   file: Tetris30WideWithBigAnyTrn.bps
   authors:
-  - Zohassadar
+  - zohassadar
   - HydrantDude
   - Kirby703
   source: https://github.com/zohassadar/NestrisHacks/tree/30bigSram
@@ -2085,7 +2085,7 @@
 - name: TetrisGYM 6.0.0
   file: TetrisGYM-6.0.0.bps
   authors:
-  - kirjava
+  - Kirjava
   source: https://github.com/kirjavascript/TetrisGYM
   desc: Adds practice modes to NES Tetris (among other things)
   screenshots:
@@ -2108,7 +2108,7 @@
 - name: TetrisGYM 6.0.0 Pride Colors
   file: TetrisGYM-6.0.0-pride.bps
   authors:
-  - kirjava
+  - Kirjava
   - zohassadar
   tags:
   - Gym6.0.0
@@ -2118,7 +2118,7 @@
 - name: TetrisGYM 6.0.0 Tron hack
   file: TetrisGYM-6.0.0-tron0.bps
   authors:
-  - kirjava
+  - Kirjava
   - zohassadar
   source: https://github.com/zohassadar/TetrisGYM/tree/neon2
   desc: Adds an extra dark mode to Tetris GYM
@@ -2141,7 +2141,7 @@
 - name: TetrisGYM 6.0.0 w/Keyboard
   file: TetrisGYM-6.0.0-keyboard.bps
   authors:
-  - kirjava
+  - Kirjava
   source: https://github.com/kirjavascript/TetrisGYM
   desc: TetrisGYM compiled with Famicom Keyboard support
   tags:

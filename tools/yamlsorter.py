@@ -47,7 +47,7 @@ MINIMUM = ["name", "file", "authors"]
 
 PATCH_FILES = [p.name for p in pathlib.Path("public/patches/").iterdir()]
 
-print("Validating only patches in patch directory")
+# validate only patches in patch directory
 for patch_file in PATCH_FILES:
     if re.search(r"\.[bi]ps$", patch_file, flags=re.IGNORECASE):
         continue
@@ -55,7 +55,7 @@ for patch_file in PATCH_FILES:
 
 
 SCREENSHOTS = [s.name for s in pathlib.Path("public/screenshots/").iterdir()]
-print("Validating only screenshots in screenshot directory")
+# validate only screenshots in screenshot directory
 for screenshot in SCREENSHOTS:
     if re.search(r"\.(png|jpe?g|gif)$", screenshot, flags=re.IGNORECASE):
         continue
@@ -72,13 +72,13 @@ with open("src/patches.yaml") as file:
 
 patches = [Patch(**p) for p in parsed]
 
-print("Validating minimum")
+# validate patches have minimum fields
 for patch in patches:
     if not any(getattr(patch, key) is NOTSET for key in MINIMUM):
         continue
     sys.exit(f"{patch.name} missing information")
 
-print("Validating lists are lists")
+# validate lists are lists
 for patch in patches:
     for item in LIST_ITEMS:
         value = getattr(patch, item, None)
@@ -94,14 +94,14 @@ for patch in patches:
         if author == ADDME:
             sys.exit(f"{patch.name} needs info")
 
-print("Validating unique names")
+# validate unique names
 names = []
 for patch in patches:
     if patch.name in names:
         sys.exit(f"{patch.name} duplicate!")
     names.append(patch.name)
 
-print("Validating unique files")
+# validate unique files
 files = []
 for patch in patches:
     if patch.file in files:
@@ -109,13 +109,13 @@ for patch in patches:
     files.append(patch.file)
 
 
-print("Validating patches are present")
+# validate patches are present
 for patch in patches:
     if patch.file not in PATCH_FILES:
         sys.exit(f"{patch.name} missing {patch.file}")
 
 
-print("Validating extas are present")
+# print("Validating extas are present")
 for patch in patches:
     if patch.extras is NOTSET:
         continue
@@ -124,7 +124,7 @@ for patch in patches:
             sys.exit(f"{patch.name} missing extra {extra}")
 
 
-print("Validating screenshots are present")
+# print("Validating screenshots are present")
 screenshots = []
 for patch in patches:
     if patch.screenshots is NOTSET:
@@ -141,7 +141,7 @@ for patch in patches:
 #         print(f"screenshots/{screenshot} is not referenced by any patch")
 
 
-print("Validating tags are valid strings")
+# print("Validating tags are valid strings")
 for patch in patches:
     if patch.tags is NOTSET:
         continue
@@ -149,6 +149,24 @@ for patch in patches:
         if re.match(r"^[\w.]+$", tag):
             continue
         sys.exit(f"{patch.name}: invalid tag {tag}")
+
+
+tagauthors = {}
+for patch in patches:
+    for author in patch.authors:
+        tagauthors.setdefault(author.lower(), set()).add(author)
+    if patch.tags is NOTSET:
+        continue
+    for tag in patch.tags:
+        tagauthors.setdefault(tag.lower(), set()).add(tag)
+
+
+for ta in tagauthors.values():
+    if len(ta) == 1:
+        continue
+    print(f"Warning! case disagreement! {' '.join(ta)}")
+
+
 
 
 example = [
