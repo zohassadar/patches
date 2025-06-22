@@ -446,6 +446,20 @@
   - visual
 
 
+- name: Drought Until Highstack
+  file: DroughtUntilHighstack.bps
+  authors:
+  - zohassadar
+  desc: The game does not offer long bars until the stack reaches the 2nd highest row
+
+
+- name: Drought Until Level 19
+  file: DroughtUntilLevel19.bps
+  authors:
+  - zohassadar
+  desc: The game does not offer long bars until level 19 is reached
+
+
 - name: Electronika60
   file: Electronika60.bps
   authors:
@@ -1242,6 +1256,13 @@
   - sps
 
 
+- name: ROM is RNG
+  file: rom_is_rng.ips
+  authors:
+  - zohassadar
+  desc: Terrible RNG.  Reads from the ROM based on the frame counter for the piece selection.  Delivers mostly T pieces.
+
+
 - name: Scrolltris
   file: Scrolltris.bps
   authors:
@@ -1649,6 +1670,28 @@
   - anydas
 
 
+- name: Tetris B Seed
+  file: TetrisBSeed.bps
+  authors:
+  - zohassadar
+  - Kirjava
+  desc: TetrisGYM's SPS added.  Additional SPS inputs added to control B-type game.
+  tags:
+  - sps
+
+
+- name: Tetris B Seed Anydas
+  file: TetrisBSeedAnydas.bps
+  authors:
+  - zohassadar
+  - HydrantDude
+  - Kirjava
+  desc: Anydas ROM with TetrisGYM's SPS added.  Additional SPS inputs added to control B-type game.
+  tags:
+  - sps
+  - anydas
+
+
 - name: Tetris Debug Mode
   file: tetris-debug-mode.ips
   authors:
@@ -1698,6 +1741,33 @@
   - mechanics
 
 
+- name: Tetris GYM Combo250103
+  file: TetrisGYMCombo250103.bps
+  authors:
+  - zohassadar
+  - Kirjava
+  source: https://github.com/zohassadar/TetrisGYM/tree/Combo250103
+  desc: Combine gym modes
+
+
+- name: Tetris GYM Combo250105
+  file: TetrisGYMCombo250105.bps
+  authors:
+  - zohassadar
+  - Kirjava
+  source: https://github.com/zohassadar/TetrisGYM/tree/Combo250105
+  desc: Combine gym modes
+
+
+- name: Tetris GYM Combo250108MMC1_2
+  file: TetrisGYMCombo250108MMC1_2.bps
+  authors:
+  - zohassadar
+  - Kirjava
+  source: https://github.com/zohassadar/TetrisGYM/tree/Combo250108MMC1_2
+  desc: Combine gym modes
+
+
 - name: Tetris Metrics
   file: TetrisMetrics.ips
   authors:
@@ -1714,6 +1784,14 @@
   - HydrantDude
   tags:
   - info
+
+
+- name: Tetris Rotate Next
+  file: TetrisRotateNext.ips
+  authors:
+  - zohassadar
+  yt: 9qsrP23Mn8k
+  desc: Rotate the piece in the nextbox instead of the current piece
 
 
 - name: Tetris Zero
