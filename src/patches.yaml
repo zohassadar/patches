@@ -124,7 +124,7 @@
   - Kirby703
   tags:
   - anydas
-  - funny
+  - shitpost
   - mechanics
 
 
@@ -189,7 +189,6 @@
   tags:
   - big
   - sps
-  - funny
 
 
 - name: Big Mode Anydas
@@ -206,7 +205,7 @@
   - BigMode_game.png
   tags:
   - big
-  - funny
+  - anydas
 
 
 - name: Big Mode Wide Sps
@@ -223,9 +222,9 @@
   - TetrisBigModeWideSps_game.png
   tags:
   - big
-  - funny
   - wider
   - sps
+  - anydas
 
 
 - name: Bracket Blocks
@@ -263,7 +262,7 @@
   desc: Lines only clear when colors match
   tags:
   - mechanics
-  - funny
+  - shitpost
 
 
 - name: CombosAnytourney
@@ -1121,7 +1120,7 @@
   desc: A penguin takes away cleared lines
   tags:
   - visual
-  - funny
+  - shitpost
 
 
 - name: Pentris
@@ -1376,7 +1375,7 @@
   - sps
   - big
   - small
-  - funny
+  - shitpost
 
 
 - name: Side Scroller Tetris
@@ -1386,7 +1385,7 @@
   yt: 5x6KWWcPquo
   desc: Tetris if it were a side scroller
   tags:
-  - funny
+  - shitpost
   - mechanics
 
 
@@ -1397,7 +1396,7 @@
   screenshots:
   - LeftToRight_game.png
   tags:
-  - funny
+  - shitpost
   - mechanics
 
 
@@ -1408,7 +1407,7 @@
   screenshots:
   - RightToLeft_game.png
   tags:
-  - funny
+  - shitpost
   - mechanics
 
 
@@ -1530,7 +1529,7 @@
   screenshots:
   - StupidRotation.gif
   tags:
-  - funny
+  - shitpost
   - mechanics
 
 
@@ -1569,7 +1568,7 @@
   screenshots:
   - sz_game.png
   tags:
-  - funny
+  - shitpost
 
 
 - name: TAGONO no J
@@ -2224,7 +2223,6 @@
   desc: uses CNROM
   tags:
   - mechanics
-  - funny
 
 
 - name: TetrisGYM v1
@@ -2333,7 +2331,7 @@
   desc: T replaced with X Piece
   tags:
   - mechanics
-  - funny
+  - shitpost
 
 
 - name: TetrisGYM XPos
@@ -2441,7 +2439,6 @@
   - UpsideDownTetris_title.png
   - UpsideDownTetris_game.png
   tags:
-  - funny
   - mechanics
 
 
@@ -2486,7 +2483,7 @@
   screenshots:
   - Tetris_Wall_Hack.gif
   tags:
-  - funny
+  - shitpost
   - mechanics
 
 
@@ -2498,7 +2495,7 @@
   screenshots:
   - Tetris_Wall_Hack_2.gif
   tags:
-  - funny
+  - shitpost
   - mechanics
 
 
@@ -2509,7 +2506,7 @@
   - HydrantDude
   desc: Pieces wrap around the playfield
   tags:
-  - funny
+  - shitpost
   - mechanics
   - anydas
 
