@@ -78,6 +78,21 @@ for patch in patches:
         continue
     sys.exit(f"{patch.name} missing information")
 
+print("Validating lists are lists")
+for patch in patches:
+    for item in LIST_ITEMS:
+        value = getattr(patch, item, None)
+        if value is NOTSET:
+            continue
+        if isinstance(value, list):
+            continue
+        sys.exit(f"{patch.name}: {item} should be list, not {type(value).__name__}")
+
+# Validate no placeholders
+for patch in patches:
+    for author in patch.authors:
+        if author == ADDME:
+            sys.exit(f"{patch.name} needs info")
 
 print("Validating unique names")
 names = []
@@ -93,15 +108,6 @@ for patch in patches:
         sys.exit(f"{patch.name} references duplicate {patch.file}")
     files.append(patch.file)
 
-print("Validating lists are lists")
-for patch in patches:
-    for item in LIST_ITEMS:
-        value = getattr(patch, item, None)
-        if value is NOTSET:
-            continue
-        if isinstance(value, list):
-            continue
-        sys.exit(f"{patch.name}: {item} should be list, not {type(value).__name__}")
 
 print("Validating patches are present")
 for patch in patches:

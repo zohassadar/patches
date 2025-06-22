@@ -85,6 +85,9 @@ function filterPatches(filter, setFilteredPatches, tags) {
                 if (patch.authors.some((author) => regexp.test(author))) {
                     return true;
                 }
+                if (patch.tags && patch.tags.some((author) => regexp.test(author))) {
+                    return true;
+                }
                 return false;
             }),
     );

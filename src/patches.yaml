@@ -36,10 +36,33 @@
   - Kirjava
 
 
+- name: 24Tall Anydas
+  file: 24Tall Anydas.bps
+  authors:
+  - zohassadar
+  - HydrantDude
+  tags:
+  - anytourney
+  - anydas
+  - mechanics
+  - taller
+
+
 - name: 7 Bag
   file: 7bagKirby703.ips
   authors:
   - Kirby703
+
+
+- name: 7 bag DAScontrols
+  file: 7 bag DAScontrols.bps
+  authors:
+  - Kirby703
+  - HydrantDude
+  desc: Kirby703's 7 Bag hack with DAS Controls added
+  tags:
+  - anytourney
+  - anydas
 
 
 - name: 7 Digit Score
@@ -48,6 +71,15 @@
   - HydrantDude
   screenshots:
   - 7DigitScore_game.png
+
+
+- name: AAYASP piece determines gravity
+  file: AAYASP piece determines gravity.bps
+  authors:
+  - HydrantDude
+  tags:
+  - anytourney
+  - anydas
 
 
 - name: All Level Challenge
@@ -451,6 +483,16 @@
   authors:
   - zohassadar
   desc: The game does not offer long bars until the stack reaches the 2nd highest row
+
+
+- name: Drought Until Highstack Anydas
+  file: DroughtUntilHighstackAnydas.bps
+  authors:
+  - zohassadar
+  - HydrantDude
+  tags:
+  - anytourney
+  - anydas
 
 
 - name: Drought Until Level 19
@@ -875,6 +917,8 @@
     In trying to catch up a bit on the years of knowledge in this channel, I found scrolltris and thought it was neat.  It made me want to mess around with PPUSCROLL so I came up with the idea of keeping the piece still and moving the screen instead.  I don't like it, it made me feel sick testing it.
   screenshots:
   - motionsickness.gif
+  tags:
+  - shitpost
 
 
 - name: Music 1.1
@@ -910,6 +954,37 @@
   - tetris_next_box_playfield.asm
 
 
+- name: No 5-tap DAScontrols
+  file: No 5-tap DAScontrols.bps
+  authors:
+  - HydrantDude
+  desc: DAS Controls combined with GG code that prevents 5 taps
+  tags:
+  - anytourney
+  - anydas
+
+
+- name: No 5-tap GymAnyDAS
+  file: No 5-tap GymAnyDAS.bps
+  authors:
+  - HydrantDude
+  - Kirjava
+  desc: TetrisGYM modified with DAS Delay affecting all modes and without 5 taps
+  tags:
+  - anytourney
+  - anydas
+
+
+- name: No Bars
+  file: No Bars.bps
+  authors:
+  - HydrantDude
+  desc: DAS Controls combined with GG code that prevents longbars
+  tags:
+  - anytourney
+  - anydas
+
+
 - name: No Demo No Legal NTSC
   file: NoDemoNoLegalNTSC.bps
   authors:
@@ -929,6 +1004,9 @@
   - zohassadar
   - HydrantDude
   desc: No Entry Delay with HydrantDude's DAS controls
+  tags:
+  - anytourney
+  - anydas
 
 
 - name: No Line Pieces
@@ -988,10 +1066,13 @@
   file: PalSPSTourney.bps
   authors:
   - fractal161
+  - Kirjava
+  - zohassadar
   yt: n9vKMNu5JWo
-  desc: Emulate PAL on NTSC console, w SPS
+  desc: Emulate PAL on NTSC console.  SPS code from TetrisGYM added
   tags:
   - mechanics
+  - sps
 
 
 - name: Pal SPS Tourney (Goofy)
@@ -1003,6 +1084,15 @@
   tags:
   - mechanics
   - goofyfoot
+
+
+- name: PALPEP hongbars
+  file: PALPEP hongbars.bps
+  authors:
+  - HydrantDude
+  tags:
+  - anytourney
+  - anydas
 
 
 - name: Parity V0
@@ -1325,6 +1415,15 @@
   - HydrantDude
 
 
+- name: Smooth Gravity Tourney
+  file: SmoothGravityTourney.bps
+  authors:
+  - HydrantDude
+  tags:
+  - anytourney
+  - anydas
+
+
 - name: SNES Gravity
   file: Tetris (USA) SNES.ips
   authors:
@@ -1365,6 +1464,27 @@
   screenshots:
   - speedrun_levelmenu.png
   - speedrun_game.png
+
+
+- name: Split Squares DAScontrols
+  file: Split Squares DAScontrols.bps
+  authors:
+  - HydrantDude
+  desc: |
+    DAS Controls combined with GG codes PAOENL PAOEOL that split squares
+  tags:
+  - anytourney
+  - anydas
+
+
+- name: Split Squares Gym
+  file: Split Squares Gym.bps
+  authors:
+  - HydrantDude
+  desc: TetrisGYM modified with DAS delay affecting all modes and also with split squares.
+  tags:
+  - anytourney
+  - anydas
 
 
 - name: SRS
@@ -1447,6 +1567,15 @@
   - sz_game.png
   tags:
   - funny
+
+
+- name: TAGONO no J
+  file: TAGONO no J.bps
+  authors:
+  - HydrantDude
+  tags:
+  - anytourney
+  - anydas
 
 
 - name: Taller Tetris
@@ -1573,6 +1702,17 @@
   - taus-1-5-0_game.png
   tags:
   - info
+
+
+- name: TEPPOZ no lineclears
+  file: TEPPOZ no lineclears.bps
+  authors:
+  - HydrantDude
+  desc: |
+    DAS Controls combined with GG code that prevents line clears
+  tags:
+  - anytourney
+  - anydas
 
 
 - name: Tetrimino Palette Swap
@@ -1741,6 +1881,19 @@
   - mechanics
 
 
+- name: Tetris GYM Anydas250107
+  file: TetrisGYMAnydas250107.bps
+  authors:
+  - Kirjava
+  - HydrantDude
+  - zohassadar
+  source: https://github.com/zohassadar/TetrisGYM/tree/Anydas250107
+  desc: DAS Controls added to TetrisGYM
+  tags:
+  - anytourney
+  - anydas
+
+
 - name: Tetris GYM Combo250103
   file: TetrisGYMCombo250103.bps
   authors:
@@ -1778,6 +1931,41 @@
   - info
 
 
+- name: Tetris No Level SPS Anydas
+  file: TetrisAnySpsTrnNoLevel.bps
+  authors:
+  - HydrantDude
+  - Kirjava
+  desc: |
+    DAS Controls combined with Gym's SPS and GG code that prevents levelup
+  tags:
+  - sps
+  - anytourney
+  - anydas
+
+
+- name: Tetris Only A Rotations Anydas
+  file: TetrisAnyTrnOnlyA.bps
+  authors:
+  - HydrantDude
+  desc: |
+    DAS Controls combined with GG code NVIEEE that makes B rotate like A
+  tags:
+  - anytourney
+  - anydas
+
+
+- name: Tetris Only B Rotations Anydas
+  file: TetrisAnyTrnOnlyB.bps
+  authors:
+  - HydrantDude
+  desc: |
+    DAS Controls combined with GG code XVLEKE that makes A rotate like B
+  tags:
+  - anytourney
+  - anydas
+
+
 - name: Tetris Rate
   file: NTSC Tetris Rate.ips
   authors:
@@ -1786,12 +1974,31 @@
   - info
 
 
+- name: Tetris RNG Next Sometimes Wrong
+  file: TetrisRNGNextSometimesWrong.bps
+  authors:
+  - zohassadar
+  desc: The placement of the next piece on the screen is determined by the value of the RNG bytes that frame.  The next piece is also sometimes wrong.
+  tags:
+  - shitpost
+
+
 - name: Tetris Rotate Next
   file: TetrisRotateNext.ips
   authors:
   - zohassadar
   yt: 9qsrP23Mn8k
   desc: Rotate the piece in the nextbox instead of the current piece
+
+
+- name: Tetris Rotate Next Anydas
+  file: TetrisAnyTrnRotNext.bps
+  authors:
+  - zohassadar
+  - HydrantDude
+  tags:
+  - anytourney
+  - anydas
 
 
 - name: Tetris Zero
@@ -1822,6 +2029,57 @@
   - 1013screenshot2.png
   tags:
   - 2player
+
+
+- name: Tetris-Triple Swap
+  file: Tetris-Triple Swap.bps
+  authors:
+  - HydrantDude
+  desc: |
+    DAS Controls combined with GG codes ZOZOKG LEZOVG that swap tetris & triple scoring
+  tags:
+  - anytourney
+  - anydas
+
+
+- name: TetrisAnySpsTrn
+  file: TetrisAnySpsTrn.bps
+  authors:
+  - HydrantDude
+  - Kirjava
+  - zohassadar
+  tags:
+  - sps
+  - anytourney
+  - anydas
+
+
+- name: TetrisAnyTrn NoDelay
+  file: TetrisAnyTrn NoDelay.bps
+  authors:
+  - HydrantDude
+  desc: DAS Controls combined with GG code that removes the line clear delay
+  tags:
+  - anytourney
+  - anydas
+
+
+- name: TetrisAnyTrnDropToggle2
+  file: TetrisAnyTrnDropToggle2.bps
+  authors:
+  - zohassadar
+  - HydrantDude
+  tags:
+  - anydas
+  - shitpost
+
+
+- name: TetrisAnyTrnToggle
+  file: TetrisAnyTrnToggle.bps
+  authors:
+  - zohassadar
+  - HydrantDude
+  desc: Play on two different playfields, but only one is visible and playable at a time.  Every line clear triggers a toggle to the other playfield.
 
 
 - name: TetrisGYM 6.0.0
@@ -2108,6 +2366,16 @@
   - visual
 
 
+- name: Toggle Pairs
+  file: TogglePairs.bps
+  authors:
+  - zohassadar
+  - HydrantDude
+  desc: Play on two separate playfields but with the same 2 pieces for each board.  Requires either placing each piece in the same place, or insane memory.
+  tags:
+  - anydas
+
+
 - name: TSpin Points
   file: tspins.ips
   authors:
@@ -2141,6 +2409,25 @@
   - mechanics
 
 
+- name: Unreliable Next Anydas
+  file: UnreliableNextAnydas.bps
+  authors:
+  - zohassadar
+  - HydrantDude
+  tags:
+  - anytourney
+  - anydas
+  - shitpost
+
+
+- name: UnreliableNext
+  file: UnreliableNext.bps
+  authors:
+  - zohassadar
+  tags:
+  - shitpost
+
+
 - name: Upside Down Tetris
   file: UpsideDownTetris.bps
   authors:
@@ -2153,6 +2440,25 @@
   tags:
   - funny
   - mechanics
+
+
+- name: UTYESO Alternating Gravity
+  file: UTYESO Alternating Gravity.bps
+  authors:
+  - HydrantDude
+  tags:
+  - anytourney
+  - anydas
+
+
+- name: Vits Anytourney
+  file: VitsAnytourney.bps
+  authors:
+  - HydrantDude
+  desc: scores 100,000 points per VITS
+  tags:
+  - anytourney
+  - anydas
 
 
 - name: WaitrisBeta
@@ -2248,6 +2554,17 @@
   - 3889screenshot1.png
   tags:
   - mechanics
+
+
+- name: XVVOVLVV no levelup
+  file: XVVOVLVV no levelup.bps
+  authors:
+  - HydrantDude
+  desc: |
+    DAS Controls combined with GG code that prevents level ups
+  tags:
+  - anytourney
+  - anydas
 
 
 - name: Zentris
