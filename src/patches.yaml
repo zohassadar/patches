@@ -72,10 +72,14 @@
       Played around with trying to make NES tetris feel like GameBoy tetris.  The board has been shortened, the pieces enter a row lower, there's a 2 frame spawn delay, slower das, different level drop rates, levels capped at 20, slower soft drop speed and a ridiculously long 91 frame blinking animation.  These were all the features I managed to cram in while enjoying megamasters today.  There's still work that would need to be done to the shift behavior, when the levels increment and the RNG (and possibly other stuff I'm not aware of)  in order to call it complete.  I'm probably going to abandon this effort so I'm leaving this here.  I like NES tetris better.
   screenshots:
     - AlmostGameBoy.gif
+  tags:
+    - mechanics
 
 
 - name: Always Tetris Ready
   file: AlwaysTetrisReady.bps
+  tags:
+    - gymhistory
   authors:
   - Kirjava
 
@@ -86,12 +90,18 @@
   - Zohassadar
   - HydrantDude
   - Kirby703
+  tags:
+    - anydas
+    - funny
+    - mechanics
 
 
 - name: Appearance Hack
   file: appearancehack.ips
   authors:
   - HydrantDude
+  tags:
+    - visual
 
 
 - name: B Mod In Progress
@@ -109,12 +119,16 @@
   file: gray.ips
   authors:
   - HydrantDude
+  tags:
+    - visual
 
 
 - name: Background Blocks - Normal
   file: normalcolor.ips
   authors:
   - HydrantDude
+  tags:
+    - visual
 
 
 - name: Background Pieces
@@ -122,6 +136,8 @@
   desc: Play tetris but using the background tiles as pieces
   authors:
   - zohassadar
+  tags:
+    - visual
 
 
 - name: Big Mode (with SPS)
@@ -138,6 +154,10 @@
   screenshots:
     - BigMode_title.png
     - BigMode_game.png
+  tags:
+    - big
+    - sps
+    - funny
 
 
 - name: Big Mode Anydas
@@ -152,6 +172,9 @@
   screenshots:
     - BigModeAnydas_title.png
     - BigMode_game.png
+  tags:
+    - big
+    - funny
 
 
 - name: Big Mode Wide Sps
@@ -166,6 +189,11 @@
   - TetrisBigModeWideSps_title.png
   - TetrisBigModeWideSps_levelmenu.png
   - TetrisBigModeWideSps_game.png
+  tags:
+    - big
+    - funny
+    - wider
+    - sps
 
 
 - name: Bracket Blocks
@@ -1195,12 +1223,16 @@
   authors:
     - Kitaru
   link: https://www.patreon.com/posts/nes-tetris-rng-61806543
+  tags:
+    - sps
 
 
 - name: Scrolltris
   file: Scrolltris.bps
   authors:
   - Kirjava
+  tags:
+    - visual
 
 
 - name: Shrink Mode
@@ -1211,6 +1243,11 @@
   - zohassadar
   - Kirjava
   yt: dt01BeEZfgw
+  tags:
+    - sps
+    - big
+    - small
+    - funny
 
 
 - name: Side Scroller Tetris
@@ -1219,6 +1256,9 @@
   authors:
   - zohassadar
   yt: 5x6KWWcPquo
+  tags:
+    - funny
+    - mechanics
 
 
 - name: Sideways (Left to Right)
@@ -1227,6 +1267,9 @@
   - LeftToRight_game.png
   authors:
   - zohassadar
+  tags:
+    - funny
+    - mechanics
 
 
 - name: Sideways (Right to Left)
@@ -1235,6 +1278,9 @@
   - RightToLeft_game.png
   authors:
   - zohassadar
+  tags:
+    - funny
+    - mechanics
 
 
 - name: Smooth Gravity
@@ -1258,6 +1304,8 @@
     Also includes a version for the “Tetris Zero” hack.
   authors:
   - Josh Tolles
+  tags:
+    - mechanics
 
 
 - name: Speedhack
@@ -1269,6 +1317,8 @@
   link: https://www.romhacking.net/hacks/7087/
   source: https://github.com/fractal161/speedhack/tree/mmc3
   yt: n9vKMNu5JWo
+  tags:
+    - mechanics
 
 
 - name: Speedrun Timer
@@ -1285,6 +1335,8 @@
   file: SRS.ips
   authors:
   - fractal161
+  tags:
+    - mechanics
 
 
 - name: Stack Mode
@@ -1304,6 +1356,8 @@
   - Tetris_USA_-_Statistics_game.png
   authors:
   - jazzthief81
+  tags:
+    - info
 
 
 - name: Stupid Rotation
@@ -1318,6 +1372,7 @@
     Can the Z, O, S & I pieces be given 4 orientations each like the T, J & L?  Yes.   Is this a practical implementation of that concept?  No.
   tags:
     - funny
+    - mechanics
 
 
 - name: Super Tetris Land v1.0
@@ -1330,6 +1385,8 @@
   authors:
   - CAndiman
   link: https://www.romhacking.net/hacks/7583/
+  tags:
+    - visual
 
 
 - name: Super Tetris Land v1.0 HD
@@ -1352,6 +1409,8 @@
   desc: Delivers an alternating sequence of S's and Z's
   authors:
   - zohassadar
+  tags:
+    - funny
 
 
 - name: Taller Tetris
@@ -1361,6 +1420,9 @@
   desc: Play tetris on a 10x24 playfield
   authors:
   - zohassadar
+  tags:
+    - mechanics
+    - taller
 
 
 - name: Tapping Display
@@ -1369,6 +1431,8 @@
   - TappingDisplay_game.png
   authors:
   - HydrantDude
+  tags:
+    - info
 
 
 - name: Tapping Display Large
@@ -1377,6 +1441,8 @@
   - TappingDisplayLarge_game.png
   authors:
   - HydrantDude
+  tags:
+    - info
 
 
 - name: TAUS 7 Bag v1.5.0
@@ -1398,13 +1464,17 @@
   source: https://github.com/ejona86/taus/tree/v1.5.0
   authors:
   - ejona86
-
+  tags:
+    - mechanics
 
 - name: TAUS Hard Drop v1.5.0
   file: hard-drop-taus-1-5-0.ips
   source: https://github.com/ejona86/taus/tree/v1.5.0
   authors:
   - ejona86
+  tags:
+    - mechanics
+    - visual
 
 
 - name: TAUS Hold v1.5.0
@@ -1412,6 +1482,8 @@
   source: https://github.com/ejona86/taus/tree/v1.5.0
   authors:
   - ejona86
+  tags:
+    - mechanics
 
 
 - name: TAUS Player ID v1.5.0
@@ -1419,6 +1491,8 @@
   source: https://github.com/ejona86/taus/tree/v1.5.0
   authors:
   - ejona86
+  tags:
+    - info
 
 
 - name: TAUS Save Highscores v1.5.0
@@ -1448,6 +1522,8 @@
   source: https://github.com/ejona86/taus/tree/v1.5.0
   authors:
   - ejona86
+  tags:
+    - 2player
 
 
 - name: TAUS v1.5.0
@@ -1458,6 +1534,8 @@
   source: https://github.com/ejona86/taus/tree/v1.5.0
   authors:
   - ejona86
+  tags:
+    - info
 
 
 - name: Tetrimino Palette Swap
@@ -1472,6 +1550,8 @@
   - 5150screenshot1.png
   - 5150screenshot3.png
   - 5150screenshot2.png
+  tags:
+    - visual
 
 
 - name: Tetris 12 Wide
@@ -1495,6 +1575,7 @@
   yt: saAkhOkxu0Q
   tags:
     - wider
+    - anydas
 
 
 - name: Tetris 30 Wide With Big Pieces
@@ -1510,7 +1591,9 @@
   - HydrantDude
   - Kirby703
   tags:
+    - big
     - wider
+    - anydas
 
 
 - name: Tetris 30x25
@@ -1655,6 +1738,7 @@
   source: https://github.com/kirjavascript/TetrisGYM
   tags:
     - Gym6.0.0
+    - sps
   authors:
   - kirjava
 
@@ -1663,6 +1747,7 @@
   file: TetrisGYM-6.0.0NES2.0-Conversion.bps
   tags:
     - Gym6.0.0
+    - sps
   authors:
   - Kirjava
   - TakuikaNinja
@@ -1672,6 +1757,7 @@
   file: TetrisGYM-6.0.0-pride.bps
   tags:
     - Gym6.0.0
+    - sps
   authors:
   - kirjava
   - zohassadar
@@ -1681,6 +1767,7 @@
   file: TetrisGYM-6.0.0-tron0.bps
   tags:
     - Gym6.0.0
+    - sps
     - visual
   desc: Adds an extra dark mode to Tetris GYM
   source: https://github.com/zohassadar/TetrisGYM/tree/neon2
@@ -1693,6 +1780,7 @@
   file: TetrisGYM-6.0.0-universal.bps
   tags:
     - Gym6.0.0
+    - sps
   desc: Downloaded patch will work with any header
   authors:
   - Kirjava
@@ -1702,6 +1790,7 @@
   file: TetrisGYM-6.0.0-keyboard.bps
   tags:
     - Gym6.0.0
+    - sps
   desc: TetrisGYM compiled with Famicom Keyboard support
   source: https://github.com/kirjavascript/TetrisGYM
   authors:
@@ -1805,6 +1894,7 @@
   file: TetrisGYM-v3.bps
   tags:
     - gymhistory
+    - sps
   source: https://github.com/kirjavascript/TetrisGYM/tree/v3
   authors:
     - Kirjava
@@ -1814,6 +1904,7 @@
   file: TetrisGYM-v3.1.bps
   tags:
     - gymhistory
+    - sps
   source: https://github.com/kirjavascript/TetrisGYM/tree/v3.1
   authors:
     - Kirjava
@@ -1823,6 +1914,7 @@
   file: TetrisGYM-v4.bps
   tags:
     - gymhistory
+    - sps
   source: https://github.com/kirjavascript/TetrisGYM/tree/v4
   authors:
     - Kirjava
@@ -1832,6 +1924,7 @@
   file: TetrisGYM-v4_Classic_Edition.bps
   tags:
     - gymhistory
+    - sps
   source: https://github.com/kirjavascript/TetrisGYM/tree/v4-classic
   authors:
     - Kirjava
@@ -1841,6 +1934,7 @@
   file: TetrisGYM-v5.rev03.bps
   tags:
     - gymhistory
+    - sps
   source: https://github.com/kirjavascript/TetrisGYM/tree/v5
   authors:
     - Kirjava
@@ -1850,6 +1944,7 @@
   file: TetrisGYM-v5.rev03-CNROM.bps
   tags:
     - gymhistory
+    - sps
   source: https://github.com/kirjavascript/TetrisGYM/tree/v5
   authors:
     - Kirjava
@@ -1859,6 +1954,7 @@
   file: TetrisGYM-v5.Tournament.Edition.rev05.bps
   tags:
     - gymhistory
+    - sps
   source: https://github.com/kirjavascript/TetrisGYM/tree/v5-tournament
   authors:
     - Kirjava
@@ -1868,6 +1964,7 @@
   file: TetrisGYM-v5.Tournament.Edition.rev05-CNROM.bps
   tags:
     - gymhistory
+    - sps
   source: https://github.com/kirjavascript/TetrisGYM/tree/v5-tournament
   authors:
     - Kirjava
