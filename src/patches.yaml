@@ -18,6 +18,8 @@
   file: 10digitscore.bps
   authors:
   - Kirjava
+  screenshots:
+  - 10digitscore_000.png
 
 
 - name: 12 Wide
@@ -92,6 +94,18 @@
   file: allLevels.bps
   authors:
   - fractal161
+  screenshots:
+  - allLevels_challenge_000.png
+  - allLevels_challenge_001.png
+  - allLevels_challenge_002.png
+  - allLevels_challenge_003.png
+  - allLevels_challenge_004.png
+  - allLevels_challenge_005.png
+  - allLevels_challenge_006.png
+  - allLevels_challenge_007.png
+  - allLevels_challenge_008.png
+  - allLevels_challenge_009.png
+  - allLevels_challenge_010.png
 
 
 - name: Almost Game Boy
@@ -132,6 +146,12 @@
   file: appearancehack.ips
   authors:
   - HydrantDude
+  screenshots:
+  - appearancehack_000.png
+  - appearancehack_001.png
+  - appearancehack_002.png
+  - appearancehack_003.png
+  - appearancehack_004.png
   tags:
   - visual
 
@@ -151,6 +171,8 @@
   file: gray.ips
   authors:
   - HydrantDude
+  screenshots:
+  - gray_000.png
   tags:
   - visual
 
@@ -159,6 +181,8 @@
   file: normalcolor.ips
   authors:
   - HydrantDude
+  screenshots:
+  - normalcolor_000.png
   tags:
   - visual
 
@@ -168,6 +192,8 @@
   authors:
   - zohassadar
   desc: Play tetris but using the background tiles as pieces
+  screenshots:
+  - background_000.png
   tags:
   - visual
 
@@ -215,6 +241,7 @@
   - HydrantDude
   - Kirby703
   - Kirjava
+  yt: epqxrKHt_cw
   desc: Big Mode but on a 15x12 playfield.  Includes SPS code borrowed from TetrisGYM.
   screenshots:
   - TetrisBigModeWideSps_title.png
@@ -241,6 +268,8 @@
   file: brackets_gym.bps
   authors:
   - Kirjava
+  screenshots:
+  - brackets_gym_000.png
   tags:
   - visual
 
@@ -1293,6 +1322,8 @@
   - zohassadar
   yt: lOOwrWkdf4o
   desc: Pieces can consist of any of the three tiles
+  tags:
+  - shitpost
 
 
 - name: Retro Theme 1 (Nostalgia)
@@ -1484,6 +1515,8 @@
   authors:
   - HydrantDude
   desc: TetrisGYM modified with DAS delay affecting all modes and also with split squares.
+  screenshots:
+  - Split Squares Gym_000.png
   tags:
   - anytourney
   - anydas
@@ -1773,6 +1806,7 @@
   - big
   - wider
   - anydas
+  - anytourney
 
 
 - name: Tetris 30x25
