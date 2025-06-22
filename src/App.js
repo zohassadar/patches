@@ -109,7 +109,7 @@ function YouTube({ vid }) {
 }
 
 function getBaseUrl() {
-    return window.location.origin + window.location.pathname
+    return window.location.origin + window.location.pathname;
 }
 
 function App() {
@@ -325,14 +325,22 @@ function App() {
     }
     function addTag(value) {
         if (tags.some((t) => t === value)) {
-            window.history.replaceState(null, null, `${getBaseUrl()}${getTagUrl(null, tags)}`);
+            window.history.replaceState(
+                null,
+                null,
+                `${getBaseUrl()}${getTagUrl(null, tags)}`,
+            );
             return;
         }
 
         const newTags = [...tags, value];
         setPatchesFromTags(newTags);
         setTags(newTags);
-        window.history.replaceState(null, null, `${getBaseUrl()}${getTagUrl(null, newTags)}`);
+        window.history.replaceState(
+            null,
+            null,
+            `${getBaseUrl()}${getTagUrl(null, newTags)}`,
+        );
     }
     function getTagUrl(tag, tagSet) {
         const results = [...(tagSet ? tagSet : tags).filter((t) => t !== tag)];
@@ -806,6 +814,16 @@ function App() {
                                         ) : (
                                             ''
                                         )}
+                                        {patch.extras &&
+                                            patch.extras.map((e) => (
+                                                <>
+                                                    <p className="m-0">
+                                                        <a href={`extras/${e}`}>
+                                                            {e}
+                                                        </a>
+                                                    </p>
+                                                </>
+                                            ))}
                                     </div>
                                     {patch.yt ? (
                                         <div className="card-content m-3">
