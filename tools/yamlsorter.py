@@ -116,12 +116,14 @@ for patch in patches:
 
 
 # print("Validating extas are present")
+extras = []
 for patch in patches:
     if patch.extras is NOTSET:
         continue
     for extra in patch.extras:
         if extra not in EXTRAS:
             sys.exit(f"{patch.name} missing extra {extra}")
+        extras.append(extra)
 
 
 # print("Validating screenshots are present")
@@ -132,14 +134,17 @@ for patch in patches:
     for screenshot in patch.screenshots:
         if screenshot not in SCREENSHOTS:
             sys.exit(f"{patch.name} missing screenshot {screenshot}")
-        screenshots.append(screenshots)
-
+        screenshots.append(screenshot)
 
 # come back to this. use to clean up screenshots directory
-# for screenshot in SCREENSHOTS:
-#     if screenshot not in screenshots:
-#         print(f"screenshots/{screenshot} is not referenced by any patch")
+for screenshot in SCREENSHOTS:
+    if screenshot not in screenshots:
+        print(f"screenshots/{screenshot} is not referenced by any patch")
+        (pathlib.Path("public/screenshots") / screenshot).unlink()
 
+for extra in EXTRAS:
+    if extra not in extras:
+        print(f"extras/{extra} is not referenced by any patch")
 
 # print("Validating tags are valid strings")
 for patch in patches:
@@ -165,8 +170,6 @@ for ta in tagauthors.values():
     if len(ta) == 1:
         continue
     print(f"Warning! case disagreement! {' '.join(ta)}")
-
-
 
 
 example = [
