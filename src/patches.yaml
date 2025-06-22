@@ -278,6 +278,9 @@
     so tetrises into a bunch of singles are really strong, for instance
     the stuff below 7 combo doesn't matter much (sub-tetris scoring) but after that you get a tetris worth of scoring until you get to 14 combo and it's 2k per level, then it just goes up 1k per level every 7 combo
     and it glitches and reads garbage data once you get 34 combo (iirc? maybe 35), which is kind of more an easter egg than a glitch, given that's basically tas-only
+  tags:
+  - anytourney
+  - anydas
 
 
 - name: Connected Pieces
