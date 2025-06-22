@@ -615,7 +615,7 @@
 
 - name: Korobeiniki
   tags:
-    - music:
+    - music
   file: TetrisKorobeiniki.ips
   authors:
   - jazzthief81
