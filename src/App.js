@@ -64,29 +64,19 @@ function patchRom(patch, rom) {
         });
 }
 
-function filterPatches(filter, setFilteredPatches, tags) {
+function filterPatches(filter, setFilteredPatches) {
+    if (!filter) {
+        setFilteredPatches(sortedPatches);
+        return;
+    }
     setFilteredPatches(
-        sortedPatches
-            .filter((p) => {
-                return (
-                    tags.length ===
-                    tags.filter(
-                        (t) =>
-                            p.authors.some((a) => a === t) ||
-                            (p.tags && p.tags.some((tag) => tag === t)),
-                    ).length
-                );
-            })
-            .filter((patch) => {
-                const regexp = new RegExp(`${filter}`, 'i');
-                if (regexp.test(patch.name)) {
-                    return true;
-                }
-                if (patch.authors.some((author) => regexp.test(author))) {
-                    return true;
-                }
-                return false;
-            }),
+        sortedPatches.filter((patch) => {
+            const regexp = new RegExp(`${filter}`, 'i');
+            if (regexp.test(patch.name)) return true;
+            if (patch.authors.some((author) => regexp.test(author)))
+                return true;
+            return false;
+        }),
     );
 }
 
@@ -108,10 +98,6 @@ function YouTube({ vid }) {
     );
 }
 
-function getBaseUrl() {
-    return ``;
-}
-
 function App() {
     const [showModal, setShowModal] = useState(null);
     const [remember, setRemember] = useState(false);
@@ -124,7 +110,6 @@ function App() {
     const [md5sum, setMd5sum] = useState(DEFAULT_MD5);
     const [confirming, setConfirming] = useState(null);
     const [featured, setFeaturedRom] = useState(null);
-    const [tags, setTags] = useState([]);
     const active = 'patches';
 
     useEffect(() => {
@@ -155,6 +140,7 @@ function App() {
 
     // marcFile, str, bool
     const validateRom = (marcfile, romName, saveLocal) => {
+        console.log(`Remember is ${remember} in validateRom`);
         const hash = md5(marcfile._u8array).toString();
         if (hash === VANILLA_INES1_MD5) {
             const timestamp = new Date().toLocaleString();
@@ -180,8 +166,10 @@ function App() {
     };
 
     function handleRememberBox(event) {
+        console.log(`B: Remember is ${remember} in validateRom`);
         const newRemember = !remember;
         setRemember(newRemember);
+        console.log(`A: Remember is ${newRemember} in validateRom`);
         if (rom && newRemember) {
             localStorage.setItem(
                 ROM_TAG,
@@ -199,6 +187,7 @@ function App() {
         const savedRomHash = localStorage.getItem(ROM_HASH_TAG);
         if (!(savedRom && savedRomName && savedRomDate && savedRomHash)) {
             // cleanup if we don't have everything
+            console.log(`setSavedRom doesn't have everything saved`);
             cleanUpRom(
                 setMd5sum,
                 setRomDate,
@@ -281,7 +270,14 @@ function App() {
         setRom(null);
     }
 
-    function handleFileInput(event) {
+    function handleFileInput(
+        event,
+        setMd5sum,
+        setValidRom,
+        setRom,
+        setRomDate,
+        remember,
+    ) {
         const fileName = event.target.files[0].name;
         const reader = new FileReader();
         reader.onload = () => handleRomInput(reader.result, fileName, true);
@@ -289,63 +285,7 @@ function App() {
             console.error(`error reading file ${error}`);
         reader.readAsArrayBuffer(event.target.files[0]);
     }
-    function Tag({ value }) {
-        return (
-            <span className="tag is-info">
-                {value}
-                <button
-                    className="delete is-small"
-                    onClick={() => removeTag(value)}
-                ></button>
-            </span>
-        );
-    }
-    function setPatchesFromTags(updatedTags) {
-        const updated = sortedPatches.filter((p) => {
-            return (
-                updatedTags.length ===
-                updatedTags.filter(
-                    (t) =>
-                        p.authors.some((a) => a === t) ||
-                        (p.tags && p.tags.some((tag) => tag === t)),
-                ).length
-            );
-        });
-        setFilteredPatches(updated);
-    }
-    function removeTag(value) {
-        const newTags = [...tags.filter((t) => !(t === value))];
-        setPatchesFromTags(newTags);
-        setTags(newTags);
-        window.history.replaceState(
-            null,
-            null,
-            `${getBaseUrl()}/${getTagUrl(null, newTags)}`,
-        );
-    }
-    function addTag(value) {
-        if (tags.some((t) => t === value)) {
-            window.history.replaceState(null, null, `${getTagUrl(null, tags)}`);
-            return;
-        }
 
-        const newTags = [...tags, value];
-        setPatchesFromTags(newTags);
-        setTags(newTags);
-        window.history.replaceState(null, null, `${getTagUrl(null, newTags)}`);
-    }
-    function getTagUrl(tag, tagSet) {
-        const results = [...(tagSet ? tagSet : tags).filter((t) => t !== tag)];
-        if (tag) {
-            results.push(tag);
-        }
-
-        const result =
-            results.length === 0
-                ? ''
-                : `?tag${results.length > 1 ? 's' : ''}=${results.join(',')}`;
-        return result;
-    }
     function FileButton() {
         return (
             <div className="file has-name is-info">
@@ -394,6 +334,7 @@ function App() {
         setRom(null);
         setValidRom(null);
         setRemember(false);
+        console.log(`remember set to false in cleanUpRom`);
         setFileSelectedMsg(DEFAULT_FILE);
         localStorage.removeItem(ROM_TAG);
         localStorage.removeItem(ROM_NAME_TAG);
@@ -408,22 +349,6 @@ function App() {
             const patch = filteredPatches.find((p) => p.name === patchName);
             if (patch) setPatch(patch);
         }
-    }
-    if (tags.length === 0) {
-        const search = new URLSearchParams(window.location.search);
-        [...search.keys()]
-            .filter((k) => k.match(/^tags?$/))
-            .forEach((k) => {
-                const urlTags = search.get(k);
-                const newTags = urlTags.split(/,/);
-                setPatchesFromTags(newTags);
-                setTags(newTags);
-                window.history.replaceState(
-                    null,
-                    null,
-                    `${getTagUrl(null, newTags)}`,
-                );
-            });
     }
     return (
         <>
@@ -489,7 +414,7 @@ function App() {
                                     this featured hack{' '}
                                     {featured && (
                                         <a
-                                            href={`${getBaseUrl()}#${featured.name.replace(
+                                            href={`#${featured.name.replace(
                                                 / /g,
                                                 '+',
                                             )}`}
@@ -556,7 +481,7 @@ function App() {
                             Featured:{' '}
                             {featured && (
                                 <a
-                                    href={`${getBaseUrl()}#${featured.name.replace(
+                                    href={`#${featured.name.replace(
                                         / /g,
                                         '+',
                                     )}`}
@@ -632,11 +557,6 @@ function App() {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="field is-grouped is-grouped-multiline">
-                    {tags.map((tag, i) => (
-                        <Tag value={tag} key={i} />
-                    ))}
                 </div>
                 <div className="columns">
                     <div className="column">
@@ -721,32 +641,21 @@ function App() {
                                     filterPatches(
                                         e.target.value,
                                         setFilteredPatches,
-                                        tags,
                                     )
                                 }
                             />
                             <div className="panel custom-sidepanel">
                                 {filteredPatches.map((p, i) => (
-                                    // eslint-disable-next-line
                                     <a
                                         key={i}
+                                        href={`#${p.name.replace(/ /g, '+')}`}
                                         className={`panel-block has-text-${
                                             JSON.stringify(p) ===
                                             JSON.stringify(patch)
                                                 ? 'primary has-text-weight-bold'
                                                 : 'info'
                                         }`}
-                                        onClick={() => {
-                                            setPatch(p);
-                                            window.history.replaceState(
-                                                null,
-                                                null,
-                                                `${getBaseUrl()}/#${p.name.replace(
-                                                    / /g,
-                                                    '+',
-                                                )}`,
-                                            );
-                                        }}
+                                        onClick={() => setPatch(p)}
                                     >
                                         {p.name}
                                     </a>
@@ -762,19 +671,17 @@ function App() {
                                         <p className="title is-3">
                                             {patch.name}
                                         </p>
-                                        <div className="buttons">
-                                            {patch.authors.map((author, i) => (
-                                                <button
-                                                    key={i}
-                                                    className="button tag is-info is-outlined"
-                                                    onClick={() => {
-                                                        addTag(author);
-                                                    }}
-                                                >
-                                                    {author}
-                                                </button>
-                                            ))}
-                                        </div>
+                                        {patch.authors.map((a, i) => (
+                                            <div key={i}>
+                                                <a href={`?author=${a}`}>{a}</a>
+                                                {i === patch.authors.length - 1
+                                                    ? ''
+                                                    : ', '}
+                                            </div>
+                                        ))}
+                                        <p className="subtitle is-6">{`by: ${patch.authors.join(
+                                            ', ',
+                                        )}`}</p>
                                     </header>
                                     <div className="content m-3">
                                         {patch.desc ? (
@@ -838,22 +745,6 @@ function App() {
                                                   );
                                               })}
                                     </div>
-                                </div>
-                                <div className="buttons">
-                                    {patch.tags &&
-                                        patch.tags.map((t, i) => {
-                                            return (
-                                                <button
-                                                    key={i}
-                                                    className="button tag is-info is-outlined"
-                                                    onClick={() => {
-                                                        addTag(t);
-                                                    }}
-                                                >
-                                                    {t}
-                                                </button>
-                                            );
-                                        })}
                                 </div>
                                 <div className="m-3 fixed-grid has-auto-count">
                                     <div className="grid">

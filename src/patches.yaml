@@ -1,18 +1,14 @@
-#- name: 000 Test Rom
-#  file: patch.bps
-#  authors:
+# - name: 000 Test Rom
+#   file: patch.bps
+#   authors:
 #     - Hacker
 #     - Others
 #     - Me
 #     - You
-#  yt: 8FEVTTIi5WU
-#  desc: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+#   yt: 8FEVTTIi5WU
+#   desc: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 #  source: https://github.com/this/that
 #  link: https://www.www.www.www
-#  tags:
-#    - test
-#    - tetris
-#    - tag
 
 - name: 10 Digit Score
   file: 10digitscore.bps
@@ -26,8 +22,6 @@
   - Kirjava
   screenshots:
     - 12wide_game.png
-  tags:
-    - wider
 
 
 - name: 19-29 Speed
@@ -62,18 +56,6 @@
   - fractal161
 
 
-- name: Almost Game Boy
-  authors:
-   - zohassadar
-  file: AlmostGameBoy.bps
-  desc: |
-    Originally posted in #romhacking:
-
-      Played around with trying to make NES tetris feel like GameBoy tetris.  The board has been shortened, the pieces enter a row lower, there's a 2 frame spawn delay, slower das, different level drop rates, levels capped at 20, slower soft drop speed and a ridiculously long 91 frame blinking animation.  These were all the features I managed to cram in while enjoying megamasters today.  There's still work that would need to be done to the shift behavior, when the levels increment and the RNG (and possibly other stuff I'm not aware of)  in order to call it complete.  I'm probably going to abandon this effort so I'm leaving this here.  I like NES tetris better.
-  screenshots:
-    - AlmostGameBoy.gif
-
-
 - name: Always Tetris Ready
   file: AlwaysTetrisReady.bps
   authors:
@@ -92,17 +74,6 @@
   file: appearancehack.ips
   authors:
   - HydrantDude
-
-
-- name: B Mod In Progress
-  file: BModInProgress.bps
-  authors:
-    - zohassadar
-  desc: |
-    This says in progress, but only because of how it was originally posted in discord.  There is no ongoing development for this version.
-
-    Original writeup:
-    Here's a mod to the B type that requires clearing all the garbage in order to succeed, inspired by the checkerboard mode.  I'm open to ideas on how the scoring should be modified or a better way to show the garbage tiles that distinguishes them from the regular tiles.   I have a few ideas on scoring but they all require leveling up some more in 6502.  For now I need to focus on that which provides, even though romhacking is more fun.
 
 
 - name: Background Blocks - Gray
@@ -180,8 +151,6 @@
 
 - name: Brackets GYM
   file: brackets_gym.bps
-  tags:
-    - visual
   authors:
   - Kirjava
 
@@ -189,8 +158,6 @@
 - name: Chaotic Palettes Tetris No Killscreen
   file: ChaoticPalettesTetrisNoKS.bps
   desc: Randomized color table with 19 & 29 speeds removed
-  tags:
-    - visual
   authors:
   - SafeHexagon
 
@@ -198,9 +165,6 @@
 - name: Color Match Line Clear
   file: ColorMatchLineClear.ips
   desc: Lines only clear when colors match
-  tags:
-    - mechanics
-    - funny
   authors:
   - zohassadar
   source: https://gist.github.com/zohassadar/4f6eaf4eafca0c2695d4d67d56ca6218
@@ -209,8 +173,6 @@
 - name: Connected Pieces
   file: connected.bps
   desc: Pieces are solidly connected
-  tags:
-    - visual
   authors:
   - zohassadar
   yt: mw4uOyBMP6A
@@ -218,8 +180,6 @@
 
 - name: Controller Input Display
   file: TetrisControllerInputDisplay.ips
-  tags:
-    - info
   desc: |
     Controller input display for NES Tetris
 
@@ -235,8 +195,6 @@
 
 - name: CTM Hack Dec 2017
   file: ctm1217.ips
-  tags:
-    - visual
   authors:
   - fridaywitch
   screenshots:
@@ -249,8 +207,6 @@
 
 - name: CTM Hack Feb 2018
   file: ctm0218.ips
-  tags:
-    - visual
   authors:
   - fridaywitch
   screenshots:
@@ -263,8 +219,6 @@
 
 - name: CTM Hack Jan 2018
   file: ctm0118.ips
-  tags:
-    - visual
   authors:
   - fridaywitch
   screenshots:
@@ -277,8 +231,6 @@
 
 - name: CTWC Jonas Cup's DAS Mode v1.0.0
   file: CTWC DAS Limit v1.0.0.ips
-  tags:
-    - mechanics
   authors:
     - Kitaru
   link: https://www.patreon.com/posts/source-code-for-115623286
@@ -295,8 +247,6 @@
 
 - name: Cursed RNG
   file: CursedRNG.bps
-  tags:
-    - mechanics
   desc: Clean tetrises discouraged by game
   authors:
   - zohassadar
@@ -308,16 +258,10 @@
   - HydrantDude
   screenshots:
   - DAScontrols_title.png
-  tags:
-    - mechanics
-    - anydas
 
 
 - name: DAS Trainer TRT
   file: NTSC DAS Trainer +TRT.ips
-  tags:
-    - info
-    - das
   authors:
   - jazzthief81
   - HydrantDude
@@ -327,8 +271,6 @@
 
 - name: Das Trainer V1.1
   file: TetrisDasTrainerV1_1.ips
-  tags:
-    - das
   source: https://www.romhacking.net/hacks/3761/
   authors:
   - jazzthief81
@@ -353,13 +295,9 @@
   authors:
     - CAndiman
   link: https://www.romhacking.net/hacks/7584/
-  tags:
-    - visual
 
 
 - name: Deep in Space 2 (2/2)
-  tags:
-    - visual
   file: deep_in_space II BGchanger.ips
   desc: |
     Hack of Tetris for the NES that changes the tetrominoes and the background.
@@ -382,13 +320,9 @@
   file: disco.bps
   authors:
   - Kirjava
-  tags:
-    - visual
 
 
 - name: Double KS
-  tags:
-    - gymhistory
   file: doubleKS.bps
   authors:
   - Kirjava
@@ -400,8 +334,6 @@
   - JazzySpinalFusion
   screenshots:
   - Dr._Mariotris_game.png
-  tags:
-    - visual
 
 
 - name: Electronika60
@@ -414,8 +346,6 @@
   - Electronika60_levelmenu.png
   - Electronika60_gamemenu.png
   - Electronika60_game.png
-  tags:
-    - visual
 
 
 - name: Electronika60 JPF
@@ -428,8 +358,6 @@
   - Electronika60-JPF_levelmenu.png
   - Electronika60-JPF_gamemenu.png
   - Electronika60-JPF_game.png
-  tags:
-    - visual
 
 
 - name: ElectronikaGYM JazzySpinalFusion
@@ -437,8 +365,6 @@
   authors:
   - Kirjava
   - JazzySpinalFusion
-  tags:
-    - visual
 
 
 - name: Fixed RNG
@@ -447,8 +373,6 @@
   - HydrantDude
   screenshots:
   - FixedRNG_title.png
-  tags:
-    - sps
 
 
 - name: Fixed RNG New
@@ -457,8 +381,6 @@
   - HydrantDude
   screenshots:
   - FixedRNGNew_title.png
-  tags:
-    - sps
 
 
 - name: Flat Pieces
@@ -467,8 +389,6 @@
   - Kirjava
   screenshots:
   - FlatPieces_game.png
-  tags:
-    - visual
 
 
 - name: French
@@ -481,8 +401,6 @@
   - French_levelmenu.png
   - French_gamemenu.png
   - French_game.png
-  tags:
-    - translation
 
 
 - name: Gameboy Mod V3
@@ -558,8 +476,6 @@
   - H_levelmenu.png
   - H_gamemenu.png
   - H_game.png
-  tags:
-    - H
 
 
 - name: Hard Drop
@@ -601,8 +517,6 @@
 
 - name: Kawaii
   file: Kawaii.bps
-  tags:
-    - translation
   screenshots:
   - Kawaii_legal.png
   - Kawaii_title.png
@@ -614,8 +528,6 @@
 
 
 - name: Korobeiniki
-  tags:
-    - music:
   file: TetrisKorobeiniki.ips
   authors:
   - jazzthief81
@@ -809,18 +721,6 @@
   - zohassadar
 
 
-- name: Motion Sickness
-  authors:
-  - zohassadar
-  file:
-  screenshots:
-  - motionsickness.gif
-  desc: |
-    This was originally posted in #romhacking:
-
-    In trying to catch up a bit on the years of knowledge in this channel, I found scrolltris and thought it was neat.  It made me want to mess around with PPUSCROLL so I came up with the idea of keeping the piece still and moving the screen instead.  I don't like it, it made me feel sick testing it.
-
-
 - name: Music 1.1
   file: music-1.1.bps
   authors:
@@ -894,8 +794,6 @@
   authors:
   - CAndiman
   link: https://www.romhacking.net/hacks/7594/
-  tags:
-    - visual
 
 
 - name: NWC90 Practice mod
@@ -906,13 +804,9 @@
 
 
 - name: Options for B Game
+  file: TetrisOptionsForBGame.bps
   authors:
   - zohassadar
-  file: TetrisOptionsForBGame.bps
-  screenshots:
-    - TetrisOptionsForBGame.png
-  desc: |
-    This started as me wanting garbage row options between 19-2 and 19-3, because the increase in difficulty between those two is steep (for me at least), so I wanted a mod where you could choose garbage by rows instead of by the arbitrary heights.  I also thought it'd be cool to change the goal lines without game genie codes as well as having the ability to reuse the same garbage field.  Lastly I wanted to be able to start an A game with B garbage.  Choosing 0 for B Lines means you gotta clear the original garbage to win.  I tried to understand the TetrisGYM scoring for the checkerboard so I could incorporate something similar (or the same) for that mode, but I'm not quite there yet so I've saved that challenge for another day.  In the mean time the scoring for that starts at FF and counts down by lines cleared in hex.   If you choose B game with 0 rows and 0 lines, it's very easy to win quickly.   Huge thanks to Kirjava and Fractal161 for the source code that greatly assisted with building the menu.
 
 
 - name: Pal Hack
@@ -923,8 +817,6 @@
   source: https://github.com/fractal161/speedhack/tree/pal
   link: https://www.romhacking.net/hacks/7088/
   yt: n9vKMNu5JWo
-  tags:
-    - mechanics
 
 
 - name: Pal SPS Tourney
@@ -933,8 +825,6 @@
   authors:
   - fractal161
   yt: n9vKMNu5JWo
-  tags:
-    - mechanics
 
 
 - name: Pal SPS Tourney (Goofy)
@@ -943,9 +833,6 @@
   authors:
   - fractal161
   yt: n9vKMNu5JWo
-  tags:
-    - mechanics
-    - goofyfoot
 
 
 - name: Parity V0
@@ -969,9 +856,6 @@
   - zohassadar
   yt: IZn6R--RxNg
   source: https://gist.github.com/zohassadar/01d3c7c1f06c044f7ed2e77f2892aceb#file-penguin-asm
-  tags:
-    - visual
-    - funny
 
 
 - name: Pentris
@@ -981,9 +865,6 @@
   - zohassadar
   source: https://github.com/zohassadar/Pentris/tree/v1.3
   yt: 3b2VvO2fCfo
-  tags:
-    - mechanics
-    - visual
 
 
 - name: Pentris (with Tetriminos)
@@ -991,9 +872,6 @@
   desc: Pentris with Tetriminos added to the mix
   authors:
   - zohassadar
-  tags:
-    - mechanics
-    - visual
 
 
 - name: Pentris (with Tetriminos) AnyDAS
@@ -1003,10 +881,6 @@
   authors:
   - zohassadar
   - HydrantDude
-  tags:
-    - mechanics
-    - visual
-    - anydas
 
 
 - name: Pentris 2.0
@@ -1017,10 +891,6 @@
   - Zohassadar
   - HydrantDude
   - Kirby703
-  tags:
-    - mechanics
-    - visual
-    - anydas
 
 
 - name: Pentris AnyDAS
@@ -1031,25 +901,17 @@
   - zohassadar
   - HydrantDude
   yt: 3b2VvO2fCfo
-  tags:
-    - mechanics
-    - visual
-    - anydas
 
 
 - name: Pepperlaw
   file: pepperlaw.ips
   authors:
   - HydrantDude
-  tags:
-    - visual
 
 
 - name: Petrus (Prototype)
   link: https://github.com/kirjavascript/TetrisGYM
   file: Petrus.bps
-  tags:
-    - gymhistory
   screenshots:
   - Petrus_title.png
   - Petrus_levelmenu.png
@@ -1065,8 +927,6 @@
   - TetricPPCT_game.png
   authors:
   - fractal161
-  tags:
-    - info
 
 
 - name: Practice Mode
@@ -1078,17 +938,12 @@
   - practice_mode_game.png
   authors:
   - CAndiman
-  tags:
-    - visual
-    - info
 
 
 - name: Press Up
   file: pressup.ips
   authors:
   - HydrantDude
-  tags:
-    - mechanics
 
 
 - name: Quick Stack Mode
@@ -1306,20 +1161,6 @@
   - jazzthief81
 
 
-- name: Stupid Rotation
-  file: StupidRotation.bps
-  authors:
-    - zohassadar
-  screenshots:
-    - StupidRotation.gif
-  desc: |
-    Originally posted in #romhacking:
-
-    Can the Z, O, S & I pieces be given 4 orientations each like the T, J & L?  Yes.   Is this a practical implementation of that concept?  No.
-  tags:
-    - funny
-
-
 - name: Super Tetris Land v1.0
   file: super_tetris_land_v_1_0_no_HD.bps
   screenshots:
@@ -1482,8 +1323,6 @@
   authors:
   - zohassadar
   yt: kz7hjhtZ3_k
-  tags:
-    - wider
 
 
 - name: Tetris 30 Wide Any Trn 5 Trans
@@ -1493,8 +1332,6 @@
   file: Tetris30WideAnyTrn5Trans.bps
   desc: 30 Wide Tetris with Das Controls and transitions every 5 lines.  Featured in HydrantDude's AnyTourney.
   yt: saAkhOkxu0Q
-  tags:
-    - wider
 
 
 - name: Tetris 30 Wide With Big Pieces
@@ -1509,8 +1346,6 @@
   - Zohassadar
   - HydrantDude
   - Kirby703
-  tags:
-    - wider
 
 
 - name: Tetris 30x25
@@ -1521,8 +1356,6 @@
   authors:
   - zohassadar
   yt: -7OrMs77s0A
-  tags:
-    - wider
 
 
 - name: Tetris AJK 2012
@@ -1532,8 +1365,6 @@
   authors:
   - Kitaru
   yt: 39VSTge9tpk
-  tags:
-    - mechanics
 
 
 - name: Tetris AnyTourney
@@ -1545,15 +1376,10 @@
   - HydrantDude
   - Kirby703
   - zohassadar
-  tags:
-    - mechanics
-    - anydas
 
 
 - name: Tetris Debug Mode
   file: tetris-debug-mode.ips
-  tags:
-    - gymhistory
   authors:
     - Kirjava
   desc: |
@@ -1570,8 +1396,6 @@
   authors:
   - zohassadar
   yt: Kdhbwzg34sc
-  tags:
-    - wider
 
 
 - name: Tetris Excel
@@ -1595,8 +1419,6 @@
   - 4973screenshot1.PNG
   - 4973screenshot2.PNG
   - 4973screenshot3.PNG
-  tags:
-    - mechanics
 
 
 - name: Tetris Metrics
@@ -1605,16 +1427,12 @@
   - TetrisMetrics_game.png
   authors:
   - jazzthief81
-  tags:
-    - info
 
 
 - name: Tetris Rate
   file: NTSC Tetris Rate.ips
   authors:
   - HydrantDude
-  tags:
-    - info
 
 
 - name: Tetris Zero
@@ -1628,8 +1446,6 @@
   - 1013screenshot4.png
   - 1013screenshot1.png
   - 1013screenshot2.png
-  tags:
-    - 2player
   desc: |
     This is a 2 player hack for the NES version of Tetris. In order to accomplish this, the ROM was converted from MMC1 to MMC3. The PRG was expanded to have 2 additional PRG banks.
 
@@ -1653,16 +1469,12 @@
   - TetrisGYM-6.0.0_gamemenu.png
   desc: Adds practice modes to NES Tetris (among other things)
   source: https://github.com/kirjavascript/TetrisGYM
-  tags:
-    - Gym6.0.0
   authors:
   - kirjava
 
 
 - name: TetrisGYM 6.0.0 iNES2.0
   file: TetrisGYM-6.0.0NES2.0-Conversion.bps
-  tags:
-    - Gym6.0.0
   authors:
   - Kirjava
   - TakuikaNinja
@@ -1670,8 +1482,6 @@
 
 - name: TetrisGYM 6.0.0 Pride Colors
   file: TetrisGYM-6.0.0-pride.bps
-  tags:
-    - Gym6.0.0
   authors:
   - kirjava
   - zohassadar
@@ -1679,9 +1489,6 @@
 
 - name: TetrisGYM 6.0.0 Tron hack
   file: TetrisGYM-6.0.0-tron0.bps
-  tags:
-    - Gym6.0.0
-    - visual
   desc: Adds an extra dark mode to Tetris GYM
   source: https://github.com/zohassadar/TetrisGYM/tree/neon2
   authors:
@@ -1691,8 +1498,6 @@
 
 - name: TetrisGYM 6.0.0 Universal
   file: TetrisGYM-6.0.0-universal.bps
-  tags:
-    - Gym6.0.0
   desc: Downloaded patch will work with any header
   authors:
   - Kirjava
@@ -1700,68 +1505,33 @@
 
 - name: TetrisGYM 6.0.0 w/Keyboard
   file: TetrisGYM-6.0.0-keyboard.bps
-  tags:
-    - Gym6.0.0
   desc: TetrisGYM compiled with Famicom Keyboard support
   source: https://github.com/kirjavascript/TetrisGYM
   authors:
   - kirjava
 
 
-- name: TetrisGYM Board Replay
-  file: GymReplayBuggy.bps
-  tags:
-    - buggy
-    - incomplete
-  authors:
-    - zohassadar
-    - Kirjava
-  screenshots:
-    - GymReplayBuggy.gif
-  desc: |
-    Uses MMC5 mapper for 64k (maybe, going off of memory) of ram to store as many gameboards as possible.  This allows the player to pause and undo place piecements and resuming from an earlier point in the game.
-
-
 - name: TetrisGYM Crunch Mode
   file: crunch.bps
   desc: Original Crunchmode
-  tags:
-    - gymhistory
   authors:
   - Kirjava
   - super
 
 
 - name: TetrisGYM Flip Mode Line Cap
-  date: 5/15/23
   file: FlipModeLinecap.bps
-  tags:
-    - mechanics
-  desc: |
-    Originally posted in #romhacking:
-
-    Used the linecap functionality to see what happens when you turn the game upside down while playing normally, or when you turn the game right side up while playing upside down.
+  desc: Adds an extra linecap mode
   authors:
-  - zohassadar
   - Kirjava
-  screenshots:
-  - FlipModeLinecap.gif
-  - FlipModeUpsideDown.gif
+  - zohassadar
 
 
 - name: TetrisGYM Invisible Options
   file: TetrisGYMInvisibleOptions.bps
-  tags:
-    - mechanics
-  desc: |
-    A version where invisible is a switch that lets you turn it on for any practice mode, or to toggle it every level, lineclear, or randomly.
-
-    The GIF shows it toggling every line clear
-  screenshots:
-    - invisible_options.gif
   authors:
-  - zohassadar
   - Kirjava
+  - zohassadar
 
 
 - name: TetrisGYM Long 18
@@ -1774,9 +1544,6 @@
 - name: TetrisGYM Upside Down Options
   file: TGymUpsideDownOptionsCNROM.bps
   desc: uses CNROM
-  tags:
-    - mechanics
-    - funny
   authors:
   - Kirjava
   - zohassadar
@@ -1786,16 +1553,12 @@
 - name: TetrisGYM v1
   file: TetrisGYM-v1.bps
   source: https://github.com/kirjavascript/TetrisGYM/tree/v1
-  tags:
-    - gymhistory
   authors:
     - Kirjava
 
 
 - name: TetrisGYM v2
   file: TetrisGYM-v2.bps
-  tags:
-    - gymhistory
   source: https://github.com/kirjavascript/TetrisGYM/tree/v2
   authors:
     - Kirjava
@@ -1803,8 +1566,6 @@
 
 - name: TetrisGYM v3
   file: TetrisGYM-v3.bps
-  tags:
-    - gymhistory
   source: https://github.com/kirjavascript/TetrisGYM/tree/v3
   authors:
     - Kirjava
@@ -1812,8 +1573,6 @@
 
 - name: TetrisGYM v3.1
   file: TetrisGYM-v3.1.bps
-  tags:
-    - gymhistory
   source: https://github.com/kirjavascript/TetrisGYM/tree/v3.1
   authors:
     - Kirjava
@@ -1821,8 +1580,6 @@
 
 - name: TetrisGYM v4
   file: TetrisGYM-v4.bps
-  tags:
-    - gymhistory
   source: https://github.com/kirjavascript/TetrisGYM/tree/v4
   authors:
     - Kirjava
@@ -1830,8 +1587,6 @@
 
 - name: TetrisGYM v4 Classic Edition
   file: TetrisGYM-v4_Classic_Edition.bps
-  tags:
-    - gymhistory
   source: https://github.com/kirjavascript/TetrisGYM/tree/v4-classic
   authors:
     - Kirjava
@@ -1839,8 +1594,6 @@
 
 - name: TetrisGYM v5 rev03
   file: TetrisGYM-v5.rev03.bps
-  tags:
-    - gymhistory
   source: https://github.com/kirjavascript/TetrisGYM/tree/v5
   authors:
     - Kirjava
@@ -1848,8 +1601,6 @@
 
 - name: TetrisGYM v5 rev03 CNROM
   file: TetrisGYM-v5.rev03-CNROM.bps
-  tags:
-    - gymhistory
   source: https://github.com/kirjavascript/TetrisGYM/tree/v5
   authors:
     - Kirjava
@@ -1857,8 +1608,6 @@
 
 - name: TetrisGYM v5 rev05 Tournament edition
   file: TetrisGYM-v5.Tournament.Edition.rev05.bps
-  tags:
-    - gymhistory
   source: https://github.com/kirjavascript/TetrisGYM/tree/v5-tournament
   authors:
     - Kirjava
@@ -1866,8 +1615,6 @@
 
 - name: TetrisGYM v5 rev05 Tournament edition CNROM
   file: TetrisGYM-v5.Tournament.Edition.rev05-CNROM.bps
-  tags:
-    - gymhistory
   source: https://github.com/kirjavascript/TetrisGYM/tree/v5-tournament
   authors:
     - Kirjava
@@ -1876,9 +1623,6 @@
 - name: TetrisGYM XPiece
   file: GymXPiece.bps
   desc: T replaced with X Piece
-  tags:
-    - mechanics
-    - funny
   authors:
   - Kirjava
   - zohassadar
@@ -1886,8 +1630,6 @@
 
 - name: TetrisGYM XPos
   file: xpos.bps
-  tags:
-    - mechanics
   authors:
   - Kirjava
   - super
@@ -1896,8 +1638,6 @@
 - name: TetrisGYM XPos Random
   file: xpos-random.bps
   desc: Set x-pos to 8 to randomize the position
-  tags:
-    - mechanics
   authors:
   - Kirjava
   - super
@@ -1905,8 +1645,6 @@
 
 - name: Tetrodrome
   file: Tetrodrome.bps
-  tags:
-    - visual
   screenshots:
   - Tetrodrome_legal.png
   - Tetrodrome_title.png
@@ -1924,8 +1662,6 @@
 
 
 - name: TSpin Trainer
-  tags:
-    - gymhistory
   file: TSpinTrainer.bps
   authors:
   - Kirjava
@@ -1933,8 +1669,6 @@
 
 - name: Ultris
   file: Ultris.ips
-  tags:
-    - mechanics
   desc: |
     Faster DAS (simulates PAL DAS)
     Faster softdrops (at level 29 speed instead of 19)
@@ -1959,9 +1693,6 @@
   authors:
   - zohassadar
   yt: cBs7H2lll-0
-  tags:
-    - funny
-    - mechanics
 
 
 - name: WaitrisBeta
@@ -1973,33 +1704,20 @@
     don''t really feel like doing much with it though.'
   authors:
   - JazzySpinalFusion
-  tags:
-    - incomplete
-    - mechanics
 
 
 - name: Wall Hack
   file: TetrisWallHack.bps
   desc: Tetris that allows going outside the playfield (as long as you return in time)
-  screenshots:
-    - Tetris_Wall_Hack.gif
   authors:
   - zohassadar
-  tags:
-    - funny
-    - mechanics
 
 
 - name: Wall Hack 2
   file: Wallhack2.bps
   desc: Pieces wrap around the playfield
-  screenshots:
-    - Tetris_Wall_Hack_2.gif
   authors:
   - zohassadar
-  tags:
-    - funny
-    - mechanics
 
 
 - name: Wall Hack 2 Anydas
@@ -2008,10 +1726,6 @@
   authors:
   - zohassadar
   - HydrantDude
-  tags:
-    - funny
-    - mechanics
-    - anydas
 
 
 - name: Window Night City V2
@@ -2024,8 +1738,6 @@
   authors:
   - CAndiman
   link: https://www.romhacking.net/hacks/7598/
-  tags:
-    - visual
 
 
 - name: Window Night City V2 HD
@@ -2039,8 +1751,6 @@
   authors:
   - CAndiman
   link: https://www.romhacking.net/hacks/7598/
-  tags:
-    - visual
 
 
 - name: WTFTris
@@ -2055,8 +1765,6 @@
 
     Enjoy!
   yt: IGuA4T0xaEE
-  tags:
-    - mechanics
 
 
 - name: Zentris
@@ -2068,16 +1776,10 @@
   - Zentris_levelmenu.png
   authors:
   - JazzySpinalFusion
-  tags:
-    - visual
-    - mechanics
 
 
 - name: Zentris (2024)
   file: Zentris.ips
-  tags:
-    - visual
-    - mechanics
   screenshots:
   - Zentris_legal.png
   - Zentris_title.png
@@ -2121,9 +1823,6 @@
   desc: See Zentris (2024)
   authors:
   - JazzySpinalFusion
-  tags:
-    - visual
-    - mechanics
 
 
 - name: Zentris Zero Gravity
@@ -2136,9 +1835,6 @@
   desc: See Zentris (2024)
   authors:
   - JazzySpinalFusion
-  tags:
-    - visual
-    - mechanics
 
 
 - name: Zentris Zero Gravity Quick Mode
@@ -2146,6 +1842,3 @@
   desc: See Zentris (2024)
   authors:
   - JazzySpinalFusion
-  tags:
-    - visual
-    - mechanics
