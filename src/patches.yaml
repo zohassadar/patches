@@ -262,6 +262,8 @@
   desc: A very simple graphic hack inspired by the Shirase mode of Tetris TGM3 (which in turn was a nod to the Electronika 60 version), changing all the blocks to the bracket style seen therein. Try it on the higher levels!
   screenshots:
   - 3644screenshot1.png
+  tags:
+  - brackets
 
 
 - name: Brackets GYM
@@ -272,6 +274,7 @@
   - brackets_gym_000.png
   tags:
   - visual
+  - brackets
 
 
 - name: Chaotic Palettes Tetris No Killscreen
@@ -545,6 +548,7 @@
   - Electronika60_game.png
   tags:
   - visual
+  - brackets
 
 
 - name: Electronika60 JPF
@@ -559,6 +563,7 @@
   - Electronika60-JPF_game.png
   tags:
   - visual
+  - brackets
 
 
 - name: ElectronikaGYM JazzySpinalFusion
@@ -566,8 +571,13 @@
   authors:
   - Kirjava
   - JazzySpinalFusion
+  screenshots:
+  - ElectronikaGYM-JazzySpinalFusion_000.png
+  - ElectronikaGYM-JazzySpinalFusion_001.png
+  - ElectronikaGYM-JazzySpinalFusion_002.png
   tags:
   - visual
+  - brackets
 
 
 - name: Fixed RNG
@@ -635,6 +645,8 @@
   - gameboy_mod_v4_levelmenu.png
   - gameboy_mod_v4_gamemenu.png
   - gameboy_mod_v4_game.png
+  tags:
+  - visual
 
 
 - name: Gameboy Mod V4 HD
@@ -649,6 +661,9 @@
   - gameboy_mod_v4_levelmenu.png
   - gameboy_mod_v4_gamemenu.png
   - gameboy_mod_v4_game.png
+  tags:
+  - visual
+  - harddrop
 
 
 - name: Goofy Foot
@@ -695,6 +710,8 @@
   file: Tetris_HD_patch.ips
   authors:
   - Josh Tolles
+  tags:
+  - harddrop
 
 
 - name: Heartris v1
@@ -956,6 +973,8 @@
   file: music-1.1.bps
   authors:
   - fractal161
+  tags:
+  - music
 
 
 - name: Neon Tetris
@@ -1193,8 +1212,23 @@
   - zohassadar
   - HydrantDude
   - Kirby703
-  source: https://github.com/zohassadar/Pentris/tree/v2.0
-  desc: See source for readme
+  source: https://github.com/zohassadar/Pentris/releases/tag/v2.0
+  yt: zb7nrl3Zt4I
+  link: https://github.com/zohassadar/Pentris/blob/v2.0/README.md
+  desc: |
+    See link for readme
+
+    Video shown is current world record as of summer 2025
+  screenshots:
+  - Pentris-atype.png
+  - Pentris-btype.png
+  - Pentris-levelmenu1.png
+  - Pentris-levelmenu2.png
+  - Pentris-pentris.png
+  - Pentris-seed.png
+  - Pentris-stats.png
+  - Pentris-stats_tetriminos.png
+  - Pentris-tetriminos.png
   tags:
   - mechanics
   - visual
@@ -1283,6 +1317,8 @@
   - JazzySpinalFusion
   desc: It instantly opens a never ending level 0 type a game for when you want instant
     casual stacking.
+  tags:
+  - harddrop
 
 
 - name: Quick Stack Mode - No Press Down
@@ -1291,6 +1327,8 @@
   - JazzySpinalFusion
   desc: It instantly opens a never ending level 0 type a game for when you want instant
     casual stacking.
+  tags:
+  - mechanics
 
 
 - name: Quick Zentris
@@ -1301,12 +1339,16 @@
   - Quick_Zentris_title.png
   - Quick_Zentris_gamemenu.png
   - Quick_Zentris_levelmenu.png
+  tags:
+  - visual
 
 
 - name: Random Rotate
   file: tetris_random_rotate.ips
   authors:
   - maya
+  tags:
+  - mechanics
 
 
 - name: Random Spawn Orientation
@@ -1314,6 +1356,9 @@
   authors:
   - zohassadar
   desc: pieces spawn in any orientation
+  tags:
+  - mechanics
+  - shitpost
 
 
 - name: Random Tiles
@@ -1324,6 +1369,7 @@
   desc: Pieces can consist of any of the three tiles
   tags:
   - shitpost
+  - visual
 
 
 - name: Retro Theme 1 (Nostalgia)
@@ -1335,6 +1381,8 @@
   - RetroTheme1(Nostalgia)_gamemenu.png
   - RetroTheme1(Nostalgia)_levelmenu.png
   - RetroTheme1(Nostalgia)_game.png
+  tags:
+  - visual
 
 
 - name: Retro Theme 1 (Nostalgia) HD
@@ -1346,6 +1394,9 @@
   - RetroTheme1(Nostalgia)HD_gamemenu.png
   - RetroTheme1(Nostalgia)HD_levelmenu.png
   - RetroTheme1(Nostalgia)HD_game.png
+  tags:
+  - visual
+  - harddrop
 
 
 - name: Retro Theme 2 (Nostalgic)
@@ -1357,6 +1408,8 @@
   - RetroTheme2(Nostalgia)_gamemenu.png
   - RetroTheme2(Nostalgia)_levelmenu.png
   - RetroTheme2(Nostalgia)_game.png
+  tags:
+  - visual
 
 
 - name: Retro Theme 2 (Nostalgic) HD
@@ -1368,6 +1421,9 @@
   - RetroTheme2(Nostalgia)HD_gamemenu.png
   - RetroTheme2(Nostalgia)HD_levelmenu.png
   - RetroTheme2(Nostalgia)HD_game.png
+  tags:
+  - visual
+  - harddrop
 
 
 - name: RNG determinism mod
@@ -1591,6 +1647,9 @@
   - super_tetris_land_v_1_0_HD_gamemenu.png
   - super_tetris_land_v_1_0_HD_levelmenu.png
   - super_tetris_land_v_1_0_HD_game.png
+  tags:
+  - visual
+  - harddrop
 
 
 - name: SZ
@@ -1666,6 +1725,7 @@
   source: https://github.com/ejona86/taus/tree/v1.5.0
   tags:
   - mechanics
+  - harddrop
 
 
 - name: TAUS Hard Drop v1.5.0
@@ -1676,6 +1736,7 @@
   tags:
   - mechanics
   - visual
+  - harddrop
 
 
 - name: TAUS Hold v1.5.0
@@ -1915,6 +1976,7 @@
   - 4973screenshot3.PNG
   tags:
   - mechanics
+  - harddrop
 
 
 - name: Tetris GYM Anydas250107
@@ -2572,6 +2634,7 @@
   - Nes Tetris(ntsc)Window Night City HDv2_0_game.png
   tags:
   - visual
+  - harddrop
 
 
 - name: WTFTris
@@ -2652,6 +2715,7 @@
   tags:
   - visual
   - mechanics
+  - harddrop
 
 
 - name: Zentris Quick Mode

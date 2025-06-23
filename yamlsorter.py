@@ -42,8 +42,17 @@ ORDER = {
     )
 }
 
-LIST_ITEMS = ["tags", "authors", "screenshots", "extras"]
-MINIMUM = ["name", "file", "authors"]
+LIST_ITEMS = [
+    "tags",
+    "authors",
+    "screenshots",
+    "extras",
+]
+MINIMUM = [
+    "name",
+    "file",
+    "authors",
+]
 
 PATCH_FILES = [p.name for p in pathlib.Path("public/patches/").iterdir()]
 
@@ -61,8 +70,6 @@ for screenshot in SCREENSHOTS:
         continue
     sys.exit(f"screenshots/{screenshot} not a screenshot")
 
-# This isn't used yet
-EXTRAS = [s.name for s in pathlib.Path("public/extras/").iterdir()]
 
 with open("src/patches.yaml") as file:
     unparsed = file.read()
@@ -115,7 +122,8 @@ for patch in patches:
         sys.exit(f"{patch.name} missing {patch.file}")
 
 
-# print("Validating extas are present")
+# Validate referenced extras exist
+EXTRAS = [s.name for s in pathlib.Path("public/extras/").iterdir()]
 extras = []
 for patch in patches:
     if patch.extras is NOTSET:
@@ -126,7 +134,7 @@ for patch in patches:
         extras.append(extra)
 
 
-# print("Validating screenshots are present")
+# Validate referenced screenshots exist
 screenshots = []
 for patch in patches:
     if patch.screenshots is NOTSET:
@@ -136,12 +144,13 @@ for patch in patches:
             sys.exit(f"{patch.name} missing screenshot {screenshot}")
         screenshots.append(screenshot)
 
-# come back to this. use to clean up screenshots directory
+# validate screenshots are referenced
 for screenshot in SCREENSHOTS:
     if screenshot not in screenshots:
         print(f"screenshots/{screenshot} is not referenced by any patch")
-        (pathlib.Path("public/screenshots") / screenshot).unlink()
+        # (pathlib.Path("public/screenshots") / screenshot).unlink()
 
+# validate extras are referenced
 for extra in EXTRAS:
     if extra not in extras:
         print(f"extras/{extra} is not referenced by any patch")
@@ -155,43 +164,74 @@ for patch in patches:
             continue
         sys.exit(f"{patch.name}: invalid tag {tag}")
 
-
-tagauthors = {}
+# collect and count all tags/authors to test for any case mismatch
+# all authors and tags each should have a single case representation
+tags = {}
+authors = {}
 for patch in patches:
     for author in patch.authors:
-        tagauthors.setdefault(author.lower(), set()).add(author)
+        authors.setdefault(author.lower(), list()).append(author)
     if patch.tags is NOTSET:
         continue
     for tag in patch.tags:
-        tagauthors.setdefault(tag.lower(), set()).add(tag)
-
-
-for ta in tagauthors.values():
-    if len(ta) == 1:
+        tags.setdefault(tag.lower(), list()).append(tag)
+for ta in list(authors.values()) + list(tags.values()):
+    if len(set(ta)) == 1:
         continue
     print(f"Warning! case disagreement! {' '.join(ta)}")
 
+# print("Authors")
+# authors = list(authors.values())
+# authors.sort(key=lambda a: len(a), reverse=True)
+# for a in authors:
+#    print(f"{a[0]:>20}: {len(a)}")
+# print("Tags")
+# tags = list(tags.values())
+# tags.sort(key=lambda t: len(t), reverse=True)
+# for t in tags:
+#    print(f"{t[0]:>20}: {len(t)}")
+# strip top example out to put back later
 
 example = [
     l.strip() for l in unparsed.strip().splitlines() if l.strip().startswith("#")
 ]
 
+# pull and sort each patch
 sections = re.findall(
     r"^-.*?(?=^-|\Z)",
     unparsed,
     flags=re.DOTALL | re.MULTILINE,
 )
-
 sections.sort(key=lambda s: re.search(r"name: .*", s).group().upper())
 
+
+# Add any new patches at the top with placeholder info
 results = []
 for patch_file in PATCH_FILES:
     if patch_file not in files:
         results.append(
-            f"- name: {patch_file.split('.')[0]}\n  file: {patch_file}\n  authors:\n  - {ADDME}"
+            "\n".join(
+                [
+                    f"- name: {patch_file.split('.')[0]}",
+                    f"  date:",
+                    f"  file: {patch_file}",
+                    f"  desc:",
+                    f"  authors:",
+                    f"  - {ADDME}",
+                    f"  link:",
+                    f"  source:",
+                    f"  screenshots:",
+                    f"  - {ADDME}",
+                    f"  tags:",
+                    f"  - {ADDME}",
+                ]
+            )
         )
         print(f"{patch_file} missing.  Adding placeholder")
 
+
+# sort subsections, preserving formatting of each section (mainly concerned with desc field)
+# normalize list indentation
 for section in sections:
     subsections = re.findall(
         r"^[- ] ([a-z]+):(\s+.*?)(?=^  [a-z]+:|\Z)",
@@ -212,7 +252,7 @@ for section in sections:
     result = "-" + result[1:]
     results.append(result)
 
-
+# rewrite with even spacing between sections
 with open("src/patches.yaml", "w+") as file:
     print("\n".join(example), file=file, end="\n\n")
     for section in results[:-1]:
