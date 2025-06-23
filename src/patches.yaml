@@ -1220,15 +1220,15 @@
 
     Video shown is current world record as of summer 2025
   screenshots:
-  - Pentris-atype.png
-  - Pentris-btype.png
+  - Pentris-pentris.png
   - Pentris-levelmenu1.png
   - Pentris-levelmenu2.png
-  - Pentris-pentris.png
+  - Pentris-atype.png
+  - Pentris-btype.png
   - Pentris-seed.png
+  - Pentris-tetriminos.png
   - Pentris-stats.png
   - Pentris-stats_tetriminos.png
-  - Pentris-tetriminos.png
   tags:
   - mechanics
   - visual
