@@ -45,7 +45,7 @@ if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
 
 // Tools like Cloud9 rely on this.
 const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 3000;
-const HOST = process.env.HOST || '0.0.0.0';
+const HOST = process.env.HOST || '127.0.0.1';
 
 if (process.env.HOST) {
     console.log(
@@ -63,10 +63,20 @@ if (process.env.HOST) {
     );
     console.log();
 }
-fs.watchFile('src/patches.yaml', () => {
-    console.log(`patches.yaml modified.  converting to json`);
-    const patches = parse(fs.readFileSync('src/patches.yaml', 'utf8'));
-    fs.writeFileSync('src/patches.json', JSON.stringify(patches), 'utf8');
+
+const YAML_FILE = 'src/patches.yaml';
+const JSON_FILE = 'src/patches.json';
+function convertYaml() {
+    console.log(`Converting ${YAML_FILE} to ${JSON_FILE}`);
+    const patches = parse(fs.readFileSync(YAML_FILE, 'utf8'));
+    fs.writeFileSync(JSON_FILE, JSON.stringify(patches), 'utf8');
+}
+console.log(`running convertYaml() on launch`);
+convertYaml();
+
+fs.watchFile(YAML_FILE, () => {
+    console.log(`${YAML_FILE} modified`);
+    convertYaml();
 });
 // We require that you explicitly set browsers and do not fall back to
 // browserslist defaults.
