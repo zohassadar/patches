@@ -1977,12 +1977,29 @@
   - harddrop
 
 
+- name: Tetris GYM Anydas250829
+  file: TetrisGYMAnydas250829.bps
+  authors:
+  - Kirjava
+  - HydrantDude
+  - zohassadar
+  - Kirby703
+  source: https://github.com/zohassadar/TetrisGYM/tree/Anydas250829
+  desc: |
+    DAS Controls added to TetrisGYM
+    Updated to include zero das support
+
+  tags:
+  - anytourney
+  - anydas
+
 - name: Tetris GYM Anydas250107
   file: TetrisGYMAnydas250107.bps
   authors:
   - Kirjava
   - HydrantDude
   - zohassadar
+  - Kirby703
   source: https://github.com/zohassadar/TetrisGYM/tree/Anydas250107
   desc: DAS Controls added to TetrisGYM
   tags:
