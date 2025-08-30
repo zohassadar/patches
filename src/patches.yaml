@@ -1977,6 +1977,35 @@
   - harddrop
 
 
+- name: Tetris GYM Anydas w/Frame Counter
+  file: AnydasFC250830.bps
+  authors:
+  - Kirjava
+  - HydrantDude
+  - zohassadar
+  - Kirby703
+  desc: |
+    Same as the Anydas250829 build but with the framecounter displayed instead of the top score.
+
+    conflicts with pace mode
+  tags:
+  - anydas
+
+
+- name: Tetris GYM Anydas250107
+  file: TetrisGYMAnydas250107.bps
+  authors:
+  - Kirjava
+  - HydrantDude
+  - zohassadar
+  - Kirby703
+  source: https://github.com/zohassadar/TetrisGYM/tree/Anydas250107
+  desc: DAS Controls added to TetrisGYM
+  tags:
+  - anytourney
+  - anydas
+
+
 - name: Tetris GYM Anydas250829
   file: TetrisGYMAnydas250829.bps
   authors:
@@ -1988,20 +2017,6 @@
   desc: |
     DAS Controls added to TetrisGYM
     Updated to include zero das support
-
-  tags:
-  - anytourney
-  - anydas
-
-- name: Tetris GYM Anydas250107
-  file: TetrisGYMAnydas250107.bps
-  authors:
-  - Kirjava
-  - HydrantDude
-  - zohassadar
-  - Kirby703
-  source: https://github.com/zohassadar/TetrisGYM/tree/Anydas250107
-  desc: DAS Controls added to TetrisGYM
   tags:
   - anytourney
   - anydas
