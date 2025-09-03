@@ -1119,7 +1119,9 @@
   - Kirjava
   - zohassadar
   yt: n9vKMNu5JWo
-  desc: Emulate PAL on NTSC console.  SPS code from TetrisGYM added
+  desc: |
+    Emulate PAL on NTSC console.  SPS code from TetrisGYM added
+    Use GG Code AATATL to skip legal screen
   tags:
   - mechanics
   - sps
