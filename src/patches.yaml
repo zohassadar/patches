@@ -2051,6 +2051,21 @@
   desc: Combine gym modes
 
 
+- name: Tetris Gym Keyboard Anydas TRT
+  file: KBGymAnydasTRT.bps
+  authors:
+  - Kirjava
+  - HydrantDude
+  - Kirby703
+  - zohassadar
+  desc: |
+    Tetris GYM with Famicom Basic Keyboard support.
+    Also added are DAS controls and HydrantDude's Tetris Rate counter.
+  tags:
+  - anydas
+  - keyboard
+
+
 - name: Tetris Metrics
   file: TetrisMetrics.ips
   authors:
