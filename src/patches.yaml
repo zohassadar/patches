@@ -1118,10 +1118,8 @@
   - fractal161
   - Kirjava
   - zohassadar
-  yt: n9vKMNu5JWo
   desc: |
     Emulate PAL on NTSC console.  SPS code from TetrisGYM added
-    Use GG Code AATATL to skip legal screen
   tags:
   - mechanics
   - sps
@@ -1136,6 +1134,37 @@
   tags:
   - mechanics
   - goofyfoot
+
+
+- name: Pal SPS Tourney 250907
+  file: PalSPSTrn250907.bps
+  authors:
+  - fractal161
+  - Kirjava
+  - zohassadar
+  source:
+  desc: |
+    Updated to fix line clear storage bug and allow for skippable legal screen
+  yt: n9vKMNu5JWo
+  tags:
+  - mechanics
+  - sps
+
+
+- name: Pal SPS Tourney w/TRT 250907
+  file: PalSPSTrnTRT250907.bps
+  authors:
+  - fractal161
+  - Kirjava
+  - zohassadar
+  - HydrantDude
+  source:
+  desc: |
+    Tetris Rate Counter added
+  yt: n9vKMNu5JWo
+  tags:
+  - mechanics
+  - sps
 
 
 - name: PALPEP hongbars
@@ -2292,6 +2321,7 @@
   tags:
   - Gym6.0.0
   - sps
+  - keyboard
 
 
 - name: TetrisGYM Board Replay
