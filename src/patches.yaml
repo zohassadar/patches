@@ -1142,10 +1142,11 @@
   - fractal161
   - Kirjava
   - zohassadar
-  source:
+  source: https://github.com/zohassadar/speedhack/tree/PalSPSTrn250907
+  yt: n9vKMNu5JWo
+  link: https://github.com/fractal161/speedhack/tree/pal
   desc: |
     Updated to fix line clear storage bug and allow for skippable legal screen
-  yt: n9vKMNu5JWo
   tags:
   - mechanics
   - sps
@@ -1158,10 +1159,11 @@
   - Kirjava
   - zohassadar
   - HydrantDude
-  source:
+  source: https://github.com/zohassadar/speedhack/tree/PalSPSTrnTRT250907
+  yt: n9vKMNu5JWo
+  link: https://github.com/fractal161/speedhack/tree/pal
   desc: |
     Tetris Rate Counter added
-  yt: n9vKMNu5JWo
   tags:
   - mechanics
   - sps
