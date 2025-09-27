@@ -2082,6 +2082,31 @@
   desc: Combine gym modes
 
 
+- name: Tetris Gym Keyboard 250927
+  file: Keyboard250927.bps
+  authors:
+  - Kirjava
+  source: https://github.com/zohassadar/TetrisGYM/tree/Keyboard250927
+  desc: |
+    TetrisGYM with family basic keyboard support
+
+    default mapping:
+
+    D - B
+    F - A
+
+    H - Left
+    J - Down
+    K - Up
+    L - Right
+
+    Left Shift - Select
+    Return - Start
+  tags:
+  - development
+  - keyboard
+
+
 - name: Tetris Gym Keyboard Anydas TRT
   file: KBGymAnydasTRT.bps
   authors:
