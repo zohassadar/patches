@@ -1930,7 +1930,20 @@
   - HydrantDude
   - Kirby703
   - zohassadar
-  desc: DAS Controls + ability to skip rocket screens + start on higher levels
+  source: https://github.com/zohassadar/nestris.js
+  desc: |
+    DAS Controls
+    Skip legal screen
+    Skip rocket screens
+    Pause keeps board visible
+    No curtain
+    Start on any level by adjusting A modifier
+    Code is not shifted so most GG codes are compatible
+
+    DAS Controls (defaults are from vanilla):
+      DAS - Initial delay (default 16).  When set to 0 the initial delay is skipped entirely.
+      ARR - Repeat rate (default 6).  When set to 0 the shifts repeat within a single frame until the piece is unable to shift further.
+      ARE Charge - Left or Right inputs during entry delay are considered wall charges (default off)
   screenshots:
   - TetrisAnyTrn_title.png
   tags:
